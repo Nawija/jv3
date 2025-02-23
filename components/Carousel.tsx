@@ -67,14 +67,13 @@ const Carousel = () => {
                     >
                         <Image
                             src={image}
-                            alt="..."
+                            alt={`Obraz ${index + 1}`}
+                            width={2048}
+                            height={1365}
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            className={`object-cover w-full h-full ${
-                                index === 1
-                                    ? "object-left-top"
-                                    : "object-center"
-                            }`}
-                            priority
+                            className="object-cover w-full h-full"
+                            priority={index === 0}
+                            quality={75}
                         />
                     </div>
                 ))}
