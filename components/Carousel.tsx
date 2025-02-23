@@ -73,7 +73,7 @@ const Carousel = () => {
                             sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover w-full h-full"
                             priority={index === 0}
-                            quality={75}
+                            quality={100}
                         />
                     </div>
                 ))}
