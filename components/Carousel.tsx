@@ -12,6 +12,7 @@ import h4 from "@/public/Images/wyjscie.jpg";
 const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
         onClick={onClick}
+        aria-label="Poprzedni slajd"
         className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2"
     >
         <SlArrowLeft className="text-4xl text-white/80 hover:text-white duration-300 transition-colors" />
@@ -21,6 +22,7 @@ const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
 const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
         onClick={onClick}
+        aria-label="Następny slajd"
         className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2"
     >
         <SlArrowRight className="text-4xl text-white/80 hover:text-white duration-300 transition-colors" />
@@ -66,7 +68,13 @@ const Carousel = () => {
                         <Image
                             src={image}
                             alt="..."
-                            className="object-cover object-center w-full h-full"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className={`object-cover w-full h-full ${
+                                index === 1
+                                    ? "object-left-top"
+                                    : "object-center"
+                            }`}
+                            priority
                         />
                     </div>
                 ))}
