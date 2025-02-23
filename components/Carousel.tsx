@@ -74,6 +74,7 @@ const Carousel = () => {
                             className="object-cover w-full h-full"
                             priority={index === 0}
                             quality={100}
+                            placeholder="blur"
                         />
                     </div>
                 ))}
