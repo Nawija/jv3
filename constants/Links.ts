@@ -21,7 +21,7 @@ export const NAVLINKS = [
     },
     {
         label: "kontakt",
-        href: "/",
+        href: "/kontakt",
     },
     {
         label: "strefa klienta",

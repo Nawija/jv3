@@ -10,9 +10,9 @@ import h3 from "@/public/Images/sesja2.jpg";
 import h4 from "@/public/Images/wyjscie.jpg";
 
 const images = [
-    { src: h1, position: "50% 50%" }, // Środek
-    { src: h3, position: "100% 50%" }, // Prawa strona
-    { src: h4, position: "50% 100%" }, // Lekko do góry
+    { src: h1, position: "50% 50%" },
+    { src: h3, position: "0% 50%" }, 
+    { src: h4, position: "50% 100%" }, 
 ];
 
 const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
 import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
+import CTA from "@/components/CTA";
 
 export default function Home() {
     return (
@@ -58,6 +59,10 @@ export default function Home() {
                             Zobacz
                         </Link>
                     </div>
+                </div>
+                <div className="space-y-4 p-12">
+                    <h3 className="text-2xl">Porozmawiajmy o Twoim pomyśle na zdjęcia </h3>
+                    <CTA />
                 </div>
             </div>
         </div>
