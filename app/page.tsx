@@ -40,14 +40,14 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
-                <div className="flex flex-col items-center justify-center lg:flex-row ">
+                <div className="flex flex-col items-center justify-center lg:flex-row max-w-screen-md ">
                     <Image
                         src={Slub}
                         height={500}
                         alt="slub"
-                        className="object-cover"
+                        className="object-cover lg:order-1"
                     />
-                    <div className="bg-black/80 w-1/2 text-start p-12 lg-mr-12 lg:order-0">
+                    <div className="bg-black/80 w-1/3 text-start p-12 lg-ml-12 lg:order-0 z-10">
                         <p className="capitalize text-white text-4xl mb-8">
                             reportaż slubny
                         </p>

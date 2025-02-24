@@ -63,7 +63,7 @@ const Carousel = () => {
                 {[h1, h3, h1, h4].map((image, index) => (
                     <div
                         key={index}
-                        className="flex justify-center items-center w-full h-[85vh]"
+                        className="flex justify-center items-center relative w-full h-[85vh]"
                     >
                         <Image
                             src={image}
