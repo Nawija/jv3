@@ -23,6 +23,7 @@ export async function POST(req: Request) {
             { status: 200 }
         );
     } catch (error) {
+        console.error("Błąd wysyłania e-maila:", error);
         return NextResponse.json({ error: "Błąd wysyłania" }, { status: 500 });
     }
 }

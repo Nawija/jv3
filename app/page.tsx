@@ -61,7 +61,9 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="space-y-4 p-12">
-                    <h3 className="text-2xl">Porozmawiajmy o Twoim pomyśle na zdjęcia </h3>
+                    <h3 className="text-2xl">
+                        Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
+                    </h3>
                     <CTA />
                 </div>
             </div>

@@ -112,6 +112,7 @@ export default function ContactPage() {
                 setStatusType("error");
             }
         } catch (error) {
+            console.error("Błąd podczas wysyłania formularza:", error);
             setStatus("Błąd podczas wysyłania.");
             setStatusType("error");
         } finally {
