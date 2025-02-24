@@ -9,6 +9,12 @@ import h1 from "@/public/Images/sesja.jpg";
 import h3 from "@/public/Images/sesja2.jpg";
 import h4 from "@/public/Images/wyjscie.jpg";
 
+const images = [
+    { src: h1, position: "50% 50%" }, // Środek
+    { src: h3, position: "100% 50%" }, // Prawa strona
+    { src: h4, position: "50% 100%" }, // Lekko do góry
+];
+
 const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
         onClick={onClick}
@@ -56,21 +62,14 @@ const Carousel = () => {
 
     return (
         <div className="flex justify-center items-center relative">
-            <Slider
-                {...settings}
-                className="w-full max-w-screen-2xl slick-slider"
-            >
-                {[h1, h3, h1, h4].map((image, index) => (
-                    <div
-                        key={index}
-                        className="relative w-full xl:w-[1536px] h-[83vh] max-w-screen-2xl text-center"
-                    >
+            <Slider {...settings} className="w-full max-w-[1700px] slick-slider">
+                {images.map((image, index) => (
+                    <div key={index} className="relative w-full xl:w-[1700px] h-[75vh] xl:h-[86vh] max-w-[1700px] text-center">
                         <Image
-                            src={image}
+                            src={image.src}
                             alt={`Obraz ${index + 1}`}
-                            className={`object-cover w-full h-full ${
-                                index === 1 ? "object-left" : ""
-                            }`}
+                            className="object-cover w-full h-full"
+                            style={{ objectPosition: image.position }}
                             fill
                             priority
                             quality={100}
