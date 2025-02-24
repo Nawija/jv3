@@ -3,12 +3,14 @@ import "slick-carousel/slick/slick.css";
 import Carousel from "@/components/Carousel";
 import Image from "next/image";
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
+import Slub from "@/public/Images/slub.jpg";
+import Link from "next/link";
 
 export default function Home() {
     return (
         <div>
             <Carousel />
-            <div className="p-2 text-center relative w-full overflow-x-hidden">
+            <div className="p-2 text-center relative w-full overflow-x-hidden max-w-screen-xl mx-auto">
                 <h1 className="text-2xl py-4">Cześć! Miło mi że tu jesteś</h1>
                 <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                     <Image
@@ -38,7 +40,25 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
-                
+                <div className="flex flex-col items-center justify-center lg:flex-row ">
+                    <Image
+                        src={Slub}
+                        height={500}
+                        alt="slub"
+                        className="object-cover"
+                    />
+                    <div className="bg-black/80 w-1/2 text-start p-12 lg-mr-12 lg:order-0">
+                        <p className="capitalize text-white text-4xl mb-8">
+                            reportaż slubny
+                        </p>
+                        <Link
+                            href="/"
+                            className="text-white py-4 px-8 border border-white"
+                        >
+                            Zobacz
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );
