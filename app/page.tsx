@@ -38,6 +38,7 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
+                
             </div>
         </div>
     );

@@ -35,7 +35,7 @@ const Carousel = () => {
         fade: true,
         arrows: true,
         autoplay: true,
-        speed: 400,
+        speed: 500,
         autoplaySpeed: 3600,
         infinite: true,
         slidesToShow: 1,
@@ -68,10 +68,8 @@ const Carousel = () => {
                         <Image
                             src={image}
                             alt={`Obraz ${index + 1}`}
-                            width={2048}
-                            height={1365}
-                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover w-full h-full"
+                            fill
                             priority={index === 0}
                             quality={100}
                             placeholder="blur"
