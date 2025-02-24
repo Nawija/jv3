@@ -18,7 +18,7 @@ export default function FotografiaSlubna() {
     }, []);
     return (
         <>
-            <div className="text-center">
+            <div className="text-center anim-opacity">
                 <div className="pt-[40vh] pb-[20vh] text-white">
                     <p className=" text-3xl font-semibold">Slub</p>
                     <p className="px-6 max-w-screen-sm mx-auto">
