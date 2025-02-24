@@ -72,6 +72,7 @@ const Carousel = () => {
                             fill
                             priority={index === 0}
                             quality={100}
+                            sizes="100vw"
                             placeholder="blur"
                         />
                     </div>
