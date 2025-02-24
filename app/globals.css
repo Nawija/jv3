@@ -6,6 +6,18 @@
     background-color: white !important;
 }
 
+.anim-opacity {
+    animation: anim-opacity 0.2s both 0.1s;
+}
+@keyframes anim-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

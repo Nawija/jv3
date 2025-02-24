@@ -5,7 +5,7 @@ export const NAVLINKS = [
     },
     {
         label: "fotografia ślubna",
-        href: "/",
+        href: "/fotografia-slubna",
     },
     {
         label: "portfolio",

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <div>
+        <div className="anim-opacity">
             <Carousel />
             <div className="p-2 text-center relative w-full overflow-x-hidden max-w-screen-xl mx-auto">
                 <h1 className="text-2xl py-4">Cześć! Miło mi że tu jesteś</h1>

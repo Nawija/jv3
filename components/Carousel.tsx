@@ -70,7 +70,7 @@ const Carousel = () => {
                             alt={`Obraz ${index + 1}`}
                             className="object-cover w-full h-full"
                             fill
-                            priority={index === 0}
+                            priority
                             quality={100}
                             placeholder="blur"
                         />
