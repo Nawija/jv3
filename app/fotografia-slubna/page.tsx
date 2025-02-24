@@ -46,6 +46,24 @@ export default function FotografiaSlubna() {
                         Distinctio illo magni magnam?
                     </p>
                 </div>
+                <div className="bg-white w-full py-48">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Distinctio illo magni magnam?
+                    </p>
+                </div>
+                <div className="bg-white w-full py-48">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Distinctio illo magni magnam?
+                    </p>
+                </div>
+                <div className="bg-white w-full py-48">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Distinctio illo magni magnam?
+                    </p>
+                </div>
             </div>
         </>
     );

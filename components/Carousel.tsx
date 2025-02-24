@@ -68,7 +68,9 @@ const Carousel = () => {
                         <Image
                             src={image}
                             alt={`Obraz ${index + 1}`}
-                            className="object-cover w-full h-full"
+                            className={`object-cover w-full h-full ${
+                                index === 1 ? "object-left" : ""
+                            }`}
                             fill
                             priority
                             quality={100}
