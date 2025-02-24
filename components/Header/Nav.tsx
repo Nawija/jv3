@@ -58,12 +58,14 @@ export default function Nav() {
                 <div className="gap-4 hidden lg:flex items-center justify-center">
                     <Link
                         href="/"
+                        aria-label="Facebook"
                         className="text-gray-600 hover:text-[#6e2a23] text-2xl"
                     >
                         <TiSocialFacebook />
                     </Link>
                     <Link
                         href="/"
+                        aria-label="Instagram"
                         className="text-gray-600 hover:text-[#6e2a23] text-xl"
                     >
                         <FiInstagram />
