@@ -63,7 +63,7 @@ const Carousel = () => {
                 {[h1, h3, h1, h4].map((image, index) => (
                     <div
                         key={index}
-                        className="relative w-full h-[85vh] max-w-screen-2xl text-center"
+                        className="relative w-full xl:w-[1536px] h-[85vh] max-w-screen-2xl text-center"
                     >
                         <Image
                             src={image}
@@ -72,7 +72,6 @@ const Carousel = () => {
                             fill
                             priority={index === 0}
                             quality={100}
-                            sizes="100vw"
                             placeholder="blur"
                         />
                     </div>
