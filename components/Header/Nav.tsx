@@ -24,7 +24,9 @@ export default function Nav() {
         >
             <div className="mx-auto flex items-center justify-between p-2 max-w-screen-xl">
                 <div className="font-light absolute left-1/2 -translate-x-1/2 lg:static uppercase tracking-widest text-2xl w-max whitespace-nowrap">
-                    <Link href="/">Jarek Olszewki</Link>
+                    <Link href="/" aria-label="Jarek Olszewski">
+                        Jarek Olszewki
+                    </Link>
                 </div>
                 <MenuBurger
                     handleShowMenu={handleShowMenu}
@@ -48,7 +50,11 @@ export default function Nav() {
                                         : "opacity-0 lg:opacity-100"
                                 }`}
                             >
-                                <Link href={link.href} className="p-1">
+                                <Link
+                                    href={link.href}
+                                    className="p-1"
+                                    aria-label={link.label}
+                                >
                                     {link.label}
                                 </Link>
                             </li>
