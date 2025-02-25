@@ -1,4 +1,6 @@
-import ContactForm from "@/components/ContactForm"; // Adjust the import based on your file structure
+import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
+import { FaPhoneAlt } from "react-icons/fa"; // Adjust the import based on your file structure
 
 export default function ContactPage() {
     return (
@@ -13,9 +15,9 @@ export default function ContactPage() {
                     Zachęcam do kontaktu poprzez formularz bądź bezpośrednio
                     telefonicznie.
                 </p>
-                <p>
-                    <strong>T:</strong> 507 946 719
-                </p>
+                <Link href='tel:507946719' className="flex items-center justify-center border w-max mx-auto px-4 py-2 border-green-300 rounded-lg">
+                    <FaPhoneAlt className="mr-2 text-green-600" /> <span className="text-lg font-bold">507 946 719</span>
+                </Link>
                 <p>
                     <strong>M:</strong> kontakt@jarekolszewski.pl
                 </p>
