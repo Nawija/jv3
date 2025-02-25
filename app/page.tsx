@@ -67,7 +67,7 @@ export default function Home() {
                 <section className="grid grid-cols-1 lg:grid-cols-3">
                     <SesjaComponent img={Slub} title="Ślub" href="/" />
                     <SesjaComponent img={Slub} title="Sesja" href="/" />
-                    <SesjaComponent img={Slub} title="C" href="/" />
+                    <SesjaComponent img={Slub} title="Fotografia" href="/" />
                 </section>
 
                 <div className="space-y-4 p-12">
