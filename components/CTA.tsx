@@ -13,8 +13,8 @@ export default function CTA() {
                 Napisz do mnie
             </MainBtn>
             {isModalOpen && (
-                <div className="fixed anim-opacity-s inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 shadow-lg max-w-lg w-full relative">
+                <div className="fixed anim-opacity-s inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
+                    <div className="bg-white p-6 shadow-lg max-w-lg w-[90%] relative">
                         <button
                             className="absolute top-2 right-2"
                             onClick={() => setIsModalOpen(false)}

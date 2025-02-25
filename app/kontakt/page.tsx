@@ -2,12 +2,22 @@ import ContactForm from "@/components/ContactForm"; // Adjust the import based o
 
 export default function ContactPage() {
     return (
-        <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="p-6">
-                <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Kontakt</h1>
-                <p className="text-lg text-center text-gray-600 mb-6">
-                    Masz pytania? Skontaktuj się ze mną za pomocą formularza poniżej,
-                    a ja jak najszybciej się z Tobą skontaktuję.
+        <div className="bg-stone-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="p-6 text-center max-w-screen-lg mx-auto space-y-4">
+                <h1 className="text-2xl font-semibold mb-4">
+                    Porozmawiajmy o zdjęciach
+                </h1>
+                <p className="mb-4">
+                    Jeśli chcesz dowiedzieć się więcej o ofercie, sprawdzić
+                    dostępność terminu bądź uzyskać jakiekolwiek informacje.
+                    Zachęcam do kontaktu poprzez formularz bądź bezpośrednio
+                    telefonicznie.
+                </p>
+                <p>
+                    <strong>T:</strong> 507 946 719
+                </p>
+                <p>
+                    <strong>M:</strong> kontakt@jarekolszewski.pl
                 </p>
                 <ContactForm />
             </div>

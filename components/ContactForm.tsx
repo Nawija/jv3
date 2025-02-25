@@ -122,21 +122,7 @@ export default function ContactPage() {
 
     return (
         <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">
-                Porozmawiajmy o zdjęciach
-            </h2>
-            <p className="mb-4">
-                Jeśli chcesz dowiedzieć się więcej o ofercie, sprawdzić
-                dostępność terminu bądź uzyskać jakiekolwiek informacje.
-                Zachęcam do kontaktu poprzez formularz bądź bezpośrednio
-                telefonicznie.
-            </p>
-            <p>
-                <strong>T:</strong> 507 946 719
-            </p>
-            <p>
-                <strong>M:</strong> kontakt@jarekolszewski.pl
-            </p>
+            <p className="text-start text-sm font-bold">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <FormField
                     name="name"
