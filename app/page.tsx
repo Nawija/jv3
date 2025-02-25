@@ -41,15 +41,16 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
-                <div className="flex flex-col items-center justify-center lg:flex-row max-w-screen-md ">
+                <div className="grid grid-cols-1 py-12 lg:grid-cols-4 max-w-screen-md mx-auto h-full w-full">
                     <Image
                         src={Slub}
                         height={500}
+                        width={600}
                         alt="slub"
-                        className="object-cover lg:order-1"
+                        className="object-cover lg:order-1 col-span-3"
                     />
-                    <div className="bg-black/80 w-1/3 text-start p-12 lg-ml-12 lg:order-0 z-10">
-                        <p className="capitalize text-white text-4xl mb-8">
+                    <div className="bg-black/80 text-start p-12 lg:p-12 -mt-12 mx-12 lg:mt-12 lg:-ml-12 lg:order-2 z-10 h-max w-max">
+                        <p className="capitalize text-white text-5xl mb-8">
                             reportaż slubny
                         </p>
                         <Link

@@ -20,7 +20,7 @@ export default function Nav() {
     }
     return (
         <header
-            className={`sticky top-0 z-50 w-full p-2 lg:p-0 bg-white/90 backdrop-blur-md ${robotoFlex.className}`}
+            className={`fixed top-0 z-50 w-full p-2 lg:p-0 bg-white/90 backdrop-blur-md ${robotoFlex.className}`}
         >
             <div className="mx-auto flex items-center justify-between p-2 max-w-screen-xl">
                 <div className="font-light absolute left-1/2 -translate-x-1/2 lg:static uppercase tracking-widest text-2xl w-max whitespace-nowrap">

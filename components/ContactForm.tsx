@@ -26,7 +26,7 @@ const FormField = ({
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded text-black"
         value={value}
         onChange={onChange}
     />
@@ -121,7 +121,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+        <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg text-black">
             <p className="text-start text-sm font-bold">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <FormField
