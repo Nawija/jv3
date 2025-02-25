@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <div className="anim-opacity">
             <Carousel />
-            <div className="p-2 text-center relative w-full overflow-x-hidden max-w-screen-xl mx-auto">
+            <div className="p-2 text-center relative  max-w-screen-xl mx-auto">
                 <h1 className="text-2xl py-4">Cześć! Miło mi że tu jesteś</h1>
                 <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                     <Image
@@ -64,10 +64,26 @@ export default function Home() {
                     </div>
                 </div>
 
-                <section className="grid grid-cols-1 lg:grid-cols-3">
+                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-3">
                     <SesjaComponent img={Slub} title="Ślub" href="/" />
                     <SesjaComponent img={Slub} title="Sesja" href="/" />
                     <SesjaComponent img={Slub} title="Fotografia" href="/" />
+                    <Link
+                        href="/"
+                        className="lg:absolute w-max mx-auto hover:bg-black hover:text-white transition-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
+                    >
+                        <p className="uppercase text-center">
+                            {["i", "wiele", "więcej"].map((word, index) => (
+                                <span key={index} className="block">
+                                    {word}
+                                </span>
+                            ))}
+                        </p>
+                    </Link>
+                </section>
+
+                <section>
+                    <h3 className="py-12 px-4 text-xl">Klienci o zdjęciach</h3>
                 </section>
 
                 <div className="space-y-4 p-12">
