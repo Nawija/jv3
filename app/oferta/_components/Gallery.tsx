@@ -72,7 +72,7 @@ function ImgGallery({ image }: ImgGalleryProps) {
                     width={image.responsiveImage.width}
                     blurDataURL={image.responsiveImage.base64}
                     placeholder="blur"
-                    quality={60}
+                    quality={50}
                 />
             </a>
         </div>
