@@ -1,10 +1,10 @@
-import { Raleway, Roboto_Flex } from "next/font/google";
+import { Raleway,Rajdhani } from "next/font/google";
 
 export const raleway = Raleway({
     subsets: ["latin"],
     weight: ["300", "400", "500", "600", "700"],
 });
-export const robotoFlex = Roboto_Flex({
+export const rajdhani = Rajdhani({
     subsets: ["latin"],
-    weight: ["200"],
+    weight: ["400"],
 });
