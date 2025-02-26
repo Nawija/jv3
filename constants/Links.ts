@@ -9,7 +9,7 @@ export const NAVLINKS = [
     },
     {
         label: "portfolio",
-        href: "/",
+        href: "/portfolio",
     },
     {
         label: "oferta",
@@ -25,6 +25,6 @@ export const NAVLINKS = [
     },
     {
         label: "strefa klienta",
-        href: "/",
+        href: "/strefa-klienta",
     },
 ];
