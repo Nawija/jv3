@@ -17,7 +17,7 @@ export const NAVLINKS = [
     },
     {
         label: "o mnie",
-        href: "/",
+        href: "/o-mnie",
     },
     {
         label: "kontakt",

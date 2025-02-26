@@ -36,7 +36,7 @@ export default async function OffertsPage() {
     return (
         <>
             <div className="bg-stone-50 py-12 px-4 sm:px-6 lg:px-8">
-                <section className="max-w-screen-md mx-auto space-y-4">
+                <section className="max-w-screen-md mx-auto space-y-4 anim-opacity">
                     <h1 className="text-2xl text-center">
                         Co z czym i dlaczego
                     </h1>
