@@ -35,7 +35,7 @@ export default function Nav() {
             className={`fixed top-0 z-50 w-full p-2 lg:p-0 bg-white/90 backdrop-blur-md transition-all duration-500 ${rajdhani.className} ${hasShadow ? "shadow-xl" : ""}`}
         >
             <div className="mx-auto flex items-center justify-between p-2 max-w-screen-xl">
-                <div className="font-light absolute left-1/2 -translate-x-1/2 lg:static uppercase tracking-widest text-2xl w-max whitespace-nowrap">
+                <div className="font-light absolute left-1/2 -translate-x-1/2 lg:static uppercase tracking-widest text-xl lg:text-2xl w-max whitespace-nowrap">
                     <Link href="/" aria-label="Jarek Olszewski">
                         Jarek Olszewki
                     </Link>

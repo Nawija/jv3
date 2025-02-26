@@ -6,7 +6,6 @@ import "photoswipe/style.css";
 import Image from "next/image";
 
 type ResponsiveImage = {
-    webpSrcSet: string;
     width: number;
     height: number;
     base64: string;
@@ -23,7 +22,7 @@ type GalleryProps = {
 
 export default function Gallery({ allImages }: GalleryProps) {
     useEffect(() => {
-        let lightbox = new PhotoSwipeLightbox({
+        const lightbox = new PhotoSwipeLightbox({
             gallery: ".pswp-gallery",
             children: "a",
             pswpModule: () => import("photoswipe"),
@@ -37,7 +36,7 @@ export default function Gallery({ allImages }: GalleryProps) {
 
     return (
         <div className="py-2">
-            <div className="pswp-gallery grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 m-2 max-w-screen-2xl mx-auto p-3 md:rounded-xl">
+            <div className="pswp-gallery grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 m-2 p-3">
                 {allImages.map((image, index) => (
                     <ImgGallery key={index} image={image} />
                 ))}
@@ -67,12 +66,13 @@ function ImgGallery({ image }: ImgGalleryProps) {
             >
                 <Image
                     className="object-cover w-full h-full -z-10"
-                    src={image.responsiveImage.webpSrcSet}
+                    src={image.responsiveImage.src}
                     alt="xx"
                     height={image.responsiveImage.height}
                     width={image.responsiveImage.width}
                     blurDataURL={image.responsiveImage.base64}
                     placeholder="blur"
+                    quality={60}
                 />
             </a>
         </div>

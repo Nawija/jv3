@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { performRequest } from "@/lib/datoCms";
 import Gallery from "./_components/Gallery";
+import { SecondBtn } from "@/components/Buttons/SecondBtn";
 
 const PAGE_CONTENT_QUERY = `
 {
@@ -97,8 +98,13 @@ export default async function OffertsPage() {
                     </div>
                 </section>
             </div>
-            <div className="anim-opacity max-w-screen-lg mx-auto ">
+            <div className="max-w-screen-lg mx-auto ">
                 <Gallery allImages={allImages} />
+            </div>
+            <div className="text-center my-12">
+                <SecondBtn className="uppercase">
+                    Zapytaj o ofertę dla twojego pomysłu na zdjęcia
+                </SecondBtn>
             </div>
         </>
     );
