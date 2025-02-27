@@ -11,7 +11,7 @@ export default function MenuBurger({
   return (
     <button
       onClick={handleShowMenu}
-      aria-label="Menu"
+      aria-label={showMenu ? "Zamknij menu" : "Otwórz menu"}
       aria-expanded={showMenu}
       className="z-[999] flex ml-auto flex-col items-center justify-center space-y-1.5 p-1 lg:hidden"
     >

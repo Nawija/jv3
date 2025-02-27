@@ -81,17 +81,11 @@ export default function Nav() {
                     </div>
 
                     {/* Przycisk hamburger */}
-                    <button
-                        onClick={() => setShowMenu(!showMenu)}
-                        aria-label={showMenu ? "Zamknij menu" : "Otwórz menu"}
-                        aria-expanded={showMenu}
-                        className="menu-burger-button z-[60] flex lg:hidden"
-                    >
-                        <MenuBurger
-                            handleShowMenu={() => setShowMenu(!showMenu)}
-                            showMenu={showMenu}
-                        />
-                    </button>
+
+                    <MenuBurger
+                        handleShowMenu={() => setShowMenu(!showMenu)}
+                        showMenu={showMenu}
+                    />
 
                     {/* Menu mobilne */}
                     <div
