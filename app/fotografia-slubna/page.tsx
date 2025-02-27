@@ -19,7 +19,7 @@ export default function FotografiaSlubna() {
     return (
         <>
             <div className="text-center anim-opacity">
-                <div className="pt-[40vh] pb-[20vh] text-white">
+                <div className=" pt-[30vh] lg:pt-[40vh] pb-[20vh] text-white">
                     <p className=" text-3xl font-semibold">Slub</p>
                     <p className="px-6 max-w-screen-sm mx-auto">
                         Dzień, który zapamiętacie na zawsze, ten wymarzony,
@@ -34,7 +34,7 @@ export default function FotografiaSlubna() {
                     }`}
                 />
                 <div
-                    className="h-screen fixed top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-40"
+                    className="h-[88vh] fixed top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-40"
                     style={{
                         backgroundImage: "url('/Images/sesja.jpg')",
                     }}

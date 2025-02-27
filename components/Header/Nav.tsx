@@ -57,7 +57,7 @@ export default function Nav() {
                             >
                                 <Link
                                     href={link.href}
-                                    className={`p-1 ${pathname === link.href ? "text-[#6e2a23] font-bold" : ""}`}
+                                    className={`py-4 px-1 ${pathname === link.href ? "text-black lg:text-[#6e2a23] font-bold" : ""}`}
                                     aria-label={link.label}
                                 >
                                     {link.label}
