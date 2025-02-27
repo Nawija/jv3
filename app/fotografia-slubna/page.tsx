@@ -51,7 +51,7 @@ export default function FotografiaSlubna() {
                         <h1 className="text-xl lg:text-2xl">
                             Fotografia ślubna, co skrywa?
                         </h1>
-                        <div className="grid grid-cols-1 md:grid-cols-2 h-80 relative gap-12 md:gap-0 md:h-[600px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 h-80 relative gap-12 md:gap-0 w-full md:h-[600px]">
                             <ImageComponent
                                 img={foto}
                                 title="Reportaż ślubny"
