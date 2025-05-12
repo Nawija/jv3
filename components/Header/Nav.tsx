@@ -32,7 +32,7 @@ export default function Nav() {
 
     // Obsługa kliknięcia poza menu (dodaj event listener do body)
     useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {};
+        const handleClickOutside = () => {};
 
         document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
