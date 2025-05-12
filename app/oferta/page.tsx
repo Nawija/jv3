@@ -5,13 +5,13 @@ import fs from "fs";
 import CTASendMail from "@/components/CTASendMail";
 
 export default async function OffertsPage() {
-    const dirPath = path.join(process.cwd(), "public/Images/Oferta");
+    const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
     const files = fs.readdirSync(dirPath);
 
     const allImages = files
         .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
         .map((file) => {
-            const imagePath = `/Images/Oferta/${file}`;
+            const imagePath = `/Images/PodglądoweZdjecia/${file}`;
             return {
                 responsiveImage: {
                     src: imagePath,
