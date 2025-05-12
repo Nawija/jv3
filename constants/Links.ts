@@ -23,8 +23,4 @@ export const NAVLINKS = [
         label: "kontakt",
         href: "/kontakt",
     },
-    {
-        label: "strefa klienta",
-        href: "/strefa-klienta",
-    },
 ];

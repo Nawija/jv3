@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Image from "next/image";
+import Skeleton from "@/components/ui/Skeleton";
 
 type ResponsiveImage = {
     width: number;
     height: number;
-    base64: string;
+    base64?: string;
     src: string;
 };
 
@@ -50,29 +51,33 @@ type ImgGalleryProps = {
 };
 
 function ImgGallery({ image }: ImgGalleryProps) {
+    const [loaded, setLoaded] = useState(false);
+
     const widthHeightRatio =
         image.responsiveImage.height / image.responsiveImage.width;
     const galleryHeight = Math.ceil(330 * widthHeightRatio);
-    const imageSapns = Math.ceil(galleryHeight / 10) + 1;
+    const imageSpans = Math.ceil(galleryHeight / 10) + 1;
+
     return (
-        <div style={{ gridRow: `span ${imageSapns}` }}>
+        <div style={{ gridRow: `span ${imageSpans}` }}>
             <a
                 href={image.responsiveImage.src}
                 data-pswp-width={image.responsiveImage.width}
                 data-pswp-height={image.responsiveImage.height}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative"
+                className="group relative block w-full h-full"
             >
+                {!loaded && (
+                    <Skeleton className="absolute inset-0 w-full h-full z-0" />
+                )}
                 <Image
-                    className="object-cover w-full h-full -z-10"
+                    className={`object-cover w-full h-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
                     src={image.responsiveImage.src}
-                    alt="xx"
+                    alt="Zdjęcie z galerii"
                     height={image.responsiveImage.height}
                     width={image.responsiveImage.width}
-                    blurDataURL={image.responsiveImage.base64}
-                    placeholder="blur"
-                    quality={50}
+                    onLoadingComplete={() => setLoaded(true)}
                 />
             </a>
         </div>

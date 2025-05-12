@@ -7,6 +7,7 @@ import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import SesjaComponent from "@/components/SesjaComponent";
+import CTASendMail from "@/components/CTASendMail";
 
 export default function Home() {
     return (
@@ -90,7 +91,7 @@ export default function Home() {
                     <h3 className="text-2xl">
                         Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
                     </h3>
-                    <CTA />
+                    <CTASendMail title="Napisz Do Mnie" />
                 </div>
             </div>
         </div>

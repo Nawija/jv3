@@ -105,7 +105,7 @@ export default function ContactPage() {
                 });
 
                 setTimeout(() => {
-                    router.push("/success");
+                    router.push("/dziekuje");
                 }, 1000);
             } else {
                 setStatus("Błąd podczas wysyłania.");
@@ -121,7 +121,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg text-black">
+        <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg text-black">
             <p className="text-start text-sm font-bold">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <FormField

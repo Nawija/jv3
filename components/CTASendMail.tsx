@@ -4,13 +4,13 @@ import ContactForm from "@/components/ContactForm";
 import { MainBtn } from "./Buttons/MainBtn";
 import { IoMdClose } from "react-icons/io";
 
-export default function CTA() {
+export default function CTASendMail({ title }: { title: string }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <>
             <MainBtn className="uppercase" onClick={() => setIsModalOpen(true)}>
-                Napisz do mnie
+                {title}
             </MainBtn>
             {isModalOpen && (
                 <div className="fixed anim-opacity-s inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">

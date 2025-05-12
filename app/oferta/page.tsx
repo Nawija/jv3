@@ -1,100 +1,164 @@
 import Link from "next/link";
-import { performRequest } from "@/lib/datoCms";
 import Gallery from "./_components/Gallery";
 import { SecondBtn } from "@/components/Buttons/SecondBtn";
-
-const PAGE_CONTENT_QUERY = `
-{
-  allGalers {
-    img {
-      responsiveImage {
-        webpSrcSet
-        width
-        height
-        base64
-        src
-      }
-    }
-  }
-}`;
-
-type GalleryType = {
-    img: {
-        url: string;
-        height: number;
-        width: number;
-    };
-};
+import path from "path";
+import fs from "fs";
+import CTA from "@/components/CTA";
+import CTASendMail from "@/components/CTASendMail";
 
 export default async function OffertsPage() {
-    const {
-        data: { allGalers },
-    } = await performRequest({ query: PAGE_CONTENT_QUERY });
+    const dirPath = path.join(process.cwd(), "public/Images/Oferta");
+    const files = fs.readdirSync(dirPath);
 
-    const allImages = allGalers.flatMap((gallery: GalleryType) => gallery.img);
+    const allImages = files
+        .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
+        .map((file) => {
+            const imagePath = `/Images/Oferta/${file}`;
+            return {
+                responsiveImage: {
+                    src: imagePath,
+                    width: 1000,
+                    height: 667,
+                },
+            };
+        });
 
     return (
         <>
             <div className="bg-stone-100 py-12 px-4 sm:px-6 lg:px-8">
-                <section className="max-w-screen-md mx-auto space-y-4 anim-opacity">
-                    <h1 className="text-2xl text-center">
-                        Co z czym i dlaczego
+                <section className="max-w-screen-md mx-auto space-y-8 anim-opacity text-stone-800 px-4">
+                    <h1 className="text-4xl font-bold text-center leading-tight">
+                        Profesjonalny Fotograf Siedlce
                     </h1>
-                    <p className="text-center">
-                        Oferując swoje usługi, moim celem jest obsłużenie Was
-                        kompleksowo. Tworząc ofertę wychodzę z założenia że musi
-                        być taka jaką sam chciałbym otrzymać. Konstruuję ją
-                        indywidualnie, uwzględniając wszystkie Wasze potrzeby,
-                        angażując Was w przygotowaniach materiałów
+
+                    <p className="text-lg text-center max-w-2xl mx-auto">
+                        Szukasz fotografa w Siedlcach, który uwieczni Twoje
+                        chwile w sposób naturalny i ponadczasowy? Oferuję
+                        kompleksową obsługę fotograficzną dostosowaną do Twoich
+                        potrzeb – z pasją, precyzją i doświadczeniem.
                     </p>
-                    <h2>Co oferuję:</h2>
-                    <ul className="list-disc space-y-4 pl-5">
-                        {" "}
-                        {/* Dodaj padding dla lepszego wyglądu */}
-                        <li>
-                            Fotografuję osobiście - wkładając całą zdobytą
-                            wiedzę i doświadczenie, by zapewnić jak najlepsze
-                            zdjęcia, używając przy tym wysokiej klasy sprzętu,
-                            który sprosta największym wymaganiom.
-                        </li>
-                        <li>
-                            Zdjęcia poddane autorskiej obróbce - naturalne i
-                            prawdziwe kolory, a przez to ponadczasowe.
-                        </li>
-                        <li>
-                            Fotografie w wersji elektronicznej - pliki zdjęciowe
-                            w wysokiej rozdzielczości przekazane na nośnikach
-                            danych (USB, CD) bądź udostępnione w sieci do
-                            pobrania.
-                        </li>
-                        <li>
-                            Fotografie w oprawie tradycyjnej - wysokiej jakości
-                            foto produkty od sprawdzonych dostawców: fotoalbumy
-                            | fotoksiążki | albumy tradycyjne | odbitki cyfrowe
-                            | fotoobrazy | zdjęcia na płótnie | fotogadżety.
-                        </li>
-                        <li>
-                            Spersonalizowane opakowania na zdjęcia i nośniki
-                            danych.
-                        </li>
-                        <li>
-                            Galeria internetowa - Wasze zdjęcia dla każdego,
-                            komu zechcecie się nimi pochwalić.
-                        </li>
-                        <li>
-                            Wszystkie materiały, które otrzymujecie, są
-                            przygotowywane indywidualnie i konsultowane z Wami.
-                        </li>
-                        <li>Szybki termin realizacji.</li>
-                    </ul>
-                    <div className="flex md:flex-row flex-col items-start lg:items-center justify-center lg:justify-start lg:space-x-2 space-y-1 lg:space-y-0">
-                        <h3>Przykładowe oferty:</h3>
-                        <Link href="/" className="text-red-700">
-                            Oferta ślubna
-                        </Link>
-                        <Link href="/" className="text-red-700">
-                            Oferta chrztu
-                        </Link>
+
+                    <div className="grid gap-6">
+                        <div className="space-y-2">
+                            <h2 className="text-2xl font-semibold text-center mb-4">
+                                Dlaczego warto wybrać mnie?
+                            </h2>
+                            <ul className="space-y-3 pl-4">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Indywidualne podejście</strong>{" "}
+                                        – każda sesja i oferta jest szyta na
+                                        miarę Twoich oczekiwań.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Fotografuję osobiście</strong> –
+                                        z użyciem profesjonalnego sprzętu i
+                                        pasją do detali.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Naturalna obróbka zdjęć</strong>{" "}
+                                        – podkreślam kolory i emocje, bez
+                                        sztuczności.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>
+                                            Zdjęcia w wersji cyfrowej
+                                        </strong>{" "}
+                                        – pliki w wysokiej rozdzielczości, na
+                                        USB lub online.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Foto produkty premium</strong> –
+                                        fotoalbumy, odbitki, fotoksiążki, obrazy
+                                        na płótnie.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>
+                                            Spersonalizowane opakowania
+                                        </strong>{" "}
+                                        – stylowe pudełka na zdjęcia i nośniki.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Prywatna galeria online</strong>{" "}
+                                        – łatwe i bezpieczne udostępnianie zdjęć
+                                        bliskim.
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-red-600 text-xl">
+                                        •
+                                    </span>
+                                    <span>
+                                        <strong>Szybka realizacja</strong> –
+                                        sprawna i terminowa dostawa gotowych
+                                        materiałów.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-2 mx-auto text-center">
+                            <h3 className="text-xl font-semibold ">
+                                Pakiety fotografii:
+                            </h3>
+                            <div className="flex flex-wrap gap-4">
+                                <Link
+                                    href="/"
+                                    className="px-4 py-2 bg-red-100 font-semibold border border-red-200 text-red-800 text-sm hover:bg-red-200 transition"
+                                >
+                                    Oferta ślubna
+                                </Link>
+                                <Link
+                                    href="/"
+                                    className="px-4 py-2 bg-red-100 font-semibold border border-red-200 text-red-800 text-sm hover:bg-red-200 transition"
+                                >
+                                    Oferta chrztu
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="text-center pt-4">
+                            <p className="text-lg max-w-2xl mx-auto">
+                                Jako <strong>Fotograf</strong> pomagam
+                                uwieczniać najważniejsze chwile życia w formie
+                                fotografii, która ma wartość nie tylko dziś, ale
+                                i po latach. Zajrzyj do galerii i przekonaj się
+                                sam!
+                            </p>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -102,9 +166,7 @@ export default async function OffertsPage() {
                 <Gallery allImages={allImages} />
             </div>
             <div className="text-center my-12">
-                <SecondBtn className="uppercase">
-                    Zapytaj o ofertę dla twojego pomysłu na zdjęcia
-                </SecondBtn>
+                <CTASendMail title="Zapytaj o Ofertę" />
             </div>
         </>
     );
