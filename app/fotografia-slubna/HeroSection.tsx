@@ -20,7 +20,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <>
+        <div className="relative -z-50">
             {" "}
             <div className="pt-[30vh] lg:pt-[40vh] pb-[20vh] text-white">
                 <p className="text-3xl font-semibold">Ślub</p>
@@ -37,12 +37,12 @@ export default function HeroSection() {
                 }`}
             />
             <div
-                className="h-[88vh] fixed top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-40"
+                className="bg-fixed absolute h-[88vh] top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-40"
                 style={{
                     backgroundImage: "url('/Images/sesja.jpg')",
                 }}
             />
             <div className="bg-black/40 absolute top-0 left-0 w-full h-screen -z-30" />
-        </>
+        </div>
     );
 }

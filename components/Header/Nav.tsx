@@ -40,21 +40,10 @@ export default function Nav() {
 
     // Obsługa kliknięcia poza menu (dodaj event listener do body)
     useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            const target = e.target as HTMLElement;
-            // Jeśli menu jest otwarte i kliknięcie nie jest na menu ani na przycisku menu
-            if (
-                showMenu &&
-                !target.closest(".mobile-menu") &&
-                !target.closest(".menu-burger-button")
-            ) {
-                setShowMenu(false);
-            }
-        };
+        const handleClickOutside = (e: MouseEvent) => {};
 
-        document.addEventListener("mousedown", handleClickOutside);
-        return () =>
-            document.removeEventListener("mousedown", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
+        return () => document.removeEventListener("click", handleClickOutside);
     }, [showMenu]);
 
     return (
@@ -68,9 +57,13 @@ export default function Nav() {
                 />
             )}
             <header
-                className={`fixed top-0 z-50 w-screen bg-white/90  backdrop-blur-md transition-all duration-300 ${
+                className={`top-0 z-50 w-screen backdrop-blur-md transition-all duration-300 ${
                     rajdhani.className
-                } ${hasShadow ? "shadow-md " : ""}`}
+                } ${
+                    pathname === "/portfolio"
+                        ? "bg-neutral-900 text-white"
+                        : "bg-white/90 text-black backdrop-blur-md"
+                }`}
             >
                 <div className="mx-auto flex items-center justify-between p-4 max-w-screen-2xl">
                     {/* Logo */}
@@ -93,7 +86,28 @@ export default function Nav() {
                             showMenu ? "translate-x-0" : "-translate-x-full"
                         }`}
                     >
-                        <div className="flex flex-col h-full pt-20 px-6">
+                        {/* Social media w menu mobilnym */}
+                        <div className="flex gap-5 mt-auto mb-10 p-6">
+                            <Link
+                                href="https://www.facebook.com/JarekOlszewskiFotografia/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="text-white hover:text-[#ffcbc4] transition-all text-2xl"
+                            >
+                                <TiSocialFacebook />
+                            </Link>
+                            <Link
+                                href="https://www.instagram.com/jarek.olszewski.fotografia/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                className="text-white hover:text-[#ffcbc4] transition-all text-xl"
+                            >
+                                <FiInstagram />
+                            </Link>
+                        </div>
+                        <div className="flex flex-col h-full px-6">
                             <nav aria-label="Menu mobilne">
                                 <ul className="flex flex-col space-y-6">
                                     {NAVLINKS.map((link, index) => (
@@ -106,7 +120,7 @@ export default function Nav() {
                                             }`}
                                             style={{
                                                 transitionDelay: `${
-                                                    index * 50
+                                                    index * 60
                                                 }ms`,
                                             }}
                                         >
@@ -115,7 +129,7 @@ export default function Nav() {
                                                 onClick={() =>
                                                     setShowMenu(false)
                                                 }
-                                                className={`block py-1 text-lg uppercase font-medium transition-all hover:text-[#ffcbc4] ${
+                                                className={`block py-1 text-lg uppercase font-medium transition-all ${
                                                     pathname === link.href
                                                         ? "text-white font-bold"
                                                         : "text-gray-200"
@@ -132,28 +146,6 @@ export default function Nav() {
                                     ))}
                                 </ul>
                             </nav>
-
-                            {/* Social media w menu mobilnym */}
-                            <div className="flex gap-5 mt-auto mb-10 pt-10">
-                                <Link
-                                    href="https://www.facebook.com/JarekOlszewskiFotografia/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Facebook"
-                                    className="text-white hover:text-[#ffcbc4] transition-all text-2xl"
-                                >
-                                    <TiSocialFacebook />
-                                </Link>
-                                <Link
-                                    href="https://www.instagram.com/jarek.olszewski.fotografia/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Instagram"
-                                    className="text-white hover:text-[#ffcbc4] transition-all text-xl"
-                                >
-                                    <FiInstagram />
-                                </Link>
-                            </div>
                         </div>
                     </div>
 
@@ -166,8 +158,8 @@ export default function Nav() {
                                         href={link.href}
                                         className={`block w-max py-4 px-1 uppercase lg:text-sm xl:text-base transition-all hover:text-[#6e2a23] ${
                                             pathname === link.href
-                                                ? "text-[#6e2a23] font-medium"
-                                                : "text-gray-800"
+                                                ? "text-[#6e2a23] font-bold"
+                                                : ""
                                         }`}
                                         aria-current={
                                             pathname === link.href

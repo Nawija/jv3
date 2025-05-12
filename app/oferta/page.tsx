@@ -23,7 +23,7 @@ export default async function OffertsPage() {
 
     return (
         <>
-            <div className="bg-stone-100 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="bg-stone-100 py-12 px-1 sm:px-6 lg:px-8">
                 <section className="max-w-screen-md mx-auto space-y-8 anim-opacity text-stone-800 px-4">
                     <h1 className="text-4xl font-bold text-center leading-tight">
                         Profesjonalny Fotograf Siedlce
@@ -41,9 +41,9 @@ export default async function OffertsPage() {
                             <h2 className="text-2xl font-semibold text-center mb-4">
                                 Dlaczego warto wybrać mnie?
                             </h2>
-                            <ul className="space-y-3 pl-4">
+                            <ul className="space-y-3 pl-2">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -53,7 +53,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -63,7 +63,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -73,7 +73,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -85,7 +85,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -95,7 +95,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -106,7 +106,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -116,7 +116,7 @@ export default async function OffertsPage() {
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-red-600 text-xl">
+                                    <span className="text-red-600 text-2xl">
                                         •
                                     </span>
                                     <span>
@@ -129,7 +129,7 @@ export default async function OffertsPage() {
                         </div>
 
                         <div className="space-y-2 mx-auto text-center">
-                            <h3 className="text-xl font-semibold ">
+                            <h3 className="text-2xl font-semibold ">
                                 Pakiety fotografii:
                             </h3>
                             <div className="flex flex-wrap gap-4">

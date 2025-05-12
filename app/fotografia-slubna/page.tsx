@@ -7,8 +7,6 @@ import CarouselProps from "@/components/CarouselProps";
 import { OFERTAIMAGES } from "@/constants/Links";
 
 export default function FotografiaSlubna() {
-
-
     const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
     const files = fs.readdirSync(dirPath);
 
