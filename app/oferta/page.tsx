@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Gallery from "./_components/Gallery";
-import { SecondBtn } from "@/components/Buttons/SecondBtn";
 import path from "path";
 import fs from "fs";
-import CTA from "@/components/CTA";
 import CTASendMail from "@/components/CTASendMail";
 
 export default async function OffertsPage() {

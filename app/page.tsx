@@ -5,7 +5,6 @@ import Image from "next/image";
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
 import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
-import CTA from "@/components/CTA";
 import SesjaComponent from "@/components/SesjaComponent";
 import CTASendMail from "@/components/CTASendMail";
 
