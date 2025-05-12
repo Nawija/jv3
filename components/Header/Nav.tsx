@@ -32,7 +32,21 @@ export default function Nav() {
 
     // Obsługa kliknięcia poza menu (dodaj event listener do body)
     useEffect(() => {
-        const handleClickOutside = () => {};
+        const handleClickOutside = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            const menu = document.querySelector(".mobile-menu");
+            const burger = document.querySelector(".menu-burger-button");
+
+            if (
+                showMenu &&
+                menu &&
+                burger &&
+                !menu.contains(target) &&
+                !burger.contains(target)
+            ) {
+                setShowMenu(false);
+            }
+        };
 
         document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
