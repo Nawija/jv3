@@ -11,15 +11,7 @@ import { FiInstagram } from "react-icons/fi";
 
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
-    const [hasShadow, setHasShadow] = useState(false);
     const pathname = usePathname();
-
-    // Dodaj cień do nagłówka przy scrollowaniu
-    useEffect(() => {
-        const handleScroll = () => setHasShadow(window.scrollY > 0);
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     // Zamykaj menu po zmianie strony
     useEffect(() => {
