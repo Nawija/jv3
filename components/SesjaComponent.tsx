@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 interface SesjaComponentProps {
-    img: StaticImageData;
+    img: string | StaticImageData;
     href: string;
     title: string;
 }

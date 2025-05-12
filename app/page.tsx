@@ -7,6 +7,7 @@ import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
 import SesjaComponent from "@/components/SesjaComponent";
 import CTASendMail from "@/components/CTASendMail";
+import { OFERTAIMAGES } from "@/constants/Links";
 
 export default function Home() {
     return (
@@ -65,11 +66,17 @@ export default function Home() {
                 </div>
 
                 <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-3">
-                    <SesjaComponent img={Slub} title="Ślub" href="/" />
-                    <SesjaComponent img={Slub} title="Sesja" href="/" />
-                    <SesjaComponent img={Slub} title="Fotografia" href="/" />
+                    {OFERTAIMAGES.map((img, index) => (
+                        <SesjaComponent
+                            key={index}
+                            img={img.src}
+                            title={img.title}
+                            href={img.title}
+                        />
+                    ))}
+
                     <Link
-                        href="/"
+                        href="/oferta"
                         className="lg:absolute w-max mx-auto hover:bg-black hover:text-white transition-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
                     >
                         <p className="uppercase text-center">

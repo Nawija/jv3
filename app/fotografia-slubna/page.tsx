@@ -4,26 +4,10 @@ import HeroSection from "./HeroSection";
 import path from "path";
 import fs from "fs";
 import CarouselProps from "@/components/CarouselProps";
+import { OFERTAIMAGES } from "@/constants/Links";
 
 export default function FotografiaSlubna() {
-    const ofertaImages = [
-        {
-            src: "/Images/Oferta/fotografia-slubna-siedlce.jpg",
-            title: "Fotografia Ślubna",
-            desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
-        },
-        {
-            src: "/Images/Oferta/02_sesja_slubna_plener_siedlce.jpg",
-            title: "Sesja Ślubna",
-            desc: "Od przygotowań po wesele — wszystkie emocje jednego dnia.",
-        },
-        {
-            src: "/Images/Oferta/sesja-narzeczenska-siedlce(2).jpg",
-            title: "Sesja Narzeczeńska",
-            desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
-        },
-        // itd.
-    ];
+
 
     const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
     const files = fs.readdirSync(dirPath);
@@ -56,7 +40,7 @@ export default function FotografiaSlubna() {
                             Fotografia ślubna, co skrywa?
                         </h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                            {ofertaImages.map((img, index) => (
+                            {OFERTAIMAGES.map((img, index) => (
                                 <ImageComponent
                                     key={index}
                                     img={img.src}
