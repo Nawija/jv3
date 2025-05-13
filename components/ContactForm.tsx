@@ -42,7 +42,6 @@ const FormField = ({
     </div>
 );
 
-
 const MessageStatus = ({
     status,
     loading,
@@ -132,8 +131,8 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-4 bg-white rounded-lg text-black">
-            <p className="text-start text-sm font-bold">Formularz kontaktowy</p>
+        <div className="max-w-2xl mx-auto p-4 bg-white rounded-lg text-black text-start">
+            <p className=" text-sm font-bold">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-3">
                 <FormField
                     name="name"
@@ -160,7 +159,7 @@ export default function ContactPage() {
                 <FormField
                     name="date"
                     type="date"
-                    placeholder="Data"
+                    label="Data (opcjonalnie)"
                     value={formData.date}
                     onChange={handleChange}
                 />
@@ -172,17 +171,19 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                 ></textarea>
-                <MainBtn type="submit">
-                    {status ? (
-                        <MessageStatus
-                            status={status}
-                            loading={loading}
-                            statusType={statusType}
-                        />
-                    ) : (
-                        <span>Wyślij wiadomość</span>
-                    )}
-                </MainBtn>
+                <div className="ml-auto w-full text-end">
+                    <MainBtn type="submit">
+                        {status ? (
+                            <MessageStatus
+                                status={status}
+                                loading={loading}
+                                statusType={statusType}
+                            />
+                        ) : (
+                            <span>Wyślij wiadomość</span>
+                        )}
+                    </MainBtn>
+                </div>
             </form>
         </div>
     );

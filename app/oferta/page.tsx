@@ -141,7 +141,7 @@ export default async function OffertsPage() {
                                 </Link>
                                 <Link
                                     href="/"
-                                    className="px-4 py-2 bg-red-100 font-semibold border border-red-200 text-red-800 text-sm hover:bg-red-200 transition"
+                                    className="px-4 py-2 bg-[#6e2a23] font-semibold text-white text-sm hover:bg-red-700 transition"
                                 >
                                     Oferta chrztu
                                 </Link>
