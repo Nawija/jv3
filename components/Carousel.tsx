@@ -69,23 +69,20 @@ const Carousel = () => {
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className="relative w-full xl:w-[1600px] aspect-[16/9] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] max-w-[1600px] text-center"
+                        className="relative w-full xl:w-[1600px] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] max-w-[1600px] text-center"
                     >
-                        {images.map((image, index) => (
-                            <Image
-                                key={index}
-                                src={image.src}
-                                alt={`Fotograf ${index + 1}`}
-                                className="object-cover w-full h-full aspect-[16/9]"
-                                style={{ objectPosition: image.position }}
-                                fill
-                                {...(index === 0
-                                    ? { priority: true }
-                                    : { loading: "lazy" })}
-                                quality={100}
-                                placeholder="blur"
-                            />
-                        ))}
+                        <Image
+                            src={image.src}
+                            alt={`Fotograf ${index + 1}`}
+                            className="object-cover w-full h-full"
+                            style={{ objectPosition: image.position }}
+                            fill
+                            {...(index === 0
+                                ? { priority: true }
+                                : { loading: "lazy" })}
+                            quality={100}
+                            placeholder="blur"
+                        />
                     </div>
                 ))}
             </Slider>
