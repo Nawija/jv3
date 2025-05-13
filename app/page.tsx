@@ -51,7 +51,7 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
-                <div className="relative w-[80%] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
+                <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
                     <Image
                         src={Slub}
                         alt="slub"
