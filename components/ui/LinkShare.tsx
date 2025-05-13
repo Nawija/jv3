@@ -11,7 +11,7 @@ export default function LinkShare({
     return (
         <Link
             href={href}
-            className="text-[#9f6012] underline hover:text-[#9f3a12] font-medium transition-color relative flex"
+            className="text-brand underline hover:text-brand-hover font-medium transition-color relative flex"
         >
             {title}
             <span>

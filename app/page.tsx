@@ -97,130 +97,112 @@ export default function Home() {
                     </Link>
                 </section>
             </div>
-            <div className="bg-neutral-100 my-12 py-12 px-4">
-                <section className="max-w-3xl mx-auto space-y-12">
+            <div className="bg-neutral-100 py-12 my-12 px-4">
+                <section className="max-w-3xl mx-auto  space-y-12">
                     <div className="border-b border-neutral-300 pb-8">
                         <h2 className="text-3xl font-semibold text-neutral-800 mb-4">
                             Cześć! Nazywam się Jarek Olszewski
                         </h2>
                         <p className="text-neutral-700 leading-relaxed">
-                            Jestem <strong>fotografem ślubnym z Siedlec</strong>{" "}
-                            i z radością uwieczniam najważniejsze momenty
-                            Waszego życia. Fotografia to moja pasja, którą
-                            zamieniłem w zawód. Jako <strong>fotograf</strong>{" "}
-                            cenię sobie emocje, autentyczność i ponadczasowość.
-                            W moim <strong>portfolio</strong> znajdziesz pełne
-                            emocji <strong>reportaże ślubne</strong>,
-                            <strong> sesje narzeczeńskie</strong>,{" "}
-                            <strong>sesje plenerowe</strong>, a także zdjęcia z{" "}
-                            <strong>chrzcin</strong> czy{" "}
-                            <strong>komunii</strong>.
+                            Jestem <strong>fotografem ślubnym z Siedlec</strong>
+                            , a moją największą pasją jest opowiadanie historii
+                            za pomocą zdjęć. Uwieczniam emocje, wzruszenia i
+                            najpiękniejsze chwile w Waszym życiu. W moim{" "}
+                            <strong>portfolio</strong> znajdziesz{" "}
+                            <strong>reportaże ślubne</strong>,{" "}
+                            <strong>sesje narzeczeńskie</strong>,{" "}
+                            <strong>zdjęcia z chrztu</strong>,{" "}
+                            <strong>komunii</strong>, a także{" "}
+                            <strong>plenerowe sesje rodzinne</strong>.
                         </p>
                     </div>
 
                     <div className="border-b border-neutral-300 pb-8">
                         <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Dlaczego warto wybrać mnie jako fotografa?
+                            Dlaczego warto mi zaufać jako fotografowi?
                         </h2>
                         <p className="text-neutral-700 leading-relaxed">
-                            Szukasz kogoś, kto w sposób dyskretny i
-                            profesjonalny <strong>uwieczni</strong> Twój{" "}
-                            <strong>dzień ślubu</strong>? Jako{" "}
-                            <strong>fotograf ślubny z Siedlec</strong> oferuję{" "}
-                            <strong>pakiety fotograficzne</strong> dopasowane do
-                            Waszych potrzeb. Oferuję również{" "}
-                            <strong>fotografię noworodkową</strong>,{" "}
-                            <strong>sesje rodzinne</strong> i{" "}
-                            <strong>plenerowe</strong>. Klienci cenią mnie za{" "}
-                            <strong>profesjonalizm</strong>, podejście do pracy
-                            i naturalny styl. Wielu mówi, że jestem
-                            <strong> najlepszym fotografem z Siedlec</strong> –
-                            to dla mnie ogromne wyróżnienie.
+                            Szukasz kogoś, kto{" "}
+                            <strong>z dyskrecją i wyczuciem</strong> uchwyci
+                            ulotne momenty Twojego <strong>ślubu</strong>? Jako{" "}
+                            <strong>fotograf ślubny z Siedlec</strong> tworzę
+                            zdjęcia z sercem i pasją, oferując{" "}
+                            <strong>pakiety dopasowane</strong> do różnych
+                            potrzeb. Realizuję też{" "}
+                            <strong>sesje noworodkowe</strong>,{" "}
+                            <strong>rodzinne</strong> oraz{" "}
+                            <strong>plenerowe</strong>. Klienci doceniają mnie
+                            za <strong>naturalny styl, profesjonalizm</strong> i
+                            zaangażowanie – często słyszę, że jestem{" "}
+                            <strong>najlepszym fotografem w Siedlcach</strong>.
+                            To ogromna motywacja!
                         </p>
                     </div>
 
                     <div className="border-b border-neutral-300 pb-8">
                         <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Fotografia Ślubna – moje podejście
+                            Fotografia ślubna – moja filozofia
                         </h2>
                         <p className="text-neutral-700 leading-relaxed">
-                            Moja <strong>fotografia ślubna</strong> to coś
-                            więcej niż tylko zdjęcia. To historia Waszej
-                            miłości, którą chcę opowiedzieć kadrami. Każdy{" "}
-                            <strong>reportaż ślubny</strong> tworzę
-                            indywidualnie, z dbałością o każdy szczegół – od
-                            przygotowań, przez ceremonię, aż po zabawę weselną.
-                            <strong> Sesja narzeczeńska</strong>,{" "}
-                            <strong>plener ślubny</strong>, czy{" "}
-                            <strong>zdjęcia z chrzcin</strong> – każdy moment
-                            zasługuje na piękne ujęcia.
+                            Dla mnie <strong>fotografia ślubna</strong> to nie
+                            tylko zdjęcia – to sposób opowiedzenia Waszej
+                            historii. Każdy <strong>reportaż</strong> tworzę
+                            indywidualnie – z uwagą, empatią i wyczuciem detali.
+                            Od porannych przygotowań, przez wzruszającą
+                            ceremonię, aż po szaloną zabawę – jestem tam, by
+                            złapać wszystko, co najpiękniejsze. Realizuję także{" "}
+                            <strong>sesje narzeczeńskie</strong>,{" "}
+                            <strong>plenery ślubne</strong> i{" "}
+                            <strong>reportaże rodzinne</strong>.
                         </p>
                     </div>
 
                     <div className="border-b border-neutral-300 pb-8">
                         <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Najlepsi fotografowie z Siedlec? Sprawdź moje
-                            portfolio
+                            Portfolio – zobacz moje zdjęcia
                         </h2>
                         <p className="text-neutral-700 leading-relaxed">
-                            Jeśli szukasz <strong>polecanego fotografa</strong>,
-                            który ma bogate <strong>portfolio</strong>,
-                            zapraszam Cię do sekcji{" "}
-                            <LinkShare href="/portfolio" title="Portfolio" />.
-                            Znajdziesz tam przykłady moich prac z różnych{" "}
-                            <strong>sesji plenerowych</strong>, ślubów i
-                            wydarzeń rodzinnych. To właśnie zdjęcia najlepiej
-                            pokazują, co mogę dla Ciebie stworzyć.
+                            Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
+                            <LinkShare href="/portfolio" title="portfolio" /> i
+                            przekonaj się, jak wyglądają moje realizacje.
+                            Znajdziesz tam fotografie z{" "}
+                            <strong>plenerów</strong>, <strong>ślubów</strong> i
+                            rodzinnych uroczystości. To najlepszy sposób, by
+                            poznać mój styl i podejście do fotografii.
                         </p>
                     </div>
 
                     <div className="border-b border-neutral-300 pb-8">
                         <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Oferta fotograficzna
+                            Oferta fotograficzna dopasowana do Ciebie
                         </h2>
                         <p className="text-neutral-700 leading-relaxed">
-                            W mojej{" "}
+                            Sprawdź moją{" "}
                             <LinkShare
                                 href="/oferta"
-                                title="ofercie fotograficznej"
-                            />
-                            znajdziesz różnorodne <strong>pakiety</strong> – od
-                            krótkich sesji, po pełny{" "}
-                            <strong>reportaż ślubny</strong>. Oferuję też{" "}
-                            <strong>fotografię reklamową</strong>,{" "}
-                            <strong>portrety</strong> oraz sesje
-                            okolicznościowe. Każdy <strong>pakiet</strong>{" "}
-                            zawiera szczegółowy opis, czas trwania, ilość zdjęć
-                            i orientacyjny <strong>cennik</strong>.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-xl font-semibold text-neutral-800 mb-2">
-                            Zapraszam do kontaktu
-                        </h3>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Jako <strong>fotograf z Siedlec</strong>, jestem
-                            dostępny w całym regionie, ale dojadę również dalej
-                            – bo pasja do
-                            <strong> fotografii</strong> nie zna granic. Jeśli
-                            chcesz omówić pomysł na swoją <strong>sesję</strong>{" "}
-                            lub <strong>dopytać o wolne terminy</strong> –{" "}
-                            <LinkShare
-                                href="/kontakt"
-                                title="zapraszam do kontaktu"
-                            />
-                            .
+                                title="ofertę fotograficzną"
+                            />{" "}
+                            – znajdziesz tam różnorodne <strong>pakiety</strong>
+                            : od krótkich sesji po pełne{" "}
+                            <strong>reportaże ślubne</strong>. Oferuję również{" "}
+                            <strong>portrety</strong>,{" "}
+                            <strong>zdjęcia reklamowe</strong> oraz{" "}
+                            <strong>sesje okolicznościowe</strong>. Każdy{" "}
+                            <strong>pakiet</strong> zawiera szczegóły dotyczące
+                            liczby zdjęć, czasu realizacji i orientacyjnego{" "}
+                            <strong>cennika</strong>.
                         </p>
                     </div>
                 </section>
             </div>
 
-            <div className="space-y-4 p-12 flex items-center justify-center flex-col">
-                <h3 className="text-2xl">
+            <div className="space-y-4 p-12 bg-brand text-white flex items-center justify-center flex-col">
+                <h3 className="text-2xl text-center">
                     Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
                 </h3>
-                <CTASendMail title="Napisz Do Mnie" />
+                <div className="p-0.5 bg-white">
+                    <CTASendMail title="Napisz Do Mnie" />
+                </div>
             </div>
 
             <section className="bg-white py-20 px-4">
