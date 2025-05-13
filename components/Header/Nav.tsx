@@ -5,10 +5,16 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import MenuBurger from "@/components/Header/MenuBurger";
 import { NAVLINKS } from "@/constants/Links";
-import { rajdhani } from "@/fonts";
 import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
-import { AnimatedLogo } from "./AnimatedLogo";
+import { Logo } from "./Logo";
+import { Saira } from "next/font/google";
+
+const saira = Saira({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+    weight: ["400"],
+});
 
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
@@ -65,21 +71,15 @@ export default function Nav() {
             )}
             <header
                 className={`top-0 z-50 backdrop-blur-md transition-all duration-300 w-full ${
-                    rajdhani.className
+                    saira.className
                 } ${
                     pathname === "/portfolio"
                         ? "bg-neutral-900 text-white"
                         : "bg-white/90 text-black backdrop-blur-md"
                 }`}
             >
-                <div className="mx-auto flex items-center justify-between p-2 max-w-screen-2xl">
-                    {/* Logo */}
-                    <div className="font-light lg:mr-8 uppercase text-xl lg:text-2xl">
-                        <AnimatedLogo />
-                    </div>
-
-                    {/* Przycisk hamburger */}
-
+                <div className="mx-auto flex items-center justify-between p-4 max-w-screen-2xl">
+                    <Logo />
                     <MenuBurger
                         handleShowMenu={() => setShowMenu(!showMenu)}
                         showMenu={showMenu}
