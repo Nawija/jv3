@@ -21,7 +21,7 @@ export default function ImageComponent({
                 className="object-cover w-full h-full"
                 quality={100}
             />
-            <div className="absolute bottom-4 left-0 bg-black/60 text-start px-4 py-3 backdrop-blur-sm z-10 h-max lg:w-[95%] w-[99%]">
+            <div className="absolute -bottom-2 left-0 bg-black/60 text-start px-4 py-3 backdrop-blur-sm z-10 h-max lg:w-[95%] w-[90%]">
                 <p className="capitalize text-white text-xl font-medium">
                     {title}
                 </p>
