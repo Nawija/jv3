@@ -43,7 +43,7 @@ const MessageStatus = ({
 }) => (
     <div className="text-sm flex items-center space-x-2">
         {loading && (
-            <div className="w-4 h-4 border-2 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+            <div className="w-4 h-4 border-2 border-t-transparent border-red-500 border-solid rounded-full animate-spin"></div>
         )}
         <p
             className={`ml-2 ${
