@@ -55,7 +55,7 @@ function ImgGallery({ image }: ImgGalleryProps) {
 
     const widthHeightRatio =
         image.responsiveImage.height / image.responsiveImage.width;
-    const galleryHeight = Math.ceil(330 * widthHeightRatio);
+    const galleryHeight = Math.ceil(200 * widthHeightRatio);
     const imageSpans = Math.ceil(galleryHeight / 10) + 1;
 
     return (
