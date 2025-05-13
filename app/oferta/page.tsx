@@ -23,9 +23,9 @@ export default async function OffertsPage() {
 
     return (
         <>
-            <div className="bg-stone-100 py-12 px-1 sm:px-6 lg:px-8">
+            <div className="bg-stone-50 py-12 px-1 sm:px-6 lg:px-8">
                 <section className="max-w-screen-md mx-auto space-y-8 anim-opacity text-stone-800 px-4">
-                    <h1 className="text-4xl font-bold text-center leading-tight">
+                    <h1 className="text-4xl text-center leading-tight">
                         Profesjonalny Fotograf Siedlce
                     </h1>
 
@@ -38,11 +38,11 @@ export default async function OffertsPage() {
 
                     <div className="grid gap-6">
                         <div className="space-y-2">
-                            <h2 className="text-2xl font-semibold text-center mb-4">
+                            <h2 className="text-2xl text-center mb-4">
                                 Dlaczego warto wybrać mnie?
                             </h2>
                             <ul className="space-y-3 pl-2">
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -52,7 +52,7 @@ export default async function OffertsPage() {
                                         miarę Twoich oczekiwań.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -62,7 +62,7 @@ export default async function OffertsPage() {
                                         pasją do detali.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -72,7 +72,7 @@ export default async function OffertsPage() {
                                         sztuczności.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -84,7 +84,7 @@ export default async function OffertsPage() {
                                         USB lub online.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -94,7 +94,7 @@ export default async function OffertsPage() {
                                         na płótnie.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -105,7 +105,7 @@ export default async function OffertsPage() {
                                         – stylowe pudełka na zdjęcia i nośniki.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -115,7 +115,7 @@ export default async function OffertsPage() {
                                         bliskim.
                                     </span>
                                 </li>
-                                <li className="flex items-start gap-2">
+                                <li className="flex items-center gap-2">
                                     <span className="text-red-600 text-2xl">
                                         •
                                     </span>
@@ -135,7 +135,7 @@ export default async function OffertsPage() {
                             <div className="flex flex-wrap gap-4">
                                 <Link
                                     href="/"
-                                    className="px-4 py-2 bg-red-100 font-semibold border border-red-200 text-red-800 text-sm hover:bg-red-200 transition"
+                                    className="px-4 py-2 bg-[#6e2a23] font-semibold text-white text-sm hover:bg-red-700 transition"
                                 >
                                     Oferta ślubna
                                 </Link>
