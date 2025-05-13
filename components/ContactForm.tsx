@@ -132,7 +132,7 @@ export default function ContactPage() {
 
     return (
         <div className="max-w-2xl mx-auto p-4 bg-white rounded-lg text-black text-start">
-            <p className=" text-sm font-bold">Formularz kontaktowy</p>
+            <p className=" text-base font-medium">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-3">
                 <FormField
                     name="name"

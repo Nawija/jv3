@@ -8,6 +8,7 @@ import { NAVLINKS } from "@/constants/Links";
 import { rajdhani } from "@/fonts";
 import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
+import { AnimatedLogo } from "./AnimatedLogo";
 
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
@@ -73,10 +74,8 @@ export default function Nav() {
             >
                 <div className="mx-auto flex items-center justify-between p-2 max-w-screen-2xl">
                     {/* Logo */}
-                    <div className="font-light lg:mr-8 uppercase tracking-widest text-xl lg:text-2xl">
-                        <Link href="/" aria-label="Strona główna">
-                            Jarek Olszewski
-                        </Link>
+                    <div className="font-light lg:mr-8 uppercase text-xl lg:text-2xl">
+                        <AnimatedLogo />
                     </div>
 
                     {/* Przycisk hamburger */}
@@ -162,9 +161,9 @@ export default function Nav() {
                                 <li key={link.label} className="relative">
                                     <Link
                                         href={link.href}
-                                        className={`block w-max py-4 px-1 uppercase lg:text-sm xl:text-base transition-all hover:text-[#6e2a23] ${
+                                        className={`block w-max py-4 px-1 uppercase lg:text-sm xl:text-base transition-all hover:text-main ${
                                             pathname === link.href
-                                                ? "text-[#6e2a23] font-bold"
+                                                ? "text-main font-bold"
                                                 : ""
                                         }`}
                                         aria-current={
@@ -187,7 +186,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="text-gray-600 hover:text-[#6e2a23] transition-all text-2xl"
+                            className="text-gray-600 hover:text-main transition-all text-2xl"
                         >
                             <TiSocialFacebook />
                         </Link>
@@ -196,7 +195,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="text-gray-600 hover:text-[#6e2a23] transition-all text-xl"
+                            className="text-gray-600 hover:text-main transition-all text-xl"
                         >
                             <FiInstagram />
                         </Link>

@@ -1,76 +1,86 @@
 import Image from "next/image";
 import Slub from "@/public/Images/slub.jpg";
 
+// Galeria
+function GalleryGrid({ images }: { images: string[] }) {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+      {images.map((src, index) => (
+        <Image
+          key={index}
+          src={src}
+          alt={`Zdjęcie ${index + 1}`}
+          width={300}
+          height={200}
+          className="object-cover"
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function AboutMePage() {
-    return (
-        <div className="py-8 max-w-screen-lg mx-auto text-center anim-opacity">
-            <h1 className="pb-8 text-3xl px-3 lg:text-4xl">
-                Jarek Olszewski Fotograf z Siedlec
-            </h1>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
-                <Image
-                    height={200}
-                    width={300}
-                    quality={75}
-                    src={Slub}
-                    alt=".."
-                />
-                <Image
-                    height={200}
-                    width={300}
-                    quality={75}
-                    src={Slub}
-                    alt=".."
-                />
-                <Image
-                    height={200}
-                    width={300}
-                    quality={75}
-                    src={Slub}
-                    alt=".."
-                />
-                <Image
-                    height={200}
-                    width={300}
-                    quality={75}
-                    src={Slub}
-                    alt=".."
-                />
-            </div>
-            <h2 className="py-12 text-xl lg:text-2xl max-w-72 mx-auto">
-                Sam o sobie, prywatnie i zawodowo(pasji)
-            </h2>
-            <div className="space-y-5 max-w-screen-sm mx-auto">
-                <p>
-                    pokrótce? szczęśliwy człowiek! od urodzenia wszędzie było
-                    mnie pełno i tak pozostało mi do dziś. pozytywnie zakręcony
-                    facet. dla dobrego zdjęcia wcisnę się w miejsca pozornie
-                    niedostępne, ba! jak potrzeba utaplam się w błocie.
-                    uwielbiam gdy wokół wiele się dzieje.
-                </p>
-                <p>
-                    moja przygoda z fotografią zaczęła się przez przypadek i to
-                    najlepszy przypadek, jaki mógł mnie spotkać w życiu! gdy w
-                    2008 roku podczas meczu lokalnej drużyny zrobiłem pierwsze
-                    zdjęcia, nie spodziewałem się, że będzie to początek pięknej
-                    pasji, która w kolejnych latach będzie tylko rosnąć na sile.
-                    przez te wszystkie lata zdążyłem poznać wiele świetnych
-                    osób, dzięki którym mogłem spróbować sprawdzić się w wielu
-                    dziedzinach fotografii. najbardziej lubię fotografować to co
-                    niedostrzeżone przez wielu “chwile i momenty” ustawiając się
-                    z boku, nikomu nie przeszkadzając. fotografując śluby,
-                    chrzty czy inne uroczystości rodzinne mogę właśnie to robić
-                    - łapać momenty, które inni chcą zapamiętać na całe życie.
-                    to daje ogromną satysfakcję, gdy widzę, że moja praca
-                    wywołuje uśmiech, a czasami łzy szczęścia.{" "}
-                </p>
-                <p>
-                    fotografuję głównie w województwie mazowieckim - okolice
-                    siedlec. odległość nigdy nie była dla mnie problemem. z
-                    moimi klientami zwiedziłem już prawie całą polskę, za co
-                    jestem im ogromnie wdzięczny, lecz po cichu liczę na więcej…{" "}
-                </p>
-            </div>
+  const images = [Slub.src, Slub.src, Slub.src, Slub.src];
+
+  return (
+    <main className="bg-white text-gray-800 anim-opacity">
+      {/* Hero */}
+      <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
+        <Image
+          src={Slub}
+          alt="Jarek Olszewski – fotograf"
+          fill
+          className="object-cover object-center brightness-[0.5]"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            Jarek Olszewski – Fotograf z Siedlec
+          </h1>
         </div>
-    );
+      </section>
+
+      {/* Sekcja O mnie */}
+      <section className="max-w-4xl mx-auto px-4 py-16 space-y-12">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-brand mb-4">
+            Kim jestem – fotograf i człowiek z pasją
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Poznaj moją historię i sposób, w jaki patrzę na świat przez obiektyw aparatu.
+          </p>
+        </div>
+
+        <div className="space-y-8 text-base md:text-lg leading-relaxed text-gray-700">
+          <p className="border-l-4 border-brand pl-4">
+            Cześć! Nazywam się Jarek Olszewski i jestem fotografem z Siedlec. Pełen energii, uśmiechu
+            i pasji do chwytania wyjątkowych chwil.
+          </p>
+
+          <p>
+            Moja przygoda z fotografią zaczęła się w 2008 roku, zupełnie przypadkiem. Wtedy jeszcze
+            nie wiedziałem, że jedno zdjęcie z lokalnego meczu zmieni moje życie na zawsze.
+          </p>
+
+          <p>
+            Specjalizuję się w fotografii ślubnej, rodzinnej i reportażowej. Uchwycenie emocji i autentyczności
+            to dla mnie największy priorytet. Pracuję dyskretnie, pozwalając ludziom być sobą.
+          </p>
+
+          <p>
+            Choć pracuję głównie w woj. mazowieckim, dojadę wszędzie tam, gdzie jest historia do opowiedzenia.
+            Każde zlecenie to dla mnie nowe wyzwanie i inspiracja.
+          </p>
+        </div>
+      </section>
+
+      {/* Galeria */}
+      <section className="max-w-6xl mx-auto px-4 pb-20">
+        <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-brand">
+          Zobacz moje kadry
+        </h3>
+        <GalleryGrid images={images} />
+      </section>
+    </main>
+  );
 }
