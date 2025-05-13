@@ -37,7 +37,7 @@ export default function HeroSection() {
                 }`}
             />
             <div
-                className="fixed h-[88vh] top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-50"
+                className="fixed h-[95vh] top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-50"
                 style={{
                     backgroundImage: "url('/Images/sesja.jpg')",
                 }}
