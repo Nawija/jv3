@@ -3,7 +3,7 @@ import Slub from "@/public/Images/slub.jpg";
 
 export default function AboutMePage() {
     return (
-        <div className="mt-12 max-w-screen-lg mx-auto text-center anim-opacity">
+        <div className="py-12 max-w-screen-lg mx-auto text-center anim-opacity">
             <h1 className="py-12 text-xl lg:text-2xl">
                 Jarek Olszewski fotograf z Siedlec
             </h1>

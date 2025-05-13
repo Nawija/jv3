@@ -7,8 +7,9 @@ import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
 import SesjaComponent from "@/components/SesjaComponent";
 import CTASendMail from "@/components/CTASendMail";
-import { OFERTAIMAGES } from "@/constants/Links";
+import { OFERTAIMAGES, OPINIONS } from "@/constants/Links";
 import LinkShare from "@/components/ui/LinkShare";
+import { FaStar } from "react-icons/fa";
 
 export default function Home() {
     return (
@@ -224,36 +225,48 @@ export default function Home() {
 
             <section className="bg-white py-20 px-4">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h4 className="text-3xl font-semibold text-neutral-800 mb-12 tracking-tight">
+                    <h4 className="text-3xl font-semibold text-neutral-900 mb-12 tracking-tight">
                         Opinie klientów
                     </h4>
                     <div className="grid md:grid-cols-3 gap-8 text-left">
-                        {[
-                            {
-                                name: "Karolina & Michał",
-                                text: "Jarek towarzyszył nam w najważniejszym dniu naszego życia. Uchwycił każdą emocję z ogromną wrażliwością. Zdjęcia przerosły nasze oczekiwania – są prawdziwe, naturalne i piękne.",
-                            },
-                            {
-                                name: "Natalia",
-                                text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
-                            },
-                            {
-                                name: "Ania & Paweł",
-                                text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
-                            },
-                        ].map((opinia, i) => (
-                            <div
-                                key={i}
-                                className="bg-neutral-100 border border-neutral-300 p-6 h-full shadow-sm hover:shadow-md transition-shadow"
-                            >
-                                <p className="text-neutral-700 mb-4 leading-relaxed">
-                                    “{opinia.text}”
-                                </p>
-                                <span className="block text-sm font-semibold text-neutral-500">
-                                    – {opinia.name}
-                                </span>
-                            </div>
-                        ))}
+                        {OPINIONS.map((opinia, i) => {
+                            const fullStars = Math.floor(opinia.rating);
+                            const hasHalf = opinia.rating % 1 !== 0;
+
+                            return (
+                                <div
+                                    key={i}
+                                    className="bg-neutral-100 border border-neutral-300 p-6 h-full shadow-sm hover:shadow-md transition-shadow"
+                                >
+                                    <p className="text-neutral-700 mb-4 leading-relaxed">
+                                        “{opinia.text}”
+                                    </p>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <div className="flex">
+                                            {[...Array(5)].map((_, idx) => (
+                                                <FaStar
+                                                    key={idx}
+                                                    className={`w-5 h-5 ${
+                                                        idx < fullStars
+                                                            ? "text-yellow-400"
+                                                            : idx <
+                                                              opinia.rating
+                                                            ? "text-yellow-400 opacity-70"
+                                                            : "text-gray-300"
+                                                    }`}
+                                                />
+                                            ))}
+                                        </div>
+                                        <span className="text-sm font-medium text-neutral-700">
+                                            {opinia.rating.toFixed(1)} / 5
+                                        </span>
+                                    </div>
+                                    <span className="block text-sm font-semibold text-neutral-700">
+                                        – {opinia.name}
+                                    </span>
+                                </div>
+                            );
+                        })}
                     </div>
 
                     <div className="mt-12">

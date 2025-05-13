@@ -42,3 +42,22 @@ export const OFERTAIMAGES = [
         desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
     },
 ];
+
+
+export const OPINIONS = [
+    {
+        name: "Karolina & Michał",
+        text: "Jarek towarzyszył nam w najważniejszym dniu naszego życia. Uchwycił każdą emocję z ogromną wrażliwością. Zdjęcia przerosły nasze oczekiwania – są prawdziwe, naturalne i piękne.",
+        rating: 5,
+    },
+    {
+        name: "Natalia",
+        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        rating: 4.7,
+    },
+    {
+        name: "Ania & Paweł",
+        text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
+        rating: 4.8,
+    },
+];
