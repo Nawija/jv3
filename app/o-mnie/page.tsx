@@ -3,9 +3,9 @@ import Slub from "@/public/Images/slub.jpg";
 
 export default function AboutMePage() {
     return (
-        <div className="py-12 max-w-screen-lg mx-auto text-center anim-opacity">
-            <h1 className="py-12 text-xl lg:text-2xl">
-                Jarek Olszewski fotograf z Siedlec
+        <div className="py-8 max-w-screen-lg mx-auto text-center anim-opacity">
+            <h1 className="pb-8 text-3xl px-3 lg:text-4xl">
+                Jarek Olszewski Fotograf z Siedlec
             </h1>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
                 <Image

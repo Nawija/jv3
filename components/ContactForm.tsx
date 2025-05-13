@@ -11,26 +11,37 @@ const FormField = ({
     value,
     onChange,
     required = false,
+    label,
 }: {
     name: string;
     type?: string;
-    placeholder: string;
+    placeholder?: string;
     value: string;
     onChange: (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void;
     required?: boolean;
+    label?: string;
 }) => (
-    <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        className="w-full p-2 border rounded text-black"
-        value={value}
-        onChange={onChange}
-    />
+    <div className="w-full">
+        {label && (
+            <label htmlFor={name} className="block text-sm font-medium mb-1">
+                {label}
+            </label>
+        )}
+        <input
+            id={name}
+            name={name}
+            type={type}
+            placeholder={type !== "date" ? placeholder : undefined}
+            required={required}
+            className="w-full p-2 border rounded text-black"
+            value={value}
+            onChange={onChange}
+        />
+    </div>
 );
+
 
 const MessageStatus = ({
     status,
@@ -106,7 +117,7 @@ export default function ContactPage() {
 
                 setTimeout(() => {
                     router.push("/dziekuje");
-                }, 1000);
+                }, 500);
             } else {
                 setStatus("Błąd podczas wysyłania.");
                 setStatusType("error");

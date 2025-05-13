@@ -75,7 +75,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-center text-sm text-neutral-500 mt-8">
+            <div className="text-center text-sm text-neutral-300 mt-12">
                 &copy; {new Date().getFullYear()} Jarek Olszewski. Wszelkie
                 prawa zastrzeżone.
             </div>

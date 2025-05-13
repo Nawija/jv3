@@ -22,14 +22,14 @@ export default function CTASendMail({ title }: { title: string }) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed -top-2 left-0 h-screen w-full flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
+                        className="fixed -top-5 left-0 h-[110%] w-full flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-white p-6 shadow-lg max-w-lg w-[90%] relative"
+                            className="bg-white p-6 shadow-lg max-w-lg w-[90%] -mt-20 relative"
                         >
                             <button
                                 className="absolute top-2 right-2"
