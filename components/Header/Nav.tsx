@@ -156,12 +156,12 @@ export default function Nav() {
 
                     {/* Menu desktopowe */}
                     <nav className="hidden lg:block">
-                        <ul className="flex items-center justify-center xl:space-x-4 space-x-2 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                        <ul className="flex items-center justify-center xl:space-x-4 space-x-1 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
                             {NAVLINKS.map((link) => (
                                 <li key={link.label} className="relative">
                                     <Link
                                         href={link.href}
-                                        className={`block w-max py-4 px-1 uppercase lg:text-sm xl:text-base transition-all hover:text-main ${
+                                        className={`block w-max py-4 px-1 uppercase lg:text-sm transition-all hover:text-main ${
                                             pathname === link.href
                                                 ? "text-main font-bold"
                                                 : ""
@@ -186,7 +186,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="text-gray-600 hover:text-main transition-all text-2xl"
+                            className="hover:text-main transition-all text-2xl"
                         >
                             <TiSocialFacebook />
                         </Link>
@@ -195,7 +195,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="text-gray-600 hover:text-main transition-all text-xl"
+                            className="hover:text-main transition-all text-xl"
                         >
                             <FiInstagram />
                         </Link>

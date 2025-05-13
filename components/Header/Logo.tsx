@@ -5,7 +5,7 @@ export function Logo() {
         <Link
             href="/"
             aria-label="Strona główna"
-            className="font-light lg:mr-8 uppercase text-xl lg:text-2xl"
+            className="font-light tracking-wider lg:mr-8 uppercase text-xl lg:text-2xl"
         >
             Jarek Olszewski
         </Link>

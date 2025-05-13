@@ -65,7 +65,7 @@ export default function Home() {
                             reportaż ślubny
                         </p>
                         <Link
-                            href="/"
+                            href="/fotografia-slubna"
                             className="text-white text-sm py-1 px-4 border border-white"
                         >
                             Zobacz
