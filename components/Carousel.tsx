@@ -74,13 +74,13 @@ const Carousel = () => {
                         <Image
                             src={image.src}
                             alt={`Fotograf ${index + 1}`}
-                            className="object-cover w-full h-full"
+                            className="object-cover"
                             style={{ objectPosition: image.position }}
                             fill
                             {...(index === 0
                                 ? { priority: true }
                                 : { loading: "lazy" })}
-                            quality={100}
+                            quality={90}
                             placeholder="blur"
                         />
                     </div>
