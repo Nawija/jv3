@@ -69,7 +69,7 @@ const Carousel = () => {
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className="relative w-full xl:w-[1600px] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] max-w-[1600px] text-center"
+                        className="relative w-screen xl:w-[1600px] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] max-w-[1600px] text-center"
                     >
                         <Image
                             src={image.src}
@@ -77,11 +77,10 @@ const Carousel = () => {
                             className="object-cover"
                             style={{ objectPosition: image.position }}
                             fill
+                            quality={90}
                             {...(index === 0
                                 ? { priority: true }
                                 : { loading: "lazy" })}
-                            quality={90}
-                            placeholder="blur"
                         />
                     </div>
                 ))}
