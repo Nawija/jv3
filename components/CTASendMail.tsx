@@ -22,7 +22,7 @@ export default function CTASendMail({ title }: { title: string }) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
+                        className="fixed -top-2 left-0 h-screen w-full flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }}
