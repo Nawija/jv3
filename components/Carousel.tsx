@@ -11,8 +11,8 @@ import h4 from "@/public/Images/wyjscie.jpg";
 
 const images = [
     { src: h1, position: "50% 50%" },
-    { src: h3, position: "0% 50%" }, 
-    { src: h4, position: "50% 100%" }, 
+    { src: h3, position: "0% 50%" },
+    { src: h4, position: "50% 100%" },
 ];
 
 const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
@@ -42,7 +42,7 @@ const Carousel = () => {
         arrows: true,
         autoplay: true,
         speed: 500,
-        autoplaySpeed: 3600,
+        autoplaySpeed: 3800,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -62,19 +62,30 @@ const Carousel = () => {
 
     return (
         <div className="flex justify-center items-center relative">
-            <Slider {...settings} className="w-full max-w-[1600px] slick-slider bg-stone-100">
+            <Slider
+                {...settings}
+                className="w-full max-w-[1600px] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] slick-slider bg-stone-100"
+            >
                 {images.map((image, index) => (
-                    <div key={index} className="relative w-full xl:w-[1600px] h-[75vh] xl:h-[86vh] max-w-[1600px] text-center">
-                        <Image
-                            src={image.src}
-                            alt={`Obraz ${index + 1}`}
-                            className="object-cover w-full h-full"
-                            style={{ objectPosition: image.position }}
-                            fill
-                            priority
-                            quality={100}
-                            placeholder="blur"
-                        />
+                    <div
+                        key={index}
+                        className="relative w-full xl:w-[1600px] aspect-[16/9] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] max-w-[1600px] text-center"
+                    >
+                        {images.map((image, index) => (
+                            <Image
+                                key={index}
+                                src={image.src}
+                                alt={`Fotograf ${index + 1}`}
+                                className="object-cover w-full h-full aspect-[16/9]"
+                                style={{ objectPosition: image.position }}
+                                fill
+                                {...(index === 0
+                                    ? { priority: true }
+                                    : { loading: "lazy" })}
+                                quality={100}
+                                placeholder="blur"
+                            />
+                        ))}
                     </div>
                 ))}
             </Slider>
