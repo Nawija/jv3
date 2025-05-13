@@ -8,13 +8,7 @@ import { NAVLINKS } from "@/constants/Links";
 import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
 import { Logo } from "./Logo";
-import { Saira } from "next/font/google";
 
-const saira = Saira({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-    weight: ["400"],
-});
 
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
