@@ -46,6 +46,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pl">
+            <head>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <link
+                    rel="apple-touch-icon"
+                    href="/icons/apple-touch-icon.png"
+                />
+            </head>
             <body
                 className={`${geistSans.className} flex flex-col min-h-screen w-full font-light antialiased`}
             >

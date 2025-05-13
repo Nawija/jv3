@@ -62,7 +62,7 @@ const Carousel = () => {
 
     return (
         <div className="flex justify-center items-center relative">
-            <Slider {...settings} className="w-full max-w-[1600px] slick-slider">
+            <Slider {...settings} className="w-full max-w-[1600px] slick-slider bg-stone-100">
                 {images.map((image, index) => (
                     <div key={index} className="relative w-full xl:w-[1600px] h-[75vh] xl:h-[86vh] max-w-[1600px] text-center">
                         <Image
