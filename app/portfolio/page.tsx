@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Image from "next/image";
-import Link from "next/link";
 
 const images = [
     {

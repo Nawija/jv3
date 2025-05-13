@@ -231,7 +231,6 @@ export default function Home() {
                     <div className="grid md:grid-cols-3 gap-8 text-left">
                         {OPINIONS.map((opinia, i) => {
                             const fullStars = Math.floor(opinia.rating);
-                            const hasHalf = opinia.rating % 1 !== 0;
 
                             return (
                                 <div
