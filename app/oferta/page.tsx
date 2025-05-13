@@ -67,7 +67,7 @@ export default async function OffertsPage() {
                   <Link
                     key={i}
                     href={href}
-                    className="px-4 py-2 bg-[#6e2a23] font-semibold text-white text-sm hover:bg-red-700 transition"
+                    className="px-4 py-2 bg-main font-semibold text-white text-sm hover:bg-red-700 transition"
                   >
                     {label}
                   </Link>

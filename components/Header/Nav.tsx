@@ -71,7 +71,7 @@ export default function Nav() {
                         : "bg-white/90 text-black backdrop-blur-md"
                 }`}
             >
-                <div className="mx-auto flex items-center justify-between p-4 max-w-screen-2xl">
+                <div className="mx-auto flex items-center justify-between p-2 max-w-screen-2xl">
                     {/* Logo */}
                     <div className="font-light lg:mr-8 uppercase tracking-widest text-xl lg:text-2xl">
                         <Link href="/" aria-label="Strona główna">

@@ -55,7 +55,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${bebasNeue.variable} flex flex-col min-h-screen w-full font-light antialiased`}
             >
                 <Nav />
-                <main className="flex-1 w-full overflow-x-hidden relative">
+                <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
                 <Footer />
