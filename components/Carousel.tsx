@@ -74,7 +74,7 @@ const Carousel = () => {
                         <Image
                             src={image.src}
                             alt={`Fotograf ${index + 1}`}
-                            className="object-cover"
+                            className="object-cover max-w-[1600px]"
                             style={{ objectPosition: image.position }}
                             fill
                             quality={90}
