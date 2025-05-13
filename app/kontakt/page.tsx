@@ -30,17 +30,17 @@ export default function ContactPage() {
                 jak tylko potrafię.
             </p>
 
-            <section className="flex flex-col sm:flex-row justify-center items-stretch lg:items-center gap-4 my-4">
-                <div className="bg-brand w-full h-px " />
+            <section className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4 text-white">
+                <div className="lg:bg-brand w-full h-px bg-white" />
                 {contactDetails.map(
                     ({ href, icon: Icon, text, label }, index) => (
                         <Link
                             key={index}
                             href={href}
                             aria-label={label}
-                            className="flex lg:w-max w-full text-center lg:items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-red-50 hover:border-red-200 transition duration-200"
+                            className="flex lg:w-max w-full text-center items-center gap-2 px-4 py-2 bg-brand"
                         >
-                            <Icon className="text-[#6e2a23]" />
+                            <Icon className="" />
                             <span className="font-medium w-max">{text}</span>
                         </Link>
                     )
