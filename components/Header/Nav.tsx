@@ -63,7 +63,7 @@ export default function Nav() {
                 />
             )}
             <header
-                className={`top-0 z-50 w-screen backdrop-blur-md transition-all duration-300 ${
+                className={`top-0 z-50 backdrop-blur-md transition-all duration-300 w-full ${
                     rajdhani.className
                 } ${
                     pathname === "/portfolio"
