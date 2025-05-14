@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "@/components/Buttons/MainBtn";
-import { DatePickerField } from "@/components/DatePickerField";
+
+import { Calendar } from "lucide-react"; // lub dowolna ikona kalendarza
 
 const FormField = ({
     name,
@@ -23,25 +24,41 @@ const FormField = ({
     ) => void;
     required?: boolean;
     label?: string;
-}) => (
-    <div className="w-full">
-        {label && (
-            <label htmlFor={name} className="block text-sm font-medium mb-1">
-                {label}
-            </label>
-        )}
-        <input
-            id={name}
-            name={name}
-            type={type}
-            placeholder={type !== "date" ? placeholder : undefined}
-            required={required}
-            className="w-full p-2 border rounded text-black"
-            value={value}
-            onChange={onChange}
-        />
-    </div>
-);
+}) => {
+    const isDate = type === "date";
+
+    return (
+        <div className="w-full relative">
+            {label && (
+                <label
+                    htmlFor={name}
+                    className="block text-sm font-medium mb-1"
+                >
+                    {label}
+                </label>
+            )}
+            <div className={isDate ? "relative" : ""}>
+                {isDate && (
+                    <p className="absolute text-sm left-2 top-3 w-5 h-5 text-brand pointer-events-none">
+                        Data
+                    </p>
+                )}
+                <input
+                    id={name}
+                    name={name}
+                    type={type}
+                    placeholder={isDate ? "Wybierz datę" : placeholder}
+                    required={required}
+                    className={`w-full p-2 border rounded text-black ${
+                        isDate ? "pl-14" : ""
+                    }`}
+                    value={value}
+                    onChange={onChange}
+                />
+            </div>
+        </div>
+    );
+};
 
 const MessageStatus = ({
     status,
@@ -75,7 +92,7 @@ export default function ContactPage() {
         name: "",
         email: "",
         phone: "",
-        date: undefined as Date | undefined,
+        date: "",
         message: "",
     });
     const [status, setStatus] = useState<null | string>(null);
@@ -101,12 +118,7 @@ export default function ContactPage() {
             const response = await fetch("/api/kontakt", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    ...formData,
-                    date: formData.date
-                        ? formData.date.toISOString().split("T")[0]
-                        : "",
-                }),
+                body: JSON.stringify(formData),
             });
 
             if (response.ok) {
@@ -116,7 +128,7 @@ export default function ContactPage() {
                     name: "",
                     email: "",
                     phone: "",
-                    date: undefined,
+                    date: "",
                     message: "",
                 });
 
@@ -162,14 +174,13 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                 />
-                <DatePickerField
+                <FormField
+                    name="date"
+                    type="date"
                     label="Data (opcjonalnie)"
-                    date={formData.date}
-                    onChange={(selectedDate) =>
-                        setFormData({ ...formData, date: selectedDate })
-                    }
+                    value={formData.date}
+                    onChange={handleChange}
                 />
-
                 <textarea
                     name="message"
                     placeholder="Kilka słów o tym jakie zdjęcia Cię interesują."
