@@ -10,6 +10,90 @@ import CTASendMail from "@/components/CTASendMail";
 import { OFERTAIMAGES, OPINIONS } from "@/constants/Links";
 import LinkShare from "@/components/ui/LinkShare";
 import { FaStar } from "react-icons/fa";
+import { MainBtn } from "@/components/Buttons/MainBtn";
+
+// ---------- Sekcje tekstowe jako dane ----------
+const TEXT_SECTIONS = [
+    {
+        title: "Cześć! Nazywam się Jarek Olszewski",
+        content: (
+            <>
+                Jestem <strong>fotografem ślubnym z Siedlec</strong>, a moją
+                największą pasją jest opowiadanie historii za pomocą zdjęć.
+                Uwieczniam emocje, wzruszenia i najpiękniejsze chwile w Waszym
+                życiu. W moim <strong>portfolio</strong> znajdziesz{" "}
+                <strong>reportaże ślubne</strong>,{" "}
+                <strong>sesje narzeczeńskie</strong>,{" "}
+                <strong>zdjęcia z chrztu</strong>, <strong>komunii</strong>, a
+                także <strong>plenerowe sesje rodzinne</strong>.
+            </>
+        ),
+    },
+    {
+        title: "Dlaczego warto mi zaufać jako fotografowi?",
+        content: (
+            <>
+                Szukasz kogoś, kto <strong>z dyskrecją i wyczuciem</strong>{" "}
+                uchwyci ulotne momenty Twojego <strong>ślubu</strong>? Jako{" "}
+                <strong>fotograf ślubny z Siedlec</strong> tworzę zdjęcia z
+                sercem i pasją, oferując <strong>pakiety dopasowane</strong> do
+                różnych potrzeb. Realizuję też{" "}
+                <strong>sesje noworodkowe</strong>, <strong>rodzinne</strong>{" "}
+                oraz <strong>plenerowe</strong>. Klienci doceniają mnie za{" "}
+                <strong>naturalny styl</strong>, <strong>profesjonalizm</strong>{" "}
+                i zaangażowanie – często słyszę, że jestem{" "}
+                <strong>najlepszym fotografem w Siedlcach</strong>. To ogromna
+                motywacja!
+            </>
+        ),
+    },
+    {
+        title: "Fotografia ślubna – moja filozofia",
+        content: (
+            <>
+                Dla mnie <strong>fotografia ślubna</strong> to nie tylko zdjęcia
+                – to sposób opowiedzenia Waszej historii. Każdy{" "}
+                <strong>reportaż</strong> tworzę indywidualnie – z uwagą,
+                empatią i wyczuciem detali. Od porannych przygotowań, przez
+                wzruszającą ceremonię, aż po szaloną zabawę – jestem tam, by
+                złapać wszystko, co najpiękniejsze. Realizuję także{" "}
+                <strong>sesje narzeczeńskie</strong>,{" "}
+                <strong>plenery ślubne</strong> i{" "}
+                <strong>reportaże rodzinne</strong>.
+            </>
+        ),
+    },
+    {
+        title: "Portfolio – zobacz moje zdjęcia",
+        content: (
+            <>
+                Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
+                <LinkShare href="/portfolio" title="portfolio" /> i przekonaj
+                się, jak wyglądają moje realizacje. Znajdziesz tam fotografie z{" "}
+                <strong>plenerów</strong>, <strong>ślubów</strong> i rodzinnych
+                uroczystości. To najlepszy sposób, by poznać mój styl i
+                podejście do fotografii.
+            </>
+        ),
+    },
+    {
+        title: "Oferta fotograficzna dopasowana do Ciebie",
+        content: (
+            <>
+                Sprawdź moją{" "}
+                <LinkShare href="/oferta" title="ofertę fotograficzną" /> –
+                znajdziesz tam różnorodne <strong>pakiety</strong>: od krótkich
+                sesji po pełne <strong>reportaże ślubne</strong>. Oferuję
+                również <strong>portrety</strong>,{" "}
+                <strong>zdjęcia reklamowe</strong> oraz{" "}
+                <strong>sesje okolicznościowe</strong>. Każdy{" "}
+                <strong>pakiet</strong> zawiera szczegóły dotyczące liczby
+                zdjęć, czasu realizacji i orientacyjnego{" "}
+                <strong>cennika</strong>.
+            </>
+        ),
+    },
+];
 
 export default function Home() {
     return (
@@ -97,112 +181,30 @@ export default function Home() {
                     </Link>
                 </section>
             </div>
-            <div className="bg-neutral-100 py-12 my-12 px-4">
-                <section className="max-w-3xl mx-auto  space-y-12">
-                    <div className="border-b border-neutral-300 pb-8">
-                        <h2 className="text-3xl font-semibold text-neutral-800 mb-4">
-                            Cześć! Nazywam się Jarek Olszewski
-                        </h2>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Jestem <strong>fotografem ślubnym z Siedlec</strong>
-                            , a moją największą pasją jest opowiadanie historii
-                            za pomocą zdjęć. Uwieczniam emocje, wzruszenia i
-                            najpiękniejsze chwile w Waszym życiu. W moim{" "}
-                            <strong>portfolio</strong> znajdziesz{" "}
-                            <strong>reportaże ślubne</strong>,{" "}
-                            <strong>sesje narzeczeńskie</strong>,{" "}
-                            <strong>zdjęcia z chrztu</strong>,{" "}
-                            <strong>komunii</strong>, a także{" "}
-                            <strong>plenerowe sesje rodzinne</strong>.
-                        </p>
-                    </div>
-
-                    <div className="border-b border-neutral-300 pb-8">
-                        <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Dlaczego warto mi zaufać jako fotografowi?
-                        </h2>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Szukasz kogoś, kto{" "}
-                            <strong>z dyskrecją i wyczuciem</strong> uchwyci
-                            ulotne momenty Twojego <strong>ślubu</strong>? Jako{" "}
-                            <strong>fotograf ślubny z Siedlec</strong> tworzę
-                            zdjęcia z sercem i pasją, oferując{" "}
-                            <strong>pakiety dopasowane</strong> do różnych
-                            potrzeb. Realizuję też{" "}
-                            <strong>sesje noworodkowe</strong>,{" "}
-                            <strong>rodzinne</strong> oraz{" "}
-                            <strong>plenerowe</strong>. Klienci doceniają mnie
-                            za <strong>naturalny styl, profesjonalizm</strong> i
-                            zaangażowanie – często słyszę, że jestem{" "}
-                            <strong>najlepszym fotografem w Siedlcach</strong>.
-                            To ogromna motywacja!
-                        </p>
-                    </div>
-
-                    <div className="border-b border-neutral-300 pb-8">
-                        <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Fotografia ślubna – moja filozofia
-                        </h2>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Dla mnie <strong>fotografia ślubna</strong> to nie
-                            tylko zdjęcia – to sposób opowiedzenia Waszej
-                            historii. Każdy <strong>reportaż</strong> tworzę
-                            indywidualnie – z uwagą, empatią i wyczuciem detali.
-                            Od porannych przygotowań, przez wzruszającą
-                            ceremonię, aż po szaloną zabawę – jestem tam, by
-                            złapać wszystko, co najpiękniejsze. Realizuję także{" "}
-                            <strong>sesje narzeczeńskie</strong>,{" "}
-                            <strong>plenery ślubne</strong> i{" "}
-                            <strong>reportaże rodzinne</strong>.
-                        </p>
-                    </div>
-
-                    <div className="border-b border-neutral-300 pb-8">
-                        <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Portfolio – zobacz moje zdjęcia
-                        </h2>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
-                            <LinkShare href="/portfolio" title="portfolio" /> i
-                            przekonaj się, jak wyglądają moje realizacje.
-                            Znajdziesz tam fotografie z{" "}
-                            <strong>plenerów</strong>, <strong>ślubów</strong> i
-                            rodzinnych uroczystości. To najlepszy sposób, by
-                            poznać mój styl i podejście do fotografii.
-                        </p>
-                    </div>
-
-                    <div className="border-b border-neutral-300 pb-8">
-                        <h2 className="text-2xl font-semibold text-neutral-800 mb-3">
-                            Oferta fotograficzna dopasowana do Ciebie
-                        </h2>
-                        <p className="text-neutral-700 leading-relaxed">
-                            Sprawdź moją{" "}
-                            <LinkShare
-                                href="/oferta"
-                                title="ofertę fotograficzną"
-                            />{" "}
-                            – znajdziesz tam różnorodne <strong>pakiety</strong>
-                            : od krótkich sesji po pełne{" "}
-                            <strong>reportaże ślubne</strong>. Oferuję również{" "}
-                            <strong>portrety</strong>,{" "}
-                            <strong>zdjęcia reklamowe</strong> oraz{" "}
-                            <strong>sesje okolicznościowe</strong>. Każdy{" "}
-                            <strong>pakiet</strong> zawiera szczegóły dotyczące
-                            liczby zdjęć, czasu realizacji i orientacyjnego{" "}
-                            <strong>cennika</strong>.
-                        </p>
-                    </div>
+            <div className="bg-neutral-100 py-12 mt-12 px-4">
+                <section className="max-w-3xl mx-auto space-y-12">
+                    {TEXT_SECTIONS.map(({ title, content }, index) => (
+                        <div
+                            key={index}
+                            className="border-b border-neutral-300 pb-8"
+                        >
+                            <h2 className="text-2xl lg:text-3xl font-semibold text-neutral-800 mb-3">
+                                {title}
+                            </h2>
+                            <p className="text-neutral-700 leading-relaxed">
+                                {content}
+                            </p>
+                        </div>
+                    ))}
                 </section>
             </div>
 
-            <div className="space-y-4 p-12 bg-brand text-white flex items-center justify-center flex-col">
+            <div className="space-y-4 p-24 bg-stone-200 flex items-center justify-center flex-col">
                 <h3 className="text-2xl text-center">
                     Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
                 </h3>
-                <div className="p-0.5 bg-white">
-                    <CTASendMail title="Napisz Do Mnie" />
-                </div>
+
+                <CTASendMail title="Napisz Do Mnie" />
             </div>
 
             <section className="bg-white py-20 px-4">
@@ -251,12 +253,11 @@ export default function Home() {
                     </div>
 
                     <div className="mt-12">
-                        <Link
-                            href="/portfolio"
-                            className="inline-block border-2 border-black px-8 py-3 uppercase tracking-wide hover:bg-black hover:text-white transition-colors"
-                        >
-                            Zobacz efekty mojej pracy
-                        </Link>
+                        <MainBtn>
+                            <Link href="/portfolio">
+                                Zobacz efekty mojej pracy
+                            </Link>
+                        </MainBtn>
                     </div>
                 </div>
             </section>

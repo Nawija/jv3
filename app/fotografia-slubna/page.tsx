@@ -1,6 +1,6 @@
 import ImageComponent from "@/components/ImageComponent";
 import TitleH2 from "@/components/TitleH2";
-import HeroSection from "./HeroSection";
+import HeroSection from "../../components/HeroSection";
 import path from "path";
 import fs from "fs";
 import CarouselProps from "@/components/CarouselProps";
@@ -29,10 +29,15 @@ export default function FotografiaSlubna() {
 
     return (
         <>
-            <div className="text-center anim-opacity">
-                <HeroSection />
-
-                <div className="bg-white w-full py-10">
+            <HeroSection
+                title="Ślub"
+                backgroundImages={["/Images/sesja.jpg"]}
+                paragraphs={[
+                    "Dzień, który zapamiętacie na zawsze, ten wymarzony, najpiękniejszy, idealny Czemu chcę być z Wami? Żeby łapać te wszystkie piękne, ale jednocześnie ulotne chwile i zachowywać je na zdjęciach.",
+                ]}
+            />
+            <div className="text-center bg-white w-full">
+                <div className="w-full py-10">
                     <div className="max-w-screen-lg mx-auto px-4">
                         <h1 className="text-2xl lg:text-3xl font-semibold text-center mb-10">
                             Fotografia ślubna, co skrywa?
