@@ -1,5 +1,3 @@
-// app/components/FaqAccordion.tsx
-
 "use client";
 
 import {
