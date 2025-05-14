@@ -4,8 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 
-import { Calendar } from "lucide-react"; // lub dowolna ikona kalendarza
-
 const FormField = ({
     name,
     type = "text",
