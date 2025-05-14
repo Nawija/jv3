@@ -100,18 +100,19 @@ export default function Home() {
         <div className="anim-opacity">
             <Carousel />
             <div className="p-2 text-center relative  max-w-screen-xl mx-auto">
-                <FadeInOnScroll delay={0.1}>
-                    <span className="text-2xl py-4">
-                        Cześć! Miło mi że tu jesteś
-                    </span>
-                </FadeInOnScroll>
+                <span className="text-2xl py-4 animate-fade-in">
+                    Cześć! Miło mi że tu jesteś
+                </span>
+
                 <FadeInOnScroll delay={0.3}>
                     <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                         <Image
                             src={Jarek}
-                            height={300}
                             alt="fotograf siedlce jarek-olszewski"
+                            width={370}
+                            height={300}
                             priority
+                            placeholder="blur"
                         />
                         <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                             <h1 className="text-2xl font-semibold mb-2">
@@ -132,24 +133,27 @@ export default function Home() {
                     </div>
                 </FadeInOnScroll>
 
-                <FadeInOnScroll delay={0.1}>
-                    <h2 className="text-xl py-4">
-                        Komu i jakie zdjęcia robię?
-                    </h2>
-                </FadeInOnScroll>
-                <FadeInOnScroll delay={0.3}>
-                    <p className="px-3 max-w-screen-lg mx-auto">
-                        najczęściej fotografuję uśmiechniętych ludzi, podczas
-                        najważniejszych chwil w życiu. specjalizuje się w
-                        reportażu ślubnym, lecz inne dziedziny fotografii nie są
-                        mi obce. chęć ciągłego poznawania i rozwoju pozwoliła
-                        uzbierać spory bagaż doświadczenia i wyjątkowych zdjęć.
-                        moje fotografie staram się by były naturalne i
-                        prawdziwe, a przez to ponadczasowe…
-                    </p>
-                </FadeInOnScroll>
+                <div className="my-10">
+                    <FadeInOnScroll delay={0.1}>
+                        <h2 className="text-xl py-4">
+                            Komu i jakie zdjęcia robię?
+                        </h2>
+                    </FadeInOnScroll>
+                    <FadeInOnScroll delay={0.3}>
+                        <p className="px-3 max-w-screen-lg mx-auto">
+                            najczęściej fotografuję uśmiechniętych ludzi,
+                            podczas najważniejszych chwil w życiu. specjalizuje
+                            się w reportażu ślubnym, lecz inne dziedziny
+                            fotografii nie są mi obce. chęć ciągłego poznawania
+                            i rozwoju pozwoliła uzbierać spory bagaż
+                            doświadczenia i wyjątkowych zdjęć. moje fotografie
+                            staram się by były naturalne i prawdziwe, a przez to
+                            ponadczasowe…
+                        </p>
+                    </FadeInOnScroll>
+                </div>
 
-                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-12">
+                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-8">
                     <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
                         <Image
                             src={Slub}
@@ -266,10 +270,7 @@ export default function Home() {
             <div className="bg-gray-100 py-12 mt-12 px-4">
                 <section className="max-w-3xl mx-auto space-y-12">
                     {TEXT_SECTIONS.map(({ title, content }, index) => (
-                        <div
-                            key={index}
-                            className="border-b border-white pb-8"
-                        >
+                        <div key={index} className="border-b border-white pb-8">
                             <h2 className="text-2xl lg:text-3xl font-semibold text-black mb-3">
                                 {title}
                             </h2>
