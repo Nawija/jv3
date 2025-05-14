@@ -10,6 +10,7 @@ import LinkShare from "@/components/ui/LinkShare";
 import { FaStar } from "react-icons/fa";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 // ---------- Sekcje tekstowe jako dane ----------
 const TEXT_SECTIONS = [
@@ -99,9 +100,12 @@ export default function Home() {
         <div className="anim-opacity">
             <Carousel />
             <div className="p-2 text-center relative  max-w-screen-xl mx-auto">
-                <span className="text-2xl py-4">
-                    Cześć! Miło mi że tu jesteś
-                </span>
+                <FadeInOnScroll delay={0.1}>
+                    <span className="text-2xl py-4">
+                        Cześć! Miło mi że tu jesteś
+                    </span>
+                </FadeInOnScroll>
+
                 <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                     <Image
                         src={Jarek}
@@ -183,10 +187,11 @@ export default function Home() {
             </div>
 
             <div className="space-y-4 p-24 bg-stone-200 flex items-center justify-center flex-col">
-                <h3 className="text-2xl text-center">
-                    Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
-                </h3>
-
+                <FadeInOnScroll delay={0.1}>
+                    <h3 className="text-2xl text-center">
+                        Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
+                    </h3>
+                </FadeInOnScroll>
                 <CTASendMail title="Napisz Do Mnie" />
             </div>
 
