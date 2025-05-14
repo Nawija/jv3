@@ -108,6 +108,7 @@ export default function Home() {
                         src={Jarek}
                         height={300}
                         alt="fotograf siedlce jarek-olszewski"
+                        priority
                     />
                     <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                         <h1 className="text-2xl font-semibold mb-2">

@@ -14,6 +14,7 @@ export default {
                 main: "#6e2a23",
                 brand: {
                     DEFAULT: "#6e2a23", // główny kolor (np. przyciski, nagłówki)
+                    nav:"#6e2a23",
                     hover: "#5c201a", // ciemniejszy odcień do hovera
                     light: "#874139", // jaśniejszy wariant np. do tła
                     soft: "#f7ebe9", // bardzo jasny do kart, sekcji
