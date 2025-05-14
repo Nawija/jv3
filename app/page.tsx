@@ -134,29 +134,29 @@ export default function Home() {
                     doświadczenia i wyjątkowych zdjęć. moje fotografie staram
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
-                <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
-                    <Image
-                        src={Slub}
-                        alt="slub"
-                        fill
-                        className="object-cover"
-                        quality={75}
-                    />
 
-                    <div className="absolute -bottom-12 md:bottom-1/2 md:translate-y-1/2 md:-left-1/3 md:-translate-x-1/2 left-0 bg-black/60 text-start px-8 py-6 backdrop-blur-sm lg:p-12 z-10 h-max w-full">
-                        <p className="capitalize text-white text-2xl lg:text-5xl mb-2">
-                            reportaż ślubny
-                        </p>
-                        <Link
-                            href="/fotografia-slubna"
-                            className="text-white text-sm py-1 px-4 border border-white"
-                        >
-                            Zobacz
-                        </Link>
+                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4">
+                    <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
+                        <Image
+                            src={Slub}
+                            alt="slub"
+                            fill
+                            className="object-cover"
+                            quality={75}
+                        />
+
+                        <div className="absolute -bottom-12 md:bottom-1/2 md:translate-y-1/2 md:-left-1/3 md:-translate-x-1/2 left-0 bg-black/60 text-start px-8 py-6 backdrop-blur-sm lg:p-12 z-10 h-max w-full">
+                            <p className="capitalize text-white text-2xl lg:text-5xl mb-2">
+                                reportaż ślubny
+                            </p>
+                            <Link
+                                href="/fotografia-slubna"
+                                className="text-white text-sm py-1 px-4 border border-white"
+                            >
+                                Zobacz
+                            </Link>
+                        </div>
                     </div>
-                </div>
-
-                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-3">
                     {OFERTAIMAGES.map((img, index) => (
                         <SesjaComponent
                             key={index}
@@ -168,7 +168,7 @@ export default function Home() {
 
                     <Link
                         href="/oferta"
-                        className="lg:absolute w-max mx-auto hover:bg-black hover:text-white transition-color-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
+                        className="w-max mx-auto h-max hover:bg-black hover:text-white transition-color-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
                     >
                         <p className="uppercase text-center">
                             {["i", "wiele", "więcej"].map((word, index) => (
