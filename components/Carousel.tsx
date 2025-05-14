@@ -8,6 +8,8 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import h1 from "@/public/Images/sesja.jpg";
 import h3 from "@/public/Images/sesja2.jpg";
 import h4 from "@/public/Images/wyjscie.jpg";
+import { useState } from "react";
+import Skeleton from "./ui/Skeleton";
 
 const images = [
     { src: h1, position: "50% 50%" },
@@ -36,6 +38,7 @@ const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
 );
 
 const Carousel = () => {
+    const [isFirstImageLoaded, setIsFirstImageLoaded] = useState(false);
     const settings = {
         dots: true,
         fade: true,
@@ -62,6 +65,7 @@ const Carousel = () => {
 
     return (
         <div className="flex justify-center items-center relative">
+            {!isFirstImageLoaded && <Skeleton />}
             <Slider
                 {...settings}
                 className="w-screen xl:max-w-[1600px] h-[75vh] min-h-[75vh] max-h-[75vh] xl:h-[86vh] xl:min-h-[86vh] xl:max-h-[86vh] slick-slider bg-stone-100"
@@ -77,6 +81,9 @@ const Carousel = () => {
                             className="object-cover max-w-[1600px]"
                             style={{ objectPosition: image.position }}
                             fill
+                            onLoad={() => {
+                                if (index === 0) setIsFirstImageLoaded(true);
+                            }}
                             quality={90}
                             {...(index === 0
                                 ? { priority: true }
