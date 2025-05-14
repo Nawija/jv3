@@ -202,7 +202,6 @@ export default function Home() {
                         Opinie klientów
                     </h4>
 
-                                    key={i}
                     <Opinions />
 
                     <div className="mt-12">
