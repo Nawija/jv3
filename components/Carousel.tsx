@@ -77,12 +77,12 @@ const Carousel = () => {
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {images.map((_, idx) => (
           <button
             key={idx}
             onClick={() => instanceRef.current?.moveToIdx(idx)}
-            className={`w-3 h-3 rounded-full transition-colors ${
+            className={`w-4 h-4 rounded-full transition-colors ${
               activeIndex === idx
                 ? "bg-white"
                 : "bg-white/30 hover:bg-white"
