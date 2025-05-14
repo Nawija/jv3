@@ -9,6 +9,7 @@ import { OFERTAIMAGES, OPINIONS } from "@/constants/Links";
 import LinkShare from "@/components/ui/LinkShare";
 import { FaStar } from "react-icons/fa";
 import { MainBtn } from "@/components/Buttons/MainBtn";
+import { FaqAccordion } from "@/components/FaqAccordion";
 
 // ---------- Sekcje tekstowe jako dane ----------
 const TEXT_SECTIONS = [
@@ -265,32 +266,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-neutral-50 py-12 px-6">
-                <h2 className="text-3xl font-bold text-center mb-8">
-                    Najczęściej zadawane pytania
-                </h2>
-                <div className="max-w-4xl mx-auto space-y-6">
-                    {[
-                        {
-                            q: "Ile kosztuje reportaż ślubny?",
-                            a: "Ceny zależą od pakietu – znajdziesz je w zakładce Oferta, ale zawsze mogę przygotować coś indywidualnego.",
-                        },
-                        {
-                            q: "Czy dojeżdżasz na sesje?",
-                            a: "Tak, dojeżdżam w promieniu 100 km od Siedlec bez dodatkowych opłat.",
-                        },
-                        {
-                            q: "Ile czeka się na zdjęcia?",
-                            a: "Standardowo do 4 tygodni, ale często oddaję szybciej :)",
-                        },
-                    ].map(({ q, a }, i) => (
-                        <div key={i}>
-                            <h3 className="font-semibold text-lg">{q}</h3>
-                            <p className="text-sm text-neutral-700">{a}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FaqAccordion />
             <section className="bg-white py-12">
                 <h2 className="text-center text-2xl font-semibold mb-4">
                     Zobacz więcej na Instagramie
