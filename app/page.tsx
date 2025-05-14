@@ -135,7 +135,7 @@ export default function Home() {
                     się by były naturalne i prawdziwe, a przez to ponadczasowe…
                 </p>
 
-                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4">
+                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-12">
                     <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
                         <Image
                             src={Slub}
@@ -178,23 +178,6 @@ export default function Home() {
                             ))}
                         </p>
                     </Link>
-                </section>
-            </div>
-            <div className="bg-neutral-100 py-12 mt-12 px-4">
-                <section className="max-w-3xl mx-auto space-y-12">
-                    {TEXT_SECTIONS.map(({ title, content }, index) => (
-                        <div
-                            key={index}
-                            className="border-b border-neutral-300 pb-8"
-                        >
-                            <h2 className="text-2xl lg:text-3xl font-semibold text-neutral-800 mb-3">
-                                {title}
-                            </h2>
-                            <p className="text-neutral-700 leading-relaxed">
-                                {content}
-                            </p>
-                        </div>
-                    ))}
                 </section>
             </div>
 
@@ -260,6 +243,88 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <section className="bg-brand text-white py-16 px-6">
+                <h2 className="text-3xl text-center font-bold mb-10">
+                    Jak wygląda współpraca?
+                </h2>
+                <div className="grid md:grid-cols-4 gap-8 text-center max-w-6xl mx-auto">
+                    {[
+                        ["1", "Kontakt i rozmowa"],
+                        ["2", "Rezerwacja terminu"],
+                        ["3", "Zdjęcia w dniu sesji"],
+                        ["4", "Obróbka i przekazanie galerii"],
+                    ].map(([step, label]) => (
+                        <div key={step}>
+                            <div className="text-5xl font-bold mb-4">
+                                {step}
+                            </div>
+                            <p>{label}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="bg-neutral-50 py-12 px-6">
+                <h2 className="text-3xl font-bold text-center mb-8">
+                    Najczęściej zadawane pytania
+                </h2>
+                <div className="max-w-4xl mx-auto space-y-6">
+                    {[
+                        {
+                            q: "Ile kosztuje reportaż ślubny?",
+                            a: "Ceny zależą od pakietu – znajdziesz je w zakładce Oferta, ale zawsze mogę przygotować coś indywidualnego.",
+                        },
+                        {
+                            q: "Czy dojeżdżasz na sesje?",
+                            a: "Tak, dojeżdżam w promieniu 100 km od Siedlec bez dodatkowych opłat.",
+                        },
+                        {
+                            q: "Ile czeka się na zdjęcia?",
+                            a: "Standardowo do 4 tygodni, ale często oddaję szybciej :)",
+                        },
+                    ].map(({ q, a }, i) => (
+                        <div key={i}>
+                            <h3 className="font-semibold text-lg">{q}</h3>
+                            <p className="text-sm text-neutral-700">{a}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <section className="bg-white py-12">
+                <h2 className="text-center text-2xl font-semibold mb-4">
+                    Zobacz więcej na Instagramie
+                </h2>
+                <p className="text-center text-sm mb-6">
+                    Świeże zdjęcia, kulisy sesji i więcej
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
+                    {[1, 2, 3, 4, 5, 6].map((_, i) => (
+                        <div
+                            key={i}
+                            className="bg-neutral-200 aspect-square animate-pulse"
+                        />
+                    ))}
+                </div>
+            </section>
+
+            <div className="bg-neutral-100 py-12 mt-12 px-4">
+                <section className="max-w-3xl mx-auto space-y-12">
+                    {TEXT_SECTIONS.map(({ title, content }, index) => (
+                        <div
+                            key={index}
+                            className="border-b border-neutral-300 pb-8"
+                        >
+                            <h2 className="text-2xl lg:text-3xl font-semibold text-neutral-800 mb-3">
+                                {title}
+                            </h2>
+                            <p className="text-neutral-700 leading-relaxed">
+                                {content}
+                            </p>
+                        </div>
+                    ))}
+                </section>
+            </div>
         </div>
     );
 }
