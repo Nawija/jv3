@@ -25,7 +25,11 @@ export function DatePickerField({
 }) {
     return (
         <div className="w-full">
-           
+            {label && (
+                <label className="block text-sm font-medium mb-1">
+                    {label}
+                </label>
+            )}
             <Popover>
                 <PopoverTrigger asChild>
                     <Button

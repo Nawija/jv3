@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "@/components/Buttons/MainBtn";
+import { DatePickerField } from "@/components/DatePickerField";
 
 const FormField = ({
     name,
@@ -74,7 +75,7 @@ export default function ContactPage() {
         name: "",
         email: "",
         phone: "",
-        date: "",
+        date: undefined as Date | undefined,
         message: "",
     });
     const [status, setStatus] = useState<null | string>(null);
@@ -100,7 +101,12 @@ export default function ContactPage() {
             const response = await fetch("/api/kontakt", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    date: formData.date
+                        ? formData.date.toISOString().split("T")[0]
+                        : "",
+                }),
             });
 
             if (response.ok) {
@@ -110,7 +116,7 @@ export default function ContactPage() {
                     name: "",
                     email: "",
                     phone: "",
-                    date: "",
+                    date: undefined,
                     message: "",
                 });
 
@@ -156,13 +162,14 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                 />
-                <FormField
-                    name="date"
-                    type="date"
+                <DatePickerField
                     label="Data (opcjonalnie)"
-                    value={formData.date}
-                    onChange={handleChange}
+                    date={formData.date}
+                    onChange={(selectedDate) =>
+                        setFormData({ ...formData, date: selectedDate })
+                    }
                 />
+
                 <textarea
                     name="message"
                     placeholder="Kilka słów o tym jakie zdjęcia Cię interesują."
