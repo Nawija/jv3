@@ -113,7 +113,7 @@ export default function Home() {
                         alt="fotograf siedlce jarek-olszewski"
                         priority
                     />
-                    <div className="w-[330px] lg:w-[400px] bg-brand/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
+                    <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                         <h1 className="text-2xl font-semibold mb-2">
                             Fotograf Siedlce – Jarek Olszewski | Fotografia
                             Ślubna
@@ -150,7 +150,7 @@ export default function Home() {
                             quality={75}
                         />
 
-                        <div className="absolute -bottom-12 md:bottom-1/2 md:translate-y-1/2 md:-left-1/3 md:-translate-x-1/2 left-0 bg-brand/60 text-start px-8 py-6 backdrop-blur-sm lg:p-12 z-10 h-max w-full">
+                        <div className="absolute -bottom-12 md:bottom-1/2 md:translate-y-1/2 md:-left-1/3 md:-translate-x-1/2 left-0 bg-black/60 text-start px-8 py-6 backdrop-blur-sm lg:p-12 z-10 h-max w-full">
                             <p className="capitalize text-white text-2xl lg:text-5xl mb-2">
                                 reportaż ślubny
                             </p>
