@@ -21,7 +21,10 @@ const contactDetails = [
 export default function ContactPage() {
     return (
         <main className="max-w-screen-md mx-auto px-4 anim-opacity py-10 text-gray-800 text-center">
-            <h1 className="text-4xl mb-6">Porozmawiajmy o fotografii</h1>
+            <h1 className="text-4xl mb-6 font-medium">
+                Porozmawiajmy o{" "}
+                <strong className="font-medium">Fotografii</strong>
+            </h1>
 
             <p className="text-lg md:text-xl mb-10">
                 Masz pytania dotyczące oferty fotograficznej, chcesz sprawdzić
