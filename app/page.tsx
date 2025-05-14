@@ -1,16 +1,31 @@
-import Carousel from "@/components/Carousel";
+import dynamic from "next/dynamic";
+
+const Carousel = dynamic(() => import("@/components/Carousel"), {
+    ssr: true,
+    loading: () => <div className="h-[80vh] bg-zinc-300 animate-pulse" />,
+});
 import Image from "next/image";
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
 import Slub from "@/public/Images/slub.jpg";
 import Link from "next/link";
-import SesjaComponent from "@/components/SesjaComponent";
-import CTASendMail from "@/components/CTASendMail";
+const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), {
+    ssr: true,
+    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
+});
+
+const CTASendMail = dynamic(() => import("@/components/CTASendMail"), {
+    ssr: true,
+    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
+});
 import { OFERTAIMAGES } from "@/constants/Links";
 import LinkShare from "@/components/ui/LinkShare";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
-import Opinions from "@/components/Opinions";
+const Opinions = dynamic(() => import("@/components/Opinions"), {
+    ssr: true,
+    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
+});
 
 // ---------- Sekcje tekstowe jako dane ----------
 const TEXT_SECTIONS = [
