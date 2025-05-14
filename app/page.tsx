@@ -1,5 +1,3 @@
-import "slick-carousel/slick/slick.css";
-
 import Carousel from "@/components/Carousel";
 import Image from "next/image";
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
