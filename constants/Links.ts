@@ -56,11 +56,21 @@ export const OPINIONS = [
     {
         name: "Natalia",
         text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
-        rating: 4.7,
+        rating: 5,
+    },
+    {
+        name: "Szymon",
+        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        rating: 5,
     },
     {
         name: "Ania & Paweł",
         text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
-        rating: 4.8,
+        rating: 4.9,
+    },
+    {
+        name: "Monika & Karol",
+        text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
+        rating: 4.9,
     },
 ];

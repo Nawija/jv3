@@ -195,13 +195,15 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="space-y-4 p-24 bg-stone-200 flex items-center justify-center flex-col">
+            <div className="space-y-4 p-24 bg-gray-200 flex items-center justify-center flex-col">
                 <FadeInOnScroll delay={0.1}>
                     <h3 className="text-2xl text-center">
                         Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
                     </h3>
                 </FadeInOnScroll>
-                <CTASendMail title="Napisz Do Mnie" />
+                <FadeInOnScroll delay={0.3}>
+                    <CTASendMail title="Napisz Do Mnie" />
+                </FadeInOnScroll>
             </div>
 
             <section className="bg-white py-20 px-4">
@@ -222,10 +224,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-brand text-white py-16 px-6">
-                <h2 className="text-3xl text-center font-bold mb-10">
+            <section className="bg-gray-200 text-black py-16 px-6">
+                <h3 className="text-3xl text-center font-bold mb-10">
                     Jak wygląda współpraca?
-                </h2>
+                </h3>
                 <div className="grid md:grid-cols-4 gap-8 text-center max-w-6xl mx-auto">
                     {[
                         ["1", "Kontakt i rozmowa"],
@@ -234,7 +236,7 @@ export default function Home() {
                         ["4", "Obróbka i przekazanie galerii"],
                     ].map(([step, label]) => (
                         <div key={step}>
-                            <div className="text-5xl font-bold mb-4">
+                            <div className="text-5xl font-bold mb-4 text-brand-light">
                                 {step}
                             </div>
                             <p>{label}</p>

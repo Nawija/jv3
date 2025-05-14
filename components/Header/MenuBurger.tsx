@@ -19,19 +19,19 @@ export default function MenuBurger({
         className={`${burgerClass} transform transition-all ${
           showMenu
             ? "bg-black translate-y-1.5 rotate-[405deg]"
-            : "bg-[#6e2a23]"
+            : "bg-brand-nav"
         }`}
       />
       <div
         className={`${burgerClass} transition-all ${
-          showMenu ? "bg-black opacity-0" : "bg-[#6e2a23]"
+          showMenu ? "bg-black opacity-0" : "bg-brand-nav"
         }`}
       />
       <div
         className={`${burgerClass} transform transition-all ${
           showMenu
             ? "bg-black -translate-y-2 -rotate-45"
-            : "bg-[#6e2a23]"
+            : "bg-brand-nav"
         }`}
       />
     </button>

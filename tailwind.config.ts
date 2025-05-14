@@ -12,10 +12,10 @@ export default {
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
-    			main: '#6e2a23',
     			brand: {
     				DEFAULT: '#6e2a23',
-    				nav: '#6e2a23',
+    				nav: '#be3d29ee',
+					navHover: '#6e2a23',
     				hover: '#5c201a',
     				light: '#874139',
     				soft: '#f7ebe9'

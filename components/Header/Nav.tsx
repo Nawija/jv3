@@ -153,9 +153,9 @@ export default function Nav() {
                                 <li key={link.label} className="relative">
                                     <Link
                                         href={link.href}
-                                        className={`block w-max py-4 px-1 uppercase lg:text-sm transition-all hover:text-main ${
+                                        className={`block w-max py-4 px-1 uppercase lg:text-sm transition-all hover:text-brand-navHover ${
                                             pathname === link.href
-                                                ? "text-main font-bold"
+                                                ? "text-brand-nav font-bold"
                                                 : ""
                                         }`}
                                         aria-current={
@@ -178,7 +178,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="hover:text-main transition-all text-2xl"
+                            className="hover:text-brand-navHover transition-all text-2xl"
                         >
                             <TiSocialFacebook />
                         </Link>
@@ -187,7 +187,7 @@ export default function Nav() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="hover:text-main transition-all text-xl"
+                            className="hover:text-brand-navHover transition-all text-xl"
                         >
                             <FiInstagram />
                         </Link>
