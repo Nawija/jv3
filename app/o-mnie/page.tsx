@@ -1,27 +1,29 @@
-import Image from "next/image";
-import Slub from "@/public/Images/slub.jpg";
 import HeroSection from "@/components/HeroSection";
-
-// Galeria
-function GalleryGrid({ images }: { images: string[] }) {
-    return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {images.map((src, index) => (
-                <Image
-                    key={index}
-                    src={src}
-                    alt={`Zdjęcie ${index + 1}`}
-                    width={300}
-                    height={200}
-                    className="object-cover"
-                />
-            ))}
-        </div>
-    );
-}
+import PhotoSwipe from "@/components/PhotoSwipe";
 
 export default function AboutMePage() {
-    const images = [Slub.src, Slub.src, Slub.src, Slub.src];
+    const images = [
+        {
+            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf037.jpeg`,
+            width: 1000,
+            height: 667,
+        },
+        {
+            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
+            width: 1000,
+            height: 667,
+        },
+        {
+            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
+            width: 1000,
+            height: 667,
+        },
+        {
+            src: `/Images/Blog/sesja.jpg`,
+            width: 1000,
+            height: 667,
+        },
+    ];
 
     return (
         <>
@@ -36,7 +38,7 @@ export default function AboutMePage() {
                 {/* Sekcja O mnie */}
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
                     <div className="text-center">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-brand mb-4">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
                             Kim jestem – fotograf i człowiek z pasją
                         </h2>
                         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -77,10 +79,10 @@ export default function AboutMePage() {
 
                 {/* Galeria */}
                 <section className="max-w-6xl mx-auto px-4 pb-20">
-                    <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-brand">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
                         Zobacz moje kadry
                     </h3>
-                    <GalleryGrid images={images} />
+                    <PhotoSwipe images={images} columns={4} className="p-6" />
                 </section>
             </main>
         </>

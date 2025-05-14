@@ -47,7 +47,7 @@ export default async function OffertsPage() {
 
     return (
         <>
-            <div className="bg-stone-50 py-8 px-6 sm:px-6 lg:px-8">
+            <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8">
                 <section className="max-w-7xl mx-auto space-y-8 anim-opacity text-stone-800">
                     <h1 className="text-4xl text-center leading-tight">
                         Profesjonalny Fotograf Siedlce
@@ -70,7 +70,7 @@ export default async function OffertsPage() {
                                     key={i}
                                     className="flex gap-4 items-start p-4 bg-white rounded-xl shadow-sm"
                                 >
-                                    <FaCheckCircle className="text-main mt-1 text-xl flex-shrink-0" />
+                                    <FaCheckCircle className="text-brand-nav mt-1 text-xl flex-shrink-0" />
                                     <div>
                                         <h3 className="font-semibold">
                                             {title}
@@ -96,7 +96,7 @@ export default async function OffertsPage() {
                                     <Link
                                         key={i}
                                         href={href}
-                                        className="px-4 py-2 bg-main font-semibold text-white text-sm hover:bg-red-700 transition"
+                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
                                     >
                                         {label}
                                     </Link>

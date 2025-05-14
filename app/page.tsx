@@ -195,7 +195,7 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="space-y-4 p-24 bg-gray-200 flex items-center justify-center flex-col">
+            <div className="space-y-4 p-24 bg-gray-100 flex items-center justify-center flex-col">
                 <FadeInOnScroll delay={0.1}>
                     <h3 className="text-2xl text-center">
                         Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
@@ -224,7 +224,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-gray-200 text-black py-16 px-6">
+            <section className="bg-gray-100 text-black py-16 px-6">
                 <h3 className="text-3xl text-center font-bold mb-10">
                     Jak wygląda współpraca?
                 </h3>
@@ -236,7 +236,7 @@ export default function Home() {
                         ["4", "Obróbka i przekazanie galerii"],
                     ].map(([step, label]) => (
                         <div key={step}>
-                            <div className="text-5xl font-bold mb-4 text-brand-light">
+                            <div className="text-5xl font-bold mb-4 text-brand-nav">
                                 {step}
                             </div>
                             <p>{label}</p>
@@ -257,20 +257,20 @@ export default function Home() {
                     {[1, 2, 3, 4, 5, 6].map((_, i) => (
                         <div
                             key={i}
-                            className="bg-neutral-200 aspect-square animate-pulse"
+                            className="bg-gray-100 aspect-square animate-pulse"
                         />
                     ))}
                 </div>
             </section>
 
-            <div className="bg-neutral-100 py-12 mt-12 px-4">
+            <div className="bg-gray-100 py-12 mt-12 px-4">
                 <section className="max-w-3xl mx-auto space-y-12">
                     {TEXT_SECTIONS.map(({ title, content }, index) => (
                         <div
                             key={index}
-                            className="border-b border-neutral-300 pb-8"
+                            className="border-b border-white pb-8"
                         >
-                            <h2 className="text-2xl lg:text-3xl font-semibold text-neutral-800 mb-3">
+                            <h2 className="text-2xl lg:text-3xl font-semibold text-black mb-3">
                                 {title}
                             </h2>
                             <p className="text-neutral-700 leading-relaxed">

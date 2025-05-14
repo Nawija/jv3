@@ -36,20 +36,14 @@ const FormField = ({
                 </label>
             )}
             <div className={isDate ? "relative" : ""}>
-                {isDate && (
-                    <p className="absolute text-sm left-2 top-3 w-5 h-5 text-brand pointer-events-none">
-                        Data
-                    </p>
-                )}
+               
                 <input
                     id={name}
                     name={name}
                     type={type}
                     placeholder={isDate ? "Wybierz datę" : placeholder}
                     required={required}
-                    className={`w-full p-2 border rounded text-black ${
-                        isDate ? "pl-14" : ""
-                    }`}
+                    className={`w-full p-2 border rounded text-black`}
                     value={value}
                     onChange={onChange}
                 />
@@ -69,14 +63,14 @@ const MessageStatus = ({
 }) => (
     <div className="text-sm flex items-center space-x-2">
         {loading && (
-            <div className="w-4 h-4 border-2 border-t-transparent border-red-500 border-solid rounded-full animate-spin"></div>
+            <div className="w-4 h-4 border-2 border-t-transparent border-brand-nav border-solid rounded-full animate-spin"></div>
         )}
         <p
             className={`ml-2 ${
                 statusType === "success"
-                    ? "text-green-500"
+                    ? "text-green-400"
                     : statusType === "error"
-                    ? "text-red-500"
+                    ? "text-red-400"
                     : "text-white"
             }`}
         >
