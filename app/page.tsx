@@ -11,6 +11,7 @@ import { FaStar } from "react-icons/fa";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import Opinions from "@/components/Opinions";
 
 // ---------- Sekcje tekstowe jako dane ----------
 const TEXT_SECTIONS = [
@@ -200,45 +201,9 @@ export default function Home() {
                     <h4 className="text-3xl font-semibold text-neutral-900 mb-12 tracking-tight">
                         Opinie klientów
                     </h4>
-                    <div className="grid md:grid-cols-3 gap-8 text-left">
-                        {OPINIONS.map((opinia, i) => {
-                            const fullStars = Math.floor(opinia.rating);
 
-                            return (
-                                <div
                                     key={i}
-                                    className="bg-neutral-100 border border-neutral-300 p-6 h-full shadow-sm hover:shadow-md transition-shadow"
-                                >
-                                    <p className="text-neutral-700 mb-4 leading-relaxed">
-                                        “{opinia.text}”
-                                    </p>
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <div className="flex">
-                                            {[...Array(5)].map((_, idx) => (
-                                                <FaStar
-                                                    key={idx}
-                                                    className={`w-5 h-5 ${
-                                                        idx < fullStars
-                                                            ? "text-yellow-400"
-                                                            : idx <
-                                                              opinia.rating
-                                                            ? "text-yellow-400 opacity-70"
-                                                            : "text-gray-300"
-                                                    }`}
-                                                />
-                                            ))}
-                                        </div>
-                                        <span className="text-sm font-medium text-neutral-700">
-                                            {opinia.rating.toFixed(1)} / 5
-                                        </span>
-                                    </div>
-                                    <span className="block text-sm font-semibold text-neutral-700">
-                                        – {opinia.name}
-                                    </span>
-                                </div>
-                            );
-                        })}
-                    </div>
+                    <Opinions />
 
                     <div className="mt-12">
                         <MainBtn>
