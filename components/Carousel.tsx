@@ -32,9 +32,11 @@ const Carousel = () => {
   });
 
   return (
-    <div className="relative w-screen xl:max-w-[1600px] h-[86vh] mx-auto overflow-hidden">
+    <div className="relative w-screen xl:max-w-[1600px] h-[80vh] lg:h-[86vh] mx-auto overflow-hidden">
       {!isFirstImageLoaded && (
-        <div className="w-full h-full absolute inset-0 z-10 bg-zinc-100" />
+        <div className="w-full h-full absolute inset-0 z-10 bg-zinc-200">
+          <div className="w-full h-full absolute inset-0 z-10 bg-zinc-400 animate-pulse" />
+        </div>
       )}
 
       {/* Slider */}

@@ -105,40 +105,49 @@ export default function Home() {
                         Cześć! Miło mi że tu jesteś
                     </span>
                 </FadeInOnScroll>
-
-                <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
-                    <Image
-                        src={Jarek}
-                        height={300}
-                        alt="fotograf siedlce jarek-olszewski"
-                        priority
-                    />
-                    <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
-                        <h1 className="text-2xl font-semibold mb-2">
-                            Fotograf Siedlce – Jarek Olszewski | Fotografia
-                            Ślubna
-                        </h1>
-                        <p>
-                            Uśmiech na mojej twarzy to Wasza zasługa. Jestem
-                            szczęśliwym człowiekiem, który zamienił swoją pasje
-                            w sposób na życie. Obserwowanie i fotografowanie
-                            całej masy emocji, to jest to co najbardziej
-                            uwielbiam w swojej pracy. Fakt stworzenia unikalnych
-                            zdjęć które będą towarzyszyć Wam przez całe życie to
-                            coś pięknego. …czytaj więcej
-                        </p>
+                <FadeInOnScroll delay={0.3}>
+                    <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
+                        <Image
+                            src={Jarek}
+                            height={300}
+                            alt="fotograf siedlce jarek-olszewski"
+                            priority
+                        />
+                        <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
+                            <h1 className="text-2xl font-semibold mb-2">
+                                Fotograf Siedlce – Jarek Olszewski | Fotografia
+                                Ślubna
+                            </h1>
+                            <p>
+                                Uśmiech na mojej twarzy to Wasza zasługa. Jestem
+                                szczęśliwym człowiekiem, który zamienił swoją
+                                pasje w sposób na życie. Obserwowanie i
+                                fotografowanie całej masy emocji, to jest to co
+                                najbardziej uwielbiam w swojej pracy. Fakt
+                                stworzenia unikalnych zdjęć które będą
+                                towarzyszyć Wam przez całe życie to coś
+                                pięknego. …czytaj więcej
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </FadeInOnScroll>
 
-                <h2 className="text-xl py-4">Komu i jakie zdjęcia robię?</h2>
-                <p className="px-3 max-w-screen-lg mx-auto">
-                    najczęściej fotografuję uśmiechniętych ludzi, podczas
-                    najważniejszych chwil w życiu. specjalizuje się w reportażu
-                    ślubnym, lecz inne dziedziny fotografii nie są mi obce. chęć
-                    ciągłego poznawania i rozwoju pozwoliła uzbierać spory bagaż
-                    doświadczenia i wyjątkowych zdjęć. moje fotografie staram
-                    się by były naturalne i prawdziwe, a przez to ponadczasowe…
-                </p>
+                <FadeInOnScroll delay={0.1}>
+                    <h2 className="text-xl py-4">
+                        Komu i jakie zdjęcia robię?
+                    </h2>
+                </FadeInOnScroll>
+                <FadeInOnScroll delay={0.3}>
+                    <p className="px-3 max-w-screen-lg mx-auto">
+                        najczęściej fotografuję uśmiechniętych ludzi, podczas
+                        najważniejszych chwil w życiu. specjalizuje się w
+                        reportażu ślubnym, lecz inne dziedziny fotografii nie są
+                        mi obce. chęć ciągłego poznawania i rozwoju pozwoliła
+                        uzbierać spory bagaż doświadczenia i wyjątkowych zdjęć.
+                        moje fotografie staram się by były naturalne i
+                        prawdziwe, a przez to ponadczasowe…
+                    </p>
+                </FadeInOnScroll>
 
                 <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-12">
                     <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
