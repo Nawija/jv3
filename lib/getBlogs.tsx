@@ -3,32 +3,33 @@ import path from "path";
 import matter from "gray-matter";
 
 export type Blog = {
-    type: string;
-    slug: string
-    title: string;
-    image: string;
-    content: string;
+  slug: string;
+  title: string;
+  image: string; // pierwsze zdjęcie
+  content: string;
 };
 
-const blocksDir = path.join(process.cwd(), "/content/blogs");
+const blogsDir = path.join(process.cwd(), "content/blogs");
 
 export async function getBlogs(): Promise<Blog[]> {
-    const filenames = fs.readdirSync(blocksDir)
-  
-    const blogs = filenames.map((filename) => {
-      const filePath = path.join(blocksDir, filename)
-      const fileContent = fs.readFileSync(filePath, 'utf8')
-      const { data, content } = matter(fileContent)
-  
+  const filenames = fs.readdirSync(blogsDir);
+
+  const blogs = filenames
+    .filter((file) => file.endsWith(".md"))
+    .map((filename) => {
+      const filePath = path.join(blogsDir, filename);
+      const fileContent = fs.readFileSync(filePath, "utf8");
+      const { data, content } = matter(fileContent);
+
+      const images: string[] = data.images || [];
+
       return {
-        type: data.type,
-        title: data.title,
-        slug: data.slug,
-        image: data.image,
+        slug: data.slug || filename.replace(/\.md$/, ""),
+        title: data.title || "Brak tytułu",
+        image: images.length > 0 ? images[0] : "",
         content,
-      }
-    })
-  
-    return blogs
-  }
-  
+      };
+    });
+
+  return blogs;
+}

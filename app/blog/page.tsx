@@ -7,7 +7,7 @@ export default async function Page() {
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 anim-opacity max-w-7xl mx-auto">
             {blogs.map((blog, i) =>
-                blog.type === "info" ? (
+                blog ? (
                     <BlogCard
                         key={i}
                         title={blog.title}
