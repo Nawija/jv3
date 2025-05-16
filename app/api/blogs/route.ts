@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     const images = formData.getAll("images") as File[];
 
     const blogDir = path.join(process.cwd(), "content/blogs");
-    const imageDir = path.join(process.cwd(), "public/images/blogs");
+    const imageDir = path.join(process.cwd(), "public/Images/blogs");
 
     await fs.mkdir(blogDir, { recursive: true });
     await fs.mkdir(imageDir, { recursive: true });
@@ -22,36 +22,20 @@ export async function POST(req: NextRequest) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const sharpImage = sharp(buffer);
-        const metadata = await sharpImage.metadata();
+        const webpFileName = path.parse(image.name).name + ".webp";
+        const webpPath = path.join(imageDir, webpFileName);
 
-        // Ustal oryginalne rozszerzenie
-        const ext = metadata.format === "jpeg" ? "jpg" : metadata.format;
-        const fileName = path.parse(image.name).name + "." + ext;
-        const filePath = path.join(imageDir, fileName);
+        // Konwertuj do WebP ze zmianą rozmiaru
+        const resized = sharp(buffer).resize({ width: 1600, withoutEnlargement: true });
+        await resized.webp({ quality: 80 }).toFile(webpPath);
 
-        // Resize tylko jeśli szerokość > 1600
-        const resizedImage = metadata.width && metadata.width > 1600
-            ? sharpImage.resize({ width: 1600, withoutEnlargement: true })
-            : sharpImage;
-
-        // Pobierz metadane po resize
-        const { width = 800, height = 600 } = await resizedImage.metadata();
-
-        // Zapisz w oryginalnym formacie
-        if (ext === "jpg") {
-            await resizedImage.jpeg({ quality: 80 }).toFile(filePath);
-        } else if (ext === "png") {
-            await resizedImage.png({ compressionLevel: 8 }).toFile(filePath);
-        } else {
-            // inne formaty zapisz bez zmian
-            await fs.writeFile(filePath, buffer);
-        }
+        // Pobierz metadane z WebP
+        const { width, height } = await resized.metadata();
 
         imageMetadataList.push({
-            src: `/images/blogs/${fileName}`,
-            width,
-            height,
+            src: `/Images/blogs/${webpFileName}`,
+            width: width || 800,
+            height: height || 600,
         });
     }
 
