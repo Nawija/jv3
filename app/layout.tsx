@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -81,6 +82,7 @@ export default function RootLayout({
                 </script>
             </head>
             <body className="flex flex-col min-h-screen w-full font-light antialiased">
+                <IntroOverlay />
                 <Nav />
                 <main
                     className={`${geistSans.className} flex-1 w-full overflow-x-hidden relative min-h-[90vh]`}
