@@ -4,7 +4,12 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { marked } from "marked";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+import PhotoSwipeProvider from "@/components/PhotoSwipeProvider";
+
+const BlogGallery = dynamic(() => import("./BlogGallery"), {
+    ssr: true,
+});
 
 type BlogData = {
     title: string;
@@ -71,42 +76,24 @@ export default async function BlogPage({
     const htmlContent = marked.parse(blog.content);
 
     return (
-        <article className="max-w-4xl mx-auto px-4 py-12 w-full">
-            <div className="flex flex-col items-center justify-center text-center">
+        <article className="max-w-4xl mx-auto px-1.5 py-12 w-full">
+            <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto px-4">
                 <h1 className="text-4xl font-medium mb-4">{blog.title}</h1>
                 <p className="text-gray-500 text-sm mb-8">
                     {new Date(blog.date).toLocaleDateString("pl-PL")}
                 </p>
 
                 <div
-                    className="text-lg mb-12"
+                    className="text-lg mb-12 space-y-6"
                     dangerouslySetInnerHTML={{ __html: htmlContent }}
                 />
             </div>
 
             {/* Obrazy z frontmattera */}
             {blog.images.length > 0 && (
-                <div className="flex flex-wrap gap-4 justify-center mb-8 max-w-4xl mx-auto">
-                    {blog.images.length > 0 && (
-                        <div className="columns-1 md:columns-2 gap-2 max-w-4xl mx-auto mb-8 space-y-2">
-                            {blog.images.map(({ src, width, height }, idx) => (
-                                <div
-                                    key={idx}
-                                    className="break-inside-avoid overflow-hidden rounded shadow"
-                                >
-                                    <Image
-                                        src={src}
-                                        alt={`obrazek-${idx}`}
-                                        width={width}
-                                        height={height}
-                                        className="w-full h-auto object-cover"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                <PhotoSwipeProvider galleryId="#gallery">
+                    <BlogGallery images={blog.images} />
+                </PhotoSwipeProvider>
             )}
         </article>
     );
