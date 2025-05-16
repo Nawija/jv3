@@ -40,13 +40,19 @@ export async function generateMetadata({
         title: `${blog.title} | Blog`,
         description: blog.content.slice(0, 160),
         openGraph: {
-            images: blog.images?.length
-                ? blog.images.map(({ src, width, height }) => ({
-                      url: src,
-                      width,
-                      height,
-                  }))
-                : [],
+            title: blog.title,
+            description: blog.content.slice(0, 160),
+            images: blog.images?.map(({ src, width, height }) => ({
+                url: src,
+                width,
+                height,
+            })),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.title,
+            description: blog.content.slice(0, 160),
+            images: blog.images?.map(({ src }) => src),
         },
     };
 }
@@ -91,7 +97,6 @@ export default async function BlogPage({
                     className="text-lg mb-12 space-y-6"
                     dangerouslySetInnerHTML={{ __html: htmlContent }}
                 />
-                
             </div>
 
             {/* Obrazy z frontmattera */}
