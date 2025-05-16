@@ -24,17 +24,36 @@ export async function POST(req: NextRequest) {
     for (const image of images) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
-    
+
         // Zmień rozszerzenie pliku na .webp
         const webpFileName = path.parse(image.name).name + ".webp";
         const webpPath = path.join(imageDir, webpFileName);
-    
+
         // Konwertuj do WebP i zapisz
         await sharp(buffer)
             .webp({ quality: 80 }) // możesz ustawić jakość np. 80
             .toFile(webpPath);
-    
+
         savedImagePaths.push(`/images/blogs/${webpFileName}`);
+    }
+
+    const imageMetadataList: { src: string; width: number; height: number }[] =
+        [];
+
+    for (const image of images) {
+        const arrayBuffer = await image.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const filePath = path.join(imageDir, image.name);
+
+        await fs.writeFile(filePath, buffer);
+
+        const { width, height } = await sharp(buffer).metadata();
+        savedImagePaths.push(`/images/blogs/${image.name}`);
+        imageMetadataList.push({
+            src: `/images/blogs/${image.name}`,
+            width: width || 800,
+            height: height || 600,
+        });
     }
 
     // Zbuduj markdown
@@ -44,10 +63,15 @@ export async function POST(req: NextRequest) {
         `slug: "${slug}"\n` +
         `date: "${new Date().toISOString()}"\n` +
         `images:\n` +
-        savedImagePaths.map((p) => `  - ${p}`).join("\n") +
+        imageMetadataList
+            .map(
+                ({ src, width, height }) =>
+                    `  - src: ${src}\n    width: ${width}\n    height: ${height}`
+            )
+            .join("\n") +
         `\n---\n\n` +
-        paragraphs.map((p) => `${p}\n`).join("\n") +
-        `\n`;
+        paragraphs.map((p) => `${p}\n`).join("\n");
+
     // Zapisz markdown
     const mdPath = path.join(blogDir, `${slug}.md`);
     await fs.writeFile(mdPath, markdown, "utf-8");
