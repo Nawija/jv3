@@ -82,7 +82,7 @@ const Carousel = () => {
           <button
             key={idx}
             onClick={() => instanceRef.current?.moveToIdx(idx)}
-            className={`w-4 h-4 rounded-full transition-colors ${
+            className={`w-3 h-3 rounded-full transition-colors ${
               activeIndex === idx
                 ? "bg-white"
                 : "bg-white/30 hover:bg-white"

@@ -119,7 +119,7 @@ export default function Home() {
                     Cześć! Miło mi że tu jesteś
                 </span>
 
-                <FadeInOnScroll delay={0.3}>
+                <FadeInOnScroll delay={0.1}>
                     <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                         <Image
                             src={Jarek}
