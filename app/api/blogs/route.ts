@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
-import sharp from "sharp";
 
 export async function POST(req: NextRequest) {
     const formData = await req.formData();
@@ -22,20 +21,18 @@ export async function POST(req: NextRequest) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const webpFileName = path.parse(image.name).name + ".webp";
-        const webpPath = path.join(imageDir, webpFileName);
+        const fileName = image.name;
+        const imagePath = path.join(imageDir, fileName);
 
-        // Konwertuj do WebP ze zmianą rozmiaru
-        const resized = sharp(buffer).resize({ width: 1600, withoutEnlargement: true });
-        await resized.webp({ quality: 80 }).toFile(webpPath);
+        // Zapisz obrazek bez zmian
+        await fs.writeFile(imagePath, buffer);
 
-        // Pobierz metadane z WebP
-        const { width, height } = await resized.metadata();
-
+        // Jeśli potrzebujesz metadanych, musisz użyć np. sharp tylko do odczytu
+        // Ale skoro nie chcesz żadnych przekształceń, możemy to pominąć lub pobrać w inny sposób
         imageMetadataList.push({
-            src: `/images/blogs/${webpFileName}`,
-            width: width || 800,
-            height: height || 600,
+            src: `/images/blogs/${fileName}`,
+            width: 0, // możesz później uzupełnić lub dodać logikę do pobrania wymiarów
+            height: 0,
         });
     }
 
