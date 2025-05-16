@@ -27,32 +27,37 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
             id="gallery"
             className="columns-1 md:columns-2 gap-1.5 max-w-4xl mx-auto mb-8 space-y-1.5"
         >
-            {images.map(({ src, width, height }, index) => (
-                <a
-                    key={index}
-                    href={src}
-                    data-pswp-width={width}
-                    data-pswp-height={height}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="break-inside-avoid block overflow-hidden relative"
-                >
-                    {!loadedImages[index] && (
-                        <div className="absolute inset-0 animate-pulse bg-gray-300 z-0" />
-                    )}
-                    <Image
-                        src={src}
-                        alt={`obrazek-${index}`}
-                        width={width}
-                        height={height}
-                        priority={index < 2}
-                        onLoad={() => handleImageLoad(index)}
-                        className={`w-full h-auto object-cover transition-opacity duration-500 ${
-                            loadedImages[index] ? "opacity-100" : "opacity-0"
-                        }`}
-                    />
-                </a>
-            ))}
+            {images.map(({ src, width, height }, index) => {
+                const scaledWidth = Math.round(width / 3);
+                const scaledHeight = Math.round(height / 3);
+
+                return (
+                    <a
+                        key={index}
+                        href={src}
+                        data-pswp-width={width}
+                        data-pswp-height={height}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="break-inside-avoid block overflow-hidden relative"
+                    >
+                        {!loadedImages[index] && (
+                            <div className="absolute inset-0 animate-pulse bg-gray-300 z-0" />
+                        )}
+                        <Image
+                            src={src}
+                            alt={`obrazek-${index}`}
+                            width={scaledWidth}
+                            height={scaledHeight}
+                            priority={index < 2}
+                            onLoad={() => handleImageLoad(index)}
+                            className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                                loadedImages[index] ? "opacity-100" : "opacity-0"
+                            }`}
+                        />
+                    </a>
+                );
+            })}
         </div>
     );
 }
