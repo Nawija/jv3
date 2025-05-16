@@ -22,21 +22,27 @@ export async function generateStaticParams() {
     }));
 }
 
-// export async function generateMetadata({
-//     params,
-// }: {
-//     params: { slug: string };
-// }): Promise<Metadata> {
-//     const blog = await getBlog(params.slug);
-//     if (!blog) return {};
-//     return {
-//         title: `${blog.title} | Blog`,
-//         description: blog.content.slice(0, 160),
-//         openGraph: {
-//             images: blog.images?.[0] ? [blog.images[0]] : [],
-//         },
-//     };
-// }
+export async function generateMetadata({
+    params,
+}: {
+    params: { slug: string };
+}): Promise<Metadata> {
+    const blog = await getBlog(params.slug);
+    if (!blog) return {};
+    return {
+        title: `${blog.title} | Blog`,
+        description: blog.content.slice(0, 160),
+        openGraph: {
+            images: blog.images?.length
+                ? blog.images.map(({ src, width, height }) => ({
+                      url: src,
+                      width,
+                      height,
+                  }))
+                : [],
+        },
+    };
+}
 
 async function getBlog(slug: string): Promise<BlogData | null> {
     const filePath = path.join(process.cwd(), "content/blogs", `${slug}.md`);
