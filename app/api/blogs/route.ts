@@ -7,9 +7,7 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
-    const paragraphs = JSON.parse(
-        formData.get("paragraphs") as string
-    ) as string[];
+    const paragraphs = JSON.parse(formData.get("paragraphs") as string) as string[];
     const images = formData.getAll("images") as File[];
 
     const blogDir = path.join(process.cwd(), "content/blogs");
@@ -18,45 +16,29 @@ export async function POST(req: NextRequest) {
     await fs.mkdir(blogDir, { recursive: true });
     await fs.mkdir(imageDir, { recursive: true });
 
-    // Zapisz obrazy
+    const imageMetadataList: { src: string; width: number; height: number }[] = [];
 
-    const savedImagePaths: string[] = [];
     for (const image of images) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        // Zmień rozszerzenie pliku na .webp
         const webpFileName = path.parse(image.name).name + ".webp";
         const webpPath = path.join(imageDir, webpFileName);
 
-        // Konwertuj do WebP i zapisz
-        await sharp(buffer)
-            .webp({ quality: 80 })
-            .toFile(webpPath);
+        // Konwertuj do WebP ze zmianą rozmiaru
+        const resized = sharp(buffer).resize({ width: 1600, withoutEnlargement: true });
+        await resized.webp({ quality: 80 }).toFile(webpPath);
 
-        savedImagePaths.push(`/images/blogs/${webpFileName}`);
-    }
+        // Pobierz metadane z WebP
+        const { width, height } = await resized.metadata();
 
-    const imageMetadataList: { src: string; width: number; height: number }[] =
-        [];
-
-    for (const image of images) {
-        const arrayBuffer = await image.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
-        const filePath = path.join(imageDir, image.name);
-
-        await fs.writeFile(filePath, buffer);
-
-        const { width, height } = await sharp(buffer).metadata();
-        savedImagePaths.push(`/images/blogs/${image.name}`);
         imageMetadataList.push({
-            src: `/images/blogs/${image.name}`,
+            src: `/images/blogs/${webpFileName}`,
             width: width || 800,
             height: height || 600,
         });
     }
 
-    // Zbuduj markdown
     const markdown =
         `---\n` +
         `title: "${title}"\n` +
@@ -72,7 +54,6 @@ export async function POST(req: NextRequest) {
         `\n---\n\n` +
         paragraphs.map((p) => `${p}\n`).join("\n");
 
-    // Zapisz markdown
     const mdPath = path.join(blogDir, `${slug}.md`);
     await fs.writeFile(mdPath, markdown, "utf-8");
 

@@ -91,6 +91,7 @@ export default async function BlogPage({
                     className="text-lg mb-12 space-y-6"
                     dangerouslySetInnerHTML={{ __html: htmlContent }}
                 />
+                
             </div>
 
             {/* Obrazy z frontmattera */}
