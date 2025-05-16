@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer";
 import IntroOverlay from "@/components/IntroOverlay";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -89,6 +90,7 @@ export default function RootLayout({
                 >
                     {children}
                 </main>
+                <ScrollToTopButton />
                 <Footer />
             </body>
         </html>
