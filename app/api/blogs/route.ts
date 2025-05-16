@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import sharp from "sharp";
 
 export async function POST(req: NextRequest) {
     const formData = await req.formData();
@@ -21,18 +22,36 @@ export async function POST(req: NextRequest) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const fileName = image.name;
-        const imagePath = path.join(imageDir, fileName);
+        const sharpImage = sharp(buffer);
+        const metadata = await sharpImage.metadata();
 
-        // Zapisz obrazek bez zmian
-        await fs.writeFile(imagePath, buffer);
+        // Ustal oryginalne rozszerzenie
+        const ext = metadata.format === "jpeg" ? "jpg" : metadata.format;
+        const fileName = path.parse(image.name).name + "." + ext;
+        const filePath = path.join(imageDir, fileName);
 
-        // Jeśli potrzebujesz metadanych, musisz użyć np. sharp tylko do odczytu
-        // Ale skoro nie chcesz żadnych przekształceń, możemy to pominąć lub pobrać w inny sposób
+        // Resize tylko jeśli szerokość > 1600
+        const resizedImage = metadata.width && metadata.width > 1600
+            ? sharpImage.resize({ width: 1600, withoutEnlargement: true })
+            : sharpImage;
+
+        // Pobierz metadane po resize
+        const { width = 800, height = 600 } = await resizedImage.metadata();
+
+        // Zapisz w oryginalnym formacie
+        if (ext === "jpg") {
+            await resizedImage.jpeg({ quality: 80 }).toFile(filePath);
+        } else if (ext === "png") {
+            await resizedImage.png({ compressionLevel: 8 }).toFile(filePath);
+        } else {
+            // inne formaty zapisz bez zmian
+            await fs.writeFile(filePath, buffer);
+        }
+
         imageMetadataList.push({
             src: `/images/blogs/${fileName}`,
-            width: 0, // możesz później uzupełnić lub dodać logikę do pobrania wymiarów
-            height: 0,
+            width,
+            height,
         });
     }
 
