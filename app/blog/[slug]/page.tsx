@@ -70,9 +70,11 @@ async function getBlog(slug: string): Promise<BlogData | null> {
 export default async function BlogPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-    const blog = await getBlog(params.slug);
+    const awaitedParams = await Promise.resolve(params);
+    const { slug } = awaitedParams;
+    const blog = await getBlog(slug);
     if (!blog) return notFound();
 
     const htmlContent = marked.parse(blog.content);

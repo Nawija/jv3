@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
         // Konwertuj do WebP i zapisz
         await sharp(buffer)
-            .webp({ quality: 80 }) // możesz ustawić jakość np. 80
+            .webp({ quality: 80 })
             .toFile(webpPath);
 
         savedImagePaths.push(`/images/blogs/${webpFileName}`);
