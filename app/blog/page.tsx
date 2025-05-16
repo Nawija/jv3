@@ -5,7 +5,7 @@ export default async function Page() {
     const blogs: Blog[] = await getBlogs();
 
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 anim-opacity max-w-7xl mx-auto">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 anim-opacity max-w-4xl mx-auto mt-12">
             {blogs.map((blog, i) =>
                 blog ? (
                     <BlogCard

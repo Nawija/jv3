@@ -5,7 +5,7 @@ import matter from "gray-matter";
 export type Blog = {
   slug: string;
   title: string;
-  image: string; // pierwsze zdjęcie
+  image: string;
   content: string;
 };
 

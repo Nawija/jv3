@@ -30,9 +30,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-    const blog = await getBlog(params.slug);
+    const awaitedParams = await Promise.resolve(params);
+    const { slug } = awaitedParams;
+    const blog = await getBlog(slug);
     if (!blog) return {};
     return {
         title: `${blog.title} | Blog`,
@@ -76,7 +78,7 @@ export default async function BlogPage({
     const htmlContent = marked.parse(blog.content);
 
     return (
-        <article className="max-w-4xl mx-auto px-1.5 py-12 w-full">
+        <article className="max-w-4xl mx-auto px-1.5 py-12 w-full anim-opacity">
             <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto px-4">
                 <h1 className="text-4xl font-medium mb-4">{blog.title}</h1>
                 <p className="text-gray-500 text-sm mb-8">

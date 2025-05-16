@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
-import { FaEye } from "react-icons/fa";
+import { FC, useState } from "react";
 
 type Props = {
     title: string;
@@ -12,22 +11,29 @@ type Props = {
 };
 
 const InfoBlock: FC<Props> = ({ title, image, slug }) => {
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <Link
             href={`/blog/${slug}`}
-            className="relative h-80 overflow-hidden group"
+            className="text-center border p-2 border-gray-300 block relative overflow-hidden"
         >
+            {!loaded && (
+                <div className="absolute inset-0 animate-pulse bg-gray-300 z-0" />
+            )}
+
             <Image
                 src={image}
                 alt={title}
-                fill
-                className="w-full h-full object-cover"
+                width={300}
+                height={300}
+                onLoad={() => setLoaded(true)}
+                className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                    loaded ? "opacity-100" : "opacity-0"
+                }`}
             />
-            <div className="absolute inset-0 bg-black/80 text-white flex items-center flex-col justify-center translate-y-full group-hover:translate-y-0 transition-all opacity-0 group-hover:opacity-100 duration-300">
-                <h2 className="font-medium mb-2">{title}</h2>
 
-                <FaEye size={50}/>
-            </div>
+            <h2 className="font-medium my-2 text-xl relative z-10">{title}</h2>
         </Link>
     );
 };
