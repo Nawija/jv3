@@ -22,11 +22,30 @@ import LinkShare from "@/components/ui/LinkShare";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Metadata } from "next";
 const Opinions = dynamic(() => import("@/components/Opinions"), {
     ssr: true,
     loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
 });
 
+export const metadata: Metadata = {
+    title: "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto",
+    description:
+        "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!",
+    openGraph: {
+        title: "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto",
+        description:
+            "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!",
+        images: [
+            {
+                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Fotografia ślubna - Jarek Olszewski",
+            },
+        ],
+    },
+};
 // ---------- Sekcje tekstowe jako dane ----------
 const TEXT_SECTIONS = [
     {
