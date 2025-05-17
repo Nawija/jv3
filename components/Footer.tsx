@@ -20,6 +20,7 @@ export default function Footer() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
+                                    aria-label={link.label}
                                     className="text-neutral-300 hover:text-white transition"
                                 >
                                     {link.label}
@@ -29,6 +30,7 @@ export default function Footer() {
                         <li key="blog">
                             <Link
                                 href="/blog"
+                                aria-label="blog"
                                 className="text-neutral-300 hover:text-white transition"
                             >
                                 blog
