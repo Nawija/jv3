@@ -11,10 +11,10 @@ export async function POST(req: NextRequest) {
     const images = formData.getAll("images") as File[];
 
     const blogDir = path.join(process.cwd(), "content/blogs");
-    const imageDir = path.join(process.cwd(), "public/Images/blogs");
+    const blogImageDir = path.join(process.cwd(), "public/Images/blogs", slug); // ✅ slug jako folder
 
     await fs.mkdir(blogDir, { recursive: true });
-    await fs.mkdir(imageDir, { recursive: true });
+    await fs.mkdir(blogImageDir, { recursive: true }); // ✅ osobny folder bloga
 
     const imageMetadataList: { src: string; width: number; height: number }[] = [];
 
@@ -22,18 +22,18 @@ export async function POST(req: NextRequest) {
         const arrayBuffer = await image.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const webpFileName = path.parse(image.name).name + ".webp";
-        const webpPath = path.join(imageDir, webpFileName);
+        const baseName = path.parse(image.name).name;
+        const webpFileName = `${baseName}.webp`;
+        const webpPath = path.join(blogImageDir, webpFileName);
 
-        // Konwertuj do WebP ze zmianą rozmiaru
+        // Konwertuj do WebP
         const resized = sharp(buffer).resize({ width: 1600, withoutEnlargement: true });
         await resized.webp({ quality: 80 }).toFile(webpPath);
 
-        // Pobierz metadane z WebP
         const { width, height } = await resized.metadata();
 
         imageMetadataList.push({
-            src: `/Images/blogs/${webpFileName}`,
+            src: `/Images/blogs/${slug}/${webpFileName}`, // ✅ z uwzględnieniem folderu
             width: width || 800,
             height: height || 600,
         });
