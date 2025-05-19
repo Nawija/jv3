@@ -1,0 +1,23 @@
+{
+  "clientName": "xxx",
+  "slug": "xxx",
+  "password": "xxx",
+  "date": "2025-05-19T22:38:10.800Z",
+  "images": [
+    {
+      "src": "/Images/strefa-klienta/xxx/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf003.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xxx/001siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xxx/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf007.webp",
+      "width": 1024,
+      "height": 683
+    }
+  ]
+}

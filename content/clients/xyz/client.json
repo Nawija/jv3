@@ -1,0 +1,58 @@
+{
+  "clientName": "xyz",
+  "slug": "xyz",
+  "password": "xyz",
+  "date": "2025-05-19T22:45:59.412Z",
+  "images": [
+    {
+      "src": "/Images/strefa-klienta/xyz/001siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf002.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf003.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf004.webp",
+      "width": 1024,
+      "height": 495
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf005.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf006.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf007.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf008.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf009.webp",
+      "width": 1024,
+      "height": 683
+    },
+    {
+      "src": "/Images/strefa-klienta/xyz/siedlce-panderoza-slub-plenerowy-jarek-olszewski-fotograf010.webp",
+      "width": 1024,
+      "height": 683
+    }
+  ]
+}

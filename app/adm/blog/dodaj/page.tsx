@@ -116,7 +116,7 @@ export default function AddBlogPage() {
         disabled={isSaving}
         className="mt-8 px-6 py-3 bg-black text-white rounded hover:bg-gray-800"
       >
-        {isSaving ? "Zapisuję..." : "Zapisz wpis jako Markdown"}
+        {isSaving ? "Zapisuję..." : "Zapisz"}
       </button>
     </div>
   );
