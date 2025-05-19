@@ -63,9 +63,8 @@ export const TEXT_SECTIONS: Section[] = [
                 Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
                 <LinkShare href="/portfolio" title="portfolio" /> i przekonaj
                 się, jak wyglądają moje realizacje. Znajdziesz tam fotografie z{" "}
-                <strong>plenerów</strong>, <strong>ślubów</strong> i rodzinnych
-                uroczystości. To najlepszy sposób, by poznać mój styl i
-                podejście do fotografii.
+                plenerów, <strong>ślubów</strong> i rodzinnych uroczystości. To
+                najlepszy sposób, by poznać mój styl i podejście do fotografii.
             </>
         ),
     },

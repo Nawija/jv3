@@ -7,7 +7,9 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const title = formData.get("title") as string;
     const slug = formData.get("slug") as string;
-    const paragraphs = JSON.parse(formData.get("paragraphs") as string) as string[];
+    const paragraphs = JSON.parse(
+        formData.get("paragraphs") as string
+    ) as string[];
     const images = formData.getAll("images") as File[];
 
     const blogDir = path.join(process.cwd(), "content/blogs");
@@ -16,7 +18,8 @@ export async function POST(req: NextRequest) {
     await fs.mkdir(blogDir, { recursive: true });
     await fs.mkdir(blogImageDir, { recursive: true }); // ✅ osobny folder bloga
 
-    const imageMetadataList: { src: string; width: number; height: number }[] = [];
+    const imageMetadataList: { src: string; width: number; height: number }[] =
+        [];
 
     for (const image of images) {
         const arrayBuffer = await image.arrayBuffer();
@@ -27,8 +30,18 @@ export async function POST(req: NextRequest) {
         const webpPath = path.join(blogImageDir, webpFileName);
 
         // Konwertuj do WebP
-        const resized = sharp(buffer).resize({ width: 1600, withoutEnlargement: true });
-        await resized.webp({ quality: 80 }).toFile(webpPath);
+        const resized = sharp(buffer).resize({
+            width: 1600,
+            withoutEnlargement: true,
+        });
+        await resized
+            .webp({
+                quality: 85, // delikatnie lepsza jakość
+                effort: 4, // balans między szybkością a jakością kompresji (0–6)
+                smartSubsample: true, // lepsza jakość przy dużych zdjęciach (jeśli używasz chromaSubsampling)
+                lossless: false, // lossy = mniejsze pliki, lossless = dużo większe
+            })
+            .toFile(webpPath);
 
         const { width, height } = await resized.metadata();
 

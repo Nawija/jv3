@@ -14,19 +14,32 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
+import InviteSocialMedia from "@/components/InviteSocialMedia";
 
 // Dynamic Components
-const Carousel = dynamic(() => import("@/components/Carousel"), { ssr: true, loading: () => <Skeleton80vh /> });
-const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), { ssr: true, loading: () => <SkeletonFull /> });
-const CTASendMail = dynamic(() => import("@/components/CTASendMail"), { ssr: true, loading: () => <SkeletonFull /> });
-const Opinions = dynamic(() => import("@/components/Opinions"), { ssr: true, loading: () => <SkeletonFull /> });
+const Carousel = dynamic(() => import("@/components/Carousel"), {
+    ssr: true,
+    loading: () => <Skeleton80vh />,
+});
+const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), {
+    ssr: true,
+    loading: () => <SkeletonFull />,
+});
+const CTASendMail = dynamic(() => import("@/components/CTASendMail"), {
+    ssr: true,
+    loading: () => <SkeletonFull />,
+});
+const Opinions = dynamic(() => import("@/components/Opinions"), {
+    ssr: true,
+    loading: () => <SkeletonFull />,
+});
 
 // Dummy Loaders (Componentize for DRYness)
 function SkeletonFull() {
-  return <div className="h-full w-full bg-zinc-300 animate-pulse" />;
+    return <div className="h-full w-full bg-zinc-300 animate-pulse" />;
 }
 function Skeleton80vh() {
-  return <div className="h-[80vh] bg-zinc-300 animate-pulse" />;
+    return <div className="h-[80vh] bg-zinc-300 animate-pulse" />;
 }
 
 export const metadata: Metadata = {
@@ -47,7 +60,6 @@ export const metadata: Metadata = {
         ],
     },
 };
-
 
 export default function Home() {
     return (
@@ -234,6 +246,13 @@ export default function Home() {
                         </div>
                     ))}
                 </section>
+            </div>
+
+            <div className="pb-20">
+                <InviteSocialMedia
+                    text="Więcej znajdziesz na"
+                    textColor="text-black"
+                />
             </div>
         </div>
     );
