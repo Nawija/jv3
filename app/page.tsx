@@ -1,32 +1,33 @@
-import dynamic from "next/dynamic";
-
-const Carousel = dynamic(() => import("@/components/Carousel"), {
-    ssr: true,
-    loading: () => <div className="h-[80vh] bg-zinc-300 animate-pulse" />,
-});
+// External
 import Image from "next/image";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+
+// Assets
 import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
 import Slub from "@/public/Images/slub.jpg";
-import Link from "next/link";
-const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), {
-    ssr: true,
-    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
-});
 
-const CTASendMail = dynamic(() => import("@/components/CTASendMail"), {
-    ssr: true,
-    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
-});
-import { OFERTAIMAGES } from "@/constants/Links";
-import LinkShare from "@/components/ui/LinkShare";
+// Components
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
-import { Metadata } from "next";
-const Opinions = dynamic(() => import("@/components/Opinions"), {
-    ssr: true,
-    loading: () => <div className="h-full w-full bg-zinc-300 animate-pulse" />,
-});
+import { OFERTAIMAGES } from "@/constants/Links";
+import { TEXT_SECTIONS } from "@/constants/homepage";
+
+// Dynamic Components
+const Carousel = dynamic(() => import("@/components/Carousel"), { ssr: true, loading: () => <Skeleton80vh /> });
+const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), { ssr: true, loading: () => <SkeletonFull /> });
+const CTASendMail = dynamic(() => import("@/components/CTASendMail"), { ssr: true, loading: () => <SkeletonFull /> });
+const Opinions = dynamic(() => import("@/components/Opinions"), { ssr: true, loading: () => <SkeletonFull /> });
+
+// Dummy Loaders (Componentize for DRYness)
+function SkeletonFull() {
+  return <div className="h-full w-full bg-zinc-300 animate-pulse" />;
+}
+function Skeleton80vh() {
+  return <div className="h-[80vh] bg-zinc-300 animate-pulse" />;
+}
 
 export const metadata: Metadata = {
     title: "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto",
@@ -46,88 +47,7 @@ export const metadata: Metadata = {
         ],
     },
 };
-// ---------- Sekcje tekstowe jako dane ----------
-const TEXT_SECTIONS = [
-    {
-        title: "Cześć! Nazywam się Jarek Olszewski",
-        content: (
-            <>
-                Jestem <strong>fotografem ślubnym z Siedlec</strong>, a moją
-                największą pasją jest opowiadanie historii za pomocą zdjęć.
-                Uwieczniam emocje, wzruszenia i najpiękniejsze chwile w Waszym
-                życiu. W moim <strong>portfolio</strong> znajdziesz{" "}
-                <strong>reportaże ślubne</strong>,{" "}
-                <strong>sesje narzeczeńskie</strong>,{" "}
-                <strong>zdjęcia z chrztu</strong>, <strong>komunii</strong>, a
-                także <strong>plenerowe sesje rodzinne</strong>.
-            </>
-        ),
-    },
-    {
-        title: "Dlaczego warto mi zaufać jako fotografowi?",
-        content: (
-            <>
-                Szukasz kogoś, kto <strong>z dyskrecją i wyczuciem</strong>{" "}
-                uchwyci ulotne momenty Twojego <strong>ślubu</strong>? Jako{" "}
-                <strong>fotograf ślubny z Siedlec</strong> tworzę zdjęcia z
-                sercem i pasją, oferując <strong>pakiety dopasowane</strong> do
-                różnych potrzeb. Realizuję też{" "}
-                <strong>sesje noworodkowe</strong>, <strong>rodzinne</strong>{" "}
-                oraz <strong>plenerowe</strong>. Klienci doceniają mnie za{" "}
-                <strong>naturalny styl</strong>, <strong>profesjonalizm</strong>{" "}
-                i zaangażowanie – często słyszę, że jestem{" "}
-                <strong>najlepszym fotografem w Siedlcach</strong>. To ogromna
-                motywacja!
-            </>
-        ),
-    },
-    {
-        title: "Fotografia ślubna – moja filozofia",
-        content: (
-            <>
-                Dla mnie <strong>fotografia ślubna</strong> to nie tylko zdjęcia
-                – to sposób opowiedzenia Waszej historii. Każdy{" "}
-                <strong>reportaż</strong> tworzę indywidualnie – z uwagą,
-                empatią i wyczuciem detali. Od porannych przygotowań, przez
-                wzruszającą ceremonię, aż po szaloną zabawę – jestem tam, by
-                złapać wszystko, co najpiękniejsze. Realizuję także{" "}
-                <strong>sesje narzeczeńskie</strong>,{" "}
-                <strong>plenery ślubne</strong> i{" "}
-                <strong>reportaże rodzinne</strong>.
-            </>
-        ),
-    },
-    {
-        title: "Portfolio – zobacz moje zdjęcia",
-        content: (
-            <>
-                Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
-                <LinkShare href="/portfolio" title="portfolio" /> i przekonaj
-                się, jak wyglądają moje realizacje. Znajdziesz tam fotografie z{" "}
-                <strong>plenerów</strong>, <strong>ślubów</strong> i rodzinnych
-                uroczystości. To najlepszy sposób, by poznać mój styl i
-                podejście do fotografii.
-            </>
-        ),
-    },
-    {
-        title: "Oferta fotograficzna dopasowana do Ciebie",
-        content: (
-            <>
-                Sprawdź moją{" "}
-                <LinkShare href="/oferta" title="ofertę fotograficzną" /> –
-                znajdziesz tam różnorodne <strong>pakiety</strong>: od krótkich
-                sesji po pełne <strong>reportaże ślubne</strong>. Oferuję
-                również <strong>portrety</strong>,{" "}
-                <strong>zdjęcia reklamowe</strong> oraz{" "}
-                <strong>sesje okolicznościowe</strong>. Każdy{" "}
-                <strong>pakiet</strong> zawiera szczegóły dotyczące liczby
-                zdjęć, czasu realizacji i orientacyjnego{" "}
-                <strong>cennika</strong>.
-            </>
-        ),
-    },
-];
+
 
 export default function Home() {
     return (

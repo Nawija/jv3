@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-shimmer {
+    animation: shimmer 1.5s linear infinite;
+}
+
 .anim-opacity {
     animation: anim-opacity 0.6s both 0.1s;
 }
@@ -15,19 +28,19 @@
 }
 
 .anim-opacity-s {
-  animation: anim-opacity 0.2s both;
+    animation: anim-opacity 0.2s both;
 }
 @keyframes anim-opacity {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @layer base {
-  :root {
+    :root {
         --background: 0 0% 100%;
         --foreground: 224 71.4% 4.1%;
         --card: 0 0% 100%;
@@ -54,7 +67,7 @@
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
     }
-  .dark {
+    .dark {
         --background: 224 71.4% 4.1%;
         --foreground: 210 20% 98%;
         --card: 224 71.4% 4.1%;
@@ -83,10 +96,10 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }

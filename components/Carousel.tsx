@@ -8,6 +8,8 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import h1 from "@/public/Images/sesja.jpg";
 import h3 from "@/public/Images/sesja2.jpg";
 import h4 from "@/public/Images/wyjscie.jpg";
+import { AnimatePresence, motion } from "framer-motion";
+import ShimmerLoader from "./ShimmerLoader";
 
 const images = [
     { src: h1, position: "50% 50%" },
@@ -15,32 +17,76 @@ const images = [
     { src: h4, position: "50% 100%" },
 ];
 
+// autoplay plugin
+function AutoplayPlugin(slider: any) {
+    let timeout: ReturnType<typeof setTimeout>;
+    let mouseOver = false;
+
+    function clearNextTimeout() {
+        clearTimeout(timeout);
+    }
+
+    function nextTimeout() {
+        clearTimeout(timeout);
+        if (mouseOver) return;
+        timeout = setTimeout(() => {
+            slider.next();
+        }, 3000); // zmień czas (ms) według uznania
+    }
+
+    slider.on("created", () => {
+        slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+        });
+        slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+        });
+        nextTimeout();
+    });
+    slider.on("dragStarted", clearNextTimeout);
+    slider.on("animationEnded", nextTimeout);
+    slider.on("updated", nextTimeout);
+}
+
 const Carousel = () => {
     const [isFirstImageLoaded, setIsFirstImageLoaded] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-        loop: true,
-        dragSpeed: 0.8,
-        slides: { perView: 1 },
-        renderMode: "performance",
-        mode: "snap",
-        slideChanged(slider) {
-            const relative = slider.track.details.rel;
-            setActiveIndex(relative);
+    const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+        {
+            loop: true,
+            dragSpeed: 0.8,
+            slides: { perView: 1 },
+            renderMode: "performance",
+            mode: "snap",
+            slideChanged(slider) {
+                const relative = slider.track.details.rel;
+                setActiveIndex(relative);
+            },
         },
-    });
+        [AutoplayPlugin]
+    );
 
     return (
         <div className="relative w-screen xl:max-w-[1600px] h-[80vh] lg:h-[86vh] mx-auto overflow-hidden">
-            {!isFirstImageLoaded && (
-                <div className="w-full h-full absolute inset-0 z-10 bg-zinc-200">
-                    <div className="w-full h-full absolute inset-0 z-10 bg-zinc-400 animate-pulse" />
-                </div>
-            )}
+            <AnimatePresence>
+                {!isFirstImageLoaded && (
+                    <motion.div
+                        className="w-full h-full absolute inset-0 z-10 bg-zinc-200"
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                    >
+                        <ShimmerLoader />
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             {/* Slider */}
-            <div ref={sliderRef} className="keen-slider h-full">
+            <div ref={sliderRef} className="keen-slider h-full cursor-grab">
                 {images.map((image, index) => (
                     <div
                         key={index}
@@ -55,6 +101,7 @@ const Carousel = () => {
                             quality={85}
                             priority={index === 0}
                             sizes="100vw"
+                            loading={index === 0 ? "eager" : "lazy"}
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}

@@ -42,7 +42,7 @@ export default function FotografiaSlubna() {
                         <h1 className="text-2xl lg:text-3xl font-semibold text-center mb-10">
                             Fotografia ślubna, co skrywa?
                         </h1>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
                             {OFERTAIMAGES.map((img, index) => (
                                 <ImageComponent
                                     key={index}
@@ -83,6 +83,7 @@ export default function FotografiaSlubna() {
                             title="-Kilka historii-"
                             desc="#reportaż_ślubny #sesja_ślubna #sesja_narzeczeńska"
                         />
+                        
                     </div>
                 </div>
             </div>

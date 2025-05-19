@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import SeoHead from "@/components/SeoHead";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,45 +35,14 @@ export default function RootLayout({
     return (
         <html lang="pl">
             <head>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <link rel="canonical" href="https://jv3.vercel.app/" />
-                <meta name="robots" content="index, follow" />
-                <meta name="author" content="Jarek Olszewski" />
-                <meta name="copyright" content="© 2025 Jarek Olszewski" />
-
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-                <link
-                    rel="apple-touch-icon"
-                    href="/icons/apple-touch-icon.png"
-                />
-
-                <script type="application/ld+json">
-                    {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Photograph",
-      "name": "Jarek Olszewski - Fotograf Siedlce",
-      "image": "https://jv3.vercel.app/Images/fotograf-siedlce-jarek-olszewski.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Siedlce",
-        "addressCountry": "PL"
-      },
-      "url": "https://jv3.vercel.app/"
-    }
-    `}
-                </script>
+                <SeoHead />
             </head>
-            <body className="flex flex-col min-h-screen w-full font-light antialiased">
+            <body
+                className={`flex flex-col min-h-screen w-full font-light antialiased ${geistSans.className}`}
+            >
                 {/* <IntroOverlay /> */}
                 <Nav />
-                <main
-                    className={`${geistSans.className} flex-1 w-full overflow-x-hidden relative min-h-[90vh]`}
-                >
+                <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
                 <ScrollToTopButton />
