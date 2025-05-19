@@ -79,7 +79,7 @@ const MessageStatus = ({
     </div>
 );
 
-export default function ContactPage() {
+export default function ContactForm() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",

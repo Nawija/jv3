@@ -1,12 +1,17 @@
 import ImageComponent from "@/components/ImageComponent";
 import TitleH2 from "@/components/TitleH2";
+import { getBlogs } from "@/lib/getBlogs";
 import HeroSection from "../../components/HeroSection";
 import path from "path";
 import fs from "fs";
 import CarouselProps from "@/components/CarouselProps";
 import { OFERTAIMAGES } from "@/constants/Links";
+import BlogList from "@/components/BlogList";
+import ContactForm from "@/components/ContactForm";
+import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 
-export default function FotografiaSlubna() {
+export default async function FotografiaSlubna() {
+    const blogs = await getBlogs();
     const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
     const files = fs.readdirSync(dirPath);
 
@@ -83,7 +88,31 @@ export default function FotografiaSlubna() {
                             title="-Kilka historii-"
                             desc="#reportaż_ślubny #sesja_ślubna #sesja_narzeczeńska"
                         />
-                        
+                        <div className="max-w-3xl mx-auto">
+                            <BlogList blogs={blogs} limit={4} columns={2} />
+                        </div>
+
+                        <div className="max-w-2xl mx-auto my-24">
+                            <ParagraphWithBullets
+                                title="Co oferuję"
+                                paragraph="Fotografuję od początku przygotowań ślubnych do ostatnich uroczystości weselnych."
+                                bullets={[
+                                    "Minimum 700 fotografii z reportażu (zdjęcia poddane autorskiej obróbce - naturalne i prawdziwe fotografie)",
+                                    "Sesję ślubną w dniu ślubu, krótka sesja w okolicach przyjęcia weselnego (by nie tracić cennego czasu)",
+                                    "Sesję ślubną innego dnia, w wybranym przez Was miejscu",
+                                    "Sesję narzeczeńska",
+                                    "Foto-albumy, wydruki cyfrowe, fotoobrazy, zdjęcia na płótnie. portrety w ramkach",
+                                    "Wydruki w dniu ślubu (pocztówki, portrety dla rodziców)",
+                                    "Nośnik danych (pendrive)",
+                                    "Zapis na chmurze - link do pobrania, bez ograniczeń i na dowolne urządzenie",
+                                    "Galerię internetową chronioną hasłem",
+                                    "Szybki termin realizacji - zdjęcia już w 14 dni do Waszej dyspozycji",
+                                ]}
+                            />
+                        </div>
+                        <div className="mt-12">
+                            <ContactForm />
+                        </div>
                     </div>
                 </div>
             </div>

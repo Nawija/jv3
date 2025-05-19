@@ -1,21 +1,13 @@
-import { getBlogs, type Blog } from "@/lib/getBlogs";
-import BlogCard from "./BlogCard";
+import { getBlogs } from "@/lib/getBlogs";
+import BlogList from "@/components/BlogList";
 
-export default async function Page() {
-    const blogs: Blog[] = await getBlogs();
+export default async function BlogPage() {
+    const blogs = await getBlogs();
 
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 anim-opacity max-w-4xl mx-auto px-2">
-            {blogs.map((blog, i) =>
-                blog ? (
-                    <BlogCard
-                        key={i}
-                        title={blog.title}
-                        image={blog.image}
-                        slug={blog.slug}
-                    />
-                ) : null
-            )}
-        </section>
+        <div className="max-w-4xl mx-auto px-4 anim-opacity">
+            <h1 className="text-3xl font-semibold my-8 text-center">Wszystkie wpisy</h1>
+            <BlogList blogs={blogs} columns={2} />
+        </div>
     );
 }

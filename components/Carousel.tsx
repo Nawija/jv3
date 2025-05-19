@@ -1,6 +1,6 @@
 "use client";
 
-import { useKeenSlider } from "keen-slider/react";
+import { KeenSliderInstance, useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import { useState } from "react";
@@ -18,7 +18,7 @@ const images = [
 ];
 
 // autoplay plugin
-function AutoplayPlugin(slider: any) {
+function AutoplayPlugin(slider: KeenSliderInstance) {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
 
