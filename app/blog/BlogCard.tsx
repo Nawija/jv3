@@ -17,22 +17,22 @@ const InfoBlock: FC<Props> = ({ title, image, slug }) => {
     return (
         <Link
             href={`/blog/${slug}`}
-            className="text-center border-gray-300 block relative aspect-square overflow-hidden"
+            className="text-center border-gray-300 block relative overflow-hidden"
         >
             {!loaded && <ShimmerLoader />}
 
             <Image
                 src={image}
                 alt={title}
-                width={300}
-                height={300}
+                width={240}
+                height={240}
                 onLoadingComplete={() => setLoaded(true)}
-                className={`w-full h-full aspect-square object-cover transition-opacity duration-500 ${
+                className={`w-full h-auto object-cover transition-opacity duration-500 ${
                     loaded ? "opacity-100" : "opacity-0"
                 }`}
             />
 
-            <h2 className="font-medium my-2 text-xl relative z-10">{title}</h2>
+            <h2 className="font-light my-2 text-lg relative z-10">{title}</h2>
         </Link>
     );
 };

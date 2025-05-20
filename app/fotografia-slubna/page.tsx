@@ -92,7 +92,7 @@ export default async function FotografiaSlubna() {
                             <BlogList blogs={blogs} limit={4} columns={2} />
                         </div>
 
-                        <div className="max-w-2xl mx-auto my-24">
+                        <div className="max-w-2xl mx-auto my-12">
                             <ParagraphWithBullets
                                 title="Co oferuję"
                                 paragraph="Fotografuję od początku przygotowań ślubnych do ostatnich uroczystości weselnych."
