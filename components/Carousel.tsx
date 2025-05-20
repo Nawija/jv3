@@ -61,10 +61,10 @@ const Carousel = () => {
             slides: { perView: 1 },
             renderMode: "performance",
             mode: "snap",
-            slideChanged(slider) {
-                const relative = slider.track.details.rel;
-                // setActiveIndex(relative);
-            },
+            // slideChanged(slider) {
+            //     const relative = slider.track.details.rel;
+            //     setActiveIndex(relative);
+            // },
         },
         [AutoplayPlugin]
     );
