@@ -34,8 +34,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
-                width: 1200,
-                height: 630,
+                width: 400,
+                height: 260,
                 alt: "Fotografia ślubna - Jarek Olszewski",
             },
         ],
