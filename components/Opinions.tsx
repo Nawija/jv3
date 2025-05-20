@@ -8,15 +8,15 @@ import { OPINIONS } from "@/constants/Links";
 
 export default function Opinions() {
   return (
-    <Carousel className="w-full px-4 py-8">
-      <CarouselContent className="flex gap-6">
+    <Carousel className="w-full px-2 py-8">
+      <CarouselContent className="flex gap-2">
         {OPINIONS.map((opinia, i) => {
           const fullStars = Math.floor(opinia.rating);
 
           return (
             <CarouselItem
               key={i}
-              className="basis-full sm:basis-1/2 lg:basis-1/3"
+              className="basis-[80%] sm:basis-1/2 lg:basis-1/3"
             >
               <div className="bg-white rounded-2xl shadow-lg p-6 h-full flex flex-col justify-between hover:shadow-xl transition-shadow duration-300 border border-neutral-200">
                 <p className="text-neutral-700 mb-4 text-base leading-relaxed italic">
