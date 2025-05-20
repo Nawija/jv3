@@ -1,6 +1,5 @@
 import InstagramPost from "./InstagramPost";
 
-
 type InstaPost = {
     media_url: string;
     permalink: string;
@@ -80,8 +79,8 @@ export default async function InstagramGrid() {
                 {itemsToRender.map((post, i) => (
                     <InstagramPost
                         key={i}
-                        media_url={post?.media_url ?? null}
-                        permalink={post?.permalink ?? null}
+                        media_url={post?.media_url || null}
+                        permalink={post?.permalink || null}
                         alt={`Instagram image ${i + 1}`}
                     />
                 ))}

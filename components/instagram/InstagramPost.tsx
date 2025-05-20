@@ -8,7 +8,7 @@ import ShimmerLoader from "../ShimmerLoader";
 type InstagramPostProps = {
     media_url: string | null;
     permalink: string | null;
-    alt: string | null;
+    alt: string;
 };
 
 export default function InstagramPost({
@@ -18,7 +18,7 @@ export default function InstagramPost({
 }: InstagramPostProps) {
     const [loading, setLoading] = useState(true);
 
-    if (!media_url || !permalink || !alt) {
+    if (!media_url || !permalink) {
         return (
             <div className="aspect-square">
                 <ShimmerLoader />
