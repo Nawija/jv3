@@ -31,7 +31,7 @@ export function MainBtn(props: MainBtnProps) {
     if ("href" in props) {
         // Usuwamy aria-label z reszty, by nie było konfliktu
         const { href, ...restWithoutHref } = rest as AnchorVariant;
-        const { ["aria-label"]: _removed, ...linkRest } = restWithoutHref;
+        const { ["aria-label"]: _, ...linkRest } = restWithoutHref;
 
         return (
             <Link
