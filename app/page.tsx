@@ -17,7 +17,7 @@ import StepsWithLazyBackground from "@/components/StepsWithLazyBackground";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 
 // Dynamic Components
-const Carousel = dynamic(() => import("@/components/Carousel"));
+const Carousel = dynamic(() => import("@/components/Carousel"), { ssr: true });
 const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"));
 const CTASendMail = dynamic(() => import("@/components/CTASendMail"));
 
