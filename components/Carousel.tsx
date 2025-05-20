@@ -5,16 +5,13 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import { useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import h1 from "@/public/Images/carousel/sesja.avif";
-import h3 from "@/public/Images/carousel/sesja2.avif";
-import h4 from "@/public/Images/carousel/slub.avif";
 import { AnimatePresence, motion } from "framer-motion";
 import ShimmerLoader from "./ShimmerLoader";
 
 const images = [
-    { src: h4, position: "50% 50%" },
-    { src: h1, position: "50% 100%" },
-    { src: h3, position: "0% 0%" },
+    { src: "/Images/carousel/slub.avif", position: "50% 50%" },
+    { src: "/Images/carousel/sesja.avif", position: "50% 100%" },
+    { src: "/Images/carousel/sesja2.avif", position: "0% 0%" },
 ];
 
 // autoplay plugin
@@ -99,11 +96,8 @@ const Carousel = () => {
                             className="object-cover transition-opacity duration-500"
                             style={{ objectPosition: image.position }}
                             quality={85}
-                            priority={index === 0}
+                            priority={index < 2}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
-                            loading={index === 0 ? "eager" : "lazy"}
-                            placeholder="blur"
-                            blurDataURL={image.src.blurDataURL} // 👈 dodajesz to
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}

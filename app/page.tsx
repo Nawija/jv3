@@ -11,24 +11,12 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
-import { SkeletonFull } from "@/components/ui/Skeleton";
 
 // Dynamic Components
-const Carousel = dynamic(() => import("@/components/Carousel"), {
-    ssr: true,
-});
-const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), {
-    ssr: true,
-    loading: () => <SkeletonFull />,
-});
-const CTASendMail = dynamic(() => import("@/components/CTASendMail"), {
-    ssr: true,
-    loading: () => <SkeletonFull />,
-});
-const Opinions = dynamic(() => import("@/components/Opinions"), {
-    ssr: true,
-    loading: () => <SkeletonFull />,
-});
+const Carousel = dynamic(() => import("@/components/Carousel"));
+const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"));
+const CTASendMail = dynamic(() => import("@/components/CTASendMail"));
+const Opinions = dynamic(() => import("@/components/Opinions"));
 
 const pageTitle = "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto";
 const pageDescription =
@@ -65,7 +53,7 @@ export default function Home() {
                             alt="fotograf siedlce jarek-olszewski"
                             width={300}
                             height={250}
-                            loading="lazy"
+                            priority
                         />
                         <div className="w-[270px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-8 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                             <h1 className="text-xl font-semibold mb-2">
@@ -161,9 +149,9 @@ export default function Home() {
                         Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
                     </h3>
                 </FadeInOnScroll>
-                <FadeInOnScroll delay={0.3}>
+
                     <CTASendMail title="Napisz Do Mnie" />
-                </FadeInOnScroll>
+
             </div>
 
             <section className="bg-white py-20 px-4">
