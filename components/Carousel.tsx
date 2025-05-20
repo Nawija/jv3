@@ -95,9 +95,9 @@ const Carousel = () => {
                             fill
                             className="object-cover transition-opacity duration-500"
                             style={{ objectPosition: image.position }}
-                            quality={85}
+                            quality={83}
                             priority={index < 2}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
+                            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1500px"
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}
