@@ -26,6 +26,7 @@ export default function SesjaComponent({
                 <p className="capitalize text-white text-2xl mb-2">{title}</p>
                 <Link
                     href={href}
+                    aria-label={title}
                     className="text-white text-sm py-1 px-4 border border-white"
                 >
                     Zobacz

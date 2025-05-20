@@ -135,7 +135,7 @@ export default function Home() {
                             key={index}
                             img={img.src}
                             title={img.title}
-                            href={img.title}
+                            href={img.href}
                         />
                     ))}
 
