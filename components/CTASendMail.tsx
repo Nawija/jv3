@@ -1,14 +1,9 @@
 "use client";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-const ContactForm = dynamic(() => import("@/components/ContactForm"), {
-    ssr: false,
-    loading: () => <SkeletonFull />,
-});
 import { MainBtn } from "./Buttons/MainBtn";
 import { IoMdClose } from "react-icons/io";
-import dynamic from "next/dynamic";
-import { SkeletonFull } from "./ui/Skeleton";
+import ContactForm from "./ContactForm";
 
 export default function CTASendMail({ title }: { title: string }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
