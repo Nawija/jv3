@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Image from "next/image";
-import Skeleton from "@/components/ui/Skeleton";
+import { Skeleton } from "@/components/ui/Skeleton";
+import ShimmerLoader from "@/components/ShimmerLoader";
 
 type ResponsiveImage = {
     width: number;
@@ -68,13 +69,13 @@ function ImgGallery({ image }: ImgGalleryProps) {
                 rel="noreferrer"
                 className="group relative block w-full h-full"
             >
-                {!loaded && (
-                    <Skeleton className="absolute inset-0 w-full h-full z-0" />
-                )}
+                {!loaded && <ShimmerLoader />}
                 <Image
-                    className={`object-cover w-full h-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+                    className={`object-cover w-full h-full transition-opacity duration-500 ${
+                        loaded ? "opacity-100" : "opacity-0"
+                    }`}
                     src={image.responsiveImage.src}
-                    alt="Zdjęcie z galerii"
+                    alt="Fotografia z galerii Jarek Olszewski"
                     height={image.responsiveImage.height}
                     width={image.responsiveImage.width}
                     onLoadingComplete={() => setLoaded(true)}

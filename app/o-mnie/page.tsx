@@ -13,7 +13,17 @@ export default function AboutMePage() {
             width: 1000,
             height: 667,
         },
+          {
+            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
+            width: 1000,
+            height: 667,
+        },
         {
+            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
+            width: 1000,
+            height: 667,
+        },
+         {
             src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
             width: 1000,
             height: 667,
@@ -82,7 +92,7 @@ export default function AboutMePage() {
                     <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
                         Zobacz moje kadry
                     </h3>
-                    <PhotoSwipe images={images} columns={4} className="p-6" />
+                    <PhotoSwipe images={images} columns={3} className="p-6" />
                 </section>
             </main>
         </>

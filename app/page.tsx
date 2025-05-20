@@ -4,10 +4,6 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 
-// Assets
-import Jarek from "@/public/Images/fotograf-siedlce-jarek-olszewski.jpg";
-import Slub from "@/public/Images/slub.jpg";
-
 // Components
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -15,6 +11,7 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
+import { Skeleton80vh, SkeletonFull } from "@/components/ui/Skeleton";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"), {
@@ -34,22 +31,16 @@ const Opinions = dynamic(() => import("@/components/Opinions"), {
     loading: () => <SkeletonFull />,
 });
 
-// Dummy Loaders (Componentize for DRYness)
-function SkeletonFull() {
-    return <div className="h-full w-full bg-zinc-300 animate-pulse" />;
-}
-function Skeleton80vh() {
-    return <div className="h-[80vh] bg-zinc-300 animate-pulse" />;
-}
+const pageTitle = "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto";
+const pageDescription =
+    "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!";
 
 export const metadata: Metadata = {
-    title: "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto",
-    description:
-        "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!",
+    title: pageTitle,
+    description: pageDescription,
     openGraph: {
-        title: "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto",
-        description:
-            "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!",
+        title: pageTitle,
+        description: pageDescription,
         images: [
             {
                 url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
@@ -73,12 +64,11 @@ export default function Home() {
                 <FadeInOnScroll delay={0.1}>
                     <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
                         <Image
-                            src={Jarek}
+                            src="/Images/fotograf-siedlce-jarek-olszewski.jpg"
                             alt="fotograf siedlce jarek-olszewski"
                             width={370}
                             height={300}
                             priority
-                            placeholder="blur"
                         />
                         <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                             <h1 className="text-2xl font-semibold mb-2">
@@ -122,8 +112,9 @@ export default function Home() {
                 <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-8">
                     <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
                         <Image
-                            src={Slub}
-                            alt="slub"
+                            src="/Images/slub.jpg"
+                            alt="Fotografia ślubna Para Młoda podczas ceremonii"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             fill
                             className="object-cover"
                             quality={75}
@@ -135,6 +126,7 @@ export default function Home() {
                             </p>
                             <Link
                                 href="/fotografia-slubna"
+                                aria-label="fotografia slubna"
                                 className="text-white text-sm py-1 px-4 border border-white"
                             >
                                 Zobacz
@@ -152,6 +144,7 @@ export default function Home() {
 
                     <Link
                         href="/oferta"
+                        aria-label="oferta"
                         className="w-max mx-auto h-max hover:bg-black hover:text-white transition-color-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
                     >
                         <p className="uppercase text-center">
@@ -186,7 +179,10 @@ export default function Home() {
 
                     <div className="mt-12">
                         <MainBtn>
-                            <Link href="/portfolio">
+                            <Link
+                                href="/portfolio"
+                                aria-label="efekty fotografii galeria"
+                            >
                                 Zobacz efekty mojej pracy
                             </Link>
                         </MainBtn>
