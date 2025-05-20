@@ -30,7 +30,7 @@ type ImageType = {
 
 const CarouselProps = ({ images }: { images: ImageType[] }) => {
     const settings = {
-        dots: true,
+        dots: false,
         fade: true,
         arrows: true,
         autoplay: true,
@@ -69,7 +69,8 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
                             alt={`Obraz ${index + 1}`}
                             className="object-cover w-full h-full"
                             fill
-                            quality={100}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            quality={85}
                         />
                     </div>
                 ))}

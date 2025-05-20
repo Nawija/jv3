@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Image from "next/image";
-import { Skeleton } from "@/components/ui/Skeleton";
 import ShimmerLoader from "@/components/ShimmerLoader";
 
 type ResponsiveImage = {
