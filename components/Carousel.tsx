@@ -5,9 +5,9 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import { useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import h1 from "@/public/Images/sesja.jpg";
-import h3 from "@/public/Images/sesja2.jpg";
-import h4 from "@/public/Images/wyjscie.jpg";
+import h1 from "@/public/Images/carousel/sesja.avif";
+import h3 from "@/public/Images/carousel/sesja2.avif";
+import h4 from "@/public/Images/carousel/wyjscie.avif";
 import { AnimatePresence, motion } from "framer-motion";
 import ShimmerLoader from "./ShimmerLoader";
 
