@@ -12,9 +12,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import ShimmerLoader from "./ShimmerLoader";
 
 const images = [
-    { src: h1, position: "50% 50%" },
-    { src: h3, position: "0% 50%" },
-    { src: h4, position: "50% 100%" },
+    { src: h4, position: "50% 50%" },
+    { src: h1, position: "0% 50%" },
+    { src: h3, position: "0% 0%" },
 ];
 
 // autoplay plugin
