@@ -14,7 +14,7 @@ import InviteSocialMedia from "@/components/InviteSocialMedia";
 import Opinions from "@/components/Opinions";
 import LinkShare from "@/components/ui/LinkShare";
 import StepsWithLazyBackground from "@/components/StepsWithLazyBackground";
-import InstagramGrid from "@/components/InstagramGrid";
+import InstagramGrid from "@/components/instagram/InstagramGrid";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"));
