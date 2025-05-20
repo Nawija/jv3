@@ -46,7 +46,7 @@ export function MainBtn(props: MainBtnProps) {
     }
 
     // Button też bez powtórzenia aria-label
-    const { ["aria-label"]: _removed, ...buttonRest } =
+    const { ["aria-label"]: _, ...buttonRest } =
         rest as ButtonHTMLAttributes<HTMLButtonElement>;
 
     return (
