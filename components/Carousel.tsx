@@ -52,7 +52,7 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
 
 const Carousel = () => {
     const [isFirstImageLoaded, setIsFirstImageLoaded] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
+    // const [activeIndex, setActiveIndex] = useState(0);
 
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         {
@@ -63,7 +63,7 @@ const Carousel = () => {
             mode: "snap",
             slideChanged(slider) {
                 const relative = slider.track.details.rel;
-                setActiveIndex(relative);
+                // setActiveIndex(relative);
             },
         },
         [AutoplayPlugin]
