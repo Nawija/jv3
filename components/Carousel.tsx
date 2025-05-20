@@ -127,7 +127,7 @@ const Carousel = () => {
             </button>
 
             {/* Dots */}
-            <div
+            {/* <div
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20"
                 role="presentation"
                 aria-hidden="true"
@@ -144,7 +144,7 @@ const Carousel = () => {
                         tabIndex={-1}
                     />
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 };
