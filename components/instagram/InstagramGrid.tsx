@@ -1,6 +1,3 @@
-import Image from "next/image";
-import ShimmerLoader from "../ShimmerLoader";
-import Link from "next/link";
 import InstagramPost from "./InstagramPost";
 
 type InstaPost = {

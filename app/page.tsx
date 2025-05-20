@@ -189,16 +189,26 @@ export default function Home() {
             <FaqAccordion />
             <InstagramGrid />
 
-            <div className="bg-gray-100 py-12 mt-12 px-4">
-                <section className="max-w-3xl mx-auto space-y-12">
+            <div className="bg-gradient-to-tr from-white to-gray-200 py-16 mt-16 px-6 md:px-12">
+                <section className="max-w-6xl mx-auto space-y-16 md:space-y-24">
                     {TEXT_SECTIONS.map(({ title, content }, index) => (
-                        <div key={index} className="border-b border-white pb-8">
-                            <h2 className="text-2xl lg:text-3xl font-semibold text-black mb-3">
+                        <div
+                            key={index}
+                            className={`
+          border-l-4 border-brand-nav pl-6 pb-8 
+          md:flex md:items-center md:justify-between md:pl-10 md:gap-12
+          ${index % 2 === 1 ? "md:flex-row-reverse md:text-end" : ""}
+        `}
+                            style={{ scrollMarginTop: "5rem" }}
+                        >
+                            <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-4 md:mb-0 drop-shadow-sm md:w-1/3">
                                 {title}
                             </h2>
-                            <p className="text-neutral-700 leading-relaxed">
-                                {content}
-                            </p>
+                            <div className="md:w-2/3">
+                                <p className="text-gray-700 leading-relaxed text-start text-lg md:text-xl">
+                                    {content}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </section>
