@@ -15,7 +15,7 @@ export default function StepsWithLazyBackground() {
                     observer.disconnect(); // tylko raz
                 }
             },
-            { threshold: 0, rootMargin: "300px" }
+            { threshold: 0, rootMargin: "650px" }
         );
 
         observer.observe(section);
