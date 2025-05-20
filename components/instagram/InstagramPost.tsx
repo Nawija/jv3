@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ShimmerLoader from "../ShimmerLoader";
+import Image from "next/image";
 
 type InstagramPostProps = {
     media_url: string | null;
@@ -23,11 +24,14 @@ export default function InstagramPost({
     return (
         <Link href={permalink} target="_blank" rel="noopener noreferrer">
             <div className="relative aspect-square">
-                <img
+                 <Image
                     src={media_url}
                     alt={alt}
                     sizes="20vw"
-                    className={`object-cover h-full w-full`}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    placeholder="empty"
                 />
             </div>
         </Link>
