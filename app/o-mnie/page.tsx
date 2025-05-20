@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import InstagramGrid from "@/components/instagram/InstagramGrid";
 import PhotoSwipe from "@/components/PhotoSwipe";
 
 export default function AboutMePage() {
@@ -13,7 +14,7 @@ export default function AboutMePage() {
             width: 1000,
             height: 667,
         },
-          {
+        {
             src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
             width: 1000,
             height: 667,
@@ -23,7 +24,7 @@ export default function AboutMePage() {
             width: 1000,
             height: 667,
         },
-         {
+        {
             src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
             width: 1000,
             height: 667,
@@ -88,12 +89,13 @@ export default function AboutMePage() {
                 </section>
 
                 {/* Galeria */}
-                <section className="max-w-6xl mx-auto px-4 pb-20">
+                <section className="max-w-5xl mx-auto">
                     <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
                         Zobacz moje kadry
                     </h3>
-                    <PhotoSwipe images={images} columns={3} className="p-6" />
+                    <PhotoSwipe images={images} columns={3} className="p-4" />
                 </section>
+                <InstagramGrid />
             </main>
         </>
     );

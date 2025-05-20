@@ -68,7 +68,7 @@ export default async function InstagramGrid() {
         : posts;
 
     return (
-        <section className="bg-white py-12">
+        <section className="bg-white py-10">
             <h2 className="text-center text-2xl font-semibold mb-4">
                 Zobacz więcej na Instagramie
             </h2>

@@ -46,7 +46,7 @@ export default function PhotoSwipe({
         }[columns] || "grid-cols-1 md:grid-cols-2";
 
     return (
-        <div className={`pswp-gallery grid gap-3 ${gridCols} ${className}`}>
+        <div className={`pswp-gallery grid gap-4 ${gridCols} ${className}`}>
             {images.map((img, index) => (
                 <GalleryItem key={index} image={img} />
             ))}
@@ -57,18 +57,19 @@ export default function PhotoSwipe({
 function GalleryItem({ image }: { image: GalleryImage }) {
     const [loaded, setLoaded] = useState(false);
     const ratio = image.height / image.width;
-    const displayHeight = Math.ceil(300 * ratio);
-    const spans = Math.ceil(displayHeight / 10) + 1;
+    // const displayHeight = Math.ceil(300 * ratio);
+    // const spans = Math.ceil(displayHeight / 10) + 1;
 
     return (
-        <div style={{ gridRow: `span ${spans}` }}>
+        // <div style={{ gridRow: `span ${spans}` }}>
+        <div>
             <a
                 href={image.src}
                 data-pswp-width={image.width}
                 data-pswp-height={image.height}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative block w-full h-full"
+                className="group relative block w-full h-full "
             >
                 {!loaded && (
                     <Skeleton className="absolute inset-0 w-full h-full z-0" />
@@ -79,7 +80,7 @@ function GalleryItem({ image }: { image: GalleryImage }) {
                     width={image.width}
                     height={image.height}
                     onLoadingComplete={() => setLoaded(true)}
-                    className={`object-cover w-full h-full transition-opacity duration-500 ${
+                    className={`object-cover aspect-square transition-opacity duration-500 ${
                         loaded ? "opacity-100" : "opacity-0"
                     }`}
                 />
