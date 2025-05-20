@@ -15,10 +15,10 @@ const InviteSocialMedia: React.FC<InviteSocialMediaProps> = ({
 }) => {
     return (
         <div
-            className={`text-lg lg:text-xl flex items-center justify-center pt-20 gap-2 ${textColor}`}
+            className={`text-lg lg:text-xl flex items-center justify-center pt-20 gap-4 ${textColor}`}
         >
             <p className="font-medium">{text}</p>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
                 <Link
                     href="https://www.facebook.com/JarekOlszewskiFotografia/"
                     target="_blank"
