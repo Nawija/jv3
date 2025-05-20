@@ -18,9 +18,14 @@ export default function InstagramGrid() {
     useEffect(() => {
         fetch("/api/instagram")
             .then((res) => res.json())
-            .then((data) => {
+            .then((data: unknown) => {
                 if (Array.isArray(data)) {
-                    setPosts(data);
+                    const validData = data.filter((item): item is InstaPost =>
+                        typeof item.media_url === "string" &&
+                        typeof item.permalink === "string" &&
+                        typeof item.media_type === "string"
+                    );
+                    setPosts(validData);
                 }
             })
             .catch((err) => {
@@ -34,6 +39,10 @@ export default function InstagramGrid() {
     const isEmpty = !loading && posts.length === 0;
     const fallbackCount = 6;
 
+    const itemsToRender: (InstaPost | null)[] = loading || isEmpty
+        ? Array.from({ length: fallbackCount }, () => null)
+        : posts;
+
     return (
         <section className="bg-white py-12">
             <h2 className="text-center text-2xl font-semibold mb-4">
@@ -43,11 +52,8 @@ export default function InstagramGrid() {
                 Świeże zdjęcia, kulisy sesji i więcej
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
-                {(loading || isEmpty
-                    ? Array.from({ length: fallbackCount })
-                    : posts
-                ).map((post: any, i) =>
-                    post?.media_url ? (
+                {itemsToRender.map((post, i) =>
+                    post ? (
                         <Link
                             key={i}
                             href={post.permalink}
