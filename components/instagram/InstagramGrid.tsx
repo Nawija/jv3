@@ -1,4 +1,8 @@
-import InstagramPost from "./InstagramPost";
+import dynamic from "next/dynamic";
+
+const InstagramPost = dynamic(
+    () => import("@/components/instagram/InstagramPost")
+);
 
 type InstaPost = {
     media_url: string;
