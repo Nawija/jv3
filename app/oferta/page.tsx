@@ -48,7 +48,7 @@ export default async function OffertsPage() {
     return (
         <div className="h-full">
             <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8">
-                <section className="max-w-7xl mx-auto space-y-8 anim-opacity text-stone-800">
+                <section className="max-w-7xl mx-auto space-y-12 anim-opacity text-stone-800">
                     <h1 className="text-4xl text-center leading-tight">
                         Profesjonalny Fotograf Siedlce
                     </h1>
@@ -60,7 +60,7 @@ export default async function OffertsPage() {
                     </p>
 
                     <div className="space-y-8">
-                        <h2 className="text-2xl font-semibold text-center">
+                        <h2 className="text-2xl font-light text-center">
                             Dlaczego warto wybrać mnie?
                         </h2>
 
@@ -85,7 +85,7 @@ export default async function OffertsPage() {
                     </div>
                     <div>
                         <div className="text-center space-y-2 mb-8">
-                            <h3 className="text-2xl font-semibold">
+                            <h3 className="text-2xl font-light">
                                 Pakiety fotografii:
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4">
