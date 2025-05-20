@@ -102,6 +102,8 @@ const Carousel = () => {
                             priority={index === 0}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
                             loading={index === 0 ? "eager" : "lazy"}
+                            placeholder="blur"
+                            blurDataURL={image.src.blurDataURL} // 👈 dodajesz to
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}
