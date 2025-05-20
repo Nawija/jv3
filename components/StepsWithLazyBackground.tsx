@@ -12,7 +12,7 @@ export default function StepsWithLazyBackground() {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsInView(true);
-                    observer.disconnect(); // tylko raz
+                    observer.disconnect();
                 }
             },
             { threshold: 0, rootMargin: "650px" }

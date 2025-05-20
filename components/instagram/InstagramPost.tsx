@@ -34,15 +34,12 @@ export default function InstagramPost({
                         <ShimmerLoader />
                     </div>
                 )}
-                <Image
+                <img
                     src={media_url}
                     alt={alt}
-                    fill
                     sizes="20vw"
-                    className={`object-cover transition-opacity duration-500 ${
-                        loading ? "opacity-0" : "opacity-100"
-                    }`}
-                    onLoadingComplete={() => setLoading(false)}
+                    className={`object-cover h-full w-full`}
+
                 />
             </div>
         </Link>
