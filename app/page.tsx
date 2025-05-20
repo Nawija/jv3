@@ -14,6 +14,7 @@ import InviteSocialMedia from "@/components/InviteSocialMedia";
 import Opinions from "@/components/Opinions";
 import LinkShare from "@/components/ui/LinkShare";
 import StepsWithLazyBackground from "@/components/StepsWithLazyBackground";
+import InstagramGrid from "@/components/InstagramGrid";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"));
@@ -187,22 +188,7 @@ export default function Home() {
            <StepsWithLazyBackground />
 
             <FaqAccordion />
-            <section className="bg-white py-12">
-                <h2 className="text-center text-2xl font-semibold mb-4">
-                    Zobacz więcej na Instagramie
-                </h2>
-                <p className="text-center text-sm mb-6">
-                    Świeże zdjęcia, kulisy sesji i więcej
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
-                    {[1, 2, 3, 4, 5, 6].map((_, i) => (
-                        <div
-                            key={i}
-                            className="bg-gray-100 aspect-square animate-pulse"
-                        />
-                    ))}
-                </div>
-            </section>
+            <InstagramGrid />
 
             <div className="bg-gray-100 py-12 mt-12 px-4">
                 <section className="max-w-3xl mx-auto space-y-12">
