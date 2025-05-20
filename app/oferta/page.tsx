@@ -46,7 +46,7 @@ export default async function OffertsPage() {
         }));
 
     return (
-        <>
+        <div className="h-full">
             <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8">
                 <section className="max-w-7xl mx-auto space-y-8 anim-opacity text-stone-800">
                     <h1 className="text-4xl text-center leading-tight">
@@ -124,6 +124,6 @@ export default async function OffertsPage() {
             <div className="text-center my-12">
                 <CTASendMail title="Zapytaj o Ofertę" />
             </div>
-        </>
+        </div>
     );
 }
