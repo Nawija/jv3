@@ -100,7 +100,7 @@ const Carousel = () => {
                             style={{ objectPosition: image.position }}
                             quality={85}
                             priority={index === 0}
-                            sizes="100vw"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1600px"
                             loading={index === 0 ? "eager" : "lazy"}
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
