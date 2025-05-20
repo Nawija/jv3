@@ -178,15 +178,14 @@ export default function Home() {
                     </div>
 
                     <div className="mt-12">
-                        <MainBtn>
-                            <Link
-                                href="/portfolio"
-                                aria-label="efekty fotografii galeria"
-                            >
-                                Moje portfolio
-                            </Link>
-                        </MainBtn>
+                        {/* <Link
+                            href="/portfolio"
+                            aria-label="efekty fotografii galeria"
+                        >
+                            <MainBtn>Moje portfolio</MainBtn>
+                            </Link> */}
                     </div>
+                    <MainBtn href="/portfolio" aria-label="Przejdz do galerii z fotografią">Moje portfolio</MainBtn>
                 </div>
             </section>
 
