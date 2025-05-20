@@ -20,12 +20,6 @@ const images = [
         alt: "Zdjęcie 2",
     },
     {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
-    {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
@@ -33,12 +27,6 @@ const images = [
     },
     {
         src: "/Images/wyjscie.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
-    {
-        src: "/Images/Blog/sesja.jpg",
         width: 1200,
         height: 800,
         alt: "Zdjęcie 3",
@@ -55,12 +43,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 2",
     },
-    {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
+
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
@@ -73,12 +56,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 3",
     },
-    {
-        src: "/Images/Blog/sesja.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
+
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
@@ -91,12 +69,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 2",
     },
-    {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
+
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
@@ -109,12 +82,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 3",
     },
-    {
-        src: "/Images/Blog/sesja.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
+
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
@@ -127,12 +95,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 2",
     },
-    {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
+
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
@@ -145,12 +108,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 3",
     },
-    {
-        src: "/Images/Blog/sesja.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
+
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
@@ -163,12 +121,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 2",
     },
-    {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
+
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
@@ -181,12 +134,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 3",
     },
-    {
-        src: "/Images/Blog/sesja.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
+
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
@@ -199,12 +147,7 @@ const images = [
         height: 800,
         alt: "Zdjęcie 2",
     },
-    {
-        src: "/Images/Blog/slub.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
+
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
@@ -213,12 +156,6 @@ const images = [
     },
     {
         src: "/Images/wyjscie.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
-    },
-    {
-        src: "/Images/Blog/sesja.jpg",
         width: 1200,
         height: 800,
         alt: "Zdjęcie 3",

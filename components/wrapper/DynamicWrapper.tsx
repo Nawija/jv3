@@ -1,19 +1,19 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { ComponentType, ReactNode } from "react";
+import dynamic, { Loader } from "next/dynamic";
+import { ReactNode } from "react";
 
-type DynamicWrapperProps<T extends object> = {
-    loader: () => Promise<{ default: ComponentType<T> }>;
+type DynamicComponentProps<T extends object> = {
+    loader: Loader<T>;
     loadingFallback?: ReactNode;
     props?: T;
 };
 
-export default function DynamicWrapper<T extends object>({
+export default function DynamicComponent<T extends object>({
     loader,
     loadingFallback = <div className="animate-pulse h-40 w-full bg-gray-100" />,
     props,
-}: DynamicWrapperProps<T>) {
+}: DynamicComponentProps<T>) {
     const LoadedComponent = dynamic(loader, {
         ssr: false,
         loading: () => <>{loadingFallback}</>,

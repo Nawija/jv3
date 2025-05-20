@@ -21,9 +21,9 @@ const contactDetails = [
 export default function ContactPage() {
     return (
         <main className="max-w-screen-md mx-auto px-4 anim-opacity py-10 text-gray-800 text-center">
-            <h1 className="text-4xl mb-6 font-medium">
+            <h1 className="text-4xl mb-6 font-light">
                 Porozmawiajmy o{" "}
-                <strong className="font-medium">Fotografii</strong>
+                <strong className="font-light">Fotografii</strong>
             </h1>
 
             <p className="text-lg md:text-xl mb-10">

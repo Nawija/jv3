@@ -11,12 +11,12 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
+import Opinions from "@/components/Opinions";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"));
 const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"));
 const CTASendMail = dynamic(() => import("@/components/CTASendMail"));
-const Opinions = dynamic(() => import("@/components/Opinions"));
 
 const pageTitle = "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto";
 const pageDescription =
@@ -150,8 +150,7 @@ export default function Home() {
                     </h3>
                 </FadeInOnScroll>
 
-                    <CTASendMail title="Napisz Do Mnie" />
-
+                <CTASendMail title="Napisz Do Mnie" />
             </div>
 
             <section className="bg-white py-20 px-4">
@@ -159,7 +158,7 @@ export default function Home() {
                     <h4 className="text-3xl font-semibold text-neutral-900 mb-12 tracking-tight">
                         Opinie klientów
                     </h4>
-
+                   
                     <Opinions />
 
                     <div className="mt-12">
