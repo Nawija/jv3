@@ -11,12 +11,11 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
-import { Skeleton80vh, SkeletonFull } from "@/components/ui/Skeleton";
+import { SkeletonFull } from "@/components/ui/Skeleton";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"), {
     ssr: true,
-    loading: () => <Skeleton80vh />,
 });
 const SesjaComponent = dynamic(() => import("@/components/SesjaComponent"), {
     ssr: true,
@@ -56,13 +55,13 @@ export default function Home() {
     return (
         <div className="anim-opacity">
             <Carousel />
-            <div className="p-2 text-center relative  max-w-screen-xl mx-auto">
-                <span className="text-2xl py-4 animate-fade-in">
+            <div className="p-2 py-24 text-center relative  max-w-screen-xl mx-auto">
+                <span className="text-2xl ">
                     Cześć! Miło mi że tu jesteś
                 </span>
 
                 <FadeInOnScroll delay={0.1}>
-                    <div className="relative text-start flex flex-col lg:flex-row items-center justify-center mt-8">
+                    <div className="relative text-start flex flex-col lg:flex-row items-center justify-center">
                         <Image
                             src="/Images/fotograf-siedlce-jarek-olszewski.jpg"
                             alt="fotograf siedlce jarek-olszewski"
