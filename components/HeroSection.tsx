@@ -25,7 +25,7 @@ export default function HeroSection({
 
       if (rafId.current === null) {
         rafId.current = requestAnimationFrame(() => {
-          setOffsetY(scrollY * 0.2);
+          setOffsetY(scrollY * 0.25);
           rafId.current = null;
         });
       }
