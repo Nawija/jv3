@@ -55,22 +55,20 @@ export default function Home() {
     return (
         <div className="anim-opacity">
             <Carousel />
-            <div className="p-2 py-24 text-center relative  max-w-screen-xl mx-auto">
-                <span className="text-2xl ">
-                    Cześć! Miło mi że tu jesteś
-                </span>
+            <div className="p-2 py-12 text-center relative  max-w-screen-xl mx-auto">
+                <span className="text-2xl ">Cześć! Miło mi że tu jesteś</span>
 
                 <FadeInOnScroll delay={0.1}>
-                    <div className="relative text-start flex flex-col lg:flex-row items-center justify-center">
+                    <div className="relative text-start mt-12 flex flex-col lg:flex-row items-center justify-center">
                         <Image
                             src="/Images/fotograf-siedlce-jarek-olszewski.jpg"
                             alt="fotograf siedlce jarek-olszewski"
-                            width={370}
-                            height={300}
-                            priority
+                            width={300}
+                            height={250}
+                            loading="lazy"
                         />
-                        <div className="w-[330px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-12 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
-                            <h1 className="text-2xl font-semibold mb-2">
+                        <div className="w-[270px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-8 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
+                            <h1 className="text-xl font-semibold mb-2">
                                 Fotograf Siedlce – Jarek Olszewski | Fotografia
                                 Ślubna
                             </h1>
