@@ -161,6 +161,7 @@ export default function Home() {
                     <h4 className="text-3xl font-semibold text-neutral-900 mb-12 tracking-tight">
                         Opinie klientów
                     </h4>
+                    <Opinions />
                     <div className="flex items-center justify-center">
                         <p className="mr-2">Opinie z </p>
                         <LinkShare
@@ -169,8 +170,6 @@ export default function Home() {
                             href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
                         />
                     </div>
-
-                    <Opinions />
 
                     <div className="mt-12">
                         <MainBtn>
@@ -185,7 +184,7 @@ export default function Home() {
                 </div>
             </section>
 
-           <StepsWithLazyBackground />
+            <StepsWithLazyBackground />
 
             <FaqAccordion />
             <InstagramGrid />
@@ -211,6 +210,11 @@ export default function Home() {
                     textColor="text-black"
                 />
             </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2450.5668306245725!2d22.124585399999997!3d52.105814599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471f4f75292183f3%3A0x4d6060c876f5795!2sJarek%20Olszewski%20-%20Fotograf!5e0!3m2!1spl!2spl!4v1747762167147!5m2!1spl!2spl"
+                loading="lazy"
+                className="w-full h-96"
+            ></iframe>
         </div>
     );
 }
