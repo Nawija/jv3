@@ -56,7 +56,7 @@ export default function PhotoSwipe({
 
 function GalleryItem({ image }: { image: GalleryImage }) {
     const [loaded, setLoaded] = useState(false);
-    const ratio = image.height / image.width;
+    // const ratio = image.height / image.width;
     // const displayHeight = Math.ceil(300 * ratio);
     // const spans = Math.ceil(displayHeight / 10) + 1;
 
