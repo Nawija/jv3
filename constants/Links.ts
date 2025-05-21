@@ -1,6 +1,6 @@
 export const NAVLINKS = [
     {
-        label: "start",
+        label: "Strona główna",
         href: "/",
     },
     {
