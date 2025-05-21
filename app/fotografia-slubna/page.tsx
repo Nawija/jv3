@@ -89,7 +89,7 @@ export default async function FotografiaSlubna() {
                             desc="#reportaż_ślubny #sesja_ślubna #sesja_narzeczeńska"
                         />
                         <div className="max-w-3xl mx-auto">
-                            <BlogList blogs={blogs} limit={4} columns={2} />
+                            <BlogList blogs={blogs} limit={6} columns={3} />
                         </div>
 
                         <div className="max-w-2xl mx-auto my-12">

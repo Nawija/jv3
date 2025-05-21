@@ -24,15 +24,15 @@ const InfoBlock: FC<Props> = ({ title, image, slug }) => {
             <Image
                 src={image}
                 alt={title}
-                width={240}
-                height={240}
+                width={350}
+                height={350}
                 onLoadingComplete={() => setLoaded(true)}
-                className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                className={`w-full h-max object-cover transition-opacity duration-500 ${
                     loaded ? "opacity-100" : "opacity-0"
                 }`}
             />
 
-            <h2 className="font-light my-2 text-lg relative z-10">{title}</h2>
+            <h3 className="font-extralight my-1 text-sm md:text-base relative z-10 line-clamp-1 px-2 ">{title}</h3>
         </Link>
     );
 };

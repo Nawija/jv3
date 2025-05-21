@@ -15,10 +15,10 @@ export default function BlogList({
     columns = 2,
 }: Props) {
     const visibleBlogs = limit ? blogs.slice(0, limit) : blogs;
-    const gridCols = `grid-cols-1 md:grid-cols-${columns}`;
+    const gridCols = `grid-cols-2 md:grid-cols-${columns}`;
 
     return (
-        <section className={`grid gap-2 ${gridCols} ${className}`}>
+        <section className={`grid gap-4 ${gridCols} ${className}`}>
             {visibleBlogs.map((blog, i) =>
                 blog ? (
                     <BlogCard
