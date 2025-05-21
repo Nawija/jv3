@@ -1,4 +1,3 @@
-"use server";
 // External
 import Image from "next/image";
 import Link from "next/link";
@@ -197,7 +196,7 @@ export default function Home() {
 
             <div className="bg-gradient-to-tr bg-gray-100 py-16 mt-16 px-6 md:px-12">
                 <section className="max-w-6xl mx-auto space-y-16 md:space-y-24">
-                    {TEXT_SECTIONS.map(({ title, content }, index) => {
+                    {TEXT_SECTIONS.map(({ title, keyword, content }, index) => {
                         const isReversed = index % 2 === 1;
 
                         return (
@@ -223,9 +222,17 @@ export default function Home() {
                                     <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 drop-shadow-sm mb-2">
                                         {title}
                                     </h2>
-                                    <span className="bg-brand-nav text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                        Jarek Foto
-                                    </span>
+                                    {keyword && (
+                                        <p
+                                            className={`bg-brand-nav text-white text-xs w-max font-semibold px-3 py-1 rounded-full capitalize ${
+                                                isReversed
+                                                    ? "md:ml-auto"
+                                                    : ""
+                                            }`}
+                                        >
+                                            {keyword}
+                                        </p>
+                                    )}
                                 </div>
                                 <div className="md:w-2/3 px-4">
                                     <p className="text-gray-700 leading-relaxed text-start text-lg md:text-xl">
