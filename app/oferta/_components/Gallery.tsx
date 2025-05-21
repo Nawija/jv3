@@ -75,8 +75,8 @@ function ImgGallery({ image }: ImgGalleryProps) {
                     }`}
                     src={image.responsiveImage.src}
                     alt="Fotografia z galerii Jarek Olszewski"
-                    height={image.responsiveImage.height}
-                    width={image.responsiveImage.width}
+                    height={image.responsiveImage.height / 4}
+                    width={image.responsiveImage.width / 4}
                     onLoadingComplete={() => setLoaded(true)}
                 />
             </a>

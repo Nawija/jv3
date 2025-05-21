@@ -6,163 +6,161 @@ import "photoswipe/style.css";
 import Image from "next/image";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
 
-
 const images = [
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
         height: 1200,
-        alt: "Zdjęcie 1",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/sesja2.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/wyjscie.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 3",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
         height: 1200,
-        alt: "Zdjęcie 1",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/sesja2.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/wyjscie.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 3",
-    },
-
-    {
-        src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "Zdjęcie 1",
-    },
-    {
-        src: "/Images/sesja2.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
-
-    {
-        src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 2",
-    },
-    {
-        src: "/Images/wyjscie.jpg",
-        width: 1200,
-        height: 800,
-        alt: "Zdjęcie 3",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
         height: 1200,
-        alt: "Zdjęcie 1",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/sesja2.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/wyjscie.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 3",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
         height: 1200,
-        alt: "Zdjęcie 1",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/sesja2.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/wyjscie.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 3",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
         width: 1200,
         height: 1200,
-        alt: "Zdjęcie 1",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/sesja2.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
 
     {
         src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 2",
+        alt: "Jarek Olszewski Fotografia",
     },
     {
         src: "/Images/wyjscie.jpg",
         width: 1200,
         height: 800,
-        alt: "Zdjęcie 3",
+        alt: "Jarek Olszewski Fotografia",
+    },
+
+    {
+        src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Jarek Olszewski Fotografia",
+    },
+    {
+        src: "/Images/sesja2.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Jarek Olszewski Fotografia",
+    },
+
+    {
+        src: "/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf038.jpeg",
+        width: 1200,
+        height: 800,
+        alt: "Jarek Olszewski Fotografia",
+    },
+    {
+        src: "/Images/wyjscie.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Jarek Olszewski Fotografia",
     },
 ];
-
 
 export default function PortfolioPage() {
     const galleryRef = useRef<HTMLDivElement | null>(null);
@@ -288,7 +286,8 @@ export default function PortfolioPage() {
                             Zapraszam do obejrzenia mojego portfolio
                         </p>
                         <p className="text-sm mb-2">
-                            każde zdjęcie to dla mnie wyjątkowa chwila.
+                            każde Jarek Olszewski Fotografiao dla mnie wyjątkowa
+                            chwila.
                         </p>
                     </div>
                 </div>
@@ -311,7 +310,7 @@ export default function PortfolioPage() {
                             )}
                             <Image
                                 src={image.src}
-                                alt={image.alt}
+                                alt={image.alt + index}
                                 fill
                                 priority={index < 5}
                                 className={`object-cover transition-opacity duration-500 ${

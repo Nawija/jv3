@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Gallery from "./_components/Gallery";
-import path from "path";
-import fs from "fs";
 import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
+import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 
 const benefits = [
     [
@@ -33,7 +32,7 @@ const benefits = [
 ];
 
 const pageTitle =
-    "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże"
+    "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże";
 const pageDescription =
     "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
 
@@ -55,18 +54,7 @@ export const metadata: Metadata = {
 };
 
 export default async function OffertsPage() {
-    const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
-    const files = fs.readdirSync(dirPath);
-
-    const allImages = files
-        .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
-        .map((file) => ({
-            responsiveImage: {
-                src: `/Images/PodglądoweZdjecia/${file}`,
-                width: 1000,
-                height: 667,
-            },
-        }));
+    const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
 
     return (
         <div className="h-full">
@@ -113,8 +101,18 @@ export default async function OffertsPage() {
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4">
                                 {[
-                                    { href: "/", label: "Oferta ślubna" },
-                                    { href: "/", label: "Oferta chrztu" },
+                                    {
+                                        href: "/sesja-slubna",
+                                        label: "Oferta ślubna",
+                                    },
+                                    {
+                                        href: "/fotografia-chrztu",
+                                        label: "Oferta chrztu",
+                                    },
+                                    {
+                                        href: "/sesja-narzeczenska",
+                                        label: "Sesja Narzeczenska",
+                                    },
                                 ].map(({ href, label }, i) => (
                                     <Link
                                         key={i}

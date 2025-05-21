@@ -4,8 +4,7 @@ import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
-const pageTitle =
-    "Kontakt - Jarek Olszewski | Fotograf ślubny Siedlce";
+const pageTitle = "Kontakt - Jarek Olszewski | Fotograf ślubny Siedlce";
 const pageDescription =
     "Skontaktuj się z Jarkiem Olszewskim - fotografem ślubnym z Siedlec. Zarezerwuj termin sesji, zapytaj o ofertę i poznaj szczegóły współpracy.";
 
@@ -52,7 +51,7 @@ export default function ContactPage() {
             <p className="text-lg md:text-xl mb-10">
                 Masz pytania dotyczące oferty fotograficznej, chcesz sprawdzić
                 dostępność terminu lub po prostu porozmawiać? Skontaktuj się ze
-                mną – jako fotograf zawsze jestem otwarty na rozmowę i pomogę
+                mną - jako fotograf zawsze jestem otwarty na rozmowę i pomogę
                 jak tylko potrafię.
             </p>
 

@@ -2,14 +2,13 @@ import ImageComponent from "@/components/ImageComponent";
 import TitleH2 from "@/components/TitleH2";
 import { getBlogs } from "@/lib/getBlogs";
 import HeroSection from "../../components/HeroSection";
-import path from "path";
-import fs from "fs";
 import CarouselProps from "@/components/CarouselProps";
 import { OFERTAIMAGES } from "@/constants/Links";
 import BlogList from "@/components/BlogList";
 import ContactForm from "@/components/ContactForm";
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import { Metadata } from "next";
+import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 
 const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
 const pageDescription =
@@ -34,21 +33,7 @@ export const metadata: Metadata = {
 
 export default async function FotografiaSlubna() {
     const blogs = await getBlogs();
-    const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
-    const files = fs.readdirSync(dirPath);
-
-    const allImages = files
-        .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
-        .map((file) => {
-            const imagePath = `/Images/PodglądoweZdjecia/${file}`;
-            return {
-                responsiveImage: {
-                    src: imagePath,
-                    width: 1000,
-                    height: 667,
-                },
-            };
-        });
+    const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
 
     const formattedImages = allImages.map((img) => ({
         src: img.responsiveImage.src,

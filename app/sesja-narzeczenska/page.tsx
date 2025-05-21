@@ -1,11 +1,10 @@
 import TitleH2 from "@/components/TitleH2";
 import HeroSection from "../../components/HeroSection";
-import path from "path";
-import fs from "fs";
 import ContactForm from "@/components/ContactForm";
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import { Metadata } from "next";
 import Gallery from "../oferta/_components/Gallery";
+import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 
 const pageTitle =
     "Sesja narzeczeńska - naturalne, pełne emocji zdjęcia | Fotograf";
@@ -30,24 +29,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SesjaNarzeczenska() {
-    const dirPath = path.join(
-        process.cwd(),
-        "public/Images/sesja-narzeczenska"
-    );
-    const files = fs.readdirSync(dirPath);
-
-    const allImages = files
-        .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
-        .map((file) => {
-            const imagePath = `/Images/sesja-narzeczenska/${file}`;
-            return {
-                responsiveImage: {
-                    src: imagePath,
-                    width: 1000,
-                    height: 667,
-                },
-            };
-        });
+    const allImages = getImagesFromFolder("sesja-narzeczenska", 6);
 
     return (
         <>
