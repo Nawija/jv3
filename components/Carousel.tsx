@@ -28,7 +28,7 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
         if (mouseOver) return;
         timeout = setTimeout(() => {
             slider.next();
-        }, 3000); // zmień czas (ms) według uznania
+        }, 3400); // zmień czas (ms) według uznania
     }
 
     slider.on("created", () => {
@@ -95,9 +95,9 @@ const Carousel = () => {
                             fill
                             className="object-cover transition-opacity duration-500"
                             style={{ objectPosition: image.position }}
-                            quality={83}
+                            quality={100}
                             priority={index < 2}
-                            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1600px"
+                            sizes="(max-width: 768px) 85vw, (max-width: 1200px) 75vw, 1600px"
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}
