@@ -66,18 +66,18 @@ export default function Home() {
                         />
                         <div className="w-[270px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-8 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
                             <h1 className="text-xl font-semibold mb-2">
-                                Fotograf Siedlce – Jarek Olszewski | Fotografia
-                                Ślubna
+                                Fotograf Ślubny Siedlce - Jarek Olszewski |
+                                Fotografia Ślubna
                             </h1>
                             <p>
-                                Uśmiech na mojej twarzy to Wasza zasługa. Jestem
-                                szczęśliwym człowiekiem, który zamienił swoją
-                                pasje w sposób na życie. Obserwowanie i
-                                fotografowanie całej masy emocji, to jest to co
-                                najbardziej uwielbiam w swojej pracy. Fakt
-                                stworzenia unikalnych zdjęć które będą
-                                towarzyszyć Wam przez całe życie to coś
-                                pięknego. …czytaj więcej
+                                Zajmuję się uwiecznianiem wyjątkowych chwil w
+                                życiu - od pełnych emocji ślubów, chrztów,
+                                komunii i sesji narzeczeńskich, po sesje
+                                rodzinne, plenerowe, noworodkowe, kobiece i
+                                okolicznościowe. Każda z nich to dla mnie osobna
+                                opowieść, którą tworzę z pasją, wrażliwością i
+                                dbałością o każdy detal - tak, by zatrzymać
+                                emocje na dłużej.
                             </p>
                         </div>
                     </div>
@@ -86,19 +86,20 @@ export default function Home() {
                 <div className="my-10">
                     <FadeInOnScroll delay={0.1}>
                         <h2 className="text-xl py-4">
-                            Komu i jakie zdjęcia robię?
+                            Szukasz fotografa ślubnego? Reportaż ślubny
                         </h2>
                     </FadeInOnScroll>
                     <FadeInOnScroll delay={0.3}>
-                        <p className="px-3 max-w-screen-lg mx-auto">
-                            najczęściej fotografuję uśmiechniętych ludzi,
-                            podczas najważniejszych chwil w życiu. specjalizuje
-                            się w reportażu ślubnym, lecz inne dziedziny
-                            fotografii nie są mi obce. chęć ciągłego poznawania
-                            i rozwoju pozwoliła uzbierać spory bagaż
-                            doświadczenia i wyjątkowych zdjęć. moje fotografie
-                            staram się by były naturalne i prawdziwe, a przez to
-                            ponadczasowe…
+                        <p className="px-3 max-w-3xl mx-auto">
+                            Szukasz kogoś, kto w sposób dyskretny i
+                            profesjonalny uwieczni dzień Waszego ślubu? Oferuję
+                            pakiety fotograficzne dopasowane do Waszych potrzeb.
+                            Moja fotografia to coś więcej niż tylko zdjęcia. To
+                            historia Waszej miłości, którą chcę opowiedzieć
+                            kadrami. Każdy reportaż tworzę indywidualnie, z
+                            dbałością o każdy szczegół - od przygotowań, przez
+                            ceremonię do oczepin. Klienci cenią mnie za
+                            profesjonalizm, podejście do pracy i naturalny styl.
                         </p>
                     </FadeInOnScroll>
                 </div>
@@ -195,26 +196,44 @@ export default function Home() {
 
             <div className="bg-gradient-to-tr from-white to-gray-200 py-16 mt-16 px-6 md:px-12">
                 <section className="max-w-6xl mx-auto space-y-16 md:space-y-24">
-                    {TEXT_SECTIONS.map(({ title, content }, index) => (
-                        <div
-                            key={index}
-                            className={`
-          border-l-4 border-brand-nav pl-6 pb-8 
-          md:flex md:items-center md:justify-between md:pl-10 md:gap-12
-          ${index % 2 === 1 ? "md:flex-row-reverse md:text-end" : ""}
-        `}
-                            style={{ scrollMarginTop: "5rem" }}
-                        >
-                            <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-4 md:mb-0 drop-shadow-sm md:w-1/3">
-                                {title}
-                            </h2>
-                            <div className="md:w-2/3">
-                                <p className="text-gray-700 leading-relaxed text-start text-lg md:text-xl">
-                                    {content}
-                                </p>
+                    {TEXT_SECTIONS.map(({ title, content }, index) => {
+                        const isReversed = index % 2 === 1;
+
+                        return (
+                            <div
+                                key={index}
+                                className={`
+                        md:flex md:items-center md:justify-between md:gap-12 pb-8
+                        ${isReversed ? "md:flex-row-reverse md:text-end" : ""}
+                    `}
+                                style={{ scrollMarginTop: "5rem" }}
+                            >
+                                <div
+                                    className={`
+                            md:w-1/3 mb-8 md:mb-0 px-4 
+                            border-brand-nav 
+                            ${
+                                isReversed
+                                    ? "border-l-4 md:border-l-0 md:border-r-4 "
+                                    : "border-l-4 "
+                            }
+                        `}
+                                >
+                                    <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 drop-shadow-sm mb-2">
+                                        {title}
+                                    </h2>
+                                    <span className="bg-brand-nav text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                        JarekPhoto
+                                    </span>
+                                </div>
+                                <div className="md:w-2/3 px-4">
+                                    <p className="text-gray-700 leading-relaxed text-start text-lg md:text-xl">
+                                        {content}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </section>
             </div>
 

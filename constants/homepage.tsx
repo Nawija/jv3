@@ -8,80 +8,76 @@ type Section = {
 
 export const TEXT_SECTIONS: Section[] = [
     {
-        title: "Cześć! Nazywam się Jarek Olszewski",
+        title: "Dlaczego warto wybrać mnie jako fotografa?",
         content: (
             <>
-                Jestem <strong>fotografem ślubnym z Siedlec</strong>, a moją
-                największą pasją jest opowiadanie historii za pomocą zdjęć.
-                Uwieczniam emocje, wzruszenia i najpiękniejsze chwile w Waszym
-                życiu. W moim <strong>portfolio</strong> znajdziesz{" "}
-                <strong>reportaże ślubne</strong>,{" "}
-                <strong>sesje narzeczeńskie</strong>,{" "}
-                <strong>zdjęcia z chrztu</strong>, <strong>komunii</strong>, a
-                także <strong>plenerowe sesje rodzinne</strong>.
+                Wybierając mnie na fotografa w Twoim ważnym dniu, zyskujesz coś
+                więcej niż tylko piękne zdjęcia — otrzymujesz pełne
+                zaangażowanie, spokój i pewność, że każda chwila zostanie
+                uchwycona z wyczuciem. Pracuję dyskretnie, z empatią i sercem,
+                dzięki czemu tworzę autentyczne kadry, które oddają
+                naturalność i prawdziwe emocje. Dbam o detale, atmosferę i
+                komfort — bo wiem, jak ważne są te momenty i jak bezcenne będą
+                wspomnienia, do których będziesz wracać przez lata.
             </>
         ),
     },
     {
-        title: "Dlaczego warto mi zaufać jako fotografowi?",
+        title: "Fotografia ślubna - co mnie wyróżnia?",
         content: (
             <>
-                Szukasz kogoś, kto <strong>z dyskrecją i wyczuciem</strong>{" "}
-                uchwyci ulotne momenty Twojego <strong>ślubu</strong>? Jako{" "}
-                <strong>fotograf ślubny z Siedlec</strong> tworzę zdjęcia z
-                sercem i pasją, oferując <strong>pakiety dopasowane</strong> do
-                różnych potrzeb. Realizuję też{" "}
-                <strong>sesje noworodkowe</strong>, <strong>rodzinne</strong>{" "}
-                oraz <strong>plenerowe</strong>. Klienci doceniają mnie za{" "}
-                <strong>naturalny styl</strong>, <strong>profesjonalizm</strong>{" "}
-                i zaangażowanie – często słyszę, że jestem{" "}
-                <strong>najlepszym fotografem w Siedlcach</strong>. To ogromna
-                motywacja!
+                Fotografia towarzyszy mi od wielu lat — to nie tylko zawód, ale
+                przede wszystkim pasja, która z biegiem czasu przerodziła się
+                w pełne zaangażowania rzemiosło. Wieloletnie doświadczenie
+                pozwala mi pracować swobodnie w różnych warunkach i sytuacjach,
+                uchwycić to, co ulotne, i jednocześnie zadbać o każdy detal.
+                Dzięki temu możesz mieć pewność, że niezależnie od okazji,
+                powierzysz swoje wspomnienia w dobre ręce.
             </>
         ),
     },
     {
-        title: "Fotografia ślubna – moja filozofia",
+        title: "Najlepszy fotograf Siedlce? Sprawdź portfolio",
         content: (
             <>
-                Dla mnie <strong>fotografia ślubna</strong> to nie tylko zdjęcia
-                – to sposób opowiedzenia Waszej historii. Każdy{" "}
-                <strong>reportaż</strong> tworzę indywidualnie – z uwagą,
-                empatią i wyczuciem detali. Od porannych przygotowań, przez
-                wzruszającą ceremonię, aż po szaloną zabawę – jestem tam, by
-                złapać wszystko, co najpiękniejsze. Realizuję także{" "}
-                <strong>sesje narzeczeńskie</strong>,{" "}
-                <strong>plenery ślubne</strong> i{" "}
-                <strong>reportaże rodzinne</strong>.
+                Szukasz fotografa, któremu możesz zaufać w ważnych momentach?
+                Zachęcam do zajrzenia do sekcji{" "}
+                <LinkShare href="/portfolio" title="PORTFOLIO" /> - to właśnie
+                tam znajdziesz przekrój moich prac: od romantycznych sesji
+                plenerowych, przez śluby, po rodzinne uroczystości. Zdjęcia
+                powiedzą Ci więcej niż słowa - pokażą styl, emocje i atmosferę,
+                którą mogę uchwycić również dla Ciebie.
             </>
         ),
     },
     {
-        title: "Portfolio – zobacz moje zdjęcia",
+        title: "Oferta fotograficzna - Cennik | Pakiet",
         content: (
             <>
-                Chcesz zobaczyć, jak pracuję? Odwiedź moje{" "}
-                <LinkShare href="/portfolio" title="portfolio" /> i przekonaj
-                się, jak wyglądają moje realizacje. Znajdziesz tam fotografie z{" "}
-                plenerów, <strong>ślubów</strong> i rodzinnych uroczystości. To
-                najlepszy sposób, by poznać mój styl i podejście do fotografii.
+                W mojej ofercie znajdziesz starannie przygotowane{" "}
+                <LinkShare href="/oferta" title="pakiety fotograficzne" /> - od
+                krótkich, nastrojowych sesji po pełne reportaże ślubne. Oferuję
+                również <strong>fotografię reklamową</strong>,{" "}
+                <strong>portrety</strong> oraz{" "}
+                <strong>sesje okolicznościowe</strong>, dopasowane do wyjątkowych
+                chwil i indywidualnych potrzeb. Każdy pakiet zawiera krótki opis,
+                czas trwania, liczbę zdjęć oraz orientacyjną wycenę, abyś z
+                łatwością mógł wybrać to, co najlepiej odpowiada Twoim
+                oczekiwaniom.
             </>
         ),
     },
     {
-        title: "Oferta fotograficzna dopasowana do Ciebie",
+        title: "Uwiecznij Najważniejsze Chwile - Fotograf Ślubny i Sesje Narzeczeńskie",
         content: (
             <>
-                Sprawdź moją{" "}
-                <LinkShare href="/oferta" title="ofertę fotograficzną" /> –
-                znajdziesz tam różnorodne <strong>pakiety</strong>: od krótkich
-                sesji po pełne <strong>reportaże ślubne</strong>. Oferuję
-                również <strong>portrety</strong>,{" "}
-                <strong>zdjęcia reklamowe</strong> oraz{" "}
-                <strong>sesje okolicznościowe</strong>. Każdy{" "}
-                <strong>pakiet</strong> zawiera szczegóły dotyczące liczby
-                zdjęć, czasu realizacji i orientacyjnego{" "}
-                <strong>cennika</strong>.
+                Jako fotograf z Siedlec, pracuję głównie na terenie regionu, ale
+                z przyjemnością dojadę również dalej - bo pasja do fotografii nie
+                zna granic. Jeśli masz pomysł na swoją sesję zdjęciową lub chcesz
+                zapytać o dostępne terminy, serdecznie{" "}
+                <LinkShare href="/kontakt" title="zapraszam do kontaktu" />.
+                Z chęcią omówię wątpliwości, doradzę i wspólnie stworzymy coś
+                wyjątkowego.
             </>
         ),
     },
