@@ -37,12 +37,21 @@ export default function Footer() {
                                 blog
                             </Link>
                         </li>
+                        <li key="regulamin">
+                            <Link
+                                href="/regulamin-i-polityka-prywatnoci"
+                                aria-label="regulamin polityka-prywatnoci"
+                                className="text-neutral-300 hover:text-white transition"
+                            >
+                                regulamin, polityka-prywatnosci
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
                 <div>
                     <p className="font-semibold mb-3">Znajdź mnie</p>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 mb-4">
                         <Link
                             href="https://www.facebook.com/JarekOlszewskiFotografia/"
                             target="_blank"
@@ -71,14 +80,6 @@ export default function Footer() {
                             <FaGoogle size={20} />
                         </Link>
                     </div>
-
-                    <Link
-                        href="/regulamin-i-polityka-prywatnoci"
-                        aria-label="regulamin polityka-prywatnoci"
-                        className="text-neutral-300 hover:text-white transition"
-                    >
-                        regulamin, polityka-prywatnosci
-                    </Link>
                 </div>
             </div>
             <div className="text-center text-sm text-neutral-300 mt-12">

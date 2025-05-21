@@ -13,7 +13,6 @@ export default function SeoHead() {
                 content="RL-Vh9Gly9vqZ4gHuFh10_tKCUU3J7DGBBOsvMxZKG0"
             />
             <link rel="icon" href="/favicon.ico" sizes="any" />
-            <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
             <script type="application/ld+json">
                 {JSON.stringify({
@@ -23,7 +22,7 @@ export default function SeoHead() {
                     url: "https://jv3.vercel.app",
                     image: "https://jv3.vercel.app/Images/fotograf-siedlce-jarek-olszewski.jpg",
                     description:
-                        "Fotograf ślubny w Siedlcach – Jarek Olszewski.",
+                        "Fotograf ślubny w Siedlcach - Jarek Olszewski.",
                     address: {
                         "@type": "PostalAddress",
                         addressLocality: "Siedlce",
