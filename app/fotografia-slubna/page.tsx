@@ -79,7 +79,7 @@ export default async function FotografiaSlubna() {
                                 Interesująco i spójnie. Poprzez fotografie
                                 staram się opowiedzieć Wasz najważniejszy dzień
                                 w życiu. Fotografując śluby, łapie to co przez
-                                wielu niedostrzeżone "chwile i momenty"
+                                wielu niedostrzeżone (chwile i momenty)
                                 Przygotowując dla Was zdjęcia ślubne, kieruję
                                 się dbałością o to by pozostały prawdziwe i
                                 naturalne a przez to ponadczasowe

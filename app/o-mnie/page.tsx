@@ -1,4 +1,3 @@
-import HeroSection from "@/components/HeroSection";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import PhotoSwipe from "@/components/PhotoSwipe";
 import { Metadata } from "next";
