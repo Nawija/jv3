@@ -34,18 +34,17 @@ export const OFERTAIMAGES = [
     },
     {
         src: "/Images/Oferta/02_sesja_slubna_plener_siedlce.jpg",
-        href: "/fotografia-slubna",
+        href: "/sesja-slubna",
         title: "Sesja Ślubna",
         desc: "Od przygotowań po wesele — wszystkie emocje jednego dnia.",
     },
     {
         src: "/Images/Oferta/sesja-narzeczenska-siedlce(2).jpg",
-        href: "/fotografia-slubna",
+        href: "/sesja-narzeczenska",
         title: "Sesja Narzeczeńska",
         desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
     },
 ];
-
 
 export const OPINIONS = [
     {

@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
+import { Metadata } from "next";
 
 const benefits = [
     [
@@ -31,6 +32,28 @@ const benefits = [
     ["Szybka realizacja", "sprawna i terminowa dostawa gotowych materiałów."],
 ];
 
+const pageTitle =
+    "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże"
+const pageDescription =
+    "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
+
+export const metadata: Metadata = {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+        title: pageTitle,
+        description: pageDescription,
+        images: [
+            {
+                url: "Images/sesja.jpg",
+                width: 400,
+                height: 260,
+                alt: "Cennik fotograf oferta sesji zdjęciowych - Jarek Olszewski",
+            },
+        ],
+    },
+};
+
 export default async function OffertsPage() {
     const dirPath = path.join(process.cwd(), "public/Images/PodglądoweZdjecia");
     const files = fs.readdirSync(dirPath);
@@ -56,7 +79,7 @@ export default async function OffertsPage() {
                         Szukasz fotografa w Siedlcach, który uwieczni Twoje
                         chwile w sposób naturalny i ponadczasowy? Oferuję
                         kompleksową obsługę fotograficzną dostosowaną do Twoich
-                        potrzeb – z pasją, precyzją i doświadczeniem.
+                        potrzeb - z pasją, precyzją i doświadczeniem.
                     </p>
 
                     <div className="space-y-8">
