@@ -37,15 +37,6 @@ export default function Footer() {
                                 blog
                             </Link>
                         </li>
-                        <li key="blog">
-                            <Link
-                                href="/regulamin-i-polityka-prywatnoci"
-                                aria-label="regulamin polityka-prywatnoci"
-                                className="text-neutral-300 hover:text-white transition"
-                            >
-                                regulamin, polityka-prywatnosci
-                            </Link>
-                        </li>
                     </ul>
                 </div>
 
@@ -80,6 +71,14 @@ export default function Footer() {
                             <FaGoogle size={20} />
                         </Link>
                     </div>
+
+                    <Link
+                        href="/regulamin-i-polityka-prywatnoci"
+                        aria-label="regulamin polityka-prywatnoci"
+                        className="text-neutral-300 hover:text-white transition"
+                    >
+                        regulamin, polityka-prywatnosci
+                    </Link>
                 </div>
             </div>
             <div className="text-center text-sm text-neutral-300 mt-12">
