@@ -136,7 +136,7 @@ export default function Nav() {
                                                         : undefined
                                                 }
                                                 aria-label={
-                                                    link.label === "start"
+                                                    link.label === "Strona główna"
                                                         ? "Przejdź do strony głównej"
                                                         : `Przejdź do: ${link.label}`
                                                 }
