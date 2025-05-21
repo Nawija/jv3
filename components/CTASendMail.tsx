@@ -35,7 +35,7 @@ export default function CTASendMail({ title }: { title: string }) {
                                 className="absolute top-2 right-2"
                                 onClick={() => setIsModalOpen(false)}
                             >
-                                <IoMdClose className="text-2xl" />
+                                <IoMdClose className="text-2xl text-black" />
                             </button>
                             <ContactForm />
                         </motion.div>

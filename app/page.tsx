@@ -153,7 +153,7 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="space-y-4 p-24 bg-gray-100 flex items-center justify-center flex-col">
+            <div className="space-y-4 p-24 bg-neutral-900 text-white flex items-center justify-center flex-col">
                 <FadeInOnScroll delay={0.1}>
                     <h3 className="text-2xl text-center">
                         Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
@@ -194,7 +194,7 @@ export default function Home() {
             <FaqAccordion />
             <InstagramGrid />
 
-            <div className="bg-gradient-to-tr from-white to-gray-200 py-16 mt-16 px-6 md:px-12">
+            <div className="bg-gradient-to-tr bg-gray-100 py-16 mt-16 px-6 md:px-12">
                 <section className="max-w-6xl mx-auto space-y-16 md:space-y-24">
                     {TEXT_SECTIONS.map(({ title, content }, index) => {
                         const isReversed = index % 2 === 1;
@@ -223,7 +223,7 @@ export default function Home() {
                                         {title}
                                     </h2>
                                     <span className="bg-brand-nav text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                        JarekPhoto
+                                        Jarek Foto
                                     </span>
                                 </div>
                                 <div className="md:w-2/3 px-4">
@@ -237,10 +237,10 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="pb-20">
+            <div className="pb-20 bg-neutral-900">
                 <InviteSocialMedia
                     text="Więcej znajdziesz na"
-                    textColor="text-black"
+                    textColor="text-white"
                 />
             </div>
             <iframe
