@@ -156,9 +156,9 @@ export default function Home() {
 
             <section className="bg-white px-4 py-12">
                 <div className="mx-auto max-w-5xl text-center">
-                    <h4 className="mb-12 font-light text-neutral-900 text-3xl tracking-tight">
+                    <p className="mb-12 font-light text-neutral-900 text-3xl tracking-tight">
                         Opinie klientów
-                    </h4>
+                    </p>
                     <Opinions />
                     <div className="flex justify-center items-center">
                         <p className="mr-2">Opinie z </p>
