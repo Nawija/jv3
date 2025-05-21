@@ -5,7 +5,6 @@ export default function SeoHead() {
                 name="viewport"
                 content="width=device-width, initial-scale=1"
             />
-            <link rel="canonical" href="https://jv3.vercel.app/" />
             <meta name="robots" content="index, follow" />
             <meta name="author" content="Jarek Olszewski" />
             <meta name="copyright" content="© 2025 Jarek Olszewski" />

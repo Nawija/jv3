@@ -62,7 +62,7 @@ export default function AboutMePage() {
     return (
         <>
             <HeroSection
-                title="Jarek Olszewski – Fotograf z Siedlec"
+                title="Jarek Olszewski - Fotograf"
                 backgroundImages={["/Images/slub.jpg"]}
                 paragraphs={[
                     "Poznaj moją historię i sposób, w jaki patrzę na świat przez obiektyw aparatu.",
@@ -72,9 +72,9 @@ export default function AboutMePage() {
                 {/* Sekcja O mnie */}
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
                     <div className="text-center">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
-                            Kim jestem – fotograf i człowiek z pasją
-                        </h2>
+                        <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
+                            Kim jestem - fotograf i człowiek z pasją
+                        </h1>
                         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
                             Poznaj moją historię i sposób, w jaki patrzę na
                             świat przez obiektyw aparatu.

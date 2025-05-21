@@ -9,7 +9,6 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
 import { Logo } from "./Logo";
 
-
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
     const pathname = usePathname();
@@ -135,6 +134,11 @@ export default function Nav() {
                                                     pathname === link.href
                                                         ? "page"
                                                         : undefined
+                                                }
+                                                aria-label={
+                                                    link.label === "start"
+                                                        ? "Przejdź do strony głównej"
+                                                        : `Przejdź do: ${link.label}`
                                                 }
                                             >
                                                 {link.label}
