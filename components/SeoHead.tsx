@@ -11,6 +11,10 @@ export default function SeoHead() {
             <meta name="robots" content="index, follow" />
             <meta name="author" content="Jarek Olszewski" />
             <meta name="copyright" content="© 2025 Jarek Olszewski" />
+            <meta
+                name="google-site-verification"
+                content="RL-Vh9Gly9vqZ4gHuFh10_tKCUU3J7DGBBOsvMxZKG0"
+            />
             <link rel="icon" href="/favicon.ico" sizes="any" />
             <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
