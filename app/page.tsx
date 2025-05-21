@@ -109,7 +109,7 @@ export default function Home() {
                         <Image
                             src="/Images/slub.jpg"
                             alt="Fotografia ślubna Para Młoda podczas ceremonii"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            sizes="(max-width: 768px) 300px, (max-width: 1200px) 450px, 600px"
                             fill
                             className="object-cover"
                             quality={75}
