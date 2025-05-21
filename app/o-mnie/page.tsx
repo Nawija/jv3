@@ -1,6 +1,29 @@
 import HeroSection from "@/components/HeroSection";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import PhotoSwipe from "@/components/PhotoSwipe";
+import { Metadata } from "next";
+
+const pageTitle =
+    "Jarek Olszewski - Fotograf ślubny Siedlce | Sesje, reportaże, emocje";
+const pageDescription =
+    "Profesjonalna fotografia ślubna i sesje zdjęciowe w Siedlcach. Jarek Olszewski - fotograf z pasją, który uchwyci najważniejsze chwile Twojego życia. Naturalne zdjęcia pełne emocji.";
+
+export const metadata: Metadata = {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+        title: pageTitle,
+        description: pageDescription,
+        images: [
+            {
+                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                width: 400,
+                height: 260,
+                alt: "Fotografia ślubna - Jarek Olszewski",
+            },
+        ],
+    },
+};
 
 export default function AboutMePage() {
     const images = [

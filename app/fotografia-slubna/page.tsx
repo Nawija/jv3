@@ -9,6 +9,28 @@ import { OFERTAIMAGES } from "@/constants/Links";
 import BlogList from "@/components/BlogList";
 import ContactForm from "@/components/ContactForm";
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
+import { Metadata } from "next";
+
+const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
+const pageDescription =
+    "Twój ślub to wyjątkowe wydarzenie, pełne wzruszeń, radości i niezapomnianych chwil. Profesjonalna fotografia ślubna to sposób, by zatrzymać te momenty na zawsze. Jako doświadczeni fotografowie ślubni wiemy, jak ważne jest dla Was, aby każdy uśmiech, każdy gest i każda emocja zostały pięknie uwiecznione.";
+
+export const metadata: Metadata = {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+        title: pageTitle,
+        description: pageDescription,
+        images: [
+            {
+                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                width: 400,
+                height: 260,
+                alt: "Fotografia ślubna - Jarek Olszewski",
+            },
+        ],
+    },
+};
 
 export default async function FotografiaSlubna() {
     const blogs = await getBlogs();

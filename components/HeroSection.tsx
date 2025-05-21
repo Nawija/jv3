@@ -57,7 +57,7 @@ export default function HeroSection({
 
       {/* Tekst */}
       <div className="relative z-10 pt-[30vh] lg:pt-[40vh] pb-[20vh] text-white text-center">
-        <h1 className="text-3xl font-semibold">{title}</h1>
+        <p className="text-3xl font-semibold">{title}</p>
         <div className="mt-4 px-6 max-w-screen-sm mx-auto space-y-4">
           {paragraphs.map((text, idx) => (
             <p key={idx}>{text}</p>

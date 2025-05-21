@@ -6,6 +6,7 @@ import "photoswipe/style.css";
 import Image from "next/image";
 import InviteSocialMedia from "@/components/InviteSocialMedia";
 
+
 const images = [
     {
         src: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
@@ -162,6 +163,7 @@ const images = [
     },
 ];
 
+
 export default function PortfolioPage() {
     const galleryRef = useRef<HTMLDivElement | null>(null);
     const imageRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -271,21 +273,22 @@ export default function PortfolioPage() {
             >
                 <div className="bg-stone-900/80 border p-8 border-zinc-800 flex items-center row-span-2 justify-center flex-col text-zinc-400">
                     <h1 className="text-xl text-white mb-3">
-                        Portfolio Jarek Olszewski
+                        Fotografia - Portfolio Jarek Olszewski
                     </h1>
                     <div className="max-w-96 text-white/80">
                         <p className="text-sm mb-2">
-                            Profesjonalna fotografia w Siedlcach – sesje,
-                            reportaże, wydarzenia.
+                            Profesjonalna fotografia w Siedlcach - sesje,
+                            reportaże, wydarzenia
                         </p>
                         <p className="text-sm mb-2">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Distinctio neque molestias officia!
+                            Fotografia to moja pasja i sposób na opowiadanie
+                            historii pełnych emocji. Uchwycam naturalne momenty,
+                            które zostają na zawsze. Pracuję z zaangażowaniem,
+                            tworząc zdjęcia pełne autentyczności i ciepła.
+                            Zapraszam do obejrzenia mojego portfolio
                         </p>
                         <p className="text-sm mb-2">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Modi eligendi, fuga asperiores animi deserunt
-                            digni
+                            każde zdjęcie to dla mnie wyjątkowa chwila.
                         </p>
                     </div>
                 </div>

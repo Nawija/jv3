@@ -13,7 +13,7 @@ export default function ParagraphWithBullets({
 }: Props) {
     return (
         <div className={`space-y-4 ${className}`}>
-            {title && <h2 className="text-2xl font-semibold">{title}</h2>}
+            {title && <h4 className="text-2xl font-semibold">{title}</h4>}
             {paragraph && <p className="text-lg text-gray-700">{paragraph}</p>}
             <ul className="list-disc pl-5 space-y-2 text-gray-800 text-start">
                 {bullets.map((point, idx) => (
