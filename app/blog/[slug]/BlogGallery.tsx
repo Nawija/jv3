@@ -25,7 +25,7 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
     return (
         <div
             id="gallery"
-            className="columns-1 md:columns-2 gap-1.5 max-w-4xl mx-auto mb-8 space-y-1.5"
+            className="columns-1 md:columns-1 gap-1.5 max-w-4xl mx-auto mb-8 space-y-1.5"
         >
             {images.map(({ src, width, height }, index) => {
                 const scaledWidth = Math.round(width / 2.5);

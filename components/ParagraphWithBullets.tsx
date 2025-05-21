@@ -12,10 +12,12 @@ export default function ParagraphWithBullets({
     className = "",
 }: Props) {
     return (
-        <div className={`space-y-4 ${className}`}>
-            {title && <h4 className="text-2xl font-semibold">{title}</h4>}
-            {paragraph && <p className="text-lg text-gray-700">{paragraph}</p>}
-            <ul className="list-disc pl-5 space-y-2 text-gray-800 text-start">
+        <div className={`space-y-4 text-base ${className}`}>
+            {title && <h4 className="text-xl font-medium">{title}</h4>}
+            {paragraph && (
+                <p className=" text-gray-800 font-medium border-y py-2">{paragraph}</p>
+            )}
+            <ul className="list-disc pl-5 space-y-2 text-gray-700 text-start">
                 {bullets.map((point, idx) => (
                     <li key={idx}>{point}</li>
                 ))}

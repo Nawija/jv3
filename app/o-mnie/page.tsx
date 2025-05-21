@@ -61,13 +61,7 @@ export default function AboutMePage() {
 
     return (
         <>
-            <HeroSection
-                title="Jarek Olszewski - Fotograf"
-                backgroundImages={["/Images/slub.jpg"]}
-                paragraphs={[
-                    "Poznaj moją historię i sposób, w jaki patrzę na świat przez obiektyw aparatu.",
-                ]}
-            />
+            
             <main className="bg-white text-gray-800">
                 {/* Sekcja O mnie */}
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">

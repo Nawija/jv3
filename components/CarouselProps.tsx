@@ -57,19 +57,19 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
         <div className="flex justify-center items-center relative">
             <Slider
                 {...settings}
-                className="w-full max-w-[1700px] slick-slider"
+                className="w-full slick-slider"
             >
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className="relative w-full xl:w-[1700px] h-[75vh] xl:h-[86vh] max-w-[1700px] text-center"
+                        className="relative w-full aspect-[7/7] md:aspect-[16/12] text-center"
                     >
                         <Image
                             src={image.src}
                             alt={`Obraz ${index + 1}`}
-                            className="object-cover w-full h-full"
+                            className="object-cover"
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
                             quality={85}
                         />
                     </div>

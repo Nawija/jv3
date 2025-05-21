@@ -27,7 +27,7 @@ const InfoBlock: FC<Props> = ({ title, image, slug }) => {
                 width={350}
                 height={350}
                 onLoadingComplete={() => setLoaded(true)}
-                className={`w-full h-max object-cover transition-opacity duration-500 ${
+                className={`w-full h-max object-cover aspect-[16/12] transition-opacity duration-500 ${
                     loaded ? "opacity-100" : "opacity-0"
                 }`}
             />

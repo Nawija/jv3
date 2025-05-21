@@ -52,20 +52,21 @@ export default function Home() {
     return (
         <div className="anim-opacity">
             <Carousel />
-            <div className="p-2 py-12 text-center relative  max-w-screen-xl mx-auto">
-                <span className="text-2xl ">Cześć! Miło mi że tu jesteś</span>
+            <div className="relative mx-auto p-2 py-4 max-w-screen-xl text-center">
+                <span className="text-2xl">Cześć! Miło mi że tu jesteś</span>
 
                 <FadeInOnScroll delay={0.1}>
-                    <div className="relative text-start mt-12 flex flex-col lg:flex-row items-center justify-center">
+                    <div className="relative flex lg:flex-row flex-col justify-center items-center mt-16 text-start">
                         <Image
-                            src="/Images/fotograf-siedlce-jarek-olszewski.jpg"
+                            src="/Images/home/fotograf-siedlce-jarek-olszewski.avif"
                             alt="fotograf siedlce jarek-olszewski"
-                            width={300}
-                            height={250}
+                            className=" object-cover"
+                            width={250}
+                            height={300}
                             priority
                         />
-                        <div className="w-[270px] lg:w-[400px] bg-black/60 lg:-ml-20 lg:mt-0 -mt-12 px-8 py-6 text-white text-xs tracking-tight backdrop-blur-sm">
-                            <h1 className="text-xl font-semibold mb-2">
+                        <div className="bg-black/60 backdrop-blur-sm -mt-12 lg:mt-0 lg:-ml-20 px-8 py-6 w-[330px] lg:w-[400px] text-white text-xs tracking-tight">
+                            <h1 className="mb-2 font-semibold text-xl">
                                 Fotograf Ślubny Siedlce - Jarek Olszewski |
                                 Fotografia Ślubna
                             </h1>
@@ -85,12 +86,12 @@ export default function Home() {
 
                 <div className="my-10">
                     <FadeInOnScroll delay={0.1}>
-                        <h2 className="text-xl py-4">
+                        <h2 className="py-4 text-xl">
                             Szukasz fotografa ślubnego? Reportaż ślubny
                         </h2>
                     </FadeInOnScroll>
                     <FadeInOnScroll delay={0.3}>
-                        <p className="px-3 max-w-3xl mx-auto">
+                        <p className="mx-auto px-3 max-w-3xl">
                             Szukasz kogoś, kto w sposób dyskretny i
                             profesjonalny uwieczni dzień Waszego ślubu? Oferuję
                             pakiety fotograficzne dopasowane do Waszych potrzeb.
@@ -104,25 +105,24 @@ export default function Home() {
                     </FadeInOnScroll>
                 </div>
 
-                <section className="relative w-full h-full grid grid-cols-1 lg:grid-cols-4 my-8">
-                    <div className="relative w-[80%] max-w-[600px] lg:mr-24 md:w-1/2 md:h-80 lg:h-96 lg:col-span-4 md:ml-auto ml-12 h-48 mb-24 px-3 -space-x-10 lg:space-x-0 mt-12">
+                <section className="relative grid grid-cols-1 lg:grid-cols-4 my-8 w-full h-full">
+                    <div className="relative -space-x-10 lg:drop-shadow-xl lg:space-x-0 lg:col-span-4 lg:mx-auto mt-12 mb-12 lg:mb-16 ml-12 px-3 lg:w-full lg:max-w-2xl w-[80%] sm:w-3/4 h-64 lg:h-96">
                         <Image
-                            src="/Images/slub.jpg"
+                            src="/Images/carousel/01_fotografia_slubna_siedlce.avif"
                             alt="Fotografia ślubna Para Młoda podczas ceremonii"
                             sizes="(max-width: 768px) 300px, (max-width: 1200px) 450px, 600px"
                             fill
                             className="object-cover"
                             quality={75}
                         />
-
-                        <div className="absolute -bottom-12 md:bottom-1/2 md:translate-y-1/2 md:-left-1/3 md:-translate-x-1/2 left-0 bg-black/60 text-start px-8 py-6 backdrop-blur-sm lg:p-12 z-10 h-max w-full">
-                            <p className="capitalize text-white text-2xl lg:text-5xl mb-2">
+                        <div className="lg:bottom-6 -bottom-12 left-0 lg:left-1/2 z-10 absolute bg-black/60 backdrop-blur-sm px-8 py-6 w-full lg:w-1/2 lg:py-8 h-max text-start lg:-translate-x-1/2">
+                            <p className="mb-2 text-white text-xl lg:text-3xl capitalize">
                                 reportaż ślubny
                             </p>
                             <Link
-                                href="/fotografia-slubna"
-                                aria-label="fotografia slubna"
-                                className="text-white text-sm py-1 px-4 border border-white"
+                                href="fotografia-slubna"
+                                aria-label="Fotografia Slubna"
+                                className="hover:bg-white/20 px-4 py-1 border border-white text-white text-sm transition-colors"
                             >
                                 Zobacz
                             </Link>
@@ -132,6 +132,7 @@ export default function Home() {
                         <SesjaComponent
                             key={index}
                             img={img.src}
+                            position={img.position}
                             title={img.title}
                             href={img.href}
                         />
@@ -140,9 +141,9 @@ export default function Home() {
                     <Link
                         href="/oferta"
                         aria-label="oferta"
-                        className="w-max mx-auto h-max hover:bg-black hover:text-white transition-color-colors -right-[14%] top-12 px-12 py-8 border-black border-2 font-semibold "
+                        className="top-12 -right-[14%] hover:bg-black mx-auto mt-24 lg:mt-12 px-12 py-8 border-2 border-black w-max h-max font-semibold hover:text-white transition-color-colors"
                     >
-                        <p className="uppercase text-center">
+                        <p className="text-center uppercase">
                             {["i", "wiele", "więcej"].map((word, index) => (
                                 <span key={index} className="block">
                                     {word}
@@ -153,23 +154,13 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="space-y-4 p-24 bg-neutral-900 text-white flex items-center justify-center flex-col">
-                <FadeInOnScroll delay={0.1}>
-                    <h3 className="text-2xl text-center">
-                        Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
-                    </h3>
-                </FadeInOnScroll>
-
-                <CTASendMail title="Napisz Do Mnie" />
-            </div>
-
-            <section className="bg-white py-20 px-4">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h4 className="text-3xl font-semibold text-neutral-900 mb-12 tracking-tight">
+            <section className="bg-white px-4 py-12">
+                <div className="mx-auto max-w-5xl text-center">
+                    <h4 className="mb-12 font-light text-neutral-900 text-3xl tracking-tight">
                         Opinie klientów
                     </h4>
                     <Opinions />
-                    <div className="flex items-center justify-center">
+                    <div className="flex justify-center items-center">
                         <p className="mr-2">Opinie z </p>
                         <LinkShare
                             title="Google"
@@ -181,21 +172,29 @@ export default function Home() {
                     <div className="mt-12">
                         <Link
                             href="/portfolio"
-                            aria-label="Przejdz do galerii z fotografią"
+                            aria-label="Przejdz do portfolio"
                         >
                             <MainBtn>Moje portfolio</MainBtn>
                         </Link>
                     </div>
                 </div>
             </section>
-
+            <InstagramGrid />
             <StepsWithLazyBackground />
+            <div className="flex flex-col justify-center items-center space-y-4 bg-gray-100 py-24 px-12 text-black">
+                <FadeInOnScroll delay={0.1}>
+                    <h3 className="text-2xl text-center">
+                        Porozmawiajmy o Twoim pomyśle na zdjęcia{" "}
+                    </h3>
+                </FadeInOnScroll>
+
+                <CTASendMail title="Napisz Do Mnie" />
+            </div>
 
             <FaqAccordion />
-            <InstagramGrid />
 
-            <div className="bg-gradient-to-tr bg-gray-100 py-16 mt-16 px-6 md:px-12">
-                <section className="max-w-6xl mx-auto space-y-16 md:space-y-24">
+            <div className="bg-gray-100 mt-4 px-6 md:px-12 py-16">
+                <section className="space-y-16 md:space-y-24 mx-auto max-w-6xl">
                     {TEXT_SECTIONS.map(({ title, keyword, content }, index) => {
                         const isReversed = index % 2 === 1;
 
@@ -219,23 +218,21 @@ export default function Home() {
                             }
                         `}
                                 >
-                                    <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 drop-shadow-sm mb-2">
+                                    <h2 className="drop-shadow-sm mb-2 font-semibold text-gray-900 text-xl md:text-3xl">
                                         {title}
                                     </h2>
                                     {keyword && (
                                         <p
                                             className={`bg-brand-nav text-white text-xs w-max font-semibold px-3 py-1 rounded-full capitalize ${
-                                                isReversed
-                                                    ? "md:ml-auto"
-                                                    : ""
+                                                isReversed ? "md:ml-auto" : ""
                                             }`}
                                         >
                                             {keyword}
                                         </p>
                                     )}
                                 </div>
-                                <div className="md:w-2/3 px-4">
-                                    <p className="text-gray-700 leading-relaxed text-start text-lg md:text-xl">
+                                <div className="px-4 md:w-2/3">
+                                    <p className="text-gray-700 text-base lg:text-lg text-start leading-relaxed">
                                         {content}
                                     </p>
                                 </div>
@@ -245,7 +242,7 @@ export default function Home() {
                 </section>
             </div>
 
-            <div className="pb-20 bg-neutral-900">
+            <div className="bg-neutral-900 pb-20">
                 <InviteSocialMedia
                     text="Więcej znajdziesz na"
                     textColor="text-white"

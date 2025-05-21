@@ -33,7 +33,7 @@ export default function StepsWithLazyBackground() {
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10 brightness-50"
                     style={{
-                        backgroundImage: "url('/Images/carousel/sesja.avif')",
+                        backgroundImage: "url('/Images/carousel/02_sesja_slubna_plener_siedlce.avif')",
                     }}
                 />
             )}

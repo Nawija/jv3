@@ -27,21 +27,24 @@ export const NAVLINKS = [
 
 export const OFERTAIMAGES = [
     {
-        src: "/Images/Oferta/fotografia-slubna-siedlce.jpg",
-        href: "/fotografia-slubna",
-        title: "Fotografia Ślubna",
-        desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
-    },
-    {
-        src: "/Images/Oferta/02_sesja_slubna_plener_siedlce.jpg",
+        src: "/Images/oferta/sesja-ślubna.avif",
+        position: "66% 0%",
         href: "/sesja-slubna",
         title: "Sesja Ślubna",
-        desc: "Od przygotowań po wesele — wszystkie emocje jednego dnia.",
+        desc: "Od przygotowań po wesele - wszystkie wydarzenie z tego dnia",
     },
     {
-        src: "/Images/Oferta/sesja-narzeczenska-siedlce(2).jpg",
+        src: "/Images/oferta/SESJA NARZECZEŃSKA.avif",
+        position: "55% 0%",
         href: "/sesja-narzeczenska",
         title: "Sesja Narzeczeńska",
+        desc: "pozwala oswoić się z aparatem, wyjątkowa pamiątka z czasu przed ślubnego",
+    },
+    {
+        src: "/Images/oferta/CHRZEST.avif",
+        position: "53% 50%",
+        href: "/fotografia-chrztu",
+        title: "Reportaż chrztu",
         desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
     },
 ];
@@ -49,17 +52,17 @@ export const OFERTAIMAGES = [
 export const OPINIONS = [
     {
         name: "Karolina & Michał",
-        text: "Jarek towarzyszył nam w najważniejszym dniu naszego życia. Uchwycił każdą emocję z ogromną wrażliwością. Zdjęcia przerosły nasze oczekiwania – są prawdziwe, naturalne i piękne.",
+        text: "Jarek towarzyszył nam w najważniejszym dniu naszego życia. Uchwycił każdą emocję z ogromną wrażliwością. Zdjęcia przerosły nasze oczekiwania - są prawdziwe, naturalne i piękne.",
         rating: 5,
     },
     {
         name: "Natalia",
-        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt - zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
         rating: 5,
     },
     {
         name: "Szymon",
-        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt – zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt - zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
         rating: 5,
     },
     {

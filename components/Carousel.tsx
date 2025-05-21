@@ -9,9 +9,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import ShimmerLoader from "./ShimmerLoader";
 
 const images = [
-    { src: "/Images/carousel/slub.avif", position: "50% 50%" },
-    { src: "/Images/carousel/sesja2.avif", position: "0% 0%" },
-    { src: "/Images/carousel/sesja.jpg", position: "50% 100%" },
+    {
+        src: "/Images/carousel/01_fotografia_slubna_siedlce.avif",
+        position: "53% 50%",
+    },
+    {
+        src: "/Images/carousel/02_sesja_slubna_plener_siedlce.avif",
+        position: "40% 40%",
+    },
+    { src: "/Images/carousel/fotografia-slubna.avif", position: "55% 100%" },
+    { src: "/Images/carousel/pierwszy-taniec-foto.avif", position: "40% 10%" },
 ];
 
 // autoplay plugin
@@ -67,7 +74,7 @@ const Carousel = () => {
     );
 
     return (
-        <div className="relative w-screen xl:max-w-[1550px] h-[83vh] lg:h-[87vh] mx-auto overflow-hidden">
+        <div className="relative w-screen xl:max-w-[1550px] h-[79vh] lg:h-[85vh] mx-auto overflow-hidden">
             <AnimatePresence>
                 {!isFirstImageLoaded && (
                     <motion.div

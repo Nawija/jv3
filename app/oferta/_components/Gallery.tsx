@@ -37,7 +37,7 @@ export default function Gallery({ allImages }: GalleryProps) {
 
     return (
         <div className="py-2">
-            <div className="pswp-gallery grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 m-2 p-3">
+            <div className="pswp-gallery grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 m-2 py-3">
                 {allImages.map((image, index) => (
                     <ImgGallery key={index} image={image} />
                 ))}

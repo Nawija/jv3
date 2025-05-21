@@ -5,6 +5,7 @@ import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
+import Messenger from "@/components/Messenger";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
+                <Messenger />
                 <ScrollToTopButton />
                 <Footer />
             </body>
