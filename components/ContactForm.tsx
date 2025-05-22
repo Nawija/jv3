@@ -26,7 +26,7 @@ const FormField = ({
     const isDate = type === "date";
 
     return (
-        <div className="w-full relative">
+        <div className="w-full relative max-w-4xl">
             {label && (
                 <label
                     htmlFor={name}
@@ -43,7 +43,7 @@ const FormField = ({
                     type={type}
                     placeholder={isDate ? "Wybierz datę" : placeholder}
                     required={required}
-                    className={`w-full p-2 border rounded text-black`}
+                    className={`w-full p-2 border rounded text-black outline-1 outline-brand`}
                     value={value}
                     onChange={onChange}
                 />
@@ -177,7 +177,7 @@ export default function ContactForm() {
                     name="message"
                     placeholder="Kilka słów o tym jakie zdjęcia Cię interesują."
                     required
-                    className="w-full p-2 border rounded"
+                    className="w-full p-2 border rounded outline-1 outline-brand"
                     value={formData.message}
                     onChange={handleChange}
                 ></textarea>
