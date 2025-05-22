@@ -50,39 +50,6 @@ export async function POST(req: NextRequest) {
             height: number;
         }[] = [];
 
-        // for (const image of images) {
-        //     const arrayBuffer = await image.arrayBuffer();
-        //     const buffer = Buffer.from(arrayBuffer);
-
-        //     const baseName = path.parse(image.name).name;
-        //     const webpFileName = `${baseName}.webp`;
-        //     const webpPath = path.join(blogImageDir, webpFileName);
-
-        //     const resized = sharp(buffer).resize({
-        //         width: 1550,
-        //         withoutEnlargement: true,
-        //     });
-        //     // .withMetadata() // zachowuje profil ICC
-        //     // .toColorspace("srgb"); // konwersja do sRGB
-
-        //     await resized
-        //         .webp({
-        //             quality: 75, // dobra równowaga jakość/rozmiar
-        //             effort: 4, // dokładniejsza kompresja (czasochłonna)
-        //             smartSubsample: false,
-        //             nearLossless: false, // lepsze zachowanie szczegółów
-        //         })
-        //         .toFile(webpPath);
-
-        //     const { width, height } = await resized.metadata();
-
-        //     imageMetadataList.push({
-        //         src: `/Images/blogs/${normalizedCategory}/${slug}/${webpFileName}`,
-        //         width: width || 1000,
-        //         height: height || 800,
-        //     });
-        // }
-
         let heroSrc = "";
 
         for (let i = 0; i < images.length; i++) {
@@ -101,10 +68,10 @@ export async function POST(req: NextRequest) {
 
             const outputBuffer = await resized
                 .webp({
-                    quality: 95,
-                    effort: 5,
+                    quality: 75,
+                    effort: 4,
                     smartSubsample: true,
-                    nearLossless: true,
+                    nearLossless: false,
                 })
                 .toBuffer();
 

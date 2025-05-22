@@ -76,7 +76,7 @@ export default async function BlogPostPage({
 
     return (
         <>
-            <article className="max-w-3xl mx-auto px-1.5 pt-12 w-full anim-opacity">
+            <article className="max-w-[700px] mx-auto px-1.5 pt-12 w-full anim-opacity">
                 <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto px-4">
                     <p className="text-4xl font-medium mb-4">{blog.title}</p>
                     <p className="text-gray-500 text-sm mb-1">

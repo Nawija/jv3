@@ -2,7 +2,7 @@
 title: "Ola i Paweł"
 slug: "ola-i-pawel"
 category: "sesja-slubna"
-date: "2025-05-22T18:58:30.783Z"
+date: "2025-05-22T21:32:41.379Z"
 image: "/Images/blogs/sesja-slubna/ola-i-pawel/034 ola-i-pawel-warszawa-praga-slub-katedra_034.webp"
 images:
   - src: /Images/blogs/sesja-slubna/ola-i-pawel/001 ola-i-pawel-warszawa-praga-slub-katedra_001.webp

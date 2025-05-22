@@ -2,15 +2,15 @@
 title: "Agata i Paweł"
 slug: "agata-i-pawel"
 category: "sesja-slubna"
-date: "2025-05-22T19:10:02.124Z"
-image: "/Images/blogs/sesja-slubna/agata-i-pawel/210_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp"
+date: "2025-05-22T21:33:36.278Z"
+image: "/Images/blogs/sesja-slubna/agata-i-pawel/217_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp"
 images:
-  - src: /Images/blogs/sesja-slubna/agata-i-pawel/182_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp
-    width: 1024
-    height: 683
   - src: /Images/blogs/sesja-slubna/agata-i-pawel/183_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp
     width: 1024
     height: 488
+  - src: /Images/blogs/sesja-slubna/agata-i-pawel/182_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp
+    width: 1024
+    height: 683
   - src: /Images/blogs/sesja-slubna/agata-i-pawel/184_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp
     width: 1024
     height: 476
