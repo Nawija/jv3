@@ -42,7 +42,7 @@ const contactDetails = [
 
 export default function ContactPage() {
     return (
-        <main className="max-w-screen-md mx-auto px-4 anim-opacity py-10 text-gray-800 text-center">
+        <div className="max-w-screen-md mx-auto px-4 anim-opacity py-10 text-gray-800 text-center">
             <h1 className="text-4xl mb-6 font-light">
                 Porozmawiajmy o{" "}
                 <strong className="font-light">Fotografii</strong>
@@ -76,6 +76,6 @@ export default function ContactPage() {
             <section className="text-left">
                 <ContactForm />
             </section>
-        </main>
+        </div>
     );
 }

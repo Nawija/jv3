@@ -169,7 +169,7 @@ export default function ContactForm() {
                 <FormField
                     name="date"
                     type="date"
-                    label="Data (opcjonalnie)"
+                    label="Data wydarzenia (opcjonalnie)"
                     value={formData.date}
                     onChange={handleChange}
                 />
