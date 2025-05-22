@@ -6,6 +6,7 @@ import { Trash2, Plus } from "lucide-react";
 
 const categories = [
     "Fotografia Ślubna",
+    "Sesja Ślubna",
     "Reportaż z chrztu",
     "Fotografia komunijna",
     "Wieczory panieńskie",
@@ -52,6 +53,10 @@ export default function AddBlogPage() {
         slugify(text, { lower: true, strict: true, locale: "pl" });
 
     const handleSave = async () => {
+        if (!category) {
+            alert("Proszę wybrać kategorię przed zapisaniem.");
+            return;
+        }
         setIsSaving(true);
         const slug = normalizeSlug(title);
         const formData = new FormData();
@@ -88,7 +93,7 @@ export default function AddBlogPage() {
 
             <input
                 type="text"
-                placeholder="Tytuł wpisu (H1)"
+                placeholder="Tytuł wpisu"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full p-3 border mb-4 rounded"

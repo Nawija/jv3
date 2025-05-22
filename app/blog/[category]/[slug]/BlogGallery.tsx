@@ -25,11 +25,11 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
     return (
         <div
             id="gallery"
-            className="columns-1 md:columns-1 gap-1.5 max-w-4xl mx-auto mb-2 space-y-1.5"
+            className="columns-1 md:columns-1 gap-1.5 max-w-3xl mx-auto mb-2 space-y-1.5"
         >
             {images.map(({ src, width, height }, index) => {
-                const scaledWidth = Math.round(width / 2.5);
-                const scaledHeight = Math.round(height / 2.5);
+                const scaledWidth = Math.round(width / 1.5);
+                const scaledHeight = Math.round(height / 1.5);
 
                 return (
                     <a
