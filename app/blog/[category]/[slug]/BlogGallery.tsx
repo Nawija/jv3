@@ -46,10 +46,11 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
                         )}
                         <Image
                             src={src}
-                            alt={`obrazek-${index}`}
+                            alt={`Jarek Olszewski ${index}`}
                             width={scaledWidth}
                             height={scaledHeight}
                             priority={index < 2}
+                            quality={90}
                             onLoad={() => handleImageLoad(index)}
                             className={`w-full h-auto object-cover transition-opacity duration-500 ${
                                 loadedImages[index] ? "opacity-100" : "opacity-0"
