@@ -57,7 +57,7 @@ export default function Opinions() {
                                 </div>
                                 <div className="flex items-center gap-3 mt-2">
                                     <div
-                                        className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-medium text-base ${bgColor}`}
+                                        className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-light text-lg ${bgColor}`}
                                     >
                                         {opinia.name.charAt(0).toUpperCase()}
                                     </div>
