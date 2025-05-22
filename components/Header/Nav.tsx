@@ -63,11 +63,7 @@ export default function Nav() {
                 />
             )}
             <header
-                className={`top-0 z-50 backdrop-blur-md transition-all duration-300 w-full  ${
-                    pathname === "/portfolio"
-                        ? "bg-neutral-900 text-white"
-                        : "bg-white/90 text-black backdrop-blur-md"
-                }`}
+                className={`top-0 z-50 backdrop-blur-md transition-all duration-300 w-full bg-white/90 text-black `}
             >
                 <div className="mx-auto flex items-center justify-between p-4 max-w-screen-2xl">
                     <Logo />

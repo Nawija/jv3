@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     },
 };
 
-export default function Portfolio() {
+export default function AboutMePage() {
     const images = [
         {
             src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf037.jpeg`,
@@ -63,7 +63,6 @@ export default function Portfolio() {
     return (
         <>
             <div className="bg-white text-gray-800">
-               
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
                     <div className="text-center">
                         <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
@@ -128,7 +127,6 @@ export default function Portfolio() {
                                 href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
                             />
                         </div>
-
                     </div>
                 </section>
             </div>
