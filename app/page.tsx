@@ -110,7 +110,7 @@ export default function Home() {
                         <Image
                             src="/Images/carousel/01_fotografia_slubna_siedlce.avif"
                             alt="Fotografia ślubna Para Młoda podczas ceremonii"
-                            sizes="(max-width: 768px) 300px, (max-width: 1200px) 450px, 600px"
+                            sizes="(max-width: 768px) 300px, 400px"
                             fill
                             className="object-cover"
                             quality={75}

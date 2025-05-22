@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function StepsWithLazyBackground() {
@@ -33,7 +34,8 @@ export default function StepsWithLazyBackground() {
                 <>
                     {/* Tło dla urządzeń mobilnych - zwykły <img> */}
                     <div className="lg:hidden absolute inset-0 -z-10">
-                        <img
+                        <Image
+                            fill
                             src="/Images/carousel/02_sesja_slubna_plener_siedlce.avif"
                             alt="Tło sekcji współpracy"
                             className="w-full h-full object-cover brightness-50"
