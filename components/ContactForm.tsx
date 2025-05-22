@@ -50,7 +50,9 @@ const FormField = ({
                     }`}
                 />
                 {isDate && (
-                    <FiCalendar className="absolute lg:hidden p-2 right-3 text-black pointer-events-none" />
+                    <div className="w-full p-2 relative lg:hidden">
+                        <FiCalendar className="absolute  right-3 text-black pointer-events-none" />
+                    </div>
                 )}
             </div>
         </div>
