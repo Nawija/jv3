@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import { marked } from "marked";
 import dynamic from "next/dynamic";
 import PhotoSwipeProvider from "@/components/PhotoSwipeProvider";
