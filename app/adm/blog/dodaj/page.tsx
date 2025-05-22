@@ -12,8 +12,8 @@ const categories = [
     "Fotografia komunijna",
     "Wieczory panieńskie",
     "Urodziny",
-    "Studniówki 18",
-    "Sesje Rodzinne brzuszkowe noworodkowe rodzinne",
+    "Studniówki",
+    "Sesje Rodzinne brzuszkowe noworodkowe",
     "Sesje indywidualne biznesowe",
     "Fotografia sportowa",
     "Fotografia koncertowa i klubowa",
@@ -159,7 +159,7 @@ export default function AddBlogPage() {
             </div>
 
             {images.length > 0 && (
-                <div className="mt-6">
+                <div className="mt-6 mb-24">
                     <label className="block font-medium mb-1">
                         Wybierz zdjęcie główne (hero):
                     </label>
