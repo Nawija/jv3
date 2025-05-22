@@ -99,7 +99,7 @@ export default async function BlogPostPage({
                             <BlogGallery images={blog.images.slice(0, 5)} />
 
                             {blog.images.length >= 5 && (
-                                <div className="flex items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-12 px-6 mb-2">
+                                <div className="flex items-center justify-center border text-center flex-col space-y-4 bg-gray-100 py-10 px-6 mb-2">
                                     <h2 className="text-xl animate-pulse">
                                         Zarezerwuj swoją wyjątkową sesję już
                                         dziś!
@@ -116,7 +116,7 @@ export default async function BlogPostPage({
                 )}
             </article>
 
-            <div className="flex mt-4 items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-24 px-6">
+            <div className="flex mt-8 items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-24 px-6">
                 <h2 className="text-2xl animate-pulse">
                     Zrób pierwszy krok do wyjątkowej sesji zdjęciowej!
                 </h2>
@@ -125,7 +125,7 @@ export default async function BlogPostPage({
 
             {relatedBlogs.length > 0 && (
                 <section className="max-w-4xl mx-auto px-4 mt-4">
-                    <h2 className="text-sm lg:text-base font-light border-y py-2 mb-4 text-center">
+                    <h2 className="text-sm lg:text-base font-light py-2 mb-4 text-center">
                         Więcej z kategorii:{" "}
                         <strong>{formatCategoryName(blog.category)}</strong>
                     </h2>

@@ -28,8 +28,8 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
             className="columns-1 md:columns-1 gap-1.5 max-w-4xl mx-auto mb-2 space-y-1.5"
         >
             {images.map(({ src, width, height }, index) => {
-                const scaledWidth = Math.round(width / 1.5);
-                const scaledHeight = Math.round(height / 1.5);
+                const scaledWidth = Math.round(width);
+                const scaledHeight = Math.round(height);
 
                 return (
                     <a
@@ -50,7 +50,6 @@ export default function BlogGallery({ images }: { images: BlogImage[] }) {
                             width={scaledWidth}
                             height={scaledHeight}
                             priority={index < 2}
-                            quality={90}
                             onLoad={() => handleImageLoad(index)}
                             className={`w-full h-auto object-cover transition-opacity duration-500 ${
                                 loadedImages[index] ? "opacity-100" : "opacity-0"

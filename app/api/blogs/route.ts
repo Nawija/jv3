@@ -95,28 +95,28 @@ export async function POST(req: NextRequest) {
             const webpPath = path.join(blogImageDir, webpFileName);
 
             const resized = sharp(buffer).resize({
-                width: 1550,
+                width: 1200,
                 withoutEnlargement: true,
             });
-            //     // .withMetadata() // zachowuje profil ICC
-            //     // .toColorspace("srgb"); // konwersja do sRGB
 
-            await resized
+            const outputBuffer = await resized
                 .webp({
-                    quality: 75,
-                    effort: 4,
-                    smartSubsample: false,
-                    nearLossless: false,
+                    quality: 95,
+                    effort: 5,
+                    smartSubsample: true,
+                    nearLossless: true,
                 })
-                .toFile(webpPath);
+                .toBuffer();
 
-            const { width, height } = await resized.metadata();
+            await sharp(outputBuffer).toFile(webpPath);
+
+            const { width, height } = await sharp(outputBuffer).metadata();
 
             const src = `/Images/blogs/${normalizedCategory}/${slug}/${webpFileName}`;
             imageMetadataList.push({
                 src,
-                width: width || 1000,
-                height: height || 800,
+                width: width || 1300,
+                height: height || 1000,
             });
 
             if (heroIndex === i) {
