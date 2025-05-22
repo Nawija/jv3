@@ -36,7 +36,7 @@ export async function getRelatedBlogsByCategory(
             return {
                 slug,
                 title: data.title || "Brak tytułu",
-                image: (data.images && data.images[0]) || "",
+                image: data.image || data.images[0],
                 images: data.images || [],
                 content,
                 date: data.date || new Date().toISOString(),

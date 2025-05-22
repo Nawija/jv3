@@ -19,10 +19,10 @@ export default function ImageComponent({
             <Image
                 src={img}
                 alt={title}
-                height={300}
-                width={300}
+                height={200}
+                width={200}
                 priority={index === 0}
-                className="object-cover w-full h-full aspect-square"
+                className="object-cover w-full h-full aspect-[4/2] sm:aspect-[8/6]"
                 quality={10}
             />
 

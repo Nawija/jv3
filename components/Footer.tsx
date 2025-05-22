@@ -28,15 +28,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                         ))}
-                        <li key="blog">
-                            <Link
-                                href="/blog"
-                                aria-label="blog"
-                                className="text-neutral-300 hover:text-white transition"
-                            >
-                                blog
-                            </Link>
-                        </li>
+
                         <li key="regulamin">
                             <Link
                                 href="/regulamin-i-polityka-prywatnoci"
