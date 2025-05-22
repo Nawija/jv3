@@ -1,10 +1,8 @@
-import { MainBtn } from "@/components/Buttons/MainBtn";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import Opinions from "@/components/Opinions";
 import PhotoSwipe from "@/components/PhotoSwipe";
 import LinkShare from "@/components/ui/LinkShare";
 import { Metadata } from "next";
-import Link from "next/link";
 
 const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Siedlce | Sesje, reportaże, emocje";
