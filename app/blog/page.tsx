@@ -26,7 +26,6 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
     const blogs = await getBlogs();
-    console.log(blogs);
 
     return (
         <div className="max-w-3xl mx-auto px-4 anim-opacity mb-8">
