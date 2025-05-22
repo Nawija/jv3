@@ -6,37 +6,50 @@ export type Blog = {
     slug: string;
     title: string;
     image: string;
-    content: string;
+    content: string; // wymagane
     category: string;
 };
 
 const blogsDir = path.join(process.cwd(), "content/blogs");
 
-export async function getBlogsByCategory(category: string): Promise<Blog[]> {
-    const categoryPath = path.join(blogsDir, category);
+export async function getBlogsByCategory(
+    categoryFilter: string
+): Promise<Blog[]> {
+    const categoryPath = path.join(blogsDir, categoryFilter);
 
-    // Jeśli nie ma folderu kategorii — zwróć pustą tablicę
-    if (!fs.existsSync(categoryPath)) return [];
+    if (!fs.existsSync(categoryPath)) {
+        return []; // brak takiej kategorii
+    }
 
-    const filenames = fs.readdirSync(categoryPath);
+    const files = fs.readdirSync(categoryPath);
+    const blogs: Blog[] = [];
 
-    const blogs = filenames
-        .filter((file) => file.endsWith(".md"))
-        .map((filename) => {
-            const filePath = path.join(categoryPath, filename);
-            const fileContent = fs.readFileSync(filePath, "utf8");
-            const { data, content } = matter(fileContent);
+    for (const filename of files) {
+        if (!filename.endsWith(".md")) continue;
 
-            const images: string[] = data.images || [];
+        const filePath = path.join(categoryPath, filename);
+        const fileContent = fs.readFileSync(filePath, "utf8");
+        const { data, content } = matter(fileContent);  // <-- tutaj dodajemy content
 
-            return {
-                slug: data.slug || filename.replace(/\.md$/, ""),
-                title: data.title || "Brak tytułu",
-                image: images.length > 0 ? images[0] : "",
-                content,
-                category,
-            };
+        // zdjęcie główne - jeśli nie ma 'image', to próbujemy wziąć pierwsze z images[0].src
+        let mainImage = data.image;
+        if (
+            !mainImage &&
+            data.images &&
+            Array.isArray(data.images) &&
+            data.images.length > 0
+        ) {
+            mainImage = data.images[0].src || data.images[0]; // czasem images to tablica stringów, czasem obiektów
+        }
+
+        blogs.push({
+            slug: data.slug || filename.replace(/\.md$/, ""),
+            title: data.title || "Brak tytułu",
+            image: mainImage || "",
+            category: categoryFilter,
+            content, // <-- dodajemy content tutaj
         });
+    }
 
     return blogs;
 }

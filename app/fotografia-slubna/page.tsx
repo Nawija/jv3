@@ -3,7 +3,6 @@ import TitleH2 from "@/components/TitleH2";
 import { getBlogs } from "@/lib/getBlogs";
 import HeroSection from "../../components/HeroSection";
 import CarouselProps from "@/components/CarouselProps";
-import { OFERTAIMAGES } from "@/constants/Links";
 import BlogList from "@/components/BlogList";
 import ContactForm from "@/components/ContactForm";
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
@@ -13,6 +12,8 @@ import Gallery from "../oferta/_components/Gallery";
 import Opinions from "@/components/Opinions";
 import LinkShare from "@/components/ui/LinkShare";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
+import Link from "next/link";
+import { getBlogsByCategory } from "@/lib/getBlogsByCategory";
 
 const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
 const pageDescription =
@@ -35,11 +36,42 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function FotografiaSlubna() {
-    const blogs = await getBlogs();
-    const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
+const OFERTAIMAGES = [
+    {
+        src: "/Images/oferta/sesja-ślubna.avif",
+        position: "66% 0%",
+        href: "/sesja-slubna",
+        title: "Sesja Ślubna",
+        desc: "Od przygotowań po wesele - wszystkie wydarzenie z tego dnia",
+    },
+    {
+        src: "/Images/oferta/SESJA NARZECZEŃSKA.avif",
+        position: "55% 0%",
+        href: "/sesja-narzeczenska",
+        title: "Sesja Narzeczeńska",
+        desc: "pozwala oswoić się z aparatem, wyjątkowa pamiątka z czasu przed ślubnego",
+    },
+    {
+        src: "/Images/oferta/CHRZEST.avif",
+        position: "53% 50%",
+        href: "/fotografia-chrztu",
+        title: "Reportaż chrztu",
+        desc: "Spokojna chwila po ślubie w ulubionym miejscu.",
+    },
+];
 
-    const formattedImages = allImages.map((img) => ({
+export default async function FotografiaSlubna() {
+    const x = await getBlogsByCategory("fotografia-slubna");
+    const y = await getBlogsByCategory("sesja-narzeczenska");
+    const z = await getBlogsByCategory("sesja-slubna");
+    const blogs = [...x, ...y, ...z];
+    const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
+    const allImagesWeding = getImagesFromFolder(
+        "blogs/fotografia-slubna/fotografia-slubna-w-siedlcach-panderoza",
+        6
+    );
+
+    const formattedImages = allImagesWeding.map((img) => ({
         src: img.responsiveImage.src,
     }));
 
@@ -62,13 +94,15 @@ export default async function FotografiaSlubna() {
                         </h1>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                             {OFERTAIMAGES.map((img, index) => (
-                                <ImageComponent
-                                    key={index}
-                                    index={index}
-                                    img={img.src}
-                                    title={img.title}
-                                    desc={img.desc}
-                                />
+                                <Link href={img.href}>
+                                    <ImageComponent
+                                        key={index}
+                                        index={index}
+                                        img={img.src}
+                                        title={img.title}
+                                        desc={img.desc}
+                                    />
+                                </Link>
                             ))}
                         </div>
 
@@ -127,7 +161,7 @@ export default async function FotografiaSlubna() {
                                 ]}
                             />
                         </div>
-                        <div className="max-w-4xl mx-auto">
+                        <div className="max-w-3xl mx-auto">
                             <Gallery allImages={allImages} />
                         </div>
                         <section className="bg-white px-4 py-12">

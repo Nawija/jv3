@@ -9,7 +9,6 @@ import ShimmerLoader from "@/components/ShimmerLoader";
 type ResponsiveImage = {
     width: number;
     height: number;
-    base64?: string;
     src: string;
 };
 
