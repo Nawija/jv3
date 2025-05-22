@@ -90,9 +90,8 @@ export default async function FotografiaChrztu() {
                         </h1>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                             {OFERTAIMAGES.map((img, index) => (
-                                <Link href={img.href}>
+                                <Link key={index} href={img.href}>
                                     <ImageComponent
-                                        key={index}
                                         index={index}
                                         img={img.src}
                                         title={img.title}
