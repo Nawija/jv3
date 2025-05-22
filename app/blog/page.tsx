@@ -26,10 +26,13 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
     const blogs = await getBlogs();
+    console.log(blogs);
 
     return (
-        <div className="max-w-4xl mx-auto px-4 anim-opacity mb-8">
-            <h1 className="text-2xl md:text-3xl font-extralight tracking-widest my-8 text-center">Prawdziwa Fotografia</h1>
+        <div className="max-w-3xl mx-auto px-4 anim-opacity mb-8">
+            <h1 className="text-2xl md:text-3xl font-extralight tracking-widest my-8 text-center">
+                Prawdziwa Fotografia
+            </h1>
             <BlogList blogs={blogs} columns={2} />
             <InviteSocialMedia
                 text="Zapraszam do odwiedzenia"

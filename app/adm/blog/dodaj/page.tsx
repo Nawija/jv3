@@ -7,24 +7,25 @@ import { Trash2, Plus } from "lucide-react";
 const categories = [
     "Fotografia Ślubna",
     "Sesja Ślubna",
-    "Reportaż z chrztu",
+    "Sesja Narzeczeńska",
+    "Fotografia chrztu",
     "Fotografia komunijna",
     "Wieczory panieńskie",
-    "Studniówki 18",
     "Urodziny",
-    "Rocznice komunijne",
-    "Brzuszkowe",
-    "Rodzinne",
-    "Indywidualne",
-    "Sportowa klubowa",
-    "Koncertowa",
-    "Wizerunkowe",
-    "Przemysłowe/architektura",
+    "Studniówki 18",
+    "Sesje Rodzinne brzuszkowe noworodkowe rodzinne",
+    "Sesje indywidualne biznesowe",
+    "Fotografia sportowa",
+    "Fotografia koncertowa i klubowa",
+    "Przemysł/architektura",
     "Kulinarne",
     "Motoryzacyjne",
+    "Zdjecia do dokumentow dowod prawojazdy paszport"
 ];
 
 export default function AddBlogPage() {
+    const [heroIndex, setHeroIndex] = useState<number | null>(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [paragraphs, setParagraphs] = useState<string[]>([""]);
@@ -66,6 +67,7 @@ export default function AddBlogPage() {
         formData.append("slug", slug);
         formData.append("paragraphs", JSON.stringify(paragraphs));
         images.forEach((img) => formData.append("images", img));
+        formData.append("heroIndex", heroIndex?.toString() ?? "");
 
         const res = await fetch("/api/blogs", {
             method: "POST",
@@ -139,7 +141,7 @@ export default function AddBlogPage() {
                 onClick={handleAddParagraph}
                 className="mt-4 flex items-center gap-2 text-blue-600 hover:text-blue-800"
             >
-                <Plus /> Dodaj paragraf
+                <Plus /> Dodaj tekst
             </button>
 
             <div className="mt-6">
@@ -153,14 +155,43 @@ export default function AddBlogPage() {
                     onChange={handleImageUpload}
                 />
 
-                {images.length > 0 && (
-                    <ul className="mt-4 list-disc pl-5 text-sm text-gray-700">
-                        {images.map((img, i) => (
-                            <li key={i}>{img.name}</li>
-                        ))}
-                    </ul>
-                )}
+               
             </div>
+
+            {images.length > 0 && (
+                <div className="mt-6">
+                    <label className="block font-medium mb-1">
+                        Wybierz zdjęcie główne (hero):
+                    </label>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {images.map((img, i) => (
+                            <button
+                                key={i}
+                                type="button"
+                                onClick={() => setHeroIndex(i)}
+                                onMouseEnter={() => setHoveredIndex(i)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                className={`relative border rounded p-2 text-sm text-left transition ${
+                                    heroIndex === i
+                                        ? "border-blue-500 ring-2 ring-blue-300"
+                                        : "border-gray-300"
+                                }`}
+                            >
+                                <p className="truncate">{img.name}</p>
+                                {hoveredIndex === i && (
+                                    <div className="absolute top-full left-0 z-10 mt-2 w-64 border bg-white shadow-lg rounded overflow-hidden">
+                                        <img
+                                            src={URL.createObjectURL(img)}
+                                            alt="Preview"
+                                            className="w-full h-auto object-cover"
+                                        />
+                                    </div>
+                                )}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             <button
                 onClick={handleSave}

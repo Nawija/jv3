@@ -33,7 +33,7 @@ export async function getBlogs(): Promise<Blog[]> {
       blogs.push({
         slug: data.slug || filename.replace(/\.md$/, ""),
         title: data.title || "Brak tytułu",
-        image: images.length > 0 ? images[0] : "",
+        image: data.image || images[0],
         content,
         category,
       });
