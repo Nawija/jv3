@@ -30,12 +30,25 @@ export default function StepsWithLazyBackground() {
         >
             {/* Tło ładowane dopiero po wejściu w widok */}
             {isInView && (
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10 brightness-50"
-                    style={{
-                        backgroundImage: "url('/Images/carousel/02_sesja_slubna_plener_siedlce.avif')",
-                    }}
-                />
+                <>
+                    {/* Tło dla urządzeń mobilnych - zwykły <img> */}
+                    <div className="lg:hidden absolute inset-0 -z-10">
+                        <img
+                            src="/Images/carousel/02_sesja_slubna_plener_siedlce.avif"
+                            alt="Tło sekcji współpracy"
+                            className="w-full h-full object-cover brightness-50"
+                        />
+                    </div>
+
+                    {/* Tło z bg-fixed tylko dla lg i większych */}
+                    <div
+                        className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10 brightness-50"
+                        style={{
+                            backgroundImage:
+                                "url('/Images/carousel/02_sesja_slubna_plener_siedlce.avif')",
+                        }}
+                    />
+                </>
             )}
 
             <h3 className="text-3xl text-center font-bold mb-10 relative z-10 text-white">

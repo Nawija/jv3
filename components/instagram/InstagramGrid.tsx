@@ -75,7 +75,7 @@ export default async function InstagramGrid() {
             <p className="text-center text-sm mb-6">
                 Świeże zdjęcia, kulisy sesji i więcej
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto px-4">
                 {itemsToRender.map((post, i) => (
                     <InstagramPost
                         key={i}
