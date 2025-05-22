@@ -19,9 +19,10 @@ function capitalizeWithSpaces(str: string): string {
 export async function generateMetadata({
     params,
 }: {
-    params: { category: string; slug: string };
-}): Promise<Metadata> {
-    const { category, slug } = params;
+    params: Promise<{ category: string; slug: string }>;
+}) {
+    const awaitedParams = await Promise.resolve(params);
+    const { category, slug } = awaitedParams;
 
     const blog = await getBlogBySlugAndCategory(category, slug);
     if (!blog) return {};
