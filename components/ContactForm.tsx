@@ -46,11 +46,11 @@ const FormField = ({
                     value={value}
                     onChange={onChange}
                     className={`w-full p-2 pr-10 lg:pr-2 border rounded text-black outline-1 outline-brand ${
-                        isDate ? "appearance-none p-2" : ""
+                        isDate ? "appearance-none " : ""
                     }`}
                 />
                 {isDate && (
-                    <FiCalendar className="absolute lg:hidden right-3 text-black pointer-events-none" />
+                    <FiCalendar className="absolute lg:hidden p-2 right-3 text-black pointer-events-none" />
                 )}
             </div>
         </div>
