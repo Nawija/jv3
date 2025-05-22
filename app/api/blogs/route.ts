@@ -2,73 +2,85 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import sharp from "sharp";
+import slugify from "slugify";
 
 export async function POST(req: NextRequest) {
-    const formData = await req.formData();
-    const title = formData.get("title") as string;
-    const slug = formData.get("slug") as string;
-    const paragraphs = JSON.parse(
-        formData.get("paragraphs") as string
-    ) as string[];
-    const images = formData.getAll("images") as File[];
+    try {
+        const formData = await req.formData();
+        const title = formData.get("title") as string;
+        const slug = formData.get("slug") as string;
+        const category = formData.get("category") as string;
+        const paragraphs = JSON.parse(
+            formData.get("paragraphs") as string
+        ) as string[];
+        const images = formData.getAll("images") as File[];
 
-    const blogDir = path.join(process.cwd(), "content/blogs");
-    const blogImageDir = path.join(process.cwd(), "public/Images/blogs", slug); // ✅ slug jako folder
+        if (!title || !slug || !category) {
+            return NextResponse.json({ error: "Brak wymaganych pól" }, { status: 400 });
+        }
 
-    await fs.mkdir(blogDir, { recursive: true });
-    await fs.mkdir(blogImageDir, { recursive: true }); // ✅ osobny folder bloga
+        const normalizedCategory = slugify(category, { lower: true, strict: true, locale: "pl" });
+        const blogDir = path.join(process.cwd(), "content/blogs", normalizedCategory);
+        const blogImageDir = path.join(process.cwd(), "public/Images/blogs", normalizedCategory, slug);
 
-    const imageMetadataList: { src: string; width: number; height: number }[] =
-        [];
+        await fs.mkdir(blogDir, { recursive: true });
+        await fs.mkdir(blogImageDir, { recursive: true });
 
-    for (const image of images) {
-        const arrayBuffer = await image.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
+        const imageMetadataList: { src: string; width: number; height: number }[] = [];
 
-        const baseName = path.parse(image.name).name;
-        const webpFileName = `${baseName}.webp`;
-        const webpPath = path.join(blogImageDir, webpFileName);
+        for (const image of images) {
+            const arrayBuffer = await image.arrayBuffer();
+            const buffer = Buffer.from(arrayBuffer);
 
-        // Konwertuj do WebP
-        const resized = sharp(buffer).resize({
-            width: 1600,
-            withoutEnlargement: true,
-        });
-        await resized
-            .webp({
-                quality: 85, // delikatnie lepsza jakość
-                effort: 4, // balans między szybkością a jakością kompresji (0–6)
-                smartSubsample: true, // lepsza jakość przy dużych zdjęciach (jeśli używasz chromaSubsampling)
-                lossless: false, // lossy = mniejsze pliki, lossless = dużo większe
-            })
-            .toFile(webpPath);
+            const baseName = path.parse(image.name).name;
+            const webpFileName = `${baseName}.webp`;
+            const webpPath = path.join(blogImageDir, webpFileName);
 
-        const { width, height } = await resized.metadata();
+            const resized = sharp(buffer).resize({
+                width: 1550,
+                withoutEnlargement: true,
+            });
 
-        imageMetadataList.push({
-            src: `/Images/blogs/${slug}/${webpFileName}`, // ✅ z uwzględnieniem folderu
-            width: width || 800,
-            height: height || 600,
-        });
+            await resized
+                .webp({
+                    quality: 85,
+                    effort: 4,
+                    smartSubsample: true,
+                    lossless: false,
+                })
+                .toFile(webpPath);
+
+            const { width, height } = await resized.metadata();
+
+            imageMetadataList.push({
+                src: `/Images/blogs/${normalizedCategory}/${slug}/${webpFileName}`,
+                width: width || 800,
+                height: height || 600,
+            });
+        }
+
+        const markdown =
+            `---\n` +
+            `title: "${title}"\n` +
+            `slug: "${slug}"\n` +
+            `category: "${normalizedCategory}"\n` +
+            `date: "${new Date().toISOString()}"\n` +
+            `images:\n` +
+            imageMetadataList
+                .map(
+                    ({ src, width, height }) =>
+                        `  - src: ${src}\n    width: ${width}\n    height: ${height}`
+                )
+                .join("\n") +
+            `\n---\n\n` +
+            paragraphs.map((p) => `${p}\n`).join("\n");
+
+        const mdPath = path.join(blogDir, `${slug}.md`);
+        await fs.writeFile(mdPath, markdown, "utf-8");
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error("Błąd zapisu bloga:", error);
+        return NextResponse.json({ error: "Wewnętrzny błąd serwera" }, { status: 500 });
     }
-
-    const markdown =
-        `---\n` +
-        `title: "${title}"\n` +
-        `slug: "${slug}"\n` +
-        `date: "${new Date().toISOString()}"\n` +
-        `images:\n` +
-        imageMetadataList
-            .map(
-                ({ src, width, height }) =>
-                    `  - src: ${src}\n    width: ${width}\n    height: ${height}`
-            )
-            .join("\n") +
-        `\n---\n\n` +
-        paragraphs.map((p) => `${p}\n`).join("\n");
-
-    const mdPath = path.join(blogDir, `${slug}.md`);
-    await fs.writeFile(mdPath, markdown, "utf-8");
-
-    return NextResponse.json({ success: true });
 }

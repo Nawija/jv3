@@ -25,6 +25,7 @@ export default function BlogList({
                         key={i}
                         title={blog.title}
                         image={blog.image}
+                        category={blog.category}
                         slug={blog.slug}
                     />
                 ) : null

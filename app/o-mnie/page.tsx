@@ -64,7 +64,7 @@ export default function AboutMePage() {
         <>
             <div className="bg-white text-gray-800">
                
-                <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
+                <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
                     <div className="text-center">
                         <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
                             Kim jestem - fotograf i człowiek z pasją

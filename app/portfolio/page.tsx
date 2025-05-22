@@ -3,6 +3,7 @@ import Opinions from "@/components/Opinions";
 import PhotoSwipe from "@/components/PhotoSwipe";
 import LinkShare from "@/components/ui/LinkShare";
 import { Metadata } from "next";
+import Link from "next/link";
 
 const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Warszawa | Siedlce | Łuków";
@@ -63,26 +64,57 @@ export default function Portfolio() {
     return (
         <>
             <div className="bg-white text-gray-800">
-               
-                <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
+                <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
                     <div className="text-center">
                         <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
-                            Kim jestem - fotograf i człowiek z pasją
+                            Bogate portfolio, to moja ogromna ciekawość
+                            fotografii.
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-                            Poznaj moją historię i sposób, w jaki patrzę na
-                            świat przez obiektyw aparatu.
-                        </p>
                     </div>
 
                     <div className="space-y-8 text-base md:text-lg leading-relaxed text-gray-700">
                         <p className="border-l-4 border-brand pl-4">
-                            Cześć! Nazywam się Jarek Olszewski i jestem
-                            fotografem z Siedlec. Pełen energii, uśmiechu i
-                            pasji do chwytania wyjątkowych chwil.
+                            Na przestrzeni lat współpracowałem z wieloma osobami
+                            w różnych zakątkach polski, realizując ich
+                            fotograficzne potrzeby z różnych dziedzin
+                            fotografii. Co fotografuje i jak to robię, można
+                            sprawdzić poniżej zaglądając do konkretnego
+                            portfolio. Największą jednak frajdę sprawia mi
+                            prezentowanie zdjęć na papierze, gdzie zyskują na
+                            swojej wartości i odkrywają prawdziwą siłę.
                         </p>
 
-                        <p>
+                        <div className="text-center space-y-2">
+                            <h3 className="text-2xl font-light">
+                                Pakiety fotografii:
+                            </h3>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                {[
+                                    {
+                                        href: "/sesja-slubna",
+                                        label: "Oferta ślubna",
+                                    },
+                                    {
+                                        href: "/fotografia-chrztu",
+                                        label: "Oferta chrztu",
+                                    },
+                                    {
+                                        href: "/sesja-narzeczenska",
+                                        label: "Sesja Narzeczenska",
+                                    },
+                                ].map(({ href, label }, i) => (
+                                    <Link
+                                        key={i}
+                                        href={href}
+                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
+                                    >
+                                        {label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <p className="py-2">
                             Moja przygoda z fotografią zaczęła się w 2008 roku,
                             zupełnie przypadkiem. Wtedy jeszcze nie wiedziałem,
                             że jedno zdjęcie z lokalnego meczu zmieni moje życie
@@ -128,7 +160,6 @@ export default function Portfolio() {
                                 href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
                             />
                         </div>
-
                     </div>
                 </section>
             </div>

@@ -4,8 +4,28 @@ import { useState } from "react";
 import slugify from "slugify";
 import { Trash2, Plus } from "lucide-react";
 
+const categories = [
+    "Fotografia Ślubna",
+    "Reportaż z chrztu",
+    "Fotografia komunijna",
+    "Wieczory panieńskie",
+    "Studniówki 18",
+    "Urodziny",
+    "Rocznice komunijne",
+    "Brzuszkowe",
+    "Rodzinne",
+    "Indywidualne",
+    "Sportowa klubowa",
+    "Koncertowa",
+    "Wizerunkowe",
+    "Przemysłowe/architektura",
+    "Kulinarne",
+    "Motoryzacyjne",
+];
+
 export default function AddBlogPage() {
     const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
     const [paragraphs, setParagraphs] = useState<string[]>([""]);
     const [images, setImages] = useState<File[]>([]);
     const [isSaving, setIsSaving] = useState(false);
@@ -37,6 +57,7 @@ export default function AddBlogPage() {
         const formData = new FormData();
 
         formData.append("title", title);
+        formData.append("category", category);
         formData.append("slug", slug);
         formData.append("paragraphs", JSON.stringify(paragraphs));
         images.forEach((img) => formData.append("images", img));
@@ -72,6 +93,19 @@ export default function AddBlogPage() {
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full p-3 border mb-4 rounded"
             />
+
+            <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full p-3 border mb-4 rounded"
+            >
+                <option value=""> Wybierz kategorię</option>
+                {categories.map((cat) => (
+                    <option key={cat} value={cat}>
+                        {cat}
+                    </option>
+                ))}
+            </select>
 
             <div className="space-y-4">
                 {paragraphs.map((para, index) => (
