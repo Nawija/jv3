@@ -1,6 +1,5 @@
 import ImageComponent from "@/components/ImageComponent";
 import TitleH2 from "@/components/TitleH2";
-import { getBlogs } from "@/lib/getBlogs";
 import HeroSection from "../../components/HeroSection";
 import CarouselProps from "@/components/CarouselProps";
 import BlogList from "@/components/BlogList";
