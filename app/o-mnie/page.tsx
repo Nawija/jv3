@@ -63,7 +63,7 @@ export default function AboutMePage() {
     return (
         <>
             <div className="bg-white text-gray-800">
-                {/* Sekcja O mnie */}
+               
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
                     <div className="text-center">
                         <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">

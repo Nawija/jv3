@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Image from "next/image";
-import { Skeleton } from "@/components/ui/Skeleton";
+import ShimmerLoader from "./ShimmerLoader";
 
 export type GalleryImage = {
     src: string;
@@ -71,14 +71,12 @@ function GalleryItem({ image }: { image: GalleryImage }) {
                 rel="noreferrer"
                 className="group relative block w-full h-full "
             >
-                {!loaded && (
-                    <Skeleton className="absolute inset-0 w-full h-full z-0" />
-                )}
+                {!loaded && <ShimmerLoader />}
                 <Image
                     src={image.src}
-                    alt={image.alt || "Zdjęcie z galerii"}
-                    width={image.width}
-                    height={image.height}
+                    alt={image.alt || "Zdjęcie z galerii Jarek Olszewski"}
+                    width={image.width / 2.5}
+                    height={image.height / 2.5}
                     onLoadingComplete={() => setLoaded(true)}
                     className={`object-cover aspect-square transition-opacity duration-500 ${
                         loaded ? "opacity-100" : "opacity-0"
