@@ -87,7 +87,7 @@ export default async function BlogPostPage({
                     </h1>
 
                     <div
-                        className="text-lg mb-12 space-y-6 px-3"
+                        className="text-lg mb-12 space-y-6 gap-5 max-w-2xl mx-auto"
                         dangerouslySetInnerHTML={{ __html: htmlContent }}
                     />
                 </div>
@@ -95,12 +95,28 @@ export default async function BlogPostPage({
                 {/* Obrazy z frontmattera */}
                 {blog.images.length > 0 && (
                     <PhotoSwipeProvider galleryId="#gallery">
-                        <BlogGallery images={blog.images} />
+                        <>
+                            <BlogGallery images={blog.images.slice(0, 5)} />
+
+                            {blog.images.length >= 5 && (
+                                <div className="flex items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-12 px-6 mb-2">
+                                    <h2 className="text-xl animate-pulse">
+                                        Zarezerwuj swoją wyjątkową sesję już
+                                        dziś!
+                                    </h2>
+                                    <CTASendMail title="Napisz do mnie" />
+                                </div>
+                            )}
+
+                            {blog.images.length > 5 && (
+                                <BlogGallery images={blog.images.slice(5)} />
+                            )}
+                        </>
                     </PhotoSwipeProvider>
                 )}
             </article>
 
-            <div className="flex items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-24 px-6">
+            <div className="flex mt-4 items-center justify-center text-center flex-col space-y-4 bg-gray-100 py-24 px-6">
                 <h2 className="text-2xl animate-pulse">
                     Zrób pierwszy krok do wyjątkowej sesji zdjęciowej!
                 </h2>
@@ -109,8 +125,9 @@ export default async function BlogPostPage({
 
             {relatedBlogs.length > 0 && (
                 <section className="max-w-4xl mx-auto px-4 mt-4">
-                    <h2 className="text-base lg:text-lg font-light border-y py-2 mb-4 text-center">
-                        Więcej z kategorii: {formatCategoryName(blog.category)}
+                    <h2 className="text-sm lg:text-base font-light border-y py-2 mb-4 text-center">
+                        Więcej z kategorii:{" "}
+                        <strong>{formatCategoryName(blog.category)}</strong>
                     </h2>
                     <BlogList blogs={relatedBlogs} columns={2} />
                 </section>
