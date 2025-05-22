@@ -1,6 +1,10 @@
+import { MainBtn } from "@/components/Buttons/MainBtn";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
+import Opinions from "@/components/Opinions";
 import PhotoSwipe from "@/components/PhotoSwipe";
+import LinkShare from "@/components/ui/LinkShare";
 import { Metadata } from "next";
+import Link from "next/link";
 
 const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Siedlce | Sesje, reportaże, emocje";
@@ -60,8 +64,7 @@ export default function AboutMePage() {
 
     return (
         <>
-            
-            <main className="bg-white text-gray-800">
+            <div className="bg-white text-gray-800">
                 {/* Sekcja O mnie */}
                 <section className="max-w-4xl mx-auto px-4 py-16 space-y-12 bg-white">
                     <div className="text-center">
@@ -106,13 +109,31 @@ export default function AboutMePage() {
 
                 {/* Galeria */}
                 <section className="max-w-4xl mx-auto">
-                    <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
+                    <h3 className="text-2xl font-semibold text-center mb-8 text-black">
                         Zobacz moje kadry
                     </h3>
                     <PhotoSwipe images={images} columns={3} className="p-4" />
                 </section>
                 <InstagramGrid />
-            </main>
+
+                <section className="bg-white px-4 py-12">
+                    <div className="mx-auto max-w-5xl text-center">
+                        <p className="mb-12 font-semibold text-neutral-900 text-2xl tracking-tight">
+                            Opinie klientów
+                        </p>
+                        <Opinions />
+                        <div className="flex justify-center items-center">
+                            <p className="mr-2">Opinie z </p>
+                            <LinkShare
+                                title="Google"
+                                target="_blank"
+                                href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
+                            />
+                        </div>
+
+                    </div>
+                </section>
+            </div>
         </>
     );
 }
