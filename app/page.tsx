@@ -39,10 +39,10 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                url: "/Images/home/fotograf-siedlce-jarek-olszewski.avif",
                 width: 400,
                 height: 260,
-                alt: "Fotografia ślubna - Jarek Olszewski",
+                alt: "Fotografia ślubna - Jarek Olszewski Siedlce",
             },
         ],
     },
