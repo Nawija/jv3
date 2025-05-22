@@ -74,7 +74,7 @@ const Carousel = () => {
     );
 
     return (
-        <div className="relative w-screen xl:max-w-[1550px] h-[79vh] lg:h-[85vh] mx-auto overflow-hidden">
+        <div className="relative w-screen xl:max-w-[1550px] h-[77vh] lg:h-[85vh] mx-auto overflow-hidden">
             <AnimatePresence>
                 {!isFirstImageLoaded && (
                     <motion.div
@@ -104,7 +104,7 @@ const Carousel = () => {
                             style={{ objectPosition: image.position }}
                             quality={85}
                             priority={index === 0}
-                            sizes="(max-width: 768px) 85vw, (max-width: 1200px) 75vw, 1600px"
+                            sizes="(max-width: 768px) 85vw, (max-width: 1200px) 75vw, 1550px"
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}

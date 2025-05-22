@@ -56,7 +56,7 @@ export default function Home() {
                 <span className="text-2xl">Cześć! Miło mi że tu jesteś</span>
 
                 <FadeInOnScroll delay={0.1}>
-                    <div className="relative flex lg:flex-row flex-col justify-center items-center mt-16 text-start">
+                    <div className="relative flex lg:flex-row flex-col justify-center items-center lg:mt-16 mt-20 text-start">
                         <Image
                             src="/Images/home/fotograf-siedlce-jarek-olszewski.avif"
                             alt="fotograf siedlce jarek-olszewski"

@@ -64,6 +64,7 @@ export default async function FotografiaSlubna() {
                             {OFERTAIMAGES.map((img, index) => (
                                 <ImageComponent
                                     key={index}
+                                    index={index}
                                     img={img.src}
                                     title={img.title}
                                     desc={img.desc}
