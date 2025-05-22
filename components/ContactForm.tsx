@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "@/components/Buttons/MainBtn";
+import { FiCalendar } from "react-icons/fi";
 
 const FormField = ({
     name,
@@ -35,18 +36,22 @@ const FormField = ({
                     {label}
                 </label>
             )}
-            <div className={isDate ? "relative" : ""}>
-               
+            <div className={`relative ${isDate ? "flex items-center" : ""}`}>
                 <input
                     id={name}
                     name={name}
                     type={type}
                     placeholder={isDate ? "Wybierz datę" : placeholder}
                     required={required}
-                    className={`w-full p-2 border rounded text-black outline-1 outline-brand`}
                     value={value}
                     onChange={onChange}
+                    className={`w-full p-2 pr-10 lg:pr-2 border rounded text-black outline-1 outline-brand ${
+                        isDate ? "appearance-none" : ""
+                    }`}
                 />
+                {isDate && (
+                    <FiCalendar className="absolute lg:hidden right-3 text-gray-500 pointer-events-none" />
+                )}
             </div>
         </div>
     );
