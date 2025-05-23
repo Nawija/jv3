@@ -27,7 +27,7 @@ export default function Messenger() {
 
     return (
         <Link
-            href="/"
+            href="https://m.me/JarekOlszewskiFotografia"
             className={`
                 fixed z-50 left-4 bottom-6 md:bottom-12 p-2 rounded-full bg-white border text-white shadow-xl
                 transition-all duration-500 ease-in-out
