@@ -97,7 +97,7 @@ function SectionWithSubSections({
 
     return (
         <section
-            className="pt-8 px-1 max-w-4xl mx-auto text-center"
+            className="pt-8 px-1 max-w-2xl mx-auto text-center"
             aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
             key={`${sectionKeyPrefix}`}
         >
@@ -153,33 +153,45 @@ export default function UniversalPage({
                         <h1 className="text-2xl lg:text-3xl max-w-4xl mx-auto font-light text-center mb-10">
                             {content.introTitle}
                         </h1>
-                        <p className="text- font-light text-center mb-10">
-                            {content.introDesc}
-                        </p>
+                        {content.introDesc && (
+                            <p className="text- font-light text-center mb-10">
+                                {content.introDesc}
+                            </p>
+                        )}
+                        {content.gridImages?.length > 0 && (
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+                                {content.gridImages.map((img, index) =>
+                                    img?.src && img?.title && img?.desc ? (
+                                        <ImageComponent
+                                            key={index}
+                                            index={index}
+                                            img={img.src}
+                                            title={img.title}
+                                            desc={img.desc}
+                                        />
+                                    ) : null
+                                )}
+                            </div>
+                        )}
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                            {content.gridImages.map((img, index) => (
-                                <ImageComponent
-                                    key={index}
-                                    index={index}
-                                    img={img.src}
-                                    title={img.title}
-                                    desc={img.desc}
-                                />
-                            ))}
-                        </div>
-
-                        {/* Pierwsze dwie sekcje */}
-                        {content.sections.slice(0, 1).map((section, i) => (
-                            <SectionWithSubSections
-                                key={`section-0-2-${i}`}
-                                section={section}
-                                sectionKeyPrefix={`section-0-2-${i}`}
-                            />
-                        ))}
+                        {content.sections?.length > 0 && (
+                            <>
+                                {content.sections
+                                    .slice(0, 1)
+                                    .map((section, i) => (
+                                        <SectionWithSubSections
+                                            key={`section-0-2-${i}`}
+                                            section={section}
+                                            sectionKeyPrefix={`section-0-2-${i}`}
+                                        />
+                                    ))}
+                            </>
+                        )}
 
                         <div className="border p-12 max-w-2xl mx-auto bg-gray-100">
-                            <p className="text-2xl font-medium pb-2">Napisz do mnie</p>
+                            <p className="text-2xl font-medium pb-2">
+                                Napisz do mnie
+                            </p>
                             <CTASendMail title="Wyślij wiadomość" />
                         </div>
 
@@ -189,22 +201,27 @@ export default function UniversalPage({
                                     title={content.carousel.title}
                                     desc={content.carousel.desc}
                                 />
-                                <div className="max-w-screen-sm mx-auto">
+                                <div className="max-w-2xl mx-auto">
                                     <CarouselProps
                                         images={content.carousel.images}
                                     />
                                 </div>
                             </>
                         )}
+                        {content.sections?.length > 0 && (
+                            <>
+                                {content.sections
+                                    .slice(1, 2)
+                                    .map((section, i) => (
+                                        <SectionWithSubSections
+                                            key={`section-2-4-${i}`}
+                                            section={section}
+                                            sectionKeyPrefix={`section-2-4-${i}`}
+                                        />
+                                    ))}
+                            </>
+                        )}
 
-                        {/* Pierwsze dwie sekcje */}
-                        {content.sections.slice(1, 2).map((section, i) => (
-                            <SectionWithSubSections
-                                key={`section-2-4-${i}`}
-                                section={section}
-                                sectionKeyPrefix={`section-2-4-${i}`}
-                            />
-                        ))}
                         {content.blogs && (
                             <>
                                 <TitleH2
@@ -235,16 +252,23 @@ export default function UniversalPage({
                             <ContactBtns />
                         </div>
 
-                        {content.sections.slice(2, 3).map((section, i) => (
-                            <SectionWithSubSections
-                                key={`section-3-x-${i}`}
-                                section={section}
-                                sectionKeyPrefix={`section-2-4-${i}`}
-                            />
-                        ))}
+                        {content.sections?.length > 0 && (
+                            <>
+                                {" "}
+                                {content.sections
+                                    .slice(2, 3)
+                                    .map((section, i) => (
+                                        <SectionWithSubSections
+                                            key={`section-3-x-${i}`}
+                                            section={section}
+                                            sectionKeyPrefix={`section-2-4-${i}`}
+                                        />
+                                    ))}
+                            </>
+                        )}
 
                         <section className="bg-white px-4 py-12">
-                            <div className="mx-auto max-w-4xl text-center">
+                            <div className="mx-auto max-w-2xl text-center">
                                 <p className="font-light text-neutral-900 text-xl tracking-tight">
                                     Opinie klientów
                                 </p>
@@ -269,17 +293,21 @@ export default function UniversalPage({
                             </div>
                         </section>
 
-                        <div className="mt-12">
+                        <div className="mt-8">
                             <ContactForm />
                         </div>
+                        {content.sections?.length > 0 && (
+                            <>
+                                {content.sections.slice(3).map((section, i) => (
+                                    <SectionWithSubSections
+                                        key={`section-4-end-${i}`}
+                                        section={section}
+                                        sectionKeyPrefix={`section-4-end-${i}`}
+                                    />
+                                ))}
+                            </>
+                        )}
 
-                        {content.sections.slice(3).map((section, i) => (
-                            <SectionWithSubSections
-                                key={`section-4-end-${i}`}
-                                section={section}
-                                sectionKeyPrefix={`section-4-end-${i}`}
-                            />
-                        ))}
                         <div className="mt-12">
                             <InstagramGrid />
                         </div>

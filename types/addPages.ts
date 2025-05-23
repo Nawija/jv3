@@ -1,0 +1,39 @@
+export interface GridImage {
+    index: number;
+    position: string;
+    title: string;
+    desc: string;
+}
+
+export interface SubSection {
+    h3: string;
+    content: string;
+}
+
+export interface Section {
+    h2: string;
+    subSections: SubSection[];
+}
+
+export interface FormData {
+    title: string;
+    description: string;
+    blogCategory: string;
+    heroImage: string;
+    imageFolder: string;
+    galleryFolder: string;
+    content: {
+        hero: {
+            title: string;
+            backgroundImages: string[];
+            paragraphs: string[];
+        };
+        introTitle: string;
+        carousel: {
+            title: string;
+            desc: string;
+        };
+        gridImages: GridImage[];
+    };
+    sections: Section[];
+}

@@ -3,25 +3,9 @@
 import { useState } from "react";
 import slugify from "slugify";
 import { Trash2, Plus } from "lucide-react";
+import { CATEGORIES } from "@/constants/categories";
 
-const categories = [
-    "Fotografia Ślubna",
-    "Sesja Ślubna",
-    "Sesja Narzeczeńska",
-    "Fotografia chrztu",
-    "Fotografia komunijna",
-    "Wieczory panieńskie",
-    "Urodziny",
-    "Studniówki",
-    "Sesje Rodzinne brzuszkowe noworodkowe",
-    "Sesje indywidualne biznesowe",
-    "Fotografia sportowa",
-    "Fotografia koncertowa i klubowa",
-    "Przemysł/architektura",
-    "Kulinarne",
-    "Motoryzacyjne",
-    "Zdjecia do dokumentow dowod prawojazdy paszport"
-];
+
 
 export default function AddBlogPage() {
     const [heroIndex, setHeroIndex] = useState<number | null>(null);
@@ -107,7 +91,7 @@ export default function AddBlogPage() {
                 className="w-full p-3 border mb-4 rounded"
             >
                 <option value=""> Wybierz kategorię</option>
-                {categories.map((cat) => (
+                {CATEGORIES.map((cat) => (
                     <option key={cat} value={cat}>
                         {cat}
                     </option>

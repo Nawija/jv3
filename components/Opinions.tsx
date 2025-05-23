@@ -29,13 +29,13 @@ export default function Opinions() {
                     return (
                         <CarouselItem
                             key={i}
-                            className="basis-[80%] sm:basis-1/2 lg:basis-1/3"
+                            className="basis-[80%] lg:basis-[59%]"
                         >
                             <div className="bg-white rounded-2xl shadow-lg p-6 h-full flex flex-col justify-between hover:shadow-xl transition-shadow duration-300 border border-neutral-200">
                                 <p className="text-neutral-700 mb-4 text-base leading-relaxed italic">
                                     “{opinia.text}”
                                 </p>
-                                <div className="flex items-center gap-2 mb-2">
+                                <div className="flex items-center justify-center gap-2">
                                     <div className="flex">
                                         {[...Array(5)].map((_, idx) => (
                                             <FaStar
@@ -50,11 +50,11 @@ export default function Opinions() {
                                             />
                                         ))}
                                     </div>
-                                    <span className="text-sm text-neutral-600 font-medium">
+                                    <span className="text-sm text-neutral-600 font-light -tracking-wide">
                                         {opinia.rating.toFixed(1)} / 5.0
                                     </span>
                                 </div>
-                                <div className="flex items-center gap-3 mt-2">
+                                <div className="flex items-center justify-center gap-3 mt-2">
                                     <div
                                         className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-light text-lg ${bgColor}`}
                                     >
