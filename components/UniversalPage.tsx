@@ -84,7 +84,15 @@ export default function UniversalPage({
                         </h1>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                             {content.gridImages.map(
-                                (img: any, index: number) => (
+                                (
+                                    img: {
+                                        href: string;
+                                        src: string;
+                                        title: string;
+                                        desc: string;
+                                    },
+                                    index: number
+                                ) => (
                                     <Link key={index} href={img.href}>
                                         <ImageComponent
                                             index={index}
@@ -97,16 +105,21 @@ export default function UniversalPage({
                             )}
                         </div>
 
-                        {content.sections.map((section: any, i: number) => (
-                            <section key={i} className="py-12 text-center">
-                                <h2 className="text-2xl font-light mb-4">
-                                    {section.title}
-                                </h2>
-                                <p className="max-w-screen-md mx-auto text-lg">
-                                    {section.content}
-                                </p>
-                            </section>
-                        ))}
+                        {content.sections.map(
+                            (
+                                section: { title: string; content: string },
+                                i: number
+                            ) => (
+                                <section key={i} className="py-12 text-center">
+                                    <h2 className="text-2xl font-light mb-4">
+                                        {section.title}
+                                    </h2>
+                                    <p className="max-w-screen-md mx-auto text-lg">
+                                        {section.content}
+                                    </p>
+                                </section>
+                            )
+                        )}
 
                         {content.carousel && (
                             <>
