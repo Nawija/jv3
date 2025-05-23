@@ -124,7 +124,7 @@ function SectionWithSubSections({
                     )}
                     <p className="max-w-screen-md mx-auto text-base text-start">
                         <span className="relative inline-block pl-2">
-                            <span className="absolute left-0 top-0 h-full w-[5px] rounded bg-brand-nav"></span>
+                            <span className="absolute left-0 top-0 h-full w-[2px] rounded bg-brand-nav"></span>
                             {sub.content.charAt(0)}
                         </span>
                         {sub.content.slice(1)}
