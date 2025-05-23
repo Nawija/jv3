@@ -149,8 +149,8 @@ export default function UniversalPage({
             />
             <div className="text-center bg-white w-full">
                 <div className="w-full py-10">
-                    <div className="max-w-screen-lg mx-auto px-4">
-                        <h1 className="text-2xl lg:text-3xl font-light text-center mb-10">
+                    <div className="max-w-5xl mx-auto px-4">
+                        <h1 className="text-2xl lg:text-3xl max-w-4xl mx-auto font-light text-center mb-10">
                             {content.introTitle}
                         </h1>
                         <p className="text- font-light text-center mb-10">
