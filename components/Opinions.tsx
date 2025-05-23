@@ -52,7 +52,7 @@ export default function Opinions() {
                                         ))}
                                     </div>
                                     <span className="text-sm text-neutral-600 font-medium">
-                                        {opinia.rating.toFixed(1)} / 5
+                                        {opinia.rating.toFixed(1)} / 5.0
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3 mt-2">

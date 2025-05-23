@@ -11,6 +11,8 @@ import InstagramGrid from "@/components/instagram/InstagramGrid";
 import LinkShare from "@/components/ui/LinkShare";
 import Link from "next/link";
 import Gallery from "@/app/oferta/_components/Gallery";
+import ContactBtns from "./contactBtns";
+import { FaStar } from "react-icons/fa";
 
 type UniversalPageContent = {
     hero: {
@@ -160,6 +162,10 @@ export default function UniversalPage({
                             </div>
                         )}
 
+                        <div className="max-2-xl w-full flex items-center justify-center">
+                            <ContactBtns />
+                        </div>
+
                         {content.gallery && (
                             <div className="max-w-3xl mx-auto">
                                 <Gallery allImages={content.gallery} />
@@ -179,6 +185,15 @@ export default function UniversalPage({
                                         target="_blank"
                                         href="https://www.google.com/search?q=jarekolszewski"
                                     />
+                                </div>
+                                <div className="flex items-center justify-center space-x-0.5 mt-2">
+                                    <span className="text-sm">5,0</span>
+                                    <FaStar className="text-yellow-400" />
+                                    <FaStar className="text-yellow-400" />
+                                    <FaStar className="text-yellow-400" />
+                                    <FaStar className="text-yellow-400" />
+                                    <FaStar className="text-yellow-400" />
+                                    <span className="text-sm">(44)</span>
                                 </div>
                             </div>
                         </section>
