@@ -1,7 +1,9 @@
+import CTASendMail from "@/components/CTASendMail";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import Opinions from "@/components/Opinions";
 import PhotoSwipe from "@/components/PhotoSwipe";
 import LinkShare from "@/components/ui/LinkShare";
+import { OFERTALINKS } from "@/constants/Links";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,6 +11,7 @@ const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Warszawa | Siedlce | Łuków";
 const pageDescription =
     "Profesjonalna fotografia ślubna i sesje zdjęciowe w warszawie, siedlach , łukowie i okolicach. Fotograf z pasją, który uchwyci najważniejsze chwile Twojego życia. Naturalne zdjęcia pełne emocji.";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -18,12 +21,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/home/fotograf-siedlce-jarek-olszewski.avif",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Fotografia ślubna - Jarek Olszewski Warszawa Siedlce",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 
@@ -89,20 +98,7 @@ export default function Portfolio() {
                                 Pakiety fotografii:
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4">
-                                {[
-                                    {
-                                        href: "/sesja-slubna",
-                                        label: "Oferta ślubna",
-                                    },
-                                    {
-                                        href: "/fotografia-chrztu",
-                                        label: "Oferta chrztu",
-                                    },
-                                    {
-                                        href: "/sesja-narzeczenska",
-                                        label: "Sesja Narzeczenska",
-                                    },
-                                ].map(({ href, label }, i) => (
+                                {OFERTALINKS.map(({ href, label }, i) => (
                                     <Link
                                         key={i}
                                         href={href}
@@ -144,6 +140,10 @@ export default function Portfolio() {
                     </h3>
                     <PhotoSwipe images={images} columns={3} className="p-4" />
                 </section>
+                <div className="py-24 px-4 flex items-center justify-center flex-col space-y-4">
+                    <p className="text-2xl font-medium">Napisz do mnie</p>
+                    <CTASendMail title="Wyslij wiadomość" />
+                </div>
                 <InstagramGrid />
 
                 <section className="bg-white px-4 py-12">

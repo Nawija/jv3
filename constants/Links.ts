@@ -25,6 +25,21 @@ export const NAVLINKS = [
     },
 ];
 
+export const OFERTALINKS = [
+    {
+        href: "/sesja-slubna",
+        label: "Oferta ślubna",
+    },
+    {
+        href: "/fotografia-chrztu",
+        label: "Oferta chrztu",
+    },
+    {
+        href: "/sesja-narzeczenska",
+        label: "Sesja Narzeczenska",
+    },
+];
+
 export const OFERTAIMAGES = [
     {
         src: "/Images/oferta/sesja-ślubna.avif",

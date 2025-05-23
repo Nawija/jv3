@@ -6,6 +6,7 @@ import { Metadata } from "next";
 const pageTitle = "Blog - Jarek Olszewski | Fotograf Siedlce";
 const pageDescription =
     "Inspiracje do sesji i kulisy pracy fotografa. Blog Jarka Olszewskiego - wszystko o fotografii ślubnej i nie tylko - prawdziwa fotografia";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -15,12 +16,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Fotografia ślubna - Jarek Olszewski",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 

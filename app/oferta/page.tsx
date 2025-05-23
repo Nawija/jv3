@@ -4,6 +4,7 @@ import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
+import { OFERTALINKS } from "@/constants/Links";
 
 const benefits = [
     [
@@ -35,6 +36,7 @@ const pageTitle =
     "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże";
 const pageDescription =
     "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -44,12 +46,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "Images/sesja.jpg",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Cennik fotograf oferta sesji zdjęciowych - Jarek Olszewski",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 
@@ -97,23 +105,10 @@ export default async function OffertsPage() {
                     <div>
                         <div className="text-center space-y-2 mb-8">
                             <h3 className="text-2xl font-light">
-                                Pakiety fotografii:
+                                Oferty fotografii:
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4">
-                                {[
-                                    {
-                                        href: "/sesja-slubna",
-                                        label: "Oferta ślubna",
-                                    },
-                                    {
-                                        href: "/fotografia-chrztu",
-                                        label: "Oferta chrztu",
-                                    },
-                                    {
-                                        href: "/sesja-narzeczenska",
-                                        label: "Sesja Narzeczenska",
-                                    },
-                                ].map(({ href, label }, i) => (
+                                {OFERTALINKS.map(({ href, label }, i) => (
                                     <Link
                                         key={i}
                                         href={href}
