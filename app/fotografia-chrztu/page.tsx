@@ -35,7 +35,7 @@ export default async function Page() {
 
     const content = {
         hero: {
-            title: "Fotografia Chrztu", // <h1>
+            title: "Fotografia Chrztu",
             backgroundImages: [heroImage],
             paragraphs: [
                 "Dzień, który zapamiętacie na zawsze — idealny, pełen emocji. Uwiecznijmy go razem.",
@@ -66,12 +66,37 @@ export default async function Page() {
 
         sections: [
             {
-                h2: "Jak pracuję podczas chrztu?", // <h2>
+                h2: "Jak pracuję podczas chrztu?",
                 subSections: [
                     {
-                        h3: "Dyskretnie i naturalnie", // <h3>
+                        h3: "Dyskretnie i naturalnie",
                         content:
                             "Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę",
+                    },
+                    {
+                        h3: "W pełnym zaangażowaniu",
+                        content:
+                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
+                    },
+                ],
+            },
+            {
+                h2: "Jak pracuję podczas chrztu?",
+                subSections: [
+                    {
+                        h3: "Dyskretnie i naturalnie",
+                        content:
+                            "Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę",
+                    },
+                    {
+                        h3: "W pełnym zaangażowaniu",
+                        content:
+                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
+                    },
+                    {
+                        h3: "W pełnym zaangażowaniu",
+                        content:
+                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
                     },
                     {
                         h3: "W pełnym zaangażowaniu",
