@@ -11,6 +11,7 @@ import InstagramGrid from "@/components/instagram/InstagramGrid";
 import LinkShare from "@/components/ui/LinkShare";
 import { FaStar } from "react-icons/fa";
 import ContactBtns from "./ContactBtns";
+import CTASendMail from "./CTASendMail";
 
 type UniversalPageContent = {
     hero: {
@@ -176,6 +177,11 @@ export default function UniversalPage({
                                 sectionKeyPrefix={`section-0-2-${i}`}
                             />
                         ))}
+
+                        <div className="border p-12 max-w-2xl mx-auto bg-gray-100">
+                            <p className="text-2xl font-medium pb-2">Napisz do mnie</p>
+                            <CTASendMail title="Wyślij wiadomość" />
+                        </div>
 
                         {content.carousel && (
                             <>
