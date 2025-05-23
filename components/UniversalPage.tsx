@@ -96,7 +96,7 @@ function SectionWithSubSections({
 
     return (
         <section
-            className="pt-8 px-4 max-w-4xl mx-auto text-center"
+            className="pt-8 px-1 max-w-4xl mx-auto text-center"
             aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
             key={`${sectionKeyPrefix}`}
         >
@@ -116,13 +116,17 @@ function SectionWithSubSections({
                     {sub.h3 && (
                         <h3
                             id={`subsection-h3-${slugify(sub.h3)}`}
-                            className="text-xl font-light mb-6"
+                            className="text-xl max-w-2xl mx-auto font-light mb-8"
                         >
                             {sub.h3}
                         </h3>
                     )}
-                    <p className="max-w-screen-md mx-auto text-base text-center">
-                        {sub.content}
+                    <p className="max-w-screen-md mx-auto text-base text-start">
+                        <span className="relative inline-block pl-2">
+                            <span className="absolute left-0 top-0 h-full w-[5px] rounded bg-brand-nav"></span>
+                            {sub.content.charAt(0)}
+                        </span>
+                        {sub.content.slice(1)}
                     </p>
                 </div>
             ))}
