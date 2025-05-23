@@ -7,7 +7,8 @@ const pageTitle =
     "Sesja ślubna i plener ślubny - wyjątkowa sesja ślubna w górach";
 const pageDescription =
     "Sesja ślubna w plenerze? Wybierz niezapomniany plener ślubny w górach. Fotografia plenerowa, która odda magię Waszego dnia.";
-const heroImage = "/Images/fotografia-chrztu/fotografia-chrztu.jpeg";
+const heroImage =
+    "/Images/blogs/sesja-slubna/agata-i-pawel/187_agata-i-pawel-plener-slubny-nad-morzem-jarek-olszewski-fotografia.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
