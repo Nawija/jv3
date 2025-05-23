@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import LinkShare from "@/components/ui/LinkShare";
 import { FaStar } from "react-icons/fa";
+import ContactBtns from "./ContactBtns";
 
 type UniversalPageContent = {
     hero: {
@@ -18,6 +19,7 @@ type UniversalPageContent = {
         paragraphs: string[];
     };
     introTitle: string;
+    introDesc?: string;
     gridImages: {
         src: string;
         title: string;
@@ -94,14 +96,14 @@ function SectionWithSubSections({
 
     return (
         <section
-            className="pt-8 px-4 max-w-3xl mx-auto text-center"
+            className="pt-8 px-4 max-w-4xl mx-auto text-center"
             aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
             key={`${sectionKeyPrefix}`}
         >
             {section.h2 && (
                 <h2
                     id={`section-h2-${slugify(section.h2)}`}
-                    className="text-2xl font-medium mb-4"
+                    className="text-2xl font-medium mb-6"
                 >
                     {section.h2}
                 </h2>
@@ -109,12 +111,12 @@ function SectionWithSubSections({
             {section.subSections?.map((sub, j) => (
                 <div
                     key={`${sectionKeyPrefix}-subsection-${j}`}
-                    className="mb-6"
+                    className="mb-12"
                 >
                     {sub.h3 && (
                         <h3
                             id={`subsection-h3-${slugify(sub.h3)}`}
-                            className="text-xl font-light mb-2"
+                            className="text-xl font-light mb-6"
                         >
                             {sub.h3}
                         </h3>
@@ -146,6 +148,9 @@ export default function UniversalPage({
                         <h1 className="text-2xl lg:text-3xl font-light text-center mb-10">
                             {content.introTitle}
                         </h1>
+                        <p className="text- font-light text-center mb-10">
+                            {content.introDesc}
+                        </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                             {content.gridImages.map((img, index) => (
@@ -160,7 +165,7 @@ export default function UniversalPage({
                         </div>
 
                         {/* Pierwsze dwie sekcje */}
-                        {content.sections.slice(0, 2).map((section, i) => (
+                        {content.sections.slice(0, 1).map((section, i) => (
                             <SectionWithSubSections
                                 key={`section-0-2-${i}`}
                                 section={section}
@@ -183,7 +188,7 @@ export default function UniversalPage({
                         )}
 
                         {/* Pierwsze dwie sekcje */}
-                        {content.sections.slice(2, 4).map((section, i) => (
+                        {content.sections.slice(1, 2).map((section, i) => (
                             <SectionWithSubSections
                                 key={`section-2-4-${i}`}
                                 section={section}
@@ -216,6 +221,18 @@ export default function UniversalPage({
                             </div>
                         )}
 
+                        <div className="mt-12 mb-6 flex items-center justify-center">
+                            <ContactBtns />
+                        </div>
+
+                        {content.sections.slice(2, 3).map((section, i) => (
+                            <SectionWithSubSections
+                                key={`section-3-x-${i}`}
+                                section={section}
+                                sectionKeyPrefix={`section-2-4-${i}`}
+                            />
+                        ))}
+
                         <section className="bg-white px-4 py-12">
                             <div className="mx-auto max-w-4xl text-center">
                                 <p className="font-light text-neutral-900 text-xl tracking-tight">
@@ -246,7 +263,7 @@ export default function UniversalPage({
                             <ContactForm />
                         </div>
 
-                        {content.sections.slice(4).map((section, i) => (
+                        {content.sections.slice(3).map((section, i) => (
                             <SectionWithSubSections
                                 key={`section-4-end-${i}`}
                                 section={section}
