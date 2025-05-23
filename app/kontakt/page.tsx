@@ -1,4 +1,4 @@
-import ContactBtns from "@/components/contactBtns";
+import ContactBtns from "@/components/ContactBtns";
 import ContactForm from "@/components/ContactForm";
 import { Metadata } from "next";
 
