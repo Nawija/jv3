@@ -171,13 +171,13 @@ export default async function Page() {
 
         carousel: {
             title: "- Przykładowe zdjęcia z chrztu -",
-            desc: "#chrzest #fotografia-chrztu #emocje",
+            desc: "#góry #sesja #emocje",
             images: images.map((img) => ({ src: img.responsiveImage.src })),
         },
 
         blogs: {
             title: "- Kilka historii -",
-            desc: "#reportaż #chrzest #rodzina",
+            desc: "#sesjaslubna #foto #jarek",
             data: blogs,
         },
 
