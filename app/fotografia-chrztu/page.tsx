@@ -35,13 +35,14 @@ export default async function Page() {
 
     const content = {
         hero: {
-            title: "Fotografia Chrztu",
+            title: "Fotografia Chrztu", // <h1>
             backgroundImages: [heroImage],
             paragraphs: [
                 "Dzień, który zapamiętacie na zawsze — idealny, pełen emocji. Uwiecznijmy go razem.",
             ],
         },
         introTitle: "Fotografia chrztu, co skrywa?",
+
         gridImages: [
             {
                 src: images[1].responsiveImage.src,
@@ -61,25 +62,38 @@ export default async function Page() {
                 title: "Chrzest fotografia",
                 desc: "Profesjonalnie w świętej oprawie",
             },
-            // Dodaj więcej jak potrzeba
         ],
+
         sections: [
             {
-                title: "Jak pracuję podczas chrztu?",
-                content:
-                    "Fotografuję dyskretnie i z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę.",
+                h2: "Jak pracuję podczas chrztu?", // <h2>
+                subSections: [
+                    {
+                        h3: "Dyskretnie i naturalnie", // <h3>
+                        content:
+                            "Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę",
+                    },
+                    {
+                        h3: "W pełnym zaangażowaniu",
+                        content:
+                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
+                    },
+                ],
             },
         ],
+
         carousel: {
             title: "- Przykładowe zdjęcia z chrztu -",
             desc: "#chrzest #fotografia-chrztu #emocje",
             images: images.map((img) => ({ src: img.responsiveImage.src })),
         },
+
         blogs: {
             title: "- Kilka historii -",
             desc: "#reportaż #chrzest #rodzina",
             data: blogs,
         },
+
         bullets: {
             title: "Co oferuję",
             paragraph:
@@ -91,6 +105,7 @@ export default async function Page() {
                 "Dostawa zdjęć w 21 dni",
             ],
         },
+
         gallery,
     };
 

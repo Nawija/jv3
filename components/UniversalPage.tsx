@@ -9,8 +9,6 @@ import Opinions from "@/components/Opinions";
 import ContactForm from "@/components/ContactForm";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import LinkShare from "@/components/ui/LinkShare";
-import Gallery from "@/app/oferta/_components/Gallery";
-import ContactBtns from "./ContactBtns";
 import { FaStar } from "react-icons/fa";
 
 type UniversalPageContent = {
@@ -26,8 +24,11 @@ type UniversalPageContent = {
         desc: string;
     }[];
     sections: {
-        title: string;
-        content: string;
+        h2?: string;
+        subSections?: {
+            h3?: string;
+            content: string;
+        }[];
     }[];
     carousel?: {
         title: string;
@@ -62,7 +63,70 @@ type UniversalPageContent = {
             src: string;
         };
     }[];
+    h2Sections?: {
+        title: string;
+        desc?: string;
+        componentType?: "default" | "gallery" | "contact";
+    }[];
 };
+
+function SectionWithSubSections({
+    section,
+    sectionKeyPrefix,
+}: {
+    section: {
+        h2?: string;
+        subSections?: {
+            h3?: string;
+            content: string;
+        }[];
+    };
+    sectionKeyPrefix: string;
+}) {
+    function slugify(text: string) {
+        return text
+            .toLowerCase()
+            .trim()
+            .replace(/[\s]+/g, "-")
+            .replace(/[^\w\-]+/g, "")
+            .replace(/\-\-+/g, "-");
+    }
+
+    return (
+        <section
+            className="pt-8 px-4 max-w-3xl mx-auto text-center"
+            aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
+            key={`${sectionKeyPrefix}`}
+        >
+            {section.h2 && (
+                <h2
+                    id={`section-h2-${slugify(section.h2)}`}
+                    className="text-2xl font-medium mb-4"
+                >
+                    {section.h2}
+                </h2>
+            )}
+            {section.subSections?.map((sub, j) => (
+                <div
+                    key={`${sectionKeyPrefix}-subsection-${j}`}
+                    className="mb-6"
+                >
+                    {sub.h3 && (
+                        <h3
+                            id={`subsection-h3-${slugify(sub.h3)}`}
+                            className="text-xl font-light mb-2"
+                        >
+                            {sub.h3}
+                        </h3>
+                    )}
+                    <p className="max-w-screen-md mx-auto text-base text-center">
+                        {sub.content}
+                    </p>
+                </div>
+            ))}
+        </section>
+    );
+}
 
 export default function UniversalPage({
     content,
@@ -82,42 +146,27 @@ export default function UniversalPage({
                         <h1 className="text-2xl lg:text-3xl font-light text-center mb-10">
                             {content.introTitle}
                         </h1>
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                            {content.gridImages.map(
-                                (
-                                    img: {
-                                        src: string;
-                                        title: string;
-                                        desc: string;
-                                    },
-                                    index: number
-                                ) => (
-                                    <ImageComponent
-                                        key={index}
-                                        index={index}
-                                        img={img.src}
-                                        title={img.title}
-                                        desc={img.desc}
-                                    />
-                                )
-                            )}
+                            {content.gridImages.map((img, index) => (
+                                <ImageComponent
+                                    key={index}
+                                    index={index}
+                                    img={img.src}
+                                    title={img.title}
+                                    desc={img.desc}
+                                />
+                            ))}
                         </div>
 
-                        {content.sections.map(
-                            (
-                                section: { title: string; content: string },
-                                i: number
-                            ) => (
-                                <section key={i} className="py-12 text-center">
-                                    <h2 className="text-2xl font-light mb-4">
-                                        {section.title}
-                                    </h2>
-                                    <p className="max-w-screen-md mx-auto text-lg">
-                                        {section.content}
-                                    </p>
-                                </section>
-                            )
-                        )}
+                        {/* Pierwsze dwie sekcje */}
+                        {content.sections.slice(0, 2).map((section, i) => (
+                            <SectionWithSubSections
+                                key={`section-0-2-${i}`}
+                                section={section}
+                                sectionKeyPrefix={`section-0-2-${i}`}
+                            />
+                        ))}
 
                         {content.carousel && (
                             <>
@@ -133,6 +182,14 @@ export default function UniversalPage({
                             </>
                         )}
 
+                        {/* Pierwsze dwie sekcje */}
+                        {content.sections.slice(2, 4).map((section, i) => (
+                            <SectionWithSubSections
+                                key={`section-2-4-${i}`}
+                                section={section}
+                                sectionKeyPrefix={`section-2-4-${i}`}
+                            />
+                        ))}
                         {content.blogs && (
                             <>
                                 <TitleH2
@@ -156,16 +213,6 @@ export default function UniversalPage({
                                     paragraph={content.bullets.paragraph}
                                     bullets={content.bullets.items}
                                 />
-                            </div>
-                        )}
-
-                        <div className="max-2-xl w-full flex items-center justify-center">
-                            <ContactBtns />
-                        </div>
-
-                        {content.gallery && (
-                            <div className="max-w-3xl mx-auto">
-                                <Gallery allImages={content.gallery} />
                             </div>
                         )}
 
@@ -198,6 +245,14 @@ export default function UniversalPage({
                         <div className="mt-12">
                             <ContactForm />
                         </div>
+
+                        {content.sections.slice(4).map((section, i) => (
+                            <SectionWithSubSections
+                                key={`section-4-end-${i}`}
+                                section={section}
+                                sectionKeyPrefix={`section-4-end-${i}`}
+                            />
+                        ))}
                         <div className="mt-12">
                             <InstagramGrid />
                         </div>
