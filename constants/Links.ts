@@ -51,28 +51,63 @@ export const OFERTAIMAGES = [
 
 export const OPINIONS = [
     {
-        name: "Karolina & Michał",
-        text: "Jarek towarzyszył nam w najważniejszym dniu naszego życia. Uchwycił każdą emocję z ogromną wrażliwością. Zdjęcia przerosły nasze oczekiwania - są prawdziwe, naturalne i piękne.",
+        name: "Karolina",
+        text: "Jarek uchwycił każdy wyjątkowy moment naszego ślubu. Jego zdjęcia są pełne emocji, naturalne i profesjonalnie wykonane. Polecamy tego fotografa każdemu, kto szuka kogoś, kto sfotografuje najważniejsze chwile z pasją i dokładnością.",
         rating: 5.0,
     },
     {
         name: "Natalia",
-        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt - zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        text: "Sesja zdjęciowa z Jarkiem to czysta przyjemność. Bez stresu i z pełnym zaangażowaniem, zrealizował sesję rodzinną oraz portretową na najwyższym poziomie. Jego podejście do fotografii sprawia, że zdjęcia są naturalne i pełne życia.",
         rating: 5.0,
     },
     {
         name: "Szymon",
-        text: "Sesja z Jarkiem to czysta przyjemność. Luźna atmosfera, zero stresu, a efekt - zachwycający. To nie tylko fotograf, ale też świetny człowiek.",
+        text: "Profesjonalny fotograf, który doskonale radzi sobie z fotografią eventową i reportażową. Zdjęcia z mojego eventu są dynamiczne, pełne detali i świetnie oddają atmosferę. Polecam każdemu, kto szuka fotografa z doświadczeniem i pomysłowością.",
         rating: 5.0,
     },
     {
-        name: "Ania & Paweł",
-        text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
+        name: "Ania",
+        text: "Jarek to fotograf, który potrafi uchwycić nie tylko obraz, ale i uczucia. Zdjęcia z chrztu naszego synka są ciepłe, pełne radości i naturalności. Współpraca przebiegła bezproblemowo, a efekt przerósł nasze oczekiwania.",
         rating: 5.0,
     },
     {
         name: "Monika & Karol",
-        text: "Zdecydowanie najlepszy fotograf w regionie! Zdjęcia z chrztu naszego synka są wyjątkowe, pełne emocji i ciepła. Polecamy z całego serca!",
+        text: "Jeśli szukasz fotografa, który wykona piękne zdjęcia ślubne, rodzinne, a także sesje portretowe, Jarek jest idealnym wyborem. Profesjonalizm, świetne oko do detali i indywidualne podejście do klienta to jego atuty. Zdjęcia są autentyczne i pełne emocji.",
+        rating: 5.0,
+    },
+    {
+        name: "Ewa",
+        text: "Sesja narzeczeńska i ślubna z Jarkiem to strzał w dziesiątkę! Zdjęcia są pięknie skomponowane, pełne naturalnych ujęć i światła. Doskonały fotograf, który zadba o każdy szczegół i atmosferę podczas sesji plenerowej.",
+        rating: 5.0,
+    },
+    {
+        name: "Marta",
+        text: "Jarek to nie tylko świetny fotograf, ale też człowiek z pasją. Zrealizował dla mnie profesjonalną sesję portretową, która w pełni oddaje moją osobowość. Polecam każdemu, kto potrzebuje zdjęć do portfolio lub biznesowych.",
+        rating: 5.0,
+    },
+    {
+        name: "Kasia",
+        text: "Zdjęcia z rodzinnego przyjęcia zostały wykonane z niezwykłą starannością. Jarek potrafi świetnie uchwycić spontaniczne chwile i emocje. To fotograf, którego polecam każdemu, kto chce mieć piękną pamiątkę z ważnych wydarzeń rodzinnych.",
+        rating: 5.0,
+    },
+    {
+        name: "Bartek",
+        text: "Jeśli szukasz fotografa na event firmowy lub koncert, Jarek to najlepszy wybór. Jego zdjęcia są dynamiczne, pełne energii i świetnie oddają charakter wydarzenia. Profesjonalizm i szybka realizacja to dodatkowe zalety.",
+        rating: 5.0,
+    },
+    {
+        name: "Aneta",
+        text: "Jarek zrobił dla nas sesję ciążową i noworodkową. Zdjęcia są subtelne, pełne ciepła i naturalnego światła. Jego umiejętność pracy z dziećmi i rodzinami jest niesamowita. Gorąco polecam każdej przyszłej mamie i rodzinie.",
+        rating: 5.0,
+    },
+    {
+        name: "Ola",
+        text: "Profesjonalna fotografia ślubna na najwyższym poziomie! Jarek potrafi uchwycić emocje, detale i piękno każdego momentu. Zdjęcia z naszego wesela to dla nas prawdziwa pamiątka na całe życie.",
+        rating: 5.0,
+    },
+    {
+        name: "Paulina",
+        text: "Sesja biznesowa z Jarkiem to była doskonała decyzja. Zdjęcia są eleganckie, profesjonalne i świetnie nadają się do mojego profilu LinkedIn oraz strony internetowej. Fotograf z dużym doświadczeniem i wyczuciem stylu.",
         rating: 5.0,
     },
 ];

@@ -1,10 +1,6 @@
 export default function SeoHead() {
     return (
         <>
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-            />
             <meta name="robots" content="index, follow" />
             <meta name="author" content="Jarek Olszewski" />
             <meta name="copyright" content="© 2025 Jarek Olszewski" />

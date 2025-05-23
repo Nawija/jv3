@@ -2,7 +2,6 @@ import { FaStar } from "react-icons/fa";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { OPINIONS } from "@/constants/Links";
 
-// Funkcja do generowania losowego koloru tła
 function getRandomColor(name: string) {
     const colors = [
         "bg-red-500",
