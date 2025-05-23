@@ -9,9 +9,8 @@ import Opinions from "@/components/Opinions";
 import ContactForm from "@/components/ContactForm";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import LinkShare from "@/components/ui/LinkShare";
-import Link from "next/link";
 import Gallery from "@/app/oferta/_components/Gallery";
-import ContactBtns from "./contactBtns";
+import ContactBtns from "./ContactBtns";
 import { FaStar } from "react-icons/fa";
 
 type UniversalPageContent = {
@@ -22,7 +21,6 @@ type UniversalPageContent = {
     };
     introTitle: string;
     gridImages: {
-        href: string;
         src: string;
         title: string;
         desc: string;
@@ -88,7 +86,6 @@ export default function UniversalPage({
                             {content.gridImages.map(
                                 (
                                     img: {
-                                        href: string;
                                         src: string;
                                         title: string;
                                         desc: string;
