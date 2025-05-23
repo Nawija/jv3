@@ -8,6 +8,7 @@ const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Siedlce | Sesje, reportaże, emocje";
 const pageDescription =
     "Profesjonalna fotografia ślubna i sesje zdjęciowe w Siedlcach. Jarek Olszewski - fotograf z pasją, który uchwyci najważniejsze chwile Twojego życia. Naturalne zdjęcia pełne emocji.";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -17,12 +18,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/home/fotograf-siedlce-jarek-olszewski.avif",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Fotografia ślubna - Jarek Olszewski",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 
@@ -63,7 +70,6 @@ export default function AboutMePage() {
     return (
         <>
             <div className="bg-white text-gray-800">
-               
                 <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
                     <div className="text-center">
                         <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
@@ -128,7 +134,6 @@ export default function AboutMePage() {
                                 href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
                             />
                         </div>
-
                     </div>
                 </section>
             </div>

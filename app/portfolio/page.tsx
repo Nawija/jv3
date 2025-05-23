@@ -11,7 +11,7 @@ const pageTitle =
     "Jarek Olszewski - Fotograf ślubny Warszawa | Siedlce | Łuków";
 const pageDescription =
     "Profesjonalna fotografia ślubna i sesje zdjęciowe w warszawie, siedlach , łukowie i okolicach. Fotograf z pasją, który uchwyci najważniejsze chwile Twojego życia. Naturalne zdjęcia pełne emocji.";
-const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,

@@ -5,6 +5,7 @@ import { Metadata } from "next";
 const pageTitle = "Kontakt - Jarek Olszewski | Fotograf ślubny Siedlce";
 const pageDescription =
     "Skontaktuj się z Jarkiem Olszewskim - fotografem ślubnym z Siedlec. Zarezerwuj termin sesji, zapytaj o ofertę i poznaj szczegóły współpracy.";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -14,12 +15,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Fotografia ślubna - Jarek Olszewski",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 

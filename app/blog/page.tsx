@@ -6,7 +6,7 @@ import { Metadata } from "next";
 const pageTitle = "Blog - Jarek Olszewski | Fotograf Siedlce";
 const pageDescription =
     "Inspiracje do sesji i kulisy pracy fotografa. Blog Jarka Olszewskiego - wszystko o fotografii ślubnej i nie tylko - prawdziwa fotografia";
-const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,

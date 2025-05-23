@@ -6,7 +6,7 @@ import { Metadata } from "next";
 const pageTitle = "Fotografia Chrztu - uchwyć magię chwili";
 const pageDescription =
     "Profesjonalne zdjęcia z chrztu dziecka — emocje, rodzina i piękna oprawa uroczystości.";
-const heroImage = "/Images/fotografia-chrztu/fotografia-chrztu.jpeg";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
                 alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 

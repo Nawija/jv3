@@ -3,6 +3,7 @@ import { Metadata } from "next";
 const pageTitle = "Regulamin i Polityka Prywatności | Jarek Olszewski";
 const pageDescription =
     "Zapoznaj się z regulaminem oraz polityką prywatności serwisu Jarek Olszewski. Dowiedz się, jak chronimy Twoje dane osobowe i korzystamy z plików cookies, aby zapewnić bezpieczne i komfortowe korzystanie ze strony";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -12,12 +13,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "Images/fotograf-siedlce-jarek-olszewski.jpg",
+                url: heroImage,
                 width: 400,
                 height: 260,
-                alt: "Jarek Olszewski",
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 

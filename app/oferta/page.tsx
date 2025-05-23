@@ -36,7 +36,7 @@ const pageTitle =
     "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże";
 const pageDescription =
     "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
-const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.avif";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
