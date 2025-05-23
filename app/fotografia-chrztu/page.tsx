@@ -1,4 +1,4 @@
-// app/fotografia-chrztu/page.tsx
+
 import UniversalPage from "@/components/UniversalPage";
 import { getBlogsByCategory } from "@/lib/getBlogsByCategory";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";

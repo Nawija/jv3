@@ -1,4 +1,3 @@
-// components/pages/UniversalPage.tsx
 import HeroSection from "@/components/HeroSection";
 import TitleH2 from "@/components/TitleH2";
 import ImageComponent from "@/components/ImageComponent";
@@ -13,7 +12,63 @@ import LinkShare from "@/components/ui/LinkShare";
 import Link from "next/link";
 import Gallery from "@/app/oferta/_components/Gallery";
 
-export default function UniversalPage({ content }: { content: any }) {
+type UniversalPageContent = {
+    hero: {
+        title: string;
+        backgroundImages: string[];
+        paragraphs: string[];
+    };
+    introTitle: string;
+    gridImages: {
+        href: string;
+        src: string;
+        title: string;
+        desc: string;
+    }[];
+    sections: {
+        title: string;
+        content: string;
+    }[];
+    carousel?: {
+        title: string;
+        desc: string;
+        images: {
+            src: string;
+            alt?: string;
+        }[];
+    };
+    blogs?: {
+        title: string;
+        desc: string;
+        data: {
+            title: string;
+            slug: string;
+            image: string;
+            date?: string;
+            excerpt?: string;
+            content: string;
+            category: string;
+        }[];
+    };
+    bullets?: {
+        title: string;
+        paragraph: string;
+        items: string[];
+    };
+    gallery?: {
+        responsiveImage: {
+            width: number;
+            height: number;
+            src: string;
+        };
+    }[];
+};
+
+export default function UniversalPage({
+    content,
+}: {
+    content: UniversalPageContent;
+}) {
     return (
         <>
             <HeroSection
