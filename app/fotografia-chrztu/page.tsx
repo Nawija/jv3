@@ -1,4 +1,3 @@
-
 import UniversalPage from "@/components/UniversalPage";
 import { getBlogsByCategory } from "@/lib/getBlogsByCategory";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
@@ -45,21 +44,21 @@ export default async function Page() {
         introTitle: "Fotografia chrztu, co skrywa?",
         gridImages: [
             {
-                src: "/Images/oferta/sesja-ślubna.avif",
+                src: images[1].responsiveImage.src,
                 position: "66% 0%",
                 href: "/sesja-slubna",
                 title: "Sesja Ślubna",
                 desc: "Wszystkie wydarzenia z tego dnia — od przygotowań po wesele.",
             },
             {
-                src: "/Images/oferta/sesja-ślubna.avif",
+                src: images[2].responsiveImage.src,
                 position: "66% 0%",
                 href: "/sesja-slubna",
                 title: "Sesja Ślubna",
                 desc: "Wszystkie wydarzenia z tego dnia — od przygotowań po wesele.",
             },
             {
-                src: "/Images/oferta/sesja-ślubna.avif",
+                src: images[3].responsiveImage.src,
                 position: "66% 0%",
                 href: "/sesja-slubna",
                 title: "Sesja Ślubna",

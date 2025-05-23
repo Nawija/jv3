@@ -19,14 +19,14 @@ export default function ImageComponent({
             <Image
                 src={img}
                 alt={title}
-                height={200}
-                width={200}
+                height={300}
+                width={300}
                 priority={index === 0}
-                className="object-cover w-full h-full aspect-[4/2] sm:aspect-[8/6]"
-                quality={10}
+                className="object-cover w-full h-full aspect-[4/2] sm:aspect-[8/6] opacity-80"
+                quality={70}
             />
 
-            <div className="absolute bottom-0 right-0 lg:left-0 bg-gradient-to-t bg-black/50 text-center p-3 z-10 h-full w-full flex items-center justify-center flex-col">
+            <div className="absolute bottom-0 right-0 lg:left-0 bg-gradient-to-t bg-black/60 text-center p-3 z-10 h-full w-full flex items-center justify-center flex-col">
                 <p className="capitalize text-white text-xl lg:text-2xl mb-2 font-semibold">
                     {title}
                 </p>

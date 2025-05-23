@@ -93,14 +93,13 @@ export default function UniversalPage({
                                     },
                                     index: number
                                 ) => (
-                                    <Link key={index} href={img.href}>
-                                        <ImageComponent
-                                            index={index}
-                                            img={img.src}
-                                            title={img.title}
-                                            desc={img.desc}
-                                        />
-                                    </Link>
+                                    <ImageComponent
+                                        key={index}
+                                        index={index}
+                                        img={img.src}
+                                        title={img.title}
+                                        desc={img.desc}
+                                    />
                                 )
                             )}
                         </div>
