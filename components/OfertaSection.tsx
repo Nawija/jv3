@@ -58,15 +58,21 @@ export default function OfertaSection() {
                         className="snap-center shrink-0 w-72 bg-gradient-to-t from-gray-100 to-stone rounded-200 shadow-lg hover:shadow-xl transition p-4 space-y-2 relative"
                     >
                         <div className="relative w-full h-40">
-                            <Image
-                                src={src}
-                                fill
-                                sizes="180px"
-                                alt={label}
-                                title={`${label} - Jarel Olszewski`}
-                                className="object-cover"
-                                draggable="false"
-                            />
+                            {src ? (
+                                <Image
+                                    src={src}
+                                    fill
+                                    sizes="180px"
+                                    alt={label}
+                                    title={`${label} - Jarel Olszewski`}
+                                    className="object-cover"
+                                    draggable="false"
+                                />
+                            ) : (
+                                <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
+                                    Brak obrazka
+                                </div>
+                            )}
                         </div>
                         <h3 className="text-lg font-semibold">{label}</h3>
                         <p className="text-sm text-gray-600">
