@@ -5,6 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 import { OFERTALINKS } from "@/constants/Links";
+import { MainBtn } from "@/components/Buttons/MainBtn";
 
 const benefits = [
     [
@@ -103,18 +104,27 @@ export default async function OffertsPage() {
                         </div>
                     </div>
                     <div>
-                        <div className="text-center space-y-2 mb-8">
+                        <div className="text-center space-y-2 mb-8 max-w-xl mx-auto">
                             <h3 className="text-2xl font-light">
-                                Oferty fotografii:
+                                Przykładowe oferty:
                             </h3>
                             <div className="flex flex-wrap justify-center gap-4">
-                                {OFERTALINKS.map(({ href, label }, i) => (
+                                {[
+                                    {
+                                        href: "/fotografia-slubna",
+                                        label: "Oferta ślubna",
+                                    },
+                                    {
+                                        href: "/fotografia-chrztu",
+                                        label: "Oferta chrztu",
+                                    },
+                                ].map(({ href, label }, i) => (
                                     <Link
                                         key={i}
                                         href={href}
-                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
+                                        className="hover:"
                                     >
-                                        {label}
+                                        <MainBtn>{label}</MainBtn>
                                     </Link>
                                 ))}
                             </div>

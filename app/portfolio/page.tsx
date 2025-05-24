@@ -94,15 +94,12 @@ export default function Portfolio() {
                         </p>
 
                         <div className="text-center space-y-2">
-                            <h3 className="text-2xl font-light">
-                                Pakiety fotografii:
-                            </h3>
-                            <div className="flex flex-wrap justify-center gap-4">
+                            <div className="flex flex-wrap justify-center gap-4 max-w-xl mx-auto">
                                 {OFERTALINKS.map(({ href, label }, i) => (
                                     <Link
                                         key={i}
                                         href={href}
-                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
+                                        className="hover:text-brand-nav transition-colors"
                                     >
                                         {label}
                                     </Link>

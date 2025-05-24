@@ -28,15 +28,75 @@ export const NAVLINKS = [
 export const OFERTALINKS = [
     {
         href: "/sesja-slubna",
-        label: "Oferta ślubna",
+        label: "Sesja ślubna",
+    },
+    {
+        href: "/fotografia-slubna",
+        label: "Fotografia Ślubna",
     },
     {
         href: "/fotografia-chrztu",
-        label: "Oferta chrztu",
+        label: "Fotografia chrztu",
     },
     {
         href: "/sesja-narzeczenska",
         label: "Sesja Narzeczenska",
+    },
+    {
+        href: "/fotografia-komunijna",
+        label: "Fotografia komunijna",
+    },
+    {
+        href: "/wieczory-panienskie",
+        label: "Wieczory panieńskie",
+    },
+    {
+        href: "/studniówki",
+        label: "Studniówki",
+    },
+    {
+        href: "/urodziny",
+        label: "Urodziny",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Rodzinne",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Brzuszkowe",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Noworodkowe",
+    },
+    {
+        href: "/sesje-indywidualne-biznesowe",
+        label: "Sesje indywidualne/Biznesowe",
+    },
+    {
+        href: "/fotografia-sportowa",
+        label: "Fotografia sportowa",
+    },
+    {
+        href: "/przemysl-architektura",
+        label: "Przemysł/architektura",
+    },
+    {
+        href: "/kulinarne",
+        label: "Kulinarne",
+    },
+    {
+        href: "/motoryzacyjne",
+        label: "Motoryzacyjne",
+    },
+    {
+        href: "/fotografia-koncertowa-i-klubowa",
+        label: "Fotografia koncertowa i klubowa",
+    },
+    {
+        href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
+        label: "Zdjecia do dokumentow",
     },
 ];
 
