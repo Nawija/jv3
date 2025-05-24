@@ -55,7 +55,7 @@ export default function OfertaSection() {
                             if (isDragging) e.preventDefault();
                         }}
                         draggable="false"
-                        className="snap-center shrink-0 w-72 bg-gradient-to-br from-gray-100 to-stone-200 rounded-200 shadow-lg hover:shadow-xl transition space-y-2 relative"
+                        className="snap-center shrink-0 w-64 overflow-hidden bg-gradient-to-br from-gray-100 to-stone-200 rounded-sm shadow-lg hover:shadow-xl transition space-y-2 relative"
                     >
                         <div className="relative w-full h-40">
                             {src ? (
