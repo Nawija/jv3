@@ -92,7 +92,6 @@ export async function POST(req: Request) {
         const heroBackgroundImages = data.content?.hero?.backgroundImages ?? [
             "",
         ];
-        const heroParagraphs = data.content?.hero?.paragraphs ?? "";
         const introTitle = data.content?.introTitle ?? "";
         const carouselTitle = data.content?.carousel?.title ?? "";
         const carouselDesc = data.content?.carousel?.desc ?? "";

@@ -2,6 +2,7 @@ import { getPageDataFromMarkdown } from "@/lib/getPageDataFromMarkdown";
 import UniversalPage from "@/components/UniversalPage";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { GridImage } from "@/types/addPages";
 
 export async function generateMetadata({
     params,
@@ -39,7 +40,7 @@ export default async function Page({
         Array.isArray(content.gallery) &&
         content.gallery.length > 0
     ) {
-        content.gridImages = content.gridImages.map((gridItem: any) => {
+        content.gridImages = content.gridImages.map((gridItem: GridImage) => {
             const galleryItem = content.gallery[gridItem.index];
             return {
                 ...gridItem,
