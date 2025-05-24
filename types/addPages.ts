@@ -38,6 +38,11 @@ export interface FormData {
             title: string;
             desc: string;
         };
+        bullets?: {
+            title?: string;
+            paragraph?: string;
+            items: { value: string }[];
+        };
         gridImages: GridImage[];
     };
     sections: Section[];

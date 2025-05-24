@@ -1,24 +1,30 @@
 ---
-title: "dsds"
+title: "ddd2"
 description: ""
 blogCategory: ""
-heroImage: "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
+heroImage: ""
 imageFolder: ""
 galleryFolder: ""
 content:
   hero:
-    title: "sd"
+    title: ""
     backgroundImages:
-      - "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
-    paragraphs: "sd"
+      - ""
+    paragraphs: ""
   introTitle: ""
   introDesc: ""
   carousel:
     title: ""
     desc: ""
   blog:
-  title: ""
+    title: ""
     desc: ""
+  bullets:
+      title: "dsds"
+      paragraph: "dsds"
+      items:
+        - "[object Object]"
+
   gridImages:
     - index: 1
       position: "66% 0%"
@@ -33,5 +39,6 @@ content:
       title: ""
       desc: ""
   sections:
+
 
 ---

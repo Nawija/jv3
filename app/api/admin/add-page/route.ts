@@ -17,8 +17,9 @@ function indent(line: string, level: number): string {
     return "  ".repeat(level) + line;
 }
 
-function escapeYamlString(str: string): string {
-    return str.replace(/"/g, '\\"');
+function escapeYamlString(str: string | undefined | null): string {
+    if (!str) return "";
+    return String(str).replace(/"/g, '\\"');
 }
 
 interface GridImage {
@@ -55,6 +56,11 @@ interface Content {
     blog?: {
         title?: string;
         desc?: string;
+    };
+    bullets: {
+        title: string;
+        paragraph: string;
+        items: { value: string }[];
     };
     gridImages?: GridImage[];
     sections?: Section[];
@@ -135,6 +141,30 @@ export async function POST(req: Request) {
             })
             .join("\n");
 
+        const bulletItems = data.content?.bullets?.items ?? [];
+
+        const bulletsYaml = data.content?.bullets
+            ? [
+                  indent("bullets:", 1),
+                  indent(
+                      `title: "${escapeYamlString(
+                          data.content.bullets.title
+                      )}"`,
+                      3
+                  ),
+                  indent(
+                      `paragraph: "${escapeYamlString(
+                          data.content.bullets.paragraph
+                      )}"`,
+                      3
+                  ),
+                  indent("items:", 3),
+                  ...bulletItems.map((item) =>
+                      indent(`- "${escapeYamlString(item.value)}"`, 4)
+                  ),
+              ].join("\n")
+            : "";
+
         const md = `---
 title: "${escapeYamlString(data.title)}"
 description: "${escapeYamlString(data.description ?? "")}"
@@ -158,10 +188,12 @@ ${heroBackgroundImages
   blog:
     title: "${escapeYamlString(blogTitle)}"
     desc: "${escapeYamlString(blogDesc)}"
+${bulletsYaml}
   gridImages:
 ${gridImagesYaml}
   sections:
 ${sectionsYaml}
+
 ---
 `;
 

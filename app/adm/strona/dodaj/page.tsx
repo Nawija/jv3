@@ -1,6 +1,7 @@
 "use client";
 
 import AddButton from "@/components/common/AddButton";
+import BulletsForm from "@/components/common/BulletsForm";
 import FormInput from "@/components/common/FormInput";
 import SectionCard from "@/components/common/SectionCard";
 import CategorySelect from "@/components/form-fields/CategorySelect";
@@ -9,8 +10,6 @@ import { FormData } from "@/types/addPages";
 import { useEffect, useState } from "react";
 import { useForm, useFieldArray, SubmitHandler, Path } from "react-hook-form";
 import slugify from "slugify";
-
-
 
 const AddPage: React.FC = () => {
     const [galleryFolders, setGalleryFolders] = useState<string[]>([]);
@@ -132,7 +131,7 @@ const AddPage: React.FC = () => {
                 </div>
 
                 {images.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-h-96 overflow-y-scroll p-2">
                         {images.map((imgPath) => (
                             <div
                                 key={imgPath}
@@ -296,6 +295,10 @@ const AddPage: React.FC = () => {
                     register
                 )}
                 <CategorySelect register={register} />
+            </SectionCard>
+
+            <SectionCard title="📌 Lista punktowana">
+                <BulletsForm control={control} register={register} />
             </SectionCard>
 
             <SectionCard title="📚 Sekcje z podtytułami">
