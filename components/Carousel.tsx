@@ -35,7 +35,7 @@ function AutoplayPlugin(slider: KeenSliderInstance) {
         if (mouseOver) return;
         timeout = setTimeout(() => {
             slider.next();
-        }, 3700); // zmień czas (ms) według uznania
+        }, 4000); // zmień czas (ms) według uznania
     }
 
     slider.on("created", () => {
@@ -74,7 +74,7 @@ const Carousel = () => {
     );
 
     return (
-        <div className="relative w-screen xl:max-w-[1550px] h-[77vh] lg:h-[85vh] mx-auto overflow-hidden">
+        <div className="relative w-screen xl:max-w-[1550px] h-[75vh] lg:h-[85vh] mx-auto overflow-hidden">
             <AnimatePresence>
                 {!isFirstImageLoaded && (
                     <motion.div
@@ -99,6 +99,7 @@ const Carousel = () => {
                         <Image
                             src={image.src}
                             alt={`Fotograf ${index + 1}`}
+                            title={`Jarek Olszewski ${index + 1} `}
                             fill
                             className="object-cover transition-opacity duration-500"
                             style={{ objectPosition: image.position }}

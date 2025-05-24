@@ -30,8 +30,8 @@ export default function OfertaSection() {
     };
 
     return (
-        <section className="bg-white py-12 px-4 mx-auto">
-            <h2 className="text-center text-3xl font-extralight mb-8">
+        <section className="bg-white py-12 mx-auto">
+            <h2 className="text-center text-2xl font-semibold mb-6">
                 Oferty fotografii:
             </h2>
 
@@ -55,7 +55,7 @@ export default function OfertaSection() {
                             if (isDragging) e.preventDefault();
                         }}
                         draggable="false"
-                        className="snap-center shrink-0 w-72 bg-gradient-to-t from-gray-100 to-stone rounded-200 shadow-lg hover:shadow-xl transition p-4 space-y-2 relative"
+                        className="snap-center shrink-0 w-72 bg-gradient-to-br from-gray-100 to-stone-200 rounded-200 shadow-lg hover:shadow-xl transition space-y-2 relative"
                     >
                         <div className="relative w-full h-40">
                             {src ? (
@@ -74,10 +74,12 @@ export default function OfertaSection() {
                                 </div>
                             )}
                         </div>
-                        <h3 className="text-lg font-semibold">{label}</h3>
-                        <p className="text-sm text-gray-600">
-                            Zobacz szczegóły
-                        </p>
+                        <div className="flex items-center justify-center flex-col text-center pb-2">
+                            <h3 className="text-lg font-semibold">{label}</h3>
+                            <p className="text-sm text-gray-700">
+                                Zobacz szczegóły
+                            </p>
+                        </div>
                     </Link>
                 ))}
             </div>

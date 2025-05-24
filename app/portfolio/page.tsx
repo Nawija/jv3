@@ -57,27 +57,23 @@ export default function PortfolioPage() {
         height: item.responsiveImage.height,
     }));
     return (
-
         <main className="bg-white text-gray-900 anim-opacity">
             {/* HERO SECTION */}
-            <section className="relative py-12 px-6 bg-gray-100 flex flex-col items-center text-center mx-auto">
-                <div className="space-y-6 max-w-3xl">
-                    <TitleH1
-                        title="Bogate portfolio, to moja ogromna ciekawość fotografii."
-                        desc="Na przestrzeni lat współpracowałem z wieloma osobami w
+            <section className="relative py-12 space-y-6 px-6 bg-gray-100 flex flex-col items-center text-center mx-auto">
+                <TitleH1
+                    title="Bogate portfolio, to moja ogromna ciekawość fotografii."
+                    desc="Na przestrzeni lat współpracowałem z wieloma osobami w
                         różnych zakątkach polski, realizując ich fotograficzne
                         potrzeby z różnych dziedzin fotografii. Co fotografuje i
                         jak to robię, można sprawdzić poniżej zaglądając do
                         konkretnego portfolio. Największą jednak frajdę sprawia
                         mi prezentowanie zdjęć na papierze, gdzie zyskują na
                         swojej wartości i odkrywają prawdziwą siłę."
-                    />
-                    <Link href="#portfolio">
-                        <MainBtn>Zobacz portfolio</MainBtn>
-                    </Link>
-                </div>
+                />
+                <Link href="#portfolio">
+                    <MainBtn>Zobacz portfolio</MainBtn>
+                </Link>
             </section>
-
 
             {/* OFERTA SECTION */}
             <OfertaSection />
