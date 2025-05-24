@@ -76,61 +76,59 @@ type UniversalPageContent = {
 };
 
 function SectionWithSubSections({
-    section,
-    sectionKeyPrefix,
+  section,
+  sectionKeyPrefix,
 }: {
-    section: {
-        h2?: string;
-        subSections?: {
-            h3?: string;
-            content: string;
-        }[];
-    };
-    sectionKeyPrefix: string;
+  section: {
+    h2?: string;
+    subSections?: {
+      h3?: string;
+      content: string;
+    }[];
+  };
+  sectionKeyPrefix: string;
 }) {
-    function slugify(text: string) {
-        return text
-            .toLowerCase()
-            .trim()
-            .replace(/[\s]+/g, "-")
-            .replace(/[^\w\-]+/g, "")
-            .replace(/\-\-+/g, "-");
-    }
+  function slugify(text: string) {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "")
+      .replace(/--+/g, "-");
+  }
 
-    return (
-        <section
-            className="pt-8 px-1 max-w-2xl mx-auto text-center space-y-12 mb-12"
-            aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
-            key={`${sectionKeyPrefix}`}
+  return (
+    <section
+      className="px-4 py-10 max-w-3xl mx-auto text-center space-y-12"
+      aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
+      key={sectionKeyPrefix}
+    >
+      {section.h2 && (
+        <h2
+          id={`section-h2-${slugify(section.h2)}`}
+          className="text-2xl sm:text-3xl font-light tracking-tight text-neutral-800"
         >
-            {section.h2 && (
-                <h2
-                    id={`section-h2-${slugify(section.h2)}`}
-                    className="text-2xl px-1 font-light "
-                >
-                    {section.h2}
-                </h2>
-            )}
-            {section.subSections?.map((sub, j) => (
-                <div
-                    key={`${sectionKeyPrefix}-subsection-${j}`}
-                    className="space-y-12"
-                >
-                    {sub.h3 && (
-                        <h3
-                            id={`subsection-h3-${slugify(sub.h3)}`}
-                            className="text-xl max-w-2xl mx-auto font-light text-start lg:text-center ml-4 mr-1 lg:mr-0 lg:ml-0 "
-                        >
-                            {sub.h3}
-                        </h3>
-                    )}
-                    <p className="max-w-3xl ml-4 lg:ml-0 mx-auto text-gray-700 text-base lg:font-extralight lg:text-lg text-start mr-1 lg:mr-0 lg:text-center">
-                        {sub.content.slice(1)}
-                    </p>
-                </div>
-            ))}
-        </section>
-    );
+          {section.h2}
+        </h2>
+      )}
+
+      {section.subSections?.map((sub, j) => (
+        <div key={`${sectionKeyPrefix}-subsection-${j}`} className="space-y-4">
+          {sub.h3 && (
+            <h3
+              id={`subsection-h3-${slugify(sub.h3)}`}
+              className="text-xl sm:text-2xl font-light text-left sm:text-center text-neutral-700"
+            >
+              {sub.h3}
+            </h3>
+          )}
+          <p className="text-base sm:text-lg text-neutral-600 leading-relaxed text-left sm:text-center">
+            {sub.content.trim()}
+          </p>
+        </div>
+      ))}
+    </section>
+  );
 }
 
 export default function UniversalPage({
