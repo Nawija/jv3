@@ -57,7 +57,7 @@ export default function Home() {
                 <TypingHeader />
 
                 <FadeInOnScroll delay={0.1}>
-                    <div className="relative flex lg:flex-row flex-col justify-center items-center lg:mt-16 mt-28 text-start">
+                    <div className="relative flex lg:flex-row flex-col justify-center items-center lg:mt-16 mt-20 text-start">
                         <Image
                             src="/Images/home/fotograf-siedlce-jarek-olszewski.avif"
                             alt="fotograf siedlce jarek-olszewski"
