@@ -29,7 +29,12 @@ export interface FormData {
             paragraphs: string[];
         };
         introTitle: string;
+        introDesc: string;
         carousel: {
+            title: string;
+            desc: string;
+        };
+        blog: {
             title: string;
             desc: string;
         };

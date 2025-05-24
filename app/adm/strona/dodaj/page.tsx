@@ -5,54 +5,12 @@ import FormInput from "@/components/common/FormInput";
 import SectionCard from "@/components/common/SectionCard";
 import CategorySelect from "@/components/form-fields/CategorySelect";
 import SubSection from "@/components/form-fields/SubSection";
+import { FormData } from "@/types/addPages";
 import { useEffect, useState } from "react";
 import { useForm, useFieldArray, SubmitHandler, Path } from "react-hook-form";
 import slugify from "slugify";
 
-interface GridImage {
-    index: number;
-    position: string;
-    title: string;
-    desc: string;
-}
 
-interface SubSection {
-    h3: string;
-    content: string;
-}
-
-interface Section {
-    h2: string;
-    subSections: SubSection[];
-}
-
-interface FormData {
-    title: string;
-    description: string;
-    blogCategory: string;
-    heroImage: string;
-    imageFolder: string;
-    galleryFolder: string;
-    content: {
-        hero: {
-            title: string;
-            backgroundImages: string[];
-            paragraphs: string[];
-        };
-        introTitle: string;
-        introDesc: string;
-        carousel: {
-            title: string;
-            desc: string;
-        };
-        blog: {
-            title: string;
-            desc: string;
-        };
-        gridImages: GridImage[];
-    };
-    sections: Section[];
-}
 
 const AddPage: React.FC = () => {
     const [galleryFolders, setGalleryFolders] = useState<string[]>([]);

@@ -3,10 +3,11 @@ import { useFieldArray, Control, UseFormRegister } from "react-hook-form";
 import FormInput from "../common/FormInput";
 import FormTextArea from "../common/FormTextArea";
 import AddButton from "../common/AddButton";
+import { FormData } from "@/types/addPages";
 
 interface SubSectionProps {
-    control: Control<any>;
-    register: UseFormRegister<any>;
+    control: Control<FormData>;
+    register: UseFormRegister<FormData>;
     nestIndex: number;
 }
 

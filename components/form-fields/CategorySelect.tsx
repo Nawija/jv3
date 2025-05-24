@@ -1,9 +1,10 @@
 import React from "react";
 import { UseFormRegister } from "react-hook-form";
 import { CATEGORIES } from "@/constants/categories";
+import { FormData } from "@/types/addPages";
 
 interface CategorySelectProps {
-    register: UseFormRegister<any>; // Zamień `any` na swój typ formularza jeśli masz
+    register: UseFormRegister<FormData>
 }
 
 const CategorySelect: React.FC<CategorySelectProps> = ({ register }) => {
