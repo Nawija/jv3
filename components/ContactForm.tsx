@@ -64,7 +64,7 @@ const MessageStatus = ({
 }) => (
     <div className="text-sm flex items-center space-x-2">
         {loading && (
-            <div className="w-4 h-4 border-2 border-t-transparent border-brand-nav border-solid rounded-full animate-spin"></div>
+            <div className="w-4 h-4 border-2 border-t-transparent border-sky-300 border-solid rounded-full animate-spin"></div>
         )}
         <p
             className={`ml-2 ${
@@ -108,6 +108,12 @@ export default function ContactForm() {
         setStatusType(null);
 
         try {
+            const phoneDigitsOnly = formData.phone.replace(/\D/g, "");
+            if (phoneDigitsOnly.length < 9) {
+                setStatus("Numer telefonu musi zawierać co najmniej 9 cyfr.");
+                setStatusType("error");
+                return;
+            }
             const response = await fetch("/api/kontakt", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
