@@ -3,40 +3,43 @@ import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
-
-import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import OfertaSection from "@/components/OfertaSection";
 import TitleH1 from "@/components/TitleH1";
 
-
 const benefits = [
     [
-        "Indywidualne podejście",
-        "każda sesja i oferta jest szyta na miarę Twoich oczekiwań.",
+        "Fotografuję osobiście",
+        "wkładając w to całą zdobytą wiedzę i doświadczenie.",
     ],
     [
-        "Fotografuję osobiście",
-        "z użyciem profesjonalnego sprzętu i pasją do detali.",
+        "Indywidualne podejście",
+        "każdy reprotaż i sesja jest szyta na miarę Twoich oczekiwań",
     ],
-    ["Naturalna obróbka zdjęć", "podkreślam kolory i emocje, bez sztuczności."],
+    [
+        "Naturalna obróbka zdjęć",
+        "każde zdjęcie musi wyglądać prawdziwie a przez to ponadczsowo.",
+    ],
     [
         "Zdjęcia w wersji cyfrowej",
-        "pliki w wysokiej rozdzielczości, na USB lub online.",
+        "pliki w wysokiej rozdzielczości na USB bądź on-line",
     ],
     [
         "Foto produkty premium",
-        "fotoalbumy, odbitki, fotoksiążki, obrazy na płótnie.",
+        "fotoalbumy, odbitki, fotoksiażki, obrazy na płótnie - zawsze od sprawdzonych dostawców",
     ],
-    ["Spersonalizowane opakowania", "stylowe pudełka na zdjęcia i nośniki."],
     [
-        "Prywatna galeria online",
-        "łatwe i bezpieczne udostępnianie zdjęć bliskim.",
+        "Spersonalizowane opakowania",
+        "eleganckie i stylowe pudełka na zdjęcia i nośniki danych",
     ],
-    ["Szybka realizacja", "sprawna i terminowa dostawa gotowych materiałów."],
+    [
+        "Prywatna galeria internetowa",
+        "łatwie i bezpieczne udostępnianie zdjęć bliskim",
+    ],
+    ["Szybka realizacja", "sprawna i terminowa dostawa gotowych materiałów"],
 ];
 
 const pageTitle =
-    "Cennik fotograf oferta sesji zdjęciowych śluby, portrety, reportaże";
+    "Cennik Fotograf - oferta sesji zdjęciowych śluby, reportaże";
 const pageDescription =
     "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
 const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
@@ -103,7 +106,6 @@ export default async function OffertsPage() {
                             ))}
                         </div>
 
-
                         <div className="text-center pt-4">
                             <p className="text-lg max-w-2xl mx-auto">
                                 Jako <strong>Fotograf</strong> pomagam
@@ -122,27 +124,7 @@ export default async function OffertsPage() {
                 <Gallery allImages={allImages} />
             </div>
 
-            <div className="max-w-2xl mx-auto mt-8 text-center">
-                <ParagraphWithBullets
-                    title="Co oferuję"
-                    paragraph="Fotografuję od początku przygotowań ślubnych do ostatnich uroczystości weselnych."
-                    bullets={[
-                        "Fotografuje od początku przygotowań ślubnych do ostatnich uroczystości weselnych",
-                        "Minimum 700 fotografii z reportażu (zdjęcia poddane autorskiej obróbce - naturalne i prawdziwe fotografie",
-                        "Sesję ślubną w dniu ślubu, krótka sesja w okolicach przyjęcia weselnego (by nie tracić cennego czasu)",
-                        "Sesje ślubną innego dnia, w wybranym przez Was miejscu",
-                        "Sesję narzeczeńska",
-                        "Foto-albumy, wydruki cyfrowe, fotoobrazy, zdjęcia na płótnie. portrety w ramkach (można dać odnośnik do oferty gdzie są zdjęcia fotoproduktów)",
-                        "Wydruki w dniu ślubu (pocztówki, portrety dla rodziców) ",
-                        "Nośnik danych (pendrive)",
-                        "Zapis na chmurze - link do pobrania, bez ograniczeń i na dowolne urządzenie",
-                        "Galerię internetową chronioną hasłem",
-                        "Szybki termin realizacji - zdjęcia już w 21 dni do waszej dyspozycji",
-                    ]}
-                />
-            </div>
-
-            <div className="text-center my-12">
+            <div className="text-center mt-6 mb-12">
                 <CTASendMail title="Zapytaj o Ofertę" />
             </div>
         </div>

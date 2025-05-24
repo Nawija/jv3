@@ -44,7 +44,7 @@ const OFERTAIMAGES = [
         desc: "Od przygotowań po wesele - wszystkie wydarzenie z tego dnia",
     },
     {
-        src: "/Images/oferta/SESJA NARZECZEŃSKA.avif",
+        src: "/Images/oferta/SESJA-NARZECZENSKA.avif",
         position: "55% 0%",
         href: "/sesja-narzeczenska",
         title: "Sesja Narzeczeńska",

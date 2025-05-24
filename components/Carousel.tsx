@@ -74,7 +74,7 @@ const Carousel = () => {
     );
 
     return (
-        <div className="relative w-screen xl:max-w-[1550px] h-[75vh] lg:h-[85vh] mx-auto overflow-hidden">
+        <div className="relative w-screen xl:max-w-[1550px] h-[72vh] lg:h-[85vh] mx-auto overflow-hidden">
             <AnimatePresence>
                 {!isFirstImageLoaded && (
                     <motion.div
