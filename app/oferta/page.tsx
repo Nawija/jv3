@@ -1,10 +1,8 @@
-import Link from "next/link";
 import Gallery from "./_components/Gallery";
 import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
-import { OFERTALINKS } from "@/constants/Links";
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import OfertaSection from "@/components/OfertaSection";
 import TitleH1 from "@/components/TitleH1";
