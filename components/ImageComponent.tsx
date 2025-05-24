@@ -19,6 +19,7 @@ export default function ImageComponent({
             <Image
                 src={img}
                 alt={title}
+                title={`${title} - Jarek Olszewski`}
                 height={400}
                 width={400}
                 priority={index === 0}

@@ -24,8 +24,8 @@ export async function getPageDataFromMarkdown(slug: string) {
                 images: [
                     {
                         url: data.heroImage,
-                        width: 400,
-                        height: 260,
+                        width: 450,
+                        height: 450,
                         alt: data.title,
                     },
                 ],
@@ -34,8 +34,8 @@ export async function getPageDataFromMarkdown(slug: string) {
         content: {
             ...data.content,
             blogs: {
-                title: "- Kilka historii -",
-                desc: "#reportaż #chrzest #rodzina",
+                title: "Fotografia Jarek Olszewski",
+                desc: "#reportaż #chrzest #rodzina #ślub",
                 data: blogs,
             },
             carousel: {

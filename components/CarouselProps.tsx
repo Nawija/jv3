@@ -66,10 +66,11 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
                     >
                         <Image
                             src={image.src}
-                            alt={`Obraz ${index + 1}`}
+                            alt={`Jarek Olszewski - Fotograf ${index + 1}`}
+                            title={`Jarek Olszewski - Fotograf ${index + 1}`}
                             className="object-cover"
                             fill
-                            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+                            sizes="(max-width: 768px) 93vw, (max-width: 1200px) 50vw, 650px"
                             quality={85}
                         />
                     </div>
