@@ -13,7 +13,7 @@ export async function generateMetadata({
     try {
         const { metadata } = await getPageDataFromMarkdown(slug);
         return metadata;
-    } catch (e) {
+    } catch {
         notFound();
     }
 }
@@ -29,24 +29,24 @@ export default async function Page({
 
     try {
         ({ content } = await getPageDataFromMarkdown(slug));
-    } catch (e) {
+    } catch {
         notFound();
     }
 
-  if (
-    Array.isArray(content.gridImages) &&
-    content.gridImages.length > 0 &&
-    Array.isArray(content.gallery) &&
-    content.gallery.length > 0
-) {
-    content.gridImages = content.gridImages.map((gridItem: any) => {
-        const galleryItem = content.gallery[gridItem.index];
-        return {
-            ...gridItem,
-            src: galleryItem?.responsiveImage?.src || "",
-        };
-    });
-}
+    if (
+        Array.isArray(content.gridImages) &&
+        content.gridImages.length > 0 &&
+        Array.isArray(content.gallery) &&
+        content.gallery.length > 0
+    ) {
+        content.gridImages = content.gridImages.map((gridItem: any) => {
+            const galleryItem = content.gallery[gridItem.index];
+            return {
+                ...gridItem,
+                src: galleryItem?.responsiveImage?.src || "",
+            };
+        });
+    }
 
     return <UniversalPage content={content} />;
 }
