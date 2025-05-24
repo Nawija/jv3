@@ -53,7 +53,7 @@ export default function HeroSection({
             ))}
 
             {/* Nakładka przyciemniająca */}
-            <div className="absolute inset-0 bg-black/40 -z-30" />
+            <div className="absolute inset-0 bg-black/55 -z-30" />
 
             {/* Tekst */}
             <div className="relative z-10 pt-[30vh] lg:pt-[40vh] pb-[10vh] lg:pb-[20vh] text-white text-center">
