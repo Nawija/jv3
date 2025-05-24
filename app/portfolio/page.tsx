@@ -1,4 +1,5 @@
 import { MainBtn } from "@/components/Buttons/MainBtn";
+import ContactForm from "@/components/ContactForm";
 import CTASendMail from "@/components/CTASendMail";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import OfertaSection from "@/components/OfertaSection";
@@ -97,16 +98,18 @@ export default function PortfolioPage() {
                     <PhotoSwipe images={formattedImages2} columns={3} />
                 </div>
             </section>
-
-            <InstagramGrid />
-
-            {/* CTA SECTION */}
-            <section className="bg-gray-100 text-balck py-24 text-center px-4 space-y-6">
+            <section className="bg-gray-200 text-black py-24 text-center px-4 space-y-6 z-[9999]">
                 <h2 className="text-center text-2xl font-semibold mb-4">
                     Masz pytanie? Porozmawiajmy!
                 </h2>
                 <CTASendMail title="Wyślij wiadomość" />
             </section>
+
+            <InstagramGrid />
+
+            <div className="pb-20 pt-4">
+                <ContactForm />
+            </div>
         </main>
     );
 }
