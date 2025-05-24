@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "@/components/Buttons/MainBtn";
-import { FiCalendar } from "react-icons/fi";
 
 const FormField = ({
     name,
