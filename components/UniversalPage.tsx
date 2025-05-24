@@ -41,9 +41,11 @@ type UniversalPageContent = {
             alt?: string;
         }[];
     };
-    blogs?: {
+    blog?: {
         title: string;
         desc: string;
+    };
+    blogs?: {
         data: {
             title: string;
             slug: string;
@@ -97,14 +99,14 @@ function SectionWithSubSections({
 
     return (
         <section
-            className="pt-8 px-1 max-w-2xl mx-auto text-center"
+            className="pt-8 px-1 max-w-2xl mx-auto text-center space-y-12 mb-12"
             aria-labelledby={`section-h2-${slugify(section.h2 ?? "")}`}
             key={`${sectionKeyPrefix}`}
         >
             {section.h2 && (
                 <h2
                     id={`section-h2-${slugify(section.h2)}`}
-                    className="text-2xl font-medium mb-6"
+                    className="text-2xl px-1 font-light "
                 >
                     {section.h2}
                 </h2>
@@ -112,21 +114,17 @@ function SectionWithSubSections({
             {section.subSections?.map((sub, j) => (
                 <div
                     key={`${sectionKeyPrefix}-subsection-${j}`}
-                    className="mb-12"
+                    className="space-y-12"
                 >
                     {sub.h3 && (
                         <h3
                             id={`subsection-h3-${slugify(sub.h3)}`}
-                            className="text-xl max-w-2xl mx-auto font-light mb-8"
+                            className="text-xl max-w-2xl mx-auto font-light text-start lg:text-center ml-4 mr-1 lg:mr-0 lg:ml-0 "
                         >
                             {sub.h3}
                         </h3>
                     )}
-                    <p className="max-w-screen-md mx-auto text-base text-start">
-                        <span className="relative inline-block pl-2">
-                            <span className="absolute left-0 top-0 h-full w-[2px] rounded bg-brand-nav"></span>
-                            {sub.content.charAt(0)}
-                        </span>
+                    <p className="max-w-3xl ml-4 lg:ml-0 mx-auto text-gray-700 text-base lg:font-extralight lg:text-lg text-start mr-1 lg:mr-0 lg:text-center">
                         {sub.content.slice(1)}
                     </p>
                 </div>
@@ -154,7 +152,7 @@ export default function UniversalPage({
                             {content.introTitle}
                         </h1>
                         {content.introDesc && (
-                            <p className="text- font-light text-center mb-10">
+                            <p className="text-base lg:font-extralight text-gray-700 max-w-5xl lg:text-lg text-center mb-10">
                                 {content.introDesc}
                             </p>
                         )}
@@ -187,14 +185,15 @@ export default function UniversalPage({
                                     ))}
                             </>
                         )}
+                    </div>
 
-                        <div className="border p-12 max-w-2xl mx-auto bg-gray-100">
-                            <p className="text-2xl font-medium pb-2">
-                                Napisz do mnie
-                            </p>
-                            <CTASendMail title="Wyślij wiadomość" />
-                        </div>
-
+                    <div className="border-y p-12 mx-auto bg-gray-100">
+                        <p className="text-2xl font-medium pb-2">
+                            Napisz do mnie
+                        </p>
+                        <CTASendMail title="Wyślij wiadomość" />
+                    </div>
+                    <div>
                         {content.carousel && (
                             <>
                                 <TitleH2
@@ -222,12 +221,14 @@ export default function UniversalPage({
                             </>
                         )}
 
+                        {content.blog && (
+                            <TitleH2
+                                title={content.blog.title}
+                                desc={content.blog.desc}
+                            />
+                        )}
                         {content.blogs && (
                             <>
-                                <TitleH2
-                                    title={content.blogs.title}
-                                    desc={content.blogs.desc}
-                                />
                                 <div className="max-w-3xl mx-auto">
                                     <BlogList
                                         blogs={content.blogs.data}
@@ -248,7 +249,7 @@ export default function UniversalPage({
                             </div>
                         )}
 
-                        <div className="mt-12 mb-6 flex items-center justify-center">
+                        <div className="mt-12 py-10 border-y flex items-center justify-center text-center w-full bg-gray-100">
                             <ContactBtns />
                         </div>
 
@@ -268,7 +269,7 @@ export default function UniversalPage({
                         )}
 
                         <section className="bg-white px-4 py-12">
-                            <div className="mx-auto max-w-2xl text-center">
+                            <div className="mx-auto max-w-3xl text-center">
                                 <p className="font-light text-neutral-900 text-xl tracking-tight">
                                     Opinie klientów
                                 </p>

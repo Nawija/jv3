@@ -26,7 +26,7 @@ export default function ImageComponent({
                 quality={70}
             />
 
-            <div className="absolute bottom-0 right-0 lg:left-0 bg-gradient-to-t bg-black/60 text-center p-3 z-10 h-full w-full flex items-center justify-center flex-col">
+            <div className="absolute bottom-0 right-0 lg:left-0 bg-gradient-to-tr from-black/90 to-black/40 text-center p-3 z-10 h-full w-full flex items-center justify-center flex-col">
                 <p className="capitalize text-white text-xl lg:text-2xl mb-2 font-semibold">
                     {title}
                 </p>

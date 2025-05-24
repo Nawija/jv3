@@ -95,8 +95,8 @@ export async function POST(req: Request) {
         const introTitle = data.content?.introTitle ?? "";
         const carouselTitle = data.content?.carousel?.title ?? "";
         const carouselDesc = data.content?.carousel?.desc ?? "";
-        const blogTitle = data.content?.carousel?.title ?? "";
-        const blogDesc = data.content?.carousel?.desc ?? "";
+        const blogTitle = data.content?.blog?.title ?? "";
+        const blogDesc = data.content?.blog?.desc ?? "";
         const gridImages = data.content?.gridImages ?? [];
         const sections = data.sections ?? [];
 
