@@ -31,7 +31,7 @@ export default function Opinions() {
                             key={i}
                             className="basis-[80%] lg:basis-[40%]"
                         >
-                            <div className="bg-white rounded-2xl shadow-lg p-6 h-full flex flex-col justify-between hover:shadow-xl transition-shadow duration-300 border border-neutral-200">
+                            <div className="bg-white rounded-2xl shadow-lg py-6 h-full flex flex-col justify-between hover:shadow-xl transition-shadow duration-300 border border-neutral-200">
                                 <p className="text-neutral-700 mb-4 text-base leading-relaxed italic">
                                     “{opinia.text}”
                                 </p>
