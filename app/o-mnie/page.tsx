@@ -21,8 +21,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 600,
-                height: 600,
+                width: 900,
+                height: 900,
                 alt: pageTitle,
             },
         ],

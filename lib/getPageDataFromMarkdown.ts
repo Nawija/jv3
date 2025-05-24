@@ -24,8 +24,8 @@ export async function getPageDataFromMarkdown(slug: string) {
                 images: [
                     {
                         url: data.heroImage,
-                        width: 450,
-                        height: 450,
+                        width: 900,
+                        height: 900,
                         alt: data.title,
                     },
                 ],

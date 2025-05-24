@@ -18,6 +18,8 @@ const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
 const pageDescription =
     "Twój ślub to wyjątkowe wydarzenie, pełne wzruszeń, radości i niezapomnianych chwil. Profesjonalna fotografia ślubna to sposób, by zatrzymać te momenty na zawsze. Jako doświadczeni fotografowie ślubni wiemy, jak ważne jest dla Was, aby każdy uśmiech, każdy gest i każda emocja zostały pięknie uwiecznione.";
 
+const heroImage = "/Images/carousel/02_sesja_slubna_plener_siedlce.avif";
+
 export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
@@ -26,12 +28,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
-                width: 600,
-                height: 600,
-                alt: "Fotografia ślubna - Jarek Olszewski",
+                url: heroImage,
+                width: 900,
+                height: 900,
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 

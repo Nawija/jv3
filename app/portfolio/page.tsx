@@ -24,8 +24,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 650,
-                height: 650,
+                width: 900,
+                height: 900,
                 alt: pageTitle,
             },
         ],
@@ -107,7 +107,7 @@ export default function PortfolioPage() {
 
             <InstagramGrid />
 
-            <div className="pb-20 pt-4">
+            <div className="pb-12 pt-4">
                 <ContactForm />
             </div>
         </main>

@@ -148,7 +148,7 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-4 bg-white rounded-lg text-black text-start z-[9999]">
+        <div className="max-w-2xl mx-auto p-4 px-6 bg-white rounded-lg text-black text-start z-[9999]">
             <p className=" text-2xl text-center">Formularz kontaktowy</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-3">
                 <FormField

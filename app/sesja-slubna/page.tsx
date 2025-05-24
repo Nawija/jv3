@@ -30,8 +30,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 400,
-                height: 260,
+                width: 900,
+                height: 900,
                 alt: pageTitle,
             },
         ],
