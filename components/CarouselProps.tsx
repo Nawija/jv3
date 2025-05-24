@@ -59,7 +59,7 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
                 {...settings}
                 className="w-full slick-slider"
             >
-                {images.map((image, index) => (
+                {images?.map((image, index) => (
                     <div
                         key={index}
                         className="relative w-full aspect-[7/7] md:aspect-[16/12] text-center"

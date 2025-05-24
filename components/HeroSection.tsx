@@ -41,7 +41,7 @@ export default function HeroSection({
     return (
         <div className="relative -z-50 overflow-hidden anim-opacity">
             {/* Tła z paralaksą */}
-            {backgroundImages.map((img, idx) => (
+            {backgroundImages?.map((img, idx) => (
                 <div
                     key={idx}
                     className="fixed top-0 left-0 w-full h-[95vh] bg-cover bg-no-repeat bg-center -z-50 will-change-transform"

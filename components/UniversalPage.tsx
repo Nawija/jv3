@@ -139,19 +139,19 @@ export default function UniversalPage({
     content: UniversalPageContent;
 }) {
     return (
-        <>
+        <div>
             <HeroSection
-                title={content.hero.title}
-                backgroundImages={content.hero.backgroundImages}
-                paragraphs={content.hero.paragraphs}
+                title={content.hero?.title}
+                backgroundImages={content.hero?.backgroundImages}
+                paragraphs={content.hero?.paragraphs}
             />
             <div className="text-center bg-white w-full">
                 <div className="w-full py-10">
                     <div className="max-w-5xl mx-auto px-4">
                         <h1 className="text-2xl lg:text-3xl max-w-4xl mx-auto font-light text-center mb-10">
-                            {content.introTitle}
+                            {content?.introTitle}
                         </h1>
-                        {content.introDesc && (
+                        {content?.introDesc && (
                             <p className="text-base lg:font-extralight text-gray-700 max-w-5xl lg:text-lg text-center mb-10">
                                 {content.introDesc}
                             </p>
@@ -197,12 +197,12 @@ export default function UniversalPage({
                         {content.carousel && (
                             <>
                                 <TitleH2
-                                    title={content.carousel.title}
-                                    desc={content.carousel.desc}
+                                    title={content?.carousel.title}
+                                    desc={content?.carousel.desc}
                                 />
                                 <div className="max-w-2xl mx-auto">
                                     <CarouselProps
-                                        images={content.carousel.images}
+                                        images={content.carousel?.images}
                                     />
                                 </div>
                             </>
@@ -310,11 +310,11 @@ export default function UniversalPage({
                         )}
 
                         <div className="mt-12 max-w-3xl mx-auto">
-                            <InstagramGrid />
+                            {/* <InstagramGrid /> */}
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
