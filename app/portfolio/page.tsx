@@ -57,6 +57,7 @@ export default function PortfolioPage() {
         height: item.responsiveImage.height,
     }));
     return (
+
         <main className="bg-white text-gray-900 anim-opacity">
             {/* HERO SECTION */}
             <section className="relative py-12 px-6 bg-gray-100 flex flex-col items-center text-center mx-auto">
@@ -76,6 +77,7 @@ export default function PortfolioPage() {
                     </Link>
                 </div>
             </section>
+
 
             {/* OFERTA SECTION */}
             <OfertaSection />

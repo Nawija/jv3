@@ -3,9 +3,11 @@ import CTASendMail from "@/components/CTASendMail";
 import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
+
 import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import OfertaSection from "@/components/OfertaSection";
 import TitleH1 from "@/components/TitleH1";
+
 
 const benefits = [
     [
@@ -100,6 +102,8 @@ export default async function OffertsPage() {
                                 </div>
                             ))}
                         </div>
+
+
                         <div className="text-center pt-4">
                             <p className="text-lg max-w-2xl mx-auto">
                                 Jako <strong>Fotograf</strong> pomagam

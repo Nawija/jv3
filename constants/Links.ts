@@ -34,17 +34,21 @@ export const OFERTALINKS = [
     {
         label: "Sesja Ślubna",
         href: "/sesja-slubna",
+
         src: "/Images/oferta/sesja-ślubna.avif",
     },
     {
         label: "Sesja Narzeczeńska",
         href: "/sesja-narzeczenska",
         src: "/Images/oferta/SESJA-NARZECZENSKA.avif",
+
     },
     {
         label: "Fotografia chrztu",
         href: "/fotografia-chrztu",
+
         src: "/Images/oferta/CHRZEST.avif",
+
     },
     {
         label: "Fotografia komunijna",
@@ -97,6 +101,62 @@ export const OFERTALINKS = [
         label: "Zdjęcia do dokumentów",
         href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
         src: "/Images/oferta/",
+    },
+    {
+        href: "/fotografia-komunijna",
+        label: "Fotografia komunijna",
+    },
+    {
+        href: "/wieczory-panienskie",
+        label: "Wieczory panieńskie",
+    },
+    {
+        href: "/studniówki",
+        label: "Studniówki",
+    },
+    {
+        href: "/urodziny",
+        label: "Urodziny",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Rodzinne",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Brzuszkowe",
+    },
+    {
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        label: "Noworodkowe",
+    },
+    {
+        href: "/sesje-indywidualne-biznesowe",
+        label: "Sesje indywidualne/Biznesowe",
+    },
+    {
+        href: "/fotografia-sportowa",
+        label: "Fotografia sportowa",
+    },
+    {
+        href: "/przemysl-architektura",
+        label: "Przemysł/architektura",
+    },
+    {
+        href: "/kulinarne",
+        label: "Kulinarne",
+    },
+    {
+        href: "/motoryzacyjne",
+        label: "Motoryzacyjne",
+    },
+    {
+        href: "/fotografia-koncertowa-i-klubowa",
+        label: "Fotografia koncertowa i klubowa",
+    },
+    {
+        href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
+        label: "Zdjecia do dokumentow",
     },
 ];
 
