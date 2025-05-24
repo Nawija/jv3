@@ -1,21 +1,22 @@
 ---
-title: "dssd"
+title: "tak"
 description: ""
-blogCategory: "sesja-slubna"
-heroImage: ""
+blogCategory: ""
+heroImage: "/Images/sesja-slubna/sesja copy.jpg"
 imageFolder: ""
 galleryFolder: ""
 content:
   hero:
-    title: "Tytuł Hero"
+    title: "sd"
     backgroundImages:
-      - ""
-    paragraphs:
-      - "Paragrafy Hero 1"
-      - "Paragrafy Hero 2"
-      - "Paragrafy Hero 3"
-  introTitle: "Intro Title"
+      - "/Images/sesja-slubna/sesja copy.jpg"
+    paragraphs: "sd"
+  introTitle: ""
+  introDesc: ""
   carousel:
+    title: ""
+    desc: ""
+  blog:
     title: ""
     desc: ""
   gridImages:

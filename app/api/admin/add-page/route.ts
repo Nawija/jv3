@@ -5,128 +5,138 @@ import path from "path";
 const PAGES_DIR = path.join(process.cwd(), "content/pages");
 
 function sanitizeFilename(str: string): string {
-  return str
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]/g, "")
-    .toLowerCase();
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-]/g, "")
+        .toLowerCase();
 }
 
 function indent(line: string, level: number): string {
-  return "  ".repeat(level) + line;
+    return "  ".repeat(level) + line;
 }
 
 function escapeYamlString(str: string): string {
-  return str.replace(/"/g, '\\"');
+    return str.replace(/"/g, '\\"');
 }
 
 interface GridImage {
-  index: number;
-  position: string;
-  title: string;
-  desc: string;
+    index: number;
+    position: string;
+    title: string;
+    desc: string;
 }
 
 interface SubSection {
-  h3: string;
-  content: string;
+    h3: string;
+    content: string;
 }
 
 interface Section {
-  h2: string;
-  subSections?: SubSection[];
+    h2: string;
+    subSections?: SubSection[];
 }
 
 interface HeroContent {
-  title?: string;
-  backgroundImages?: string[];
-  paragraphs?: string[];
+    title?: string;
+    backgroundImages?: string[];
+    paragraphs?: string;
 }
 
 interface Content {
-  hero?: HeroContent;
-  introTitle?: string;
-  carousel?: {
-    title?: string;
-    desc?: string;
-  };
-  gridImages?: GridImage[];
-  sections?: Section[];
+    hero?: HeroContent;
+    introTitle?: string;
+    introDesc?: string;
+    carousel?: {
+        title?: string;
+        desc?: string;
+    };
+    blog?: {
+        title?: string;
+        desc?: string;
+    };
+    gridImages?: GridImage[];
+    sections?: Section[];
 }
 
 interface PageData {
-  slug?: string;
-  title: string;
-  description?: string;
-  blogCategory?: string;
-  heroImage?: string;
-  imageFolder?: string;
-  galleryFolder?: string;
-  content?: Content;
-  sections?: Section[];
+    slug?: string;
+    title: string;
+    description?: string;
+    blogCategory?: string;
+    heroImage?: string;
+    imageFolder?: string;
+    galleryFolder?: string;
+    content?: Content;
+    sections?: Section[];
 }
 
 export async function POST(req: Request) {
-  try {
-    const data: PageData = await req.json();
-
-    const slug = sanitizeFilename(data.slug ?? data.title ?? "strona");
-    const filePath = path.join(PAGES_DIR, `${slug}.md`);
-
     try {
-      await access(filePath);
-      return new NextResponse("File already exists", { status: 409 });
-    } catch {
-      // File does not exist - proceed
-    }
+        const data: PageData = await req.json();
 
-    await mkdir(PAGES_DIR, { recursive: true });
+        const slug = sanitizeFilename(data.slug ?? data.title ?? "strona");
+        const filePath = path.join(PAGES_DIR, `${slug}.md`);
 
-    const heroTitle = data.content?.hero?.title ?? "";
-    const heroBackgroundImages = data.content?.hero?.backgroundImages ?? [""];
-    const heroParagraphs = data.content?.hero?.paragraphs ?? [""];
-    const introTitle = data.content?.introTitle ?? "";
-    const carouselTitle = data.content?.carousel?.title ?? "";
-    const carouselDesc = data.content?.carousel?.desc ?? "";
-    const gridImages = data.content?.gridImages ?? [];
-    const sections = data.sections ?? [];
+        try {
+            await access(filePath);
+            return new NextResponse("File already exists", { status: 409 });
+        } catch {
+            // File does not exist - proceed
+        }
 
-    const gridImagesYaml = gridImages
-      .map(
-        (img) =>
-          [
-            indent(`- index: ${img.index}`, 2),
-            indent(`position: "${escapeYamlString(img.position)}"`, 3),
-            indent(`title: "${escapeYamlString(img.title)}"`, 3),
-            indent(`desc: "${escapeYamlString(img.desc)}"`, 3),
-          ].join("\n")
-      )
-      .join("\n");
+        await mkdir(PAGES_DIR, { recursive: true });
 
-    const sectionsYaml = sections
-      .map((section) => {
-        const subSectionsYaml = (section.subSections ?? [])
-          .map(
-            (sub) =>
-              [
-                indent(`- h3: "${escapeYamlString(sub.h3)}"`, 3),
-                indent(`content: "${escapeYamlString(sub.content)}"`, 4),
-              ].join("\n")
-          )
-          .join("\n");
+        const heroTitle = data.content?.hero?.title ?? "";
+        const heroBackgroundImages = data.content?.hero?.backgroundImages ?? [
+            "",
+        ];
+        const heroParagraphs = data.content?.hero?.paragraphs ?? "";
+        const introTitle = data.content?.introTitle ?? "";
+        const carouselTitle = data.content?.carousel?.title ?? "";
+        const carouselDesc = data.content?.carousel?.desc ?? "";
+        const blogTitle = data.content?.carousel?.title ?? "";
+        const blogDesc = data.content?.carousel?.desc ?? "";
+        const gridImages = data.content?.gridImages ?? [];
+        const sections = data.sections ?? [];
 
-        return (
-          indent(`- h2: "${escapeYamlString(section.h2)}"`, 2) +
-          "\n" +
-          indent("subSections:", 3) +
-          "\n" +
-          subSectionsYaml
-        );
-      })
-      .join("\n");
+        const gridImagesYaml = gridImages
+            .map((img) =>
+                [
+                    indent(`- index: ${img.index}`, 2),
+                    indent(`position: "${escapeYamlString(img.position)}"`, 3),
+                    indent(`title: "${escapeYamlString(img.title)}"`, 3),
+                    indent(`desc: "${escapeYamlString(img.desc)}"`, 3),
+                ].join("\n")
+            )
+            .join("\n");
 
-    const md = `---
+        const sectionsYaml = sections
+            .map((section) => {
+                const subSectionsYaml = (section.subSections ?? [])
+                    .map((sub) =>
+                        [
+                            indent(`- h3: "${escapeYamlString(sub.h3)}"`, 3),
+                            indent(
+                                `content: "${escapeYamlString(sub.content)}"`,
+                                4
+                            ),
+                        ].join("\n")
+                    )
+                    .join("\n");
+
+                return (
+                    indent(`- h2: "${escapeYamlString(section.h2)}"`, 2) +
+                    "\n" +
+                    indent("subSections:", 3) +
+                    "\n" +
+                    subSectionsYaml
+                );
+            })
+            .join("\n");
+
+        const md = `---
 title: "${escapeYamlString(data.title)}"
 description: "${escapeYamlString(data.description ?? "")}"
 blogCategory: "${escapeYamlString(data.blogCategory ?? "")}"
@@ -137,13 +147,18 @@ content:
   hero:
     title: "${escapeYamlString(heroTitle)}"
     backgroundImages:
-${heroBackgroundImages.map((img) => indent(`- "${escapeYamlString(img)}"`, 3)).join("\n")}
-    paragraphs:
-${heroParagraphs.map((p) => indent(`- "${escapeYamlString(p)}"`, 3)).join("\n")}
+${heroBackgroundImages
+    .map((img) => indent(`- "${escapeYamlString(img)}"`, 3))
+    .join("\n")}
+    paragraphs: "${escapeYamlString(heroTitle)}"
   introTitle: "${escapeYamlString(introTitle)}"
+  introDesc: "${escapeYamlString(introTitle)}"
   carousel:
     title: "${escapeYamlString(carouselTitle)}"
     desc: "${escapeYamlString(carouselDesc)}"
+  blog:
+    title: "${escapeYamlString(blogTitle)}"
+    desc: "${escapeYamlString(blogDesc)}"
   gridImages:
 ${gridImagesYaml}
   sections:
@@ -151,11 +166,11 @@ ${sectionsYaml}
 ---
 `;
 
-    await writeFile(filePath, md, "utf-8");
+        await writeFile(filePath, md, "utf-8");
 
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error("Error writing page:", err);
-    return new NextResponse("Internal Server Error", { status: 500 });
-  }
+        return NextResponse.json({ success: true });
+    } catch (err) {
+        console.error("Error writing page:", err);
+        return new NextResponse("Internal Server Error", { status: 500 });
+    }
 }

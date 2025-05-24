@@ -30,7 +30,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({ register }) => {
     return (
         <label className="block">
             <span className="text-sm font-medium text-gray-700">
-                Kilka Histori (kategoria)
+                Kilka Histori (zdjecia z kategorii)
             </span>
             <select
                 {...register("blogCategory")}

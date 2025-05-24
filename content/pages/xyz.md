@@ -1,7 +1,7 @@
 ---
-title: "h1"
-description: "Opis pod H1 (moze byc pusty)"
-blogCategory: "sesja-slubna"
+title: "xyz"
+description: "xxxxxx"
+blogCategory: "fotografia-slubna"
 heroImage: "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
 imageFolder: "blogs/fotografia-chrztu/chrzest-ujecia-pelne-milosci"
 galleryFolder: "PodglądoweZdjecia"
@@ -11,11 +11,12 @@ content:
     backgroundImages:
       - "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
     paragraphs:
-      - ""
-  introTitle: ""
+      - "sd"
+  introTitle: "Intro Title"
+  introDesc: "Intro Title"
   carousel:
-    title: "Tytuł karuzeli"
-    desc: "Opis karuzeli"
+    title: ""
+    desc: ""
   gridImages:
     - index: 1
       position: "66% 0%"

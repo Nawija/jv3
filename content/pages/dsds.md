@@ -1,20 +1,23 @@
 ---
-title: "xxx"
+title: "dsds"
 description: ""
 blogCategory: ""
-heroImage: ""
+heroImage: "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
 imageFolder: ""
 galleryFolder: ""
 content:
   hero:
-    title: ""
+    title: "sd"
     backgroundImages:
-      - ""
-    paragraphs:
-      - "xxx"
-  introTitle: "xxxxxx"
+      - "/Images/fotografia-chrztu/fotografia-chrztu.jpeg"
+    paragraphs: "sd"
+  introTitle: ""
+  introDesc: ""
   carousel:
     title: ""
+    desc: ""
+  blog:
+  title: ""
     desc: ""
   gridImages:
     - index: 1

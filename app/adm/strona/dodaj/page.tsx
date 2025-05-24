@@ -4,8 +4,8 @@ import AddButton from "@/components/common/AddButton";
 import FormInput from "@/components/common/FormInput";
 import SectionCard from "@/components/common/SectionCard";
 import CategorySelect from "@/components/form-fields/CategorySelect";
-import DynamicList from "@/components/form-fields/DynamicList";
 import SubSection from "@/components/form-fields/SubSection";
+import { useEffect, useState } from "react";
 import { useForm, useFieldArray, SubmitHandler, Path } from "react-hook-form";
 import slugify from "slugify";
 
@@ -40,7 +40,12 @@ interface FormData {
             paragraphs: string[];
         };
         introTitle: string;
+        introDesc: string;
         carousel: {
+            title: string;
+            desc: string;
+        };
+        blog: {
             title: string;
             desc: string;
         };
@@ -50,9 +55,48 @@ interface FormData {
 }
 
 const AddPage: React.FC = () => {
-    const { register, handleSubmit, control, reset } = useForm<FormData>({
-        defaultValues: getDefaultValues(),
-    });
+    const [galleryFolders, setGalleryFolders] = useState<string[]>([]);
+    const [imageFolders, setImageFolders] = useState<string[]>([]);
+    const [folders, setFolders] = useState<string[]>([]);
+    const [selectedFolder, setSelectedFolder] = useState("");
+    const [images, setImages] = useState<string[]>([]);
+    const [selectedImage, setSelectedImage] = useState("");
+
+    useEffect(() => {
+        fetch("/api/image-folders")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Folders:", data.folders);
+                setFolders(data.folders);
+            });
+    }, []);
+
+    useEffect(() => {
+        if (selectedFolder) {
+            fetch(
+                `/api/images-in-folder?folder=${encodeURIComponent(
+                    selectedFolder
+                )}`
+            )
+                .then((res) => res.json())
+                .then((data) => setImages(data.files));
+        } else {
+            setImages([]);
+        }
+    }, [selectedFolder]);
+
+    useEffect(() => {
+        fetch("/api/image-folders")
+            .then((res) => res.json())
+            .then((data) => {
+                setGalleryFolders(data.folders);
+                setImageFolders(data.folders); // Jeśli chcesz mieć ten sam zestaw folderów
+            });
+    }, []);
+    const { register, handleSubmit, control, reset, setValue } =
+        useForm<FormData>({
+            defaultValues: getDefaultValues(),
+        });
 
     const { fields: gridImageFields } = useFieldArray({
         control,
@@ -62,15 +106,6 @@ const AddPage: React.FC = () => {
     const { fields: sectionFields, append: appendSection } = useFieldArray({
         control,
         name: "sections",
-    });
-
-    const {
-        fields: paragraphFields,
-        append: appendParagraph,
-        remove: removeParagraph,
-    } = useFieldArray<FormData>({
-        control,
-        name: "content.hero.paragraphs",
     });
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -109,42 +144,93 @@ const AddPage: React.FC = () => {
                 📝 Dodaj stronę
             </h1>
 
-            <SectionCard title="📄 Informacje główne">
+            <SectionCard title="📄 MetaTag">
                 {renderInputs(
                     [
-                        { label: "Title MetaTag", name: "title" },
+                        { label: "Title MetaTag / Slug", name: "title" },
                         { label: "Opis Meta Tag", name: "description" },
-                        { label: "Hero Image URL", name: "heroImage" },
-                        { label: "Folder zdjęć", name: "imageFolder" },
-                        { label: "Folder galerii", name: "galleryFolder" },
-                        { label: "Tytuł Hero", name: "content.hero.title" },
-                        { label: "Intro Title", name: "content.introTitle" },
                     ],
                     register
                 )}
-
-                <CategorySelect register={register} />
-
-                <DynamicList
-                    title="Paragrafy Hero"
-                    fields={paragraphFields}
-                    register={register}
-                    nameBase="content.hero.paragraphs"
-                    onAdd={() => appendParagraph("")}
-                    onRemove={removeParagraph}
-                />
             </SectionCard>
 
-            <SectionCard title="🧩 Wprowadzenie i Karuzela">
+            <SectionCard title="📄 Hero Zdjecie Główne">
+                <div className="mb-4">
+                    <label className="block mb-1 font-medium">
+                        Wybierz folder z obrazkami
+                    </label>
+                    <select
+                        className="w-full border rounded-md px-3 py-2"
+                        value={selectedFolder}
+                        onChange={(e) => setSelectedFolder(e.target.value)}
+                    >
+                        <option value="">-- Wybierz folder --</option>
+                        {folders.map((folder) => (
+                            <option key={folder} value={folder}>
+                                {folder}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                {images.length > 0 && (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                        {images.map((imgPath) => (
+                            <div
+                                key={imgPath}
+                                className={`border rounded p-1 cursor-pointer hover:shadow ${
+                                    selectedImage === `/Images/${imgPath}`
+                                        ? "ring-2 ring-blue-500"
+                                        : ""
+                                }`}
+                                onClick={() => {
+                                    setSelectedImage(`/Images/${imgPath}`);
+                                    setValue("heroImage", `/Images/${imgPath}`);
+                                }}
+                            >
+                                <img
+                                    src={`/Images/${imgPath}`}
+                                    alt="hero option"
+                                    className="object-cover w-full h-32 rounded"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {selectedImage && (
+                    <div className="mt-2 text-sm text-gray-600">
+                        Wybrany: <code>{selectedImage}</code>
+                        <img
+                            src={selectedImage}
+                            alt="Wybrany Hero"
+                            className="mt-2 rounded shadow max-h-48"
+                        />
+                    </div>
+                )}
+
+                {renderInputs(
+                    [{ label: "Tytuł Hero", name: "content.hero.title" }],
+                    register
+                )}
                 {renderInputs(
                     [
                         {
-                            label: "Tytuł karuzeli",
-                            name: "content.carousel.title",
+                            label: "Paragraf Hero",
+                            name: "content.hero.paragraphs",
                         },
+                    ],
+                    register
+                )}
+            </SectionCard>
+
+            <SectionCard title="📄 Informacje główne">
+                {renderInputs(
+                    [
+                        { label: "H1", name: "content.introTitle" },
                         {
-                            label: "Opis karuzeli",
-                            name: "content.carousel.desc",
+                            label: "Paragraf pod H1 (opcionalnie)",
+                            name: "content.introDesc",
                         },
                     ],
                     register
@@ -152,6 +238,25 @@ const AddPage: React.FC = () => {
             </SectionCard>
 
             <SectionCard title="🖼️ Obrazki Grid (max 3)">
+                <div className="p-4">
+                    <div className="mb-4">
+                        <label className="block mb-1 font-medium">
+                            Folder galerii
+                        </label>
+                        <select
+                            {...register("galleryFolder")}
+                            className="w-full border rounded-md px-3 py-2"
+                        >
+                            <option value="">-- Wybierz folder --</option>
+                            {galleryFolders.map((folder) => (
+                                <option key={folder} value={folder}>
+                                    {folder}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+
                 {gridImageFields.map((field, i) => (
                     <div
                         key={field.id}
@@ -185,6 +290,54 @@ const AddPage: React.FC = () => {
                         )}
                     </div>
                 ))}
+            </SectionCard>
+
+            <SectionCard title="🧩 Wprowadzenie i Karuzela">
+                {renderInputs(
+                    [
+                        {
+                            label: "Tytuł karuzeli",
+                            name: "content.carousel.title",
+                        },
+                        {
+                            label: "Opis karuzeli",
+                            name: "content.carousel.desc",
+                        },
+                    ],
+                    register
+                )}
+                <div className="mb-4">
+                    <label className="block mb-1 font-medium">
+                        Folder karuzeli
+                    </label>
+                    <select
+                        {...register("imageFolder")}
+                        className="w-full border rounded-md px-3 py-2"
+                    >
+                        <option value="">-- Wybierz folder --</option>
+                        {imageFolders.map((folder) => (
+                            <option key={folder} value={folder}>
+                                {folder}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </SectionCard>
+            <SectionCard title="🧩 Kilka historii (blog)">
+                {renderInputs(
+                    [
+                        {
+                            label: "Tytuł historii",
+                            name: "content.blog.title",
+                        },
+                        {
+                            label: "Opis historii",
+                            name: "content.blog.desc",
+                        },
+                    ],
+                    register
+                )}
+                <CategorySelect register={register} />
             </SectionCard>
 
             <SectionCard title="📚 Sekcje z podtytułami">
@@ -224,7 +377,6 @@ const AddPage: React.FC = () => {
 
 export default AddPage;
 
-// Funkcja domyślnych wartości
 function getDefaultValues(): FormData {
     return {
         title: "",
@@ -240,7 +392,12 @@ function getDefaultValues(): FormData {
                 paragraphs: [""],
             },
             introTitle: "",
+            introDesc: "",
             carousel: {
+                title: "",
+                desc: "",
+            },
+            blog: {
                 title: "",
                 desc: "",
             },
