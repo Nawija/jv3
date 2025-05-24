@@ -15,11 +15,11 @@ export default function IntroOverlay() {
             setText(fullText.slice(0, index + 1));
             index++;
             if (index === fullText.length) clearInterval(interval);
-        }, 600 / fullText.length);
+        }, 320 / fullText.length);
 
         const fadeOutTimer = setTimeout(() => {
             setFadeOut(true); // trigger fade out
-        }, 1800); // start fading after fullText shown
+        }, 900); // start fading after fullText shown
 
         const removeTimer = setTimeout(() => {
             setShouldRender(false); // remove after fade
