@@ -28,8 +28,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: "/Images/fotograf-siedlce-jarek-olszewski.jpg",
-                width: 400,
-                height: 260,
+                width: 600,
+                height: 600,
                 alt: "Fotografia ślubna - Jarek Olszewski",
             },
         ],
@@ -76,7 +76,7 @@ export default async function SesjaNarzeczenska() {
         <>
             <HeroSection
                 title="Sesja Narzeczeńska"
-                backgroundImages={["/Images/oferta/SESJA NARZECZEŃSKA.avif"]}
+                backgroundImages={["/Images/oferta/SESJA-NARZECZENSKA.avif"]}
                 paragraphs={[
                     "Dzień, który zapamiętacie na zawsze - ten wymarzony, najpiękniejszym idealny. Czemu chce być z Wami? Żeby łapać te wszystkie piękne, ale jednocześnie ulotne chwile i zachować je na zdjęciach.",
                 ]}

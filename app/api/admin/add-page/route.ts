@@ -95,6 +95,7 @@ export async function POST(req: Request) {
         await mkdir(PAGES_DIR, { recursive: true });
 
         const heroTitle = data.content?.hero?.title ?? "";
+        const heroParagraphs = data.content?.hero?.paragraphs ?? "";
         const heroBackgroundImages = data.content?.hero?.backgroundImages ?? [
             "",
         ];
@@ -179,7 +180,7 @@ content:
 ${heroBackgroundImages
     .map((img) => indent(`- "${escapeYamlString(img)}"`, 3))
     .join("\n")}
-    paragraphs: "${escapeYamlString(heroTitle)}"
+    paragraphs: "${escapeYamlString(heroParagraphs)}"
   introTitle: "${escapeYamlString(introTitle)}"
   introDesc: "${escapeYamlString(introTitle)}"
   carousel:

@@ -5,6 +5,9 @@ import { FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 import { OFERTALINKS } from "@/constants/Links";
+import ParagraphWithBullets from "@/components/ParagraphWithBullets";
+import OfertaSection from "@/components/OfertaSection";
+import TitleH1 from "@/components/TitleH1";
 
 const benefits = [
     [
@@ -47,8 +50,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 400,
-                height: 260,
+                width: 600,
+                height: 600,
                 alt: pageTitle,
             },
         ],
@@ -68,15 +71,13 @@ export default async function OffertsPage() {
         <div className="h-full">
             <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8">
                 <section className="max-w-7xl mx-auto space-y-12 anim-opacity text-stone-800">
-                    <h1 className="text-4xl text-center leading-tight">
-                        Profesjonalny Fotograf Siedlce
-                    </h1>
-                    <p className="text-lg text-center max-w-2xl mx-auto">
-                        Szukasz fotografa w Siedlcach, który uwieczni Twoje
+                    <TitleH1
+                        title="Profesjonalny Fotograf"
+                        desc="Szukasz fotografa, który uwieczni Twoje
                         chwile w sposób naturalny i ponadczasowy? Oferuję
                         kompleksową obsługę fotograficzną dostosowaną do Twoich
-                        potrzeb - z pasją, precyzją i doświadczeniem.
-                    </p>
+                        potrzeb - z pasją, precyzją i doświadczeniem."
+                    />
 
                     <div className="space-y-8">
                         <h2 className="text-2xl font-light text-center">
@@ -101,25 +102,6 @@ export default async function OffertsPage() {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                    <div>
-                        <div className="text-center space-y-2 mb-8">
-                            <h3 className="text-2xl font-light">
-                                Oferty fotografii:
-                            </h3>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                {OFERTALINKS.map(({ href, label }, i) => (
-                                    <Link
-                                        key={i}
-                                        href={href}
-                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
-                                    >
-                                        {label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
                         <div className="text-center pt-4">
                             <p className="text-lg max-w-2xl mx-auto">
                                 Jako <strong>Fotograf</strong> pomagam
@@ -132,9 +114,30 @@ export default async function OffertsPage() {
                     </div>
                 </section>
             </div>
+            <OfertaSection />
 
-            <div className="max-w-screen-lg mx-auto">
+            <div className="max-w-screen-lg mt-5 mx-auto">
                 <Gallery allImages={allImages} />
+            </div>
+
+            <div className="max-w-2xl mx-auto mt-8 text-center">
+                <ParagraphWithBullets
+                    title="Co oferuję"
+                    paragraph="Fotografuję od początku przygotowań ślubnych do ostatnich uroczystości weselnych."
+                    bullets={[
+                        "Fotografuje od początku przygotowań ślubnych do ostatnich uroczystości weselnych",
+                        "Minimum 700 fotografii z reportażu (zdjęcia poddane autorskiej obróbce - naturalne i prawdziwe fotografie",
+                        "Sesję ślubną w dniu ślubu, krótka sesja w okolicach przyjęcia weselnego (by nie tracić cennego czasu)",
+                        "Sesje ślubną innego dnia, w wybranym przez Was miejscu",
+                        "Sesję narzeczeńska",
+                        "Foto-albumy, wydruki cyfrowe, fotoobrazy, zdjęcia na płótnie. portrety w ramkach (można dać odnośnik do oferty gdzie są zdjęcia fotoproduktów)",
+                        "Wydruki w dniu ślubu (pocztówki, portrety dla rodziców) ",
+                        "Nośnik danych (pendrive)",
+                        "Zapis na chmurze - link do pobrania, bez ograniczeń i na dowolne urządzenie",
+                        "Galerię internetową chronioną hasłem",
+                        "Szybki termin realizacji - zdjęcia już w 21 dni do waszej dyspozycji",
+                    ]}
+                />
             </div>
 
             <div className="text-center my-12">

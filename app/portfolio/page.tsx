@@ -1,9 +1,10 @@
+import { MainBtn } from "@/components/Buttons/MainBtn";
 import CTASendMail from "@/components/CTASendMail";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
-import Opinions from "@/components/Opinions";
+import OfertaSection from "@/components/OfertaSection";
 import PhotoSwipe from "@/components/PhotoSwipe";
-import LinkShare from "@/components/ui/LinkShare";
-import { OFERTALINKS } from "@/constants/Links";
+import TitleH1 from "@/components/TitleH1";
+import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 400,
-                height: 260,
+                width: 650,
+                height: 650,
                 alt: pageTitle,
             },
         ],
@@ -36,133 +37,78 @@ export const metadata: Metadata = {
     },
 };
 
-export default function Portfolio() {
-    const images = [
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf037.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/Blog/sesja.jpg`,
-            width: 1000,
-            height: 667,
-        },
-    ];
-
+export default function PortfolioPage() {
+    const imagesFromFolder = getImagesFromFolder(
+        "/blogs/fotografia-slubna/top-fotografia-slubna",
+        6
+    );
+    const imagesFromFolder2 = getImagesFromFolder(
+        "/blogs/fotografia-chrztu/top-fotografia-chrztu",
+        6
+    );
+    const formattedImages = imagesFromFolder.map((item) => ({
+        src: item.responsiveImage.src.replace("//", "/"), // napraw podwójny slash
+        width: item.responsiveImage.width,
+        height: item.responsiveImage.height,
+    }));
+    const formattedImages2 = imagesFromFolder2.map((item) => ({
+        src: item.responsiveImage.src.replace("//", "/"), // napraw podwójny slash
+        width: item.responsiveImage.width,
+        height: item.responsiveImage.height,
+    }));
     return (
-        <>
-            <div className="bg-white text-gray-800">
-                <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
-                    <div className="text-center">
-                        <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
-                            Bogate portfolio, to moja ogromna ciekawość
-                            fotografii.
-                        </h1>
-                    </div>
-
-                    <div className="space-y-8 text-base md:text-lg leading-relaxed text-gray-700">
-                        <p className="border-l-4 border-brand pl-4">
-                            Na przestrzeni lat współpracowałem z wieloma osobami
-                            w różnych zakątkach polski, realizując ich
-                            fotograficzne potrzeby z różnych dziedzin
-                            fotografii. Co fotografuje i jak to robię, można
-                            sprawdzić poniżej zaglądając do konkretnego
-                            portfolio. Największą jednak frajdę sprawia mi
-                            prezentowanie zdjęć na papierze, gdzie zyskują na
-                            swojej wartości i odkrywają prawdziwą siłę.
-                        </p>
-
-                        <div className="text-center space-y-2">
-                            <h3 className="text-2xl font-light">
-                                Pakiety fotografii:
-                            </h3>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                {OFERTALINKS.map(({ href, label }, i) => (
-                                    <Link
-                                        key={i}
-                                        href={href}
-                                        className="px-4 py-2 bg-brand font-semibold text-white text-sm hover:bg-brand-nav transition"
-                                    >
-                                        {label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                        <p className="py-2">
-                            Moja przygoda z fotografią zaczęła się w 2008 roku,
-                            zupełnie przypadkiem. Wtedy jeszcze nie wiedziałem,
-                            że jedno zdjęcie z lokalnego meczu zmieni moje życie
-                            na zawsze.
-                        </p>
-
-                        <p>
-                            Specjalizuję się w fotografii ślubnej, rodzinnej i
-                            reportażowej. Uchwycenie emocji i autentyczności to
-                            dla mnie największy priorytet. Pracuję dyskretnie,
-                            pozwalając ludziom być sobą.
-                        </p>
-
-                        <p>
-                            Choć pracuję głównie w woj. mazowieckim, dojadę
-                            wszędzie tam, gdzie jest historia do opowiedzenia.
-                            Każde zlecenie to dla mnie nowe wyzwanie i
-                            inspiracja.
-                        </p>
-                    </div>
-                </section>
-
-                {/* Galeria */}
-                <section className="max-w-4xl mx-auto">
-                    <h3 className="text-2xl font-semibold text-center mb-8 text-black">
-                        Zobacz moje kadry
-                    </h3>
-                    <PhotoSwipe images={images} columns={3} className="p-4" />
-                </section>
-                <div className="py-24 px-4 flex items-center justify-center flex-col space-y-4">
-                    <p className="text-2xl font-medium">Napisz do mnie</p>
-                    <CTASendMail title="Wyslij wiadomość" />
+        <main className="bg-white text-gray-900 anim-opacity">
+            {/* HERO SECTION */}
+            <section className="relative py-12 px-6 bg-gray-100 flex flex-col items-center text-center mx-auto">
+                <div className="space-y-6 max-w-3xl">
+                    <TitleH1
+                        title="Bogate portfolio, to moja ogromna ciekawość fotografii."
+                        desc="Na przestrzeni lat współpracowałem z wieloma osobami w
+                        różnych zakątkach polski, realizując ich fotograficzne
+                        potrzeby z różnych dziedzin fotografii. Co fotografuje i
+                        jak to robię, można sprawdzić poniżej zaglądając do
+                        konkretnego portfolio. Największą jednak frajdę sprawia
+                        mi prezentowanie zdjęć na papierze, gdzie zyskują na
+                        swojej wartości i odkrywają prawdziwą siłę."
+                    />
+                    <Link href="#portfolio">
+                        <MainBtn>Zobacz portfolio</MainBtn>
+                    </Link>
                 </div>
-                <InstagramGrid />
+            </section>
 
-                <section className="bg-white px-4 py-12">
-                    <div className="mx-auto max-w-5xl text-center">
-                        <p className="mb-12 font-semibold text-neutral-900 text-2xl tracking-tight">
-                            Opinie klientów
-                        </p>
-                        <Opinions />
-                        <div className="flex justify-center items-center">
-                            <p className="mr-2">Opinie z </p>
-                            <LinkShare
-                                title="Google"
-                                target="_blank"
-                                href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
-                            />
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </>
+            {/* OFERTA SECTION */}
+            <OfertaSection />
+
+            {/* GALERIA SECTION */}
+            <section id="portfolio" className="pt-12 bg-gray-100">
+                <div className="max-w-4xl mx-auto px-4">
+                    <h2 className="text-center text-2xl font-semibold mb-12">
+                        Zobacz moje kadry
+                    </h2>
+                    <PhotoSwipe images={formattedImages} columns={3} />
+                </div>
+            </section>
+
+            {/* GALERIA SECTION */}
+            <section id="portfolio" className="py-12 bg-gray-100">
+                <div className="max-w-4xl mx-auto px-4">
+                    <h2 className="text-center text-2xl font-semibold mb-12">
+                        Historia w obrazach
+                    </h2>
+                    <PhotoSwipe images={formattedImages2} columns={3} />
+                </div>
+            </section>
+
+            <InstagramGrid />
+
+            {/* CTA SECTION */}
+            <section className="bg-gray-100 text-balck py-24 text-center px-4 space-y-6">
+                <h2 className="text-center text-2xl font-semibold mb-4">
+                    Masz pytanie? Porozmawiajmy!
+                </h2>
+                <CTASendMail title="Wyślij wiadomość" />
+            </section>
+        </main>
     );
 }
