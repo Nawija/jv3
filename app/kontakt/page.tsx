@@ -1,5 +1,6 @@
 import ContactBtns from "@/components/ContactBtns";
 import ContactForm from "@/components/ContactForm";
+import TitleH1 from "@/components/TitleH1";
 import { Metadata } from "next";
 
 const pageTitle = "Kontakt - Jarek Olszewski | Fotograf ślubny Siedlce";
@@ -32,18 +33,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="max-w-screen-md mx-auto px-4 anim-opacity py-10 text-gray-800 text-center">
-            <h1 className="text-4xl mb-6 font-light">
-                Porozmawiajmy o{" "}
-                <strong className="font-light">Fotografii</strong>
-            </h1>
-
-            <p className="text-lg md:text-xl mb-10">
-                Masz pytania dotyczące oferty fotograficznej, chcesz sprawdzić
+        <div className="max-w-screen-md mx-auto px-4 anim-opacity py-6 text-gray-800 text-center">
+            <div className="py-1 px-6 sm:px-12">
+                <TitleH1
+                    title="Porozmawiajmy o Fotografii"
+                    desc="Masz pytania dotyczące oferty fotograficznej, chcesz sprawdzić
                 dostępność terminu lub po prostu porozmawiać? Skontaktuj się ze
                 mną - jako fotograf zawsze jestem otwarty na rozmowę i pomogę
-                jak tylko potrafię.
-            </p>
+                jak tylko potrafię."
+                />
+            </div>
 
             <ContactBtns />
 

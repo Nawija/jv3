@@ -27,20 +27,80 @@ export const NAVLINKS = [
 
 export const OFERTALINKS = [
     {
-        href: "/sesja-slubna",
-        label: "Sesja ślubna",
-    },
-    {
-        href: "/fotografia-slubna",
         label: "Fotografia Ślubna",
+        href: "/fotografia-slubna",
+        src: "/Images/oferta/01_fotografia_slubna_siedlce.avif",
     },
     {
-        href: "/fotografia-chrztu",
-        label: "Fotografia chrztu",
+        label: "Sesja Ślubna",
+        href: "/sesja-slubna",
+
+        src: "/Images/oferta/sesja-ślubna.avif",
     },
     {
+        label: "Sesja Narzeczeńska",
         href: "/sesja-narzeczenska",
-        label: "Sesja Narzeczenska",
+        src: "/Images/oferta/SESJA-NARZECZENSKA.avif",
+
+    },
+    {
+        label: "Fotografia chrztu",
+        href: "/fotografia-chrztu",
+
+        src: "/Images/oferta/CHRZEST.avif",
+
+    },
+    {
+        label: "Fotografia komunijna",
+        href: "/fotografia-komunijna",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Wieczory panieńskie",
+        href: "/wieczory-panienskie",
+        src: "/Images/oferta/",
+    },
+    { label: "Urodziny", href: "/urodziny", src: "/Images/oferta/" },
+    { label: "Studniówki", href: "/studniowki", src: "/Images/oferta/" },
+    {
+        label: "Sesje rodzinne, brzuszkowe, noworodkowe",
+        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Sesje indywidualne, biznesowe",
+        href: "/sesje-indywidualne-biznesowe",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Fotografia sportowa",
+        href: "/fotografia-sportowa",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Fotografia koncertowa i klubowa",
+        href: "/fotografia-koncertowa-klubowa",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Przemysł / architektura",
+        href: "/przemysl-architektura",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Fotografia kulinarna",
+        href: "/fotografia-kulinarna",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Fotografia motoryzacyjna",
+        href: "/fotografia-motoryzacyjna",
+        src: "/Images/oferta/",
+    },
+    {
+        label: "Zdjęcia do dokumentów",
+        href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
+        src: "/Images/oferta/",
     },
     {
         href: "/fotografia-komunijna",
@@ -109,7 +169,7 @@ export const OFERTAIMAGES = [
         desc: "Od przygotowań po wesele - wszystkie wydarzenie z tego dnia",
     },
     {
-        src: "/Images/oferta/SESJA NARZECZEŃSKA.avif",
+        src: "/Images/oferta/SESJA-NARZECZENSKA.avif",
         position: "55% 0%",
         href: "/sesja-narzeczenska",
         title: "Sesja Narzeczeńska",

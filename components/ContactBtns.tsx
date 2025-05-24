@@ -22,7 +22,7 @@ const contactDetails = [
 export default function ContactBtns() {
     return (
         <section className="flex flex-col mx-auto sm:flex-row justify-center items-center gap-4 my-4 text-white">
-            <div className="lg:bg-brand w-full h-px bg-white" />
+            <div className="bg-brand w-full h-px hidden lg:block" />
             {contactDetails.map(({ href, icon: Icon, text, label }, index) => (
                 <Link
                     key={index}
@@ -34,7 +34,7 @@ export default function ContactBtns() {
                     <span className="font-medium w-max">{text}</span>
                 </Link>
             ))}
-            <div className="bg-brand w-full h-px " />
+            <div className="bg-brand w-full h-px hidden lg:block " />
         </section>
     );
 }

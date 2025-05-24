@@ -1,7 +1,9 @@
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import Opinions from "@/components/Opinions";
 import PhotoSwipe from "@/components/PhotoSwipe";
+import TitleH1 from "@/components/TitleH1";
 import LinkShare from "@/components/ui/LinkShare";
+import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
 import { Metadata } from "next";
 
 const pageTitle =
@@ -34,58 +36,32 @@ export const metadata: Metadata = {
 };
 
 export default function AboutMePage() {
-    const images = [
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf037.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/PodglądoweZdjecia/fotografia-siedlce-albumy-dobitki-jarek-olszewski-fotograf042.jpeg`,
-            width: 1000,
-            height: 667,
-        },
-        {
-            src: `/Images/Blog/sesja.jpg`,
-            width: 1000,
-            height: 667,
-        },
-    ];
-
+    const imagesFromFolder = getImagesFromFolder(
+        "/blogs/fotografia-slubna/top-fotografia-slubna",
+        6
+    );
+    const formattedImages = imagesFromFolder.map((item) => ({
+        src: item.responsiveImage.src.replace("//", "/"), // napraw podwójny slash
+        width: item.responsiveImage.width,
+        height: item.responsiveImage.height,
+    }));
     return (
         <>
             <div className="bg-white text-gray-800">
-                <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
-                    <div className="text-center">
-                        <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4">
-                            Kim jestem - fotograf i człowiek z pasją
-                        </h1>
-                        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-                            Poznaj moją historię i sposób, w jaki patrzę na
-                            świat przez obiektyw aparatu.
-                        </p>
+                <div className="text-center bg-gray-100">
+                    <div className="py-12 px-6 sm:px-12">
+                        <TitleH1
+                            title="Kim jestem - fotograf i człowiek z pasją"
+                            desc="Poznaj moją historię i sposób, w jaki patrzę na świat przez obiektyw aparatu."
+                        />
                     </div>
-
+                </div>
+                <section className="max-w-4xl mx-auto px-4 py-10 space-y-12 bg-white">
                     <div className="space-y-8 text-base md:text-lg leading-relaxed text-gray-700">
                         <p className="border-l-4 border-brand pl-4">
                             Cześć! Nazywam się Jarek Olszewski i jestem
-                            fotografem z Siedlec. Pełen energii, uśmiechu i
-                            pasji do chwytania wyjątkowych chwil.
+                            fotografem. Pełen energii, uśmiechu i pasji do
+                            chwytania wyjątkowych chwil.
                         </p>
 
                         <p>
@@ -116,12 +92,15 @@ export default function AboutMePage() {
                     <h3 className="text-2xl font-semibold text-center mb-8 text-black">
                         Zobacz moje kadry
                     </h3>
-                    <PhotoSwipe images={images} columns={3} className="p-4" />
+                    <PhotoSwipe
+                        images={formattedImages}
+                        columns={3}
+                        className="p-4"
+                    />
                 </section>
-                <InstagramGrid />
 
                 <section className="bg-white px-4 py-12">
-                    <div className="mx-auto max-w-5xl text-center">
+                    <div className="mx-auto max-w-4xl text-center">
                         <p className="mb-12 font-semibold text-neutral-900 text-2xl tracking-tight">
                             Opinie klientów
                         </p>
@@ -136,6 +115,8 @@ export default function AboutMePage() {
                         </div>
                     </div>
                 </section>
+
+                <InstagramGrid />
             </div>
         </>
     );

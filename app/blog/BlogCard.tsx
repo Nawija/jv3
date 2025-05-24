@@ -21,8 +21,9 @@ const InfoBlock: FC<Props> = ({ title, image, category, slug, desc }) => {
             <Image
                 src={image}
                 alt={title}
-                width={550}
-                height={550}
+                title={`${title} - Jarek Olszewski`}
+                width={650}
+                height={650}
                 className={`w-full h-max object-cover aspect-[16/12] transition-opacity duration-500 `}
             />
 

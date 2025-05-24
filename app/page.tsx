@@ -11,6 +11,7 @@ import { OFERTAIMAGES } from "@/constants/Links";
 import { TEXT_SECTIONS } from "@/constants/homepage";
 import LinkShare from "@/components/ui/LinkShare";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import TypingHeader from "@/components/TypingHeader";
 
 // Dynamic Components
 const Carousel = dynamic(() => import("@/components/Carousel"), { ssr: true });
@@ -53,7 +54,7 @@ export default function Home() {
         <div className="anim-opacity">
             <Carousel />
             <div className="relative mx-auto p-2 py-4 max-w-screen-xl text-center">
-                <span className="text-2xl">Cześć! Miło mi że tu jesteś</span>
+                <TypingHeader />
 
                 <FadeInOnScroll delay={0.1}>
                     <div className="relative flex lg:flex-row flex-col justify-center items-center lg:mt-16 mt-20 text-start">
