@@ -35,7 +35,7 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
         arrows: true,
         autoplay: true,
         speed: 500,
-        autoplaySpeed: 3600,
+        autoplaySpeed: 4400,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -54,11 +54,11 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
     };
 
     return (
-        <div className="flex justify-center items-center relative">
-            <Slider
-                {...settings}
-                className="w-full slick-slider"
-            >
+        <div
+            id="carousel"
+            className="flex justify-center items-center relative"
+        >
+            <Slider {...settings} className="w-full slick-slider">
                 {images.map((image, index) => (
                     <div
                         key={index}
@@ -67,11 +67,9 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
                         <Image
                             src={image.src}
                             alt={`Jarek Olszewski - Fotograf ${index + 1}`}
-                            title={`Jarek Olszewski - Fotograf ${index + 1}`}
                             className="object-cover"
                             fill
-                            sizes="(max-width: 768px) 93vw, (max-width: 1200px) 50vw, 650px"
-                            quality={85}
+                            sizes="25vw"
                         />
                     </div>
                 ))}
