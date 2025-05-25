@@ -6,7 +6,10 @@ import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
 import Messenger from "@/components/Messenger";
-// import IntroOverlay from "@/components/IntroOverlay";
+import { cookies } from "next/headers";
+import FacebookPixel from "@/lib/FacebookPixel";
+import CookieBanner from "@/components/CookieBanner";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -33,11 +36,14 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const cookieStore = await cookies();
+    const cookiesAccepted =
+        cookieStore.get("cookies-accepted")?.value === "true";
     return (
         <html lang="pl">
             <head>
@@ -53,11 +59,13 @@ export default function RootLayout({
             <body
                 className={`flex flex-col min-h-screen w-full font-light antialiased ${geistSans.className}`}
             >
-                {/* <IntroOverlay /> */}
+                <IntroOverlay />
                 <Nav />
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
+                {cookiesAccepted && <FacebookPixel />}
+                <CookieBanner />
                 <Messenger />
                 <ScrollToTopButton />
                 <Footer />

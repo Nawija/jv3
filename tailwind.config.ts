@@ -65,6 +65,10 @@ export default {
                 sm: "calc(var(--radius) - 4px)",
             },
             keyframes: {
+                "slide-up": {
+                    "0%": { transform: "translateY(100%)", opacity: "0" },
+                    "100%": { transform: "translateY(0)", opacity: "1" },
+                },
                 blink: {
                     "0%, 100%": { opacity: "0" },
                     "50%": { opacity: "1" },
@@ -87,6 +91,8 @@ export default {
                 },
             },
             animation: {
+                "slide-up": "slide-up 0.5s ease-out",
+
                 blink: "blink 1s steps(2, start) infinite",
                 "fade-in": "fadeIn 1s ease-out forwards",
                 "accordion-down": "accordion-down 0.2s ease-out",
