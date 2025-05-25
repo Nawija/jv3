@@ -26,7 +26,7 @@ export default function HeroSection({
 
             if (rafId.current === null) {
                 rafId.current = requestAnimationFrame(() => {
-                    setOffsetY(scrollY * 0.25);
+                    setOffsetY(scrollY * 0.5);
                     rafId.current = null;
                 });
             }
@@ -45,24 +45,28 @@ export default function HeroSection({
             {backgroundImages.map((img, idx) => (
                 <div
                     key={idx}
-                    className="fixed top-0 left-0 w-full h-[95vh] bg-cover bg-no-repeat bg-center -z-50 will-change-transform"
-                    style={{
-                        transform: `translateY(-${offsetY}px)`,
-                    }}
+                    className="fixed top-0 left-0 w-full h-[90vh] bg-cover bg-no-repeat bg-center -z-50 will-change-transform"
                 >
-                    <Image
-                        src={img}
-                        fill
-                        sizes="(max-width: 768px) 85vw, (max-width: 1200px) 75vw, 1550px"
-                        alt="Hero - Jarek Olszewski"
-                        priority
-                        className="object-cover"
-                    />
+                    <div
+                        className="mt-10 w-full h-full relative"
+                        style={{
+                            transform: `translateY(-${offsetY}px)`,
+                        }}
+                    >
+                        <Image
+                            src={img}
+                            fill
+                            sizes="(max-width: 768px) 65vw, (max-width: 1200px) 75vw, 1250px"
+                            alt="Hero - Jarek Olszewski"
+                            priority
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/45 lg:bg-black/55 z-30" />
+                    </div>
                 </div>
             ))}
 
             {/* Nakładka przyciemniająca */}
-            <div className="absolute inset-0 bg-black/45 lg:bg-black/55 -z-30" />
 
             {/* Tekst */}
             <div className="relative z-10 pt-[30vh] lg:pt-[40vh] pb-[10vh] lg:pb-[20vh] text-white text-center">
