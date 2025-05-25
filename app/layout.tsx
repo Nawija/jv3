@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
 import Messenger from "@/components/Messenger";
-// import IntroOverlay from "@/components/IntroOverlay";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -56,7 +56,7 @@ export default function RootLayout({
             <body
                 className={`flex flex-col min-h-screen w-full font-light antialiased ${geistSans.className}`}
             >
-                {/* <IntroOverlay /> */}
+                <IntroOverlay />
                 <Nav />
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
