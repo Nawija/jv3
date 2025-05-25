@@ -31,6 +31,7 @@ const StepsWithLazyBackground = dynamic(
 const pageTitle = "Fotograf Siedlce: Fotografia Ślubna i Artystyczna, Foto";
 const pageDescription =
     "Fotograf Siedlce: Jarek Olszewski fotografia ślubna i reportaże. Najlepszy fotograf ślubny w Siedlcach. Zobacz portfolio i zamów sesję!";
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     title: pageTitle,
@@ -40,12 +41,18 @@ export const metadata: Metadata = {
         description: pageDescription,
         images: [
             {
-                url: "/Images/home/fotograf-siedlce-jarek-olszewski.avif",
-                width: 600,
-                height: 600,
-                alt: "Fotografia ślubna - Jarek Olszewski Siedlce",
+                url: heroImage,
+                width: 900,
+                height: 900,
+                alt: pageTitle,
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
     },
 };
 
