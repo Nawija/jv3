@@ -27,6 +27,9 @@ export async function generateMetadata({
     if (!blog) return {};
 
     return {
+        alternates: {
+            canonical: `https://www.jarekolszewski.pl/blog/${category}/${slug}`,
+        },
         title: `${capitalizeWithSpaces(
             blog.title
         )} | Jarek Olszewski | ${capitalizeWithSpaces(category)}`,

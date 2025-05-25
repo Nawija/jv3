@@ -9,6 +9,9 @@ const pageDescription =
 const heroImage = "/Images/fotografia-chrztu/fotografia-chrztu.jpeg";
 
 export const metadata: Metadata = {
+     alternates: {
+        canonical: "https://www.jarekolszewski.pl/fotografia-chrztu",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {

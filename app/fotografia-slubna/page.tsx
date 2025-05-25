@@ -21,6 +21,9 @@ const pageDescription =
 const heroImage = "/Images/carousel/02_sesja_slubna_plener_siedlce.avif";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/fotografia-slubna",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {

@@ -34,6 +34,9 @@ const pageDescription =
 const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {

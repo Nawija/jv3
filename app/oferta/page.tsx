@@ -38,13 +38,15 @@ const benefits = [
     ["Szybka realizacja", "sprawna i terminowa dostawa gotowych materiałów"],
 ];
 
-const pageTitle =
-    "Cennik Fotograf - oferta sesji zdjęciowych śluby, reportaże";
+const pageTitle = "Cennik Fotograf - oferta sesji zdjęciowych śluby, reportaże";
 const pageDescription =
     "Sprawdź aktualny cennik fotografa - oferta sesji ślubnych, portretowych, rodzinnych i reportaży. Przejrzyste pakiety, indywidualne podejście, bez ukrytych kosztów";
 const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/oferta",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {

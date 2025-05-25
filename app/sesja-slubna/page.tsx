@@ -22,6 +22,9 @@ const heroImage =
     "/Images/blogs/sesja-slubna/ola-i-pawel/015 ola-i-pawel-warszawa-praga-slub-katedra_015.webp";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/sesja-slubna",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {

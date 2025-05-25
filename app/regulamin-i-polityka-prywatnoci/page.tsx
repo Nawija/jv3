@@ -6,6 +6,9 @@ const pageDescription =
 const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/regulamin-i-polityka-prywatnoci",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {
@@ -14,8 +17,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: heroImage,
-                width: 400,
-                height: 260,
+                width: 900,
+                height: 900,
                 alt: pageTitle,
             },
         ],

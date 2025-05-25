@@ -22,6 +22,9 @@ const pageDescription =
 const heroImage = "/Images/oferta/SESJA-NARZECZENSKA.avif";
 
 export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.jarekolszewski.pl/sesja-narzeczenska",
+    },
     title: pageTitle,
     description: pageDescription,
     openGraph: {
