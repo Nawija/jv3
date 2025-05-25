@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 
@@ -46,10 +47,17 @@ export default function HeroSection({
                     key={idx}
                     className="fixed top-0 left-0 w-full h-[95vh] bg-cover bg-no-repeat bg-center -z-50 will-change-transform"
                     style={{
-                        backgroundImage: `url('${img}')`,
                         transform: `translateY(-${offsetY}px)`,
                     }}
-                />
+                >
+                    <Image
+                        src={img}
+                        fill
+                        sizes="(max-width: 768px) 85vw, (max-width: 1200px) 75vw, 1550px"
+                        alt="Hero - Jarek Olszewski"
+                        className="object-cover"
+                    />
+                </div>
             ))}
 
             {/* Nakładka przyciemniająca */}

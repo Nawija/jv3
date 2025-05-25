@@ -155,7 +155,7 @@ export default function UniversalPage({
                             </p>
                         )}
                         {content.gridImages?.length > 0 && (
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-3 gap-8 md:gap-6">
                                 {content.gridImages.map((img, index) =>
                                     img?.src && img?.title && img?.desc ? (
                                         <ImageComponent
