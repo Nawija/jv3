@@ -7,7 +7,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
 import Messenger from "@/components/Messenger";
 import { cookies } from "next/headers";
-import FacebookPixel from "@/lib/FacebookPixel";
+// import FacebookPixel from "@/lib/FacebookPixel";
 import CookieBanner from "@/components/CookieBanner";
 import IntroOverlay from "@/components/IntroOverlay";
 
@@ -64,8 +64,9 @@ export default async function RootLayout({
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
-                {cookiesAccepted && <FacebookPixel />}
-                <CookieBanner />
+                {/* {cookiesAccepted && <FacebookPixel />} */}
+                {cookiesAccepted && <CookieBanner />}
+                {/* <CookieBanner /> */}
                 <Messenger />
                 <ScrollToTopButton />
                 <Footer />
