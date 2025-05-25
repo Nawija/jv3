@@ -1,5 +1,6 @@
 "use client";
 
+import { LucideExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -33,6 +34,9 @@ const InfoBlock: FC<Props> = ({ title, image, category, slug, desc }) => {
                     className="object-cover"
                     sizes="37vw"
                 />
+                <div className="absolute bottom-1 right-1 p-2 bg-black/30 text-white rounded-full from-black to-transparent">
+                    <LucideExternalLink size={14} />
+                </div>
             </div>
 
             <h3 className="font-light my-1 text-base lg:text-xl md:text-base relative z-10 line-clamp-1 px-2 py-2 ">
