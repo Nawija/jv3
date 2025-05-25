@@ -173,7 +173,7 @@ export default async function FotografiaSlubna() {
                         <div className="max-w-3xl mx-auto">
                             <Gallery allImages={allImages} />
                         </div>
-                        <section className="bg-white px-4 py-12">
+                        <section className="bg-white py-12">
                             <div className="mx-auto max-w-4xl text-center">
                                 <p className=" font-light text-neutral-900 text-xl tracking-tight">
                                     Opinie klientów

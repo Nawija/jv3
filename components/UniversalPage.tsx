@@ -266,7 +266,7 @@ export default function UniversalPage({
                             </>
                         )}
 
-                        <section className="bg-white px-4 py-12">
+                        <section className="bg-white py-12">
                             <div className="mx-auto max-w-3xl text-center">
                                 <p className="font-light text-neutral-900 text-xl tracking-tight">
                                     Opinie klientów

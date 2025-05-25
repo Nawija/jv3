@@ -119,7 +119,7 @@ export default function AboutMePage() {
                 />
             </section>
 
-            <section className="bg-white px-4 py-12">
+            <section className="bg-white py-12">
                 <div className="mx-auto max-w-4xl text-center">
                     <h2 className="mb-12 font-semibold text-neutral-900 text-2xl tracking-tight">
                         Klienci o zdjęciach i odrobinę o mnie

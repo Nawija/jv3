@@ -69,7 +69,7 @@ const CarouselProps = ({ images }: { images: ImageType[] }) => {
                             alt={`Jarek Olszewski - Fotograf ${index + 1}`}
                             className="object-cover"
                             fill
-                            sizes="34vw"
+                            sizes="37vw"
                         />
                     </div>
                 ))}
