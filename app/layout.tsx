@@ -10,6 +10,7 @@ import Messenger from "@/components/Messenger";
 // import FacebookPixel from "@/lib/FacebookPixel";
 import CookieBanner from "@/components/CookieBanner";
 import IntroOverlay from "@/components/IntroOverlay";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -59,6 +60,19 @@ export default async function RootLayout({
             <body
                 className={`flex flex-col min-h-screen w-full font-light antialiased ${geistSans.className}`}
             >
+                <NextTopLoader
+                    color="#be3d29ee"
+                    initialPosition={0.08}
+                    crawlSpeed={200}
+                    height={3}
+                    crawl={true}
+                    showSpinner={false}
+                    easing="ease"
+                    speed={200}
+                    shadow="0 0 25px #be3d29ee,0 0 15px #e4440a"
+                    zIndex={1600}
+                    showAtBottom={false}
+                />
                 <IntroOverlay />
                 <Nav />
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
