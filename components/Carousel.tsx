@@ -99,12 +99,11 @@ const Carousel = () => {
                         <Image
                             src={image.src}
                             alt={`Fotograf ${index + 1}`}
-                            title={`Jarek Olszewski ${index + 1} `}
                             fill
-                            className="object-cover transition-opacity duration-500"
+                            className="object-cover"
                             style={{ objectPosition: image.position }}
                             priority={index === 0}
-                            sizes="(max-width: 768px) 65vw, (max-width: 1200px) 65vw, 1550px"
+                            sizes="(max-width: 768px) 75vw, (max-width: 1200px) 75vw, 1550px"
                             onLoad={() => {
                                 if (index === 0) setIsFirstImageLoaded(true);
                             }}
