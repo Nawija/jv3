@@ -9,7 +9,7 @@ const pageDescription =
 const heroImage = "/Images/fotografia-chrztu/fotografia-chrztu.jpeg";
 
 export const metadata: Metadata = {
-     alternates: {
+    alternates: {
         canonical: "https://www.jarekolszewski.pl/fotografia-chrztu",
     },
     title: pageTitle,
@@ -47,75 +47,63 @@ export default async function Page() {
             title: "Fotografia Chrztu",
             backgroundImages: [heroImage],
             paragraphs: [
-                "Dzień, który zapamiętacie na zawsze — idealny, pełen emocji. Uwiecznijmy go razem.",
+                "Chrzest to wyjątkowy dzień pełen wzruszeń, symboliki i rodzinnego ciepła. Zatrzymaj te chwile na zawsze dzięki subtelnej i profesjonalnej fotografii.",
             ],
         },
-        introTitle: "Fotografia chrztu, co skrywa?",
+        introTitle: "Dlaczego fotografia chrztu ma znaczenie?",
 
         gridImages: [
             {
                 src: images[1].responsiveImage.src,
                 position: "66% 0%",
                 title: "Reportaż chrztu",
-                desc: "Uchwyć emocje i chwile sakramentu",
+                desc: "Uchwyć emocje i piękno ceremonii — dyskretnie i autentycznie.",
             },
             {
                 src: images[2].responsiveImage.src,
                 position: "66% 0%",
                 title: "Zdjęcia sakralne",
-                desc: "Profesjonalnie w świętej oprawie",
+                desc: "Duchowy klimat i detale uchwycone z szacunkiem.",
             },
             {
                 src: images[3].responsiveImage.src,
                 position: "66% 0%",
-                title: "Chrzest fotografia",
-                desc: "Profesjonalnie w świętej oprawie",
+                title: "Rodzinne kadry",
+                desc: "Ciepło relacji w kadrach pełnych emocji.",
             },
         ],
-
         sections: [
             {
-                h2: "Jak pracuję podczas chrztu?",
+                h2: "Jak wygląda moja fotografia chrztu?",
                 subSections: [
                     {
-                        h3: "Dyskretnie i naturalnie",
+                        h3: "Naturalnie i z wyczuciem",
                         content:
-                            "Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę",
+                            "Staram się pozostać niewidoczny, by uchwycić autentyczne emocje — od łez wzruszenia po subtelne gesty rodziny. Każdy kadr oddaje prawdę tego dnia, bez sztuczności.",
                     },
                     {
-                        h3: "W pełnym zaangażowaniu",
+                        h3: "Obecność od początku do końca",
                         content:
-                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
+                            "Towarzyszę Wam od przygotowań, przez ceremonię, aż po ostatnie rodzinne uściski. Dzięki temu powstaje spójna, opowieść z chrztu - nie tylko z kościoła, ale z całego dnia.",
                     },
                 ],
             },
             {
-                h2: "Jak pracuję podczas chrztu?",
+                h2: "Styl fotografii — nie tylko dokumentacja",
                 subSections: [
                     {
-                        h3: "Dyskretnie i naturalnie",
+                        h3: "Światło, detale i emocje",
                         content:
-                            "Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferęFotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę Fotografuję z wyczuciem, by uchwycić naturalne emocje i wyjątkową atmosferę",
+                            "Fotografia chrztu to dla mnie nie tylko dokumentacja, ale sztuka uchwycenia światła, emocji i atmosfery. Każde zdjęcie tworzy historię, która porusza.",
                     },
                     {
-                        h3: "W pełnym zaangażowaniu",
+                        h3: "Dbałość o komfort",
                         content:
-                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
-                    },
-                    {
-                        h3: "W pełnym zaangażowaniu",
-                        content:
-                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
-                    },
-                    {
-                        h3: "W pełnym zaangażowaniu",
-                        content:
-                            "Jestem obecny od przygotowań aż po rodzinne uściski  obecny od przygotowań aż po rodzi— by nie umknął żaden moment.",
+                            "Dzieci są nieprzewidywalne, dlatego pracuję z cierpliwością i spokojem, nie narzucając się nikomu. Rodzina czuje się swobodnie, co widać na zdjęciach.",
                     },
                 ],
             },
         ],
-
         carousel: {
             title: "- Przykładowe zdjęcia z chrztu -",
             desc: "#chrzest #fotografia-chrztu #emocje",
@@ -124,19 +112,19 @@ export default async function Page() {
 
         blogs: {
             title: "- Kilka historii -",
-            desc: "#reportaż #chrzest #rodzina",
+            desc: "#fotografiachrztu #dzieńpełnemocji #reportaż",
             data: blogs,
         },
 
         bullets: {
-            title: "Co oferuję",
+            title: "Co zawiera reportaż z chrztu?",
             paragraph:
-                "Od przygotowań do rodzinnych uścisków — jestem z Wami cały czas.",
+                "Każdy reportaż to pełna opowieść o dniu chrztu — od ciepłych przygotowań po rodzinne wzruszenia.",
             items: [
-                "Minimum 700 zdjęć z reportażu",
-                "Sesja w dniu chrztu i innego dnia",
-                "Albumy, odbitki, galerie online",
-                "Dostawa zdjęć w 21 dni",
+                "Minimum 700 profesjonalnych zdjęć",
+                "Sesja rodzinna w dniu chrztu i poza nim",
+                "Wysokiej jakości albumy i odbitki",
+                "Dostawa pełnego materiału w 21 dni",
             ],
         },
 

@@ -1,25 +1,14 @@
-import ImageComponent from "@/components/ImageComponent";
-import TitleH2 from "@/components/TitleH2";
-import HeroSection from "../../components/HeroSection";
-import CarouselProps from "@/components/CarouselProps";
-import BlogList from "@/components/BlogList";
-import ContactForm from "@/components/ContactForm";
-import ParagraphWithBullets from "@/components/ParagraphWithBullets";
 import { Metadata } from "next";
 import { getImagesFromFolder } from "@/lib/getImagesFromFolder";
-import Gallery from "../oferta/_components/Gallery";
-import Opinions from "@/components/Opinions";
-import LinkShare from "@/components/ui/LinkShare";
-import InstagramGrid from "@/components/instagram/InstagramGrid";
-import Link from "next/link";
 import { getBlogsByCategory } from "@/lib/getBlogsByCategory";
-import { FaStar } from "react-icons/fa";
+import UniversalPage from "@/components/UniversalPage";
 
 const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
 const pageDescription =
     "Twój ślub to wyjątkowe wydarzenie, pełne wzruszeń, radości i niezapomnianych chwil. Profesjonalna fotografia ślubna to sposób, by zatrzymać te momenty na zawsze. Jako doświadczeni fotografowie ślubni wiemy, jak ważne jest dla Was, aby każdy uśmiech, każdy gest i każda emocja zostały pięknie uwiecznione.";
 
-const heroImage = "/Images/oferta/SESJA-NARZECZENSKA.avif";
+const heroImage =
+    "/Images/blogs/sesja-narzeczenska/magia-sesji-narzeczenskiej/IMG_003sesja-narzeczenska-roksana-kamil-fotograf-jarek-olszewski.webp";
 
 export const metadata: Metadata = {
     alternates: {
@@ -47,160 +36,110 @@ export const metadata: Metadata = {
     },
 };
 
-const OFERTAIMAGES = [
-    {
-        src: "/Images/oferta/sesja-ślubna.avif",
-        position: "66% 0%",
-        href: "/sesja-slubna",
-        title: "Sesja Ślubna",
-        desc: "Od przygotowań po wesele - wszystkie wydarzenie z tego dnia",
-    },
-    {
-        src: "/Images/carousel/01_fotografia_slubna_siedlce.avif",
-        position: "53% 50%",
-        href: "/fotografia-slubna",
-        title: "Fotografia Ślubna",
-        desc: "Wyjątkowe kadry pełne emocji i magii Waszego ślubu, które zostaną na zawsze",
-    },
-    {
-        src: "/Images/oferta/CHRZEST.avif",
-        position: "55% 0%",
-        href: "/sesja-narzeczenska",
-        title: "Sesja Narzeczeńska",
-        desc: "pozwala oswoić się z aparatem, wyjątkowa pamiątka z czasu przed ślubnego",
-    },
-];
-
-export default async function SesjaNarzeczenska() {
+export default async function Page() {
     const blogs = await getBlogsByCategory("sesja-narzeczenska");
-    const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
-    const allImagesWeding = getImagesFromFolder(
-        "blogs/sesja-narzeczenska/chwile-przed-slubem",
+    const images = getImagesFromFolder(
+        "blogs/sesja-narzeczenska/magia-sesji-narzeczenskiej",
         6
     );
+    const gallery = getImagesFromFolder("PodglądoweZdjecia", 6);
 
-    const formattedImages = allImagesWeding.map((img) => ({
-        src: img.responsiveImage.src,
-    }));
+    const content = {
+        hero: {
+            title: "Sesja Narzeczeńska",
+            backgroundImages: [heroImage],
+            paragraphs: [
+                "Miłość, która dopiero co rozkwita, zasługuje na swoje miejsce w kadrach. Zatrzymajmy ten czas — zanim rozpoczniecie wspólną drogę jako małżeństwo.",
+            ],
+        },
 
-    return (
-        <>
-            <HeroSection
-                title="Sesja Narzeczeńska"
-                backgroundImages={["/Images/oferta/SESJA-NARZECZENSKA.avif"]}
-                paragraphs={[
-                    "Dzień, który zapamiętacie na zawsze - ten wymarzony, najpiękniejszym idealny. Czemu chce być z Wami? Żeby łapać te wszystkie piękne, ale jednocześnie ulotne chwile i zachować je na zdjęciach.",
-                ]}
-            />
-            <div className="text-center bg-white w-full">
-                <div className="w-full py-10">
-                    <div className="max-w-screen-lg mx-auto px-4">
-                        <h1 className="text-2xl lg:text-3xl font-light text-center mb-10">
-                            Sesja narzeczeńska, co skrywa?
-                        </h1>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                            {OFERTAIMAGES.map((img, index) => (
-                                <Link key={index} href={img.href}>
-                                    <ImageComponent
-                                        index={index}
-                                        img={img.src}
-                                        title={img.title}
-                                        desc={img.desc}
-                                    />
-                                </Link>
-                            ))}
-                        </div>
+        introTitle: "Dlaczego warto wybrać sesję narzeczeńską?",
 
-                        <section className="pb-12 pt-24 text-center">
-                            <h2 className="text-2xl font-light mb-4">
-                                Jak pracuję podczas chrztu?
-                            </h2>
-                            <p className="max-w-screen-md mx-auto text-lg">
-                                Fotografuję dyskretnie i z wyczuciem, by
-                                uchwycić naturalne emocje i wyjątkową atmosferę
-                                tej uroczystości. Stawiam na autentyczność i
-                                piękno każdej chwili, tworząc ponadczasowe
-                                fotografie chrztu.
-                            </p>
-                        </section>
+        gridImages: [
+            {
+                src: images[1].responsiveImage.src,
+                position: "50% 0%",
+                title: "Naturalne ujęcia",
+                desc: "Bez pozowania, bez stresu. Tylko Wy — tacy, jacy jesteście.",
+            },
+            {
+                src: images[2].responsiveImage.src,
+                position: "50% 0%",
+                title: "Wyjątkowe miejsca",
+                desc: "Las, miasto, góry, jezioro? Dobieramy miejsce do Waszej historii.",
+            },
+            {
+                src: images[3].responsiveImage.src,
+                position: "50% 0%",
+                title: "Zmysłowy klimat",
+                desc: "Delikatność spojrzeń i intymność bliskości w nastrojowych kadrach.",
+            },
+        ],
 
-                        <TitleH2
-                            title="- Przykładowe zdjęcia z chrztu -"
-                            desc="#chrzest #fotografia-chrztu #emocje"
-                        />
-                        <div className="max-w-screen-sm mx-auto">
-                            <CarouselProps images={formattedImages} />
-                        </div>
+        sections: [
+            {
+                h2: "Czym jest sesja narzeczeńska?",
+                subSections: [
+                    {
+                        h3: "Wasza historia przed ślubem",
+                        content:
+                            "Sesja narzeczeńska to intymny reportaż Waszej miłości — zanim padnie sakramentalne „tak”. To czas, kiedy możecie poczuć się sobą przed obiektywem, bez presji i scenariusza. Zdjęcia mogą posłużyć do zaproszeń, dekoracji sali, prezentacji ślubnej… albo po prostu do wspólnego wspominania.",
+                    },
+                    {
+                        h3: "Spontanicznie i naturalnie",
+                        content:
+                            "Nie oczekuję od Was doświadczenia przed aparatem. Wystarczy Wasza obecność, spojrzenia, dotyk. Reszta dzieje się sama. Dbam o luźną atmosferę, dzięki której powstają prawdziwe, autentyczne kadry — nie wystudiowane pozy.",
+                    },
+                ],
+            },
+            {
+                h2: "Jak wygląda sesja narzeczeńska ze mną?",
+                subSections: [
+                    {
+                        h3: "Wybór miejsca i stylu",
+                        content:
+                            "Każda para ma swoją energię i historię. Wspólnie wybieramy lokalizację — od miejskich zaułków po górskie szlaki. To Wy decydujecie, co Was wyraża.",
+                    },
+                    {
+                        h3: "Luźna atmosfera i bliskość",
+                        content:
+                            "Nie reżyseruję — podpowiadam. Czekam na momenty, które są Wasze. Dzięki temu zdjęcia nie są sztuczne, ale ciepłe i osobiste.",
+                    },
+                    {
+                        h3: "Gotowe zdjęcia pełne emocji",
+                        content:
+                            "Po sesji otrzymujecie galerię online, gotową do pobrania lub udostępnienia. Wszystko w wysokiej jakości i z autorską obróbką.",
+                    },
+                ],
+            },
+        ],
 
-                        <TitleH2
-                            title="Jak pracuję?"
-                            desc="Niedostrzeżony i często z boku, jestem z Wami przez cały czas, z pomocną radą i wsparciem. podpowiadam, nie ustawiam. najpiękniejsze zdjęcia wychodzą gdy jesteście sobą, cieszycie się wyjątkowością przeżywanej chwili. Fotografie które wykonuje są naturalnie i prawdziwe przez co staja się wyjątkowe i ponadczasowe."
-                        />
+        carousel: {
+            title: "- Zobacz nasze narzeczeńskie sesje -",
+            desc: "#miłość #sesjanarzeczeńska #zaręczyny",
+            images: images.map((img) => ({ src: img.responsiveImage.src })),
+        },
 
-                        <TitleH2
-                            title="- Kilka historii -"
-                            desc="#reportaż_ślubny #sesja_ślubna #sesja_narzeczeńska"
-                        />
-                        <div className="max-w-3xl mx-auto">
-                            <BlogList blogs={blogs} limit={6} columns={2} />
-                        </div>
+        blogs: {
+            title: "- Historie pełne emocji -",
+            desc: "#miłośćwobiektywie #narzeczeni #reportaż",
+            data: blogs,
+        },
 
-                        <div className="max-w-2xl mx-auto my-12">
-                            <ParagraphWithBullets
-                                title="Co oferuję"
-                                paragraph="Fotografuję od początku przygotowań ślubnych do ostatnich uroczystości weselnych."
-                                bullets={[
-                                    "Fotografuje od początku przygotowań ślubnych do ostatnich uroczystości weselnych",
-                                    "Minimum 700 fotografii z reportażu (zdjęcia poddane autorskiej obróbce - naturalne i prawdziwe fotografie",
-                                    "Sesję ślubną w dniu ślubu, krótka sesja w okolicach przyjęcia weselnego (by nie tracić cennego czasu)",
-                                    "Sesje ślubną innego dnia, w wybranym przez Was miejscu",
-                                    "Sesję narzeczeńska",
-                                    "Foto-albumy, wydruki cyfrowe, fotoobrazy, zdjęcia na płótnie. portrety w ramkach (można dać odnośnik do oferty gdzie są zdjęcia fotoproduktów)",
-                                    "Wydruki w dniu ślubu (pocztówki, portrety dla rodziców) ",
-                                    "Nośnik danych (pendrive)",
-                                    "Zapis na chmurze - link do pobrania, bez ograniczeń i na dowolne urządzenie",
-                                    "Galerię internetową chronioną hasłem",
-                                    "Szybki termin realizacji - zdjęcia już w 21 dni do waszej dyspozycji",
-                                ]}
-                            />
-                        </div>
-                        <div className="max-w-3xl mx-auto">
-                            <Gallery allImages={allImages} />
-                        </div>
-                        <section className="bg-white px-4 py-12">
-                            <div className="mx-auto max-w-4xl text-center">
-                                <p className=" font-light text-neutral-900 text-xl tracking-tight">
-                                    Opinie klientów
-                                </p>
-                                <Opinions />
-                                <div className="flex justify-center items-center">
-                                    <p className="mr-2">Opinie z </p>
-                                    <LinkShare
-                                        title="Google"
-                                        target="_blank"
-                                        href="https://www.google.com/search?sca_esv=36354fdb691823cb&rlz=1C5CHFA_enPL994PL994&sxsrf=AHTn8zocdBNdDop6JxFkDh7ZvwmBGz-yQA:1747759200679&q=jarekolszewski&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzSHL3h72FHJno5lAMGESINrEPckvvMSP28qIzP1NmX36Zu8MiyMs01d8X2DaqEuEVDJ_aYs%3D&uds=ABqPDvzh2Ji1Kqt-7EMvWRUQDfyq32fE0uGbr4uJQc4sQZqDb8FkSTC7VC6zBtw9Ms1apU7KPJzGzztDOCAB1tHAo1cvIm1_8fG54_w7B1HbpkvD_2-_u34&sa=X&ved=2ahUKEwjoxryyvrKNAxWlR_EDHTPOImYQ3PALegQIHhAE&biw=1680&bih=963&dpr=2"
-                                    />
-                                </div>
-                                <div className="flex items-center justify-center mx-auto mt-2 space-x-0.5">
-                                    <span className="text-sm">5,0</span>
-                                    <FaStar className="text-yellow-400" />
-                                    <FaStar className="text-yellow-400" />
-                                    <FaStar className="text-yellow-400" />
-                                    <FaStar className="text-yellow-400" />
-                                    <FaStar className="text-yellow-400" />
-                                    <span className="text-sm">(44)</span>
-                                </div>
-                            </div>
-                        </section>
-                        <div className="mt-12">
-                            <ContactForm />
-                        </div>
-                        <div className="mt-12">
-                            <InstagramGrid />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+        bullets: {
+            title: "Dlaczego pary wybierają mnie?",
+            paragraph:
+                "Tworzę przestrzeń do bycia sobą. Bez presji, za to z uważnością na emocje i Waszą więź.",
+            items: [
+                "Pomoc w wyborze lokalizacji i stylizacji",
+                "Min. 50 zdjęć w pełnej rozdzielczości",
+                "Galeria online gotowa do udostępniania",
+                "Gotowe zdjęcia w 7-14 dni",
+            ],
+        },
+
+        gallery,
+    };
+
+    return <UniversalPage content={content} />;
 }

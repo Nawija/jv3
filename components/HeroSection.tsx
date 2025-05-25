@@ -59,7 +59,7 @@ export default function HeroSection({
                             sizes="(max-width: 768px) 65vw, (max-width: 1200px) 75vw, 1250px"
                             alt="Hero - Jarek Olszewski"
                             priority
-                            className="object-cover"
+                            className="object-cover "
                         />
                         <div className="absolute inset-0 bg-black/45 lg:bg-black/55 z-30" />
                     </div>
