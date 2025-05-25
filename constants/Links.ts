@@ -34,129 +34,69 @@ export const OFERTALINKS = [
     {
         label: "Sesja Ślubna",
         href: "/sesja-slubna",
-
         src: "/Images/oferta/sesja-ślubna.avif",
     },
     {
         label: "Sesja Narzeczeńska",
         href: "/sesja-narzeczenska",
         src: "/Images/oferta/SESJA-NARZECZENSKA.avif",
-
     },
     {
         label: "Fotografia chrztu",
         href: "/fotografia-chrztu",
-
         src: "/Images/oferta/CHRZEST.avif",
-
     },
     {
         label: "Fotografia komunijna",
         href: "/fotografia-komunijna",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Wieczory panieńskie",
         href: "/wieczory-panienskie",
-        src: "/Images/oferta/",
+        src: "",
     },
-    { label: "Urodziny", href: "/urodziny", src: "/Images/oferta/" },
-    { label: "Studniówki", href: "/studniowki", src: "/Images/oferta/" },
+    { label: "Urodziny", href: "/urodziny", src: "" },
+    { label: "Studniówki", href: "/studniowki", src: "" },
     {
         label: "Sesje rodzinne, brzuszkowe, noworodkowe",
         href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Sesje indywidualne, biznesowe",
         href: "/sesje-indywidualne-biznesowe",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Fotografia sportowa",
         href: "/fotografia-sportowa",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Fotografia koncertowa i klubowa",
         href: "/fotografia-koncertowa-klubowa",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Przemysł / architektura",
         href: "/przemysl-architektura",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Fotografia kulinarna",
         href: "/fotografia-kulinarna",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Fotografia motoryzacyjna",
         href: "/fotografia-motoryzacyjna",
-        src: "/Images/oferta/",
+        src: "",
     },
     {
         label: "Zdjęcia do dokumentów",
         href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
-        src: "/Images/oferta/",
-    },
-    {
-        href: "/fotografia-komunijna",
-        label: "Fotografia komunijna",
-    },
-    {
-        href: "/wieczory-panienskie",
-        label: "Wieczory panieńskie",
-    },
-    {
-        href: "/studniówki",
-        label: "Studniówki",
-    },
-    {
-        href: "/urodziny",
-        label: "Urodziny",
-    },
-    {
-        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
-        label: "Rodzinne",
-    },
-    {
-        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
-        label: "Brzuszkowe",
-    },
-    {
-        href: "/sesje-rodzinne-brzuszkowe-noworodkowe",
-        label: "Noworodkowe",
-    },
-    {
-        href: "/sesje-indywidualne-biznesowe",
-        label: "Sesje indywidualne/Biznesowe",
-    },
-    {
-        href: "/fotografia-sportowa",
-        label: "Fotografia sportowa",
-    },
-    {
-        href: "/przemysl-architektura",
-        label: "Przemysł/architektura",
-    },
-    {
-        href: "/kulinarne",
-        label: "Kulinarne",
-    },
-    {
-        href: "/motoryzacyjne",
-        label: "Motoryzacyjne",
-    },
-    {
-        href: "/fotografia-koncertowa-i-klubowa",
-        label: "Fotografia koncertowa i klubowa",
-    },
-    {
-        href: "/zdjecia-do-dokumentow-dowod-prawojazdy-paszport",
-        label: "Zdjecia do dokumentow",
+        src: "",
     },
 ];
 

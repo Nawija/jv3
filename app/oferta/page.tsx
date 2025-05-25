@@ -73,9 +73,9 @@ export default async function OffertsPage() {
     const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
 
     return (
-        <div className="h-full">
-            <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8">
-                <section className="max-w-7xl mx-auto space-y-12 anim-opacity text-stone-800">
+        <>
+            <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8 anim-opacity">
+                <section className="max-w-7xl mx-auto space-y-12  text-stone-800">
                     <TitleH1
                         title="Profesjonalny Fotograf"
                         desc="Szukasz fotografa, który uwieczni Twoje
@@ -129,6 +129,6 @@ export default async function OffertsPage() {
             <div className="text-center mt-6 mb-12">
                 <CTASendMail title="Zapytaj o Ofertę" />
             </div>
-        </div>
+        </>
     );
 }
