@@ -1,6 +1,16 @@
 // app/api/list-images/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
+interface CloudinaryResource {
+    public_id: string;
+    folder: string;
+    [key: string]: any; // jeśli inne pola nie są potrzebne
+}
+
+interface CloudinaryResponse {
+    resources: CloudinaryResource[];
+}
+
 export async function GET(req: NextRequest) {
     const folder = req.nextUrl.searchParams.get("folder");
 
@@ -22,11 +32,11 @@ export async function GET(req: NextRequest) {
         }
     );
 
-    const data = await res.json();
+    const data: CloudinaryResponse = await res.json();
 
     const images = data.resources
-        .filter((img: any) => img.folder === folder)
-        .map((img: any) => img.public_id);
+        .filter((img) => img.folder === folder)
+        .map((img) => img.public_id);
 
     return NextResponse.json({ images });
 }

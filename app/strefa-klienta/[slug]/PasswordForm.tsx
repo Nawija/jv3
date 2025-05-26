@@ -1,7 +1,6 @@
 // app/klienci/[slug]/PasswordForm.tsx
 "use client";
 
-import { MainBtn } from "@/components/Buttons/MainBtn";
 import { useState } from "react";
 
 export default function PasswordForm({ name }: { name: string }) {
