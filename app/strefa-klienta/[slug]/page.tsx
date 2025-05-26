@@ -15,6 +15,18 @@ interface ImageItem {
     height: number;
 }
 
+interface CloudinaryResource {
+    public_id: string;
+    secure_url: string;
+    width: number;
+    height: number;
+    // możesz dodać więcej pól jeśli potrzebujesz
+}
+
+interface CloudinaryResponse {
+    resources: CloudinaryResource[];
+}
+
 export default async function GaleriaKlienta({ params, searchParams }: Props) {
     const awaitedParams = await Promise.resolve(params);
     const { slug } = awaitedParams;
@@ -53,14 +65,16 @@ export default async function GaleriaKlienta({ params, searchParams }: Props) {
         return <div>Błąd podczas pobierania zdjęć.</div>;
     }
 
-    const data = await res.json();
+    const data: CloudinaryResponse = await res.json();
     const images: ImageItem[] =
-        data.resources?.map((img: any): ImageItem => ({
-            publicId: img.public_id,
-            url: img.secure_url,
-            width: img.width,
-            height: img.height,
-        })) || [];
+        data.resources?.map(
+            (img): ImageItem => ({
+                publicId: img.public_id,
+                url: img.secure_url,
+                width: img.width,
+                height: img.height,
+            })
+        ) || [];
 
     // console.log(data.resources);
 
