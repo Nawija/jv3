@@ -5,7 +5,7 @@ import Script from "next/script";
 export default function FacebookPixel() {
     return (
         <>
-            <Script
+            <Script 
                 id="fb-pixel"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{

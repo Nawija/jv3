@@ -7,9 +7,10 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
 import Messenger from "@/components/Messenger";
 import { cookies } from "next/headers";
-// import FacebookPixel from "@/lib/FacebookPixel";
 import CookieBanner from "@/components/CookieBanner";
 import IntroOverlay from "@/components/IntroOverlay";
+import FacebookPixel from "@/lib/FacebookPixel";
+
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -65,8 +66,7 @@ export default async function RootLayout({
                 <main className="flex-1 w-full overflow-x-hidden relative min-h-[90vh]">
                     {children}
                 </main>
-                {/* {cookiesAccepted && <FacebookPixel />} */}
-                {/* {cookiesAccepted && <CookieBanner />} */}
+                {cookiesAccepted && <FacebookPixel />}
                 {!cookiesAccepted && <CookieBanner />}
 
                 <Messenger />
