@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SeoHead from "@/components/SeoHead";
 import Messenger from "@/components/Messenger";
-// import { cookies } from "next/headers";
+import { cookies } from "next/headers";
 // import FacebookPixel from "@/lib/FacebookPixel";
 import CookieBanner from "@/components/CookieBanner";
 import IntroOverlay from "@/components/IntroOverlay";
@@ -41,9 +41,9 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    // const cookieStore = await cookies();
-    // const cookiesAccepted =
-    //     cookieStore.get("cookies-accepted")?.value === "true";
+    const cookieStore = await cookies();
+    const cookiesAccepted =
+        cookieStore.get("cookies-accepted")?.value === "true";
     return (
         <html lang="pl">
             <head>
@@ -67,7 +67,8 @@ export default async function RootLayout({
                 </main>
                 {/* {cookiesAccepted && <FacebookPixel />} */}
                 {/* {cookiesAccepted && <CookieBanner />} */}
-                <CookieBanner />
+                {!cookiesAccepted && <CookieBanner />}
+
                 <Messenger />
                 <ScrollToTopButton />
                 <Footer />
