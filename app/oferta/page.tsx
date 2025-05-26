@@ -75,7 +75,7 @@ export default async function OffertsPage() {
     return (
         <>
             <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8 anim-opacity">
-                <section className="max-w-7xl mx-auto space-y-12  text-stone-800">
+                <section className="max-w-7xl mx-auto space-y-12 text-stone-800">
                     <TitleH1
                         title="Profesjonalny Fotograf"
                         desc="Szukasz fotografa, który uwieczni Twoje
@@ -84,16 +84,16 @@ export default async function OffertsPage() {
                         potrzeb - z pasją, precyzją i doświadczeniem."
                     />
 
-                    <div className="space-y-8">
+                    <div className="space-y-12">
                         <h2 className="text-2xl font-light text-center">
                             Dlaczego warto wybrać mnie?
                         </h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 bg-gray-100">
                             {benefits.map(([title, desc], i) => (
                                 <div
                                     key={i}
-                                    className="flex gap-4 items-start p-4 bg-white rounded-xl shadow-sm"
+                                    className="flex gap-4 items-start p-4 bg-white rounded-xl"
                                 >
                                     <FaCheckCircle className="text-brand-nav mt-1 text-xl flex-shrink-0" />
                                     <div>

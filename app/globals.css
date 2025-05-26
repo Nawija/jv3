@@ -6,6 +6,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 @keyframes shimmer {
     0% {
         transform: translateX(-100%);
