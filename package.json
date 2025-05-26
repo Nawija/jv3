@@ -24,6 +24,7 @@
     "lucide-react": "^0.510.0",
     "marked": "^15.0.11",
     "next": "^15.3.2",
+    "next-cloudinary": "^6.16.0",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^6.10.0",
     "photoswipe": "^5.4.4",
@@ -36,6 +37,7 @@
     "sharp": "^0.34.1",
     "slick-carousel": "^1.8.1",
     "slugify": "^1.6.6",
+    "swr": "^2.3.3",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

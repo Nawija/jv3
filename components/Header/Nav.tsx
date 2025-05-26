@@ -9,6 +9,8 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
 import { Logo } from "./Logo";
 
+// Jeśli URL zawiera '/strefa-klienta', to nie renderuj nic
+
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
     const pathname = usePathname();
@@ -51,6 +53,10 @@ export default function Nav() {
         document.addEventListener("click", handleClickOutside);
         return () => document.removeEventListener("click", handleClickOutside);
     }, [showMenu]);
+
+    if (pathname.includes("/strefa-klienta/")) {
+        return null;
+    }
 
     return (
         <>
