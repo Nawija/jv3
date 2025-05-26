@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 interface CloudinaryResource {
     public_id: string;
     folder: string;
-    [key: string]: any; // jeśli inne pola nie są potrzebne
 }
 
 interface CloudinaryResponse {
