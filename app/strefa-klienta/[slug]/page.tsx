@@ -4,7 +4,7 @@ import Galeria from "./Galeria";
 import PasswordForm from "./PasswordForm";
 
 interface Props {
-    params: Promise<{ slug: string }>;
+    params: { slug: string };
     searchParams: { password?: string };
 }
 
@@ -20,7 +20,6 @@ interface CloudinaryResource {
     secure_url: string;
     width: number;
     height: number;
-    // możesz dodać więcej pól jeśli potrzebujesz
 }
 
 interface CloudinaryResponse {
@@ -28,14 +27,12 @@ interface CloudinaryResponse {
 }
 
 export default async function GaleriaKlienta({ params, searchParams }: Props) {
-    const awaitedParams = await Promise.resolve(params);
-    const { slug } = awaitedParams;
+    const { slug } = params;
 
     const client = CLIENTS.find((c) => c.slug === slug);
     if (!client) return <div>Nie znaleziono galerii.</div>;
 
-    const awaitedSearchParams = await searchParams;
-    const isAuth = awaitedSearchParams.password === client.password;
+    const isAuth = searchParams.password === client.password;
 
     if (!isAuth) {
         return <PasswordForm name={client.name} />;
