@@ -70,7 +70,7 @@ export default function HeroSection({
 
             {/* Tekst */}
             <div className="relative z-10 pt-[30vh] lg:pt-[40vh] pb-[10vh] lg:pb-[20vh] text-white text-center">
-                <p className="text-3xl font-semibold">{title}</p>
+                <p className="text-3xl font-semibold max-w-3xl px-4 mx-auto">{title}</p>
                 <div className="mt-4 px-6 max-w-screen-sm mx-auto space-y-4">
                     <p>{paragraphs}</p>
                 </div>

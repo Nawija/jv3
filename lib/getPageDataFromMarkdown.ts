@@ -9,7 +9,6 @@ export async function getPageDataFromMarkdown(slug: string) {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const { data } = matter(fileContent);
 
-    // Dynamiczne pobieranie danych (np. obrazów i blogów)
     const blogs = await getBlogsByCategory(data.blogCategory);
     const images = getImagesFromFolder(data.imageFolder, 6);
     const gallery = getImagesFromFolder(data.galleryFolder, 6);

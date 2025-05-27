@@ -1,17 +1,15 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsMessenger } from "react-icons/bs";
 
 export default function Messenger() {
-    const pathname = usePathname();
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
         const showAfterTimeout = setTimeout(() => {
             setVisible(true);
-        }, 3000); // pokaz po 3 sekundach
+        }, 3000);
 
         const handleScroll = () => {
             if (window.scrollY > 600) {
@@ -26,10 +24,6 @@ export default function Messenger() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
-    if (pathname.includes("/strefa-klienta/")) {
-        return null;
-    }
 
     return (
         <Link

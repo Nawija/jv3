@@ -17,7 +17,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://jv3.vercel.app"),
+    metadataBase: new URL("https://www.jarekolszewski.pl"),
     keywords: [
         "fotograf Siedlce",
         "fotografia ślubna",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         "fotograf warszawa",
     ],
     openGraph: {
-        url: "https://jv3.vercel.app/",
+        url: "https://www.jarekolszewski.pl/",
         siteName: "Jarek Olszewski - Fotograf",
         locale: "pl_PL",
         type: "website",

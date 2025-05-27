@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
                 hostname: "**.cdninstagram.com",
             },
         ],
-        domains: ["res.cloudinary.com"],
     },
 };
 

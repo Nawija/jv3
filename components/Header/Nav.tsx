@@ -9,18 +9,13 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
 import { Logo } from "./Logo";
 
-// Jeśli URL zawiera '/strefa-klienta', to nie renderuj nic
-
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
     const pathname = usePathname();
 
-    // Zamykaj menu po zmianie strony
     useEffect(() => {
         setShowMenu(false);
     }, [pathname]);
-
-    // Blokuj scrollowanie strony gdy menu jest otwarte
     useEffect(() => {
         if (showMenu) {
             document.body.style.overflow = "hidden";
@@ -32,7 +27,6 @@ export default function Nav() {
         };
     }, [showMenu]);
 
-    // Obsługa kliknięcia poza menu (dodaj event listener do body)
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
@@ -54,13 +48,8 @@ export default function Nav() {
         return () => document.removeEventListener("click", handleClickOutside);
     }, [showMenu]);
 
-    if (pathname.includes("/strefa-klienta/")) {
-        return null;
-    }
-
     return (
         <>
-            {/* Overlay do zamykania menu */}
             {showMenu && (
                 <div
                     className="fixed inset-0 anim-opacity bg-black/30 backdrop-blur-md z-[40] lg:hidden"
@@ -78,13 +67,11 @@ export default function Nav() {
                         showMenu={showMenu}
                     />
 
-                    {/* Menu mobilne */}
                     <div
                         className={`mobile-menu fixed left-0 top-0 z-[50] h-screen w-[280px] bg-[#6e2a23] text-white shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden ${
                             showMenu ? "translate-x-0" : "-translate-x-full"
                         }`}
                     >
-                        {/* Social media w menu mobilnym */}
                         <div className="flex gap-5 mt-auto mb-10 p-6">
                             <Link
                                 href="https://www.facebook.com/JarekOlszewskiFotografia/"
@@ -147,7 +134,6 @@ export default function Nav() {
                         </div>
                     </div>
 
-                    {/* Menu desktopowe */}
                     <nav className="hidden lg:block">
                         <ul className="flex items-center justify-center xl:space-x-4 space-x-1 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
                             {NAVLINKS.map((link) => (
@@ -172,7 +158,6 @@ export default function Nav() {
                         </ul>
                     </nav>
 
-                    {/* Social media desktop */}
                     <div className="hidden lg:flex items-center gap-4">
                         <Link
                             href="https://www.facebook.com/JarekOlszewskiFotografia/"

@@ -73,9 +73,9 @@ export default async function OffertsPage() {
     const allImages = getImagesFromFolder("PodglądoweZdjecia", 6);
 
     return (
-        <>
-            <div className="bg-gray-100 py-12 px-6 sm:px-6 lg:px-8 anim-opacity overflow-hidden">
-                <section className="max-w-7xl mx-auto space-y-12 text-stone-800 overflow-hidden">
+        <div className="overflow-hidden h-full w-full">
+            <div className="bg-gray-100 py-12 px-6 lg:px-8 anim-opacity w-full overflow-hidden">
+                <section className="max-w-7xl mx-auto space-y-12 text-stone-800 w-full overflow-hidden">
                     <TitleH1
                         title="Profesjonalny Fotograf"
                         desc="Szukasz fotografa, który uwieczni Twoje
@@ -89,11 +89,11 @@ export default async function OffertsPage() {
                             Dlaczego warto wybrać mnie?
                         </h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 bg-gray-100">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
                             {benefits.map(([title, desc], i) => (
                                 <div
                                     key={i}
-                                    className="flex gap-4 items-start p-4 bg-white rounded-xl"
+                                    className="flex gap-4 items-start p-4 bg-white rounded-xl shadow-lg"
                                 >
                                     <FaCheckCircle className="text-brand-nav mt-1 text-xl flex-shrink-0" />
                                     <div>
@@ -129,6 +129,6 @@ export default async function OffertsPage() {
             <div className="text-center mt-6 mb-12">
                 <CTASendMail title="Zapytaj o Ofertę" />
             </div>
-        </>
+        </div>
     );
 }

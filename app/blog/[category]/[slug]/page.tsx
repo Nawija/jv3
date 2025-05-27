@@ -95,7 +95,6 @@ export default async function BlogPostPage({
                     />
                 </div>
 
-                {/* Obrazy z frontmattera */}
                 {blog.images.length > 0 && (
                     <PhotoSwipeProvider galleryId="#gallery">
                         <>

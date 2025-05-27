@@ -51,18 +51,17 @@ export default function PortfolioPage() {
         6
     );
     const formattedImages = imagesFromFolder.map((item) => ({
-        src: item.responsiveImage.src.replace("//", "/"), // napraw podwójny slash
+        src: item.responsiveImage.src.replace("//", "/"),
         width: item.responsiveImage.width,
         height: item.responsiveImage.height,
     }));
     const formattedImages2 = imagesFromFolder2.map((item) => ({
-        src: item.responsiveImage.src.replace("//", "/"), // napraw podwójny slash
+        src: item.responsiveImage.src.replace("//", "/"),
         width: item.responsiveImage.width,
         height: item.responsiveImage.height,
     }));
     return (
         <main className="bg-white text-gray-900 anim-opacity">
-            {/* HERO SECTION */}
             <section className="relative py-12 space-y-6 px-6 bg-gray-100 flex flex-col items-center text-center mx-auto">
                 <TitleH1
                     title="Bogate portfolio, to moja ogromna ciekawość fotografii."
@@ -79,10 +78,8 @@ export default function PortfolioPage() {
                 </Link>
             </section>
 
-            {/* OFERTA SECTION */}
             <OfertaSection />
 
-            {/* GALERIA SECTION */}
             <section id="portfolio" className="pt-12 bg-gray-100">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-center text-2xl font-semibold mb-12">
@@ -92,7 +89,6 @@ export default function PortfolioPage() {
                 </div>
             </section>
 
-            {/* GALERIA SECTION */}
             <section id="portfolio" className="py-12 bg-gray-100">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-center text-2xl font-semibold mb-12">
