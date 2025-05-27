@@ -1,4 +1,3 @@
-import ImageComponent from "@/components/ImageComponent";
 import TitleH2 from "@/components/TitleH2";
 import HeroSection from "../../components/HeroSection";
 import CarouselProps from "@/components/CarouselProps";

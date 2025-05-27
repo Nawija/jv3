@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { CiShare1 } from "react-icons/ci";
 
 interface ImageComponentProps {
     index: number;
