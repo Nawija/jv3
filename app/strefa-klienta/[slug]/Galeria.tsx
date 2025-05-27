@@ -11,6 +11,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { PiPlay } from "react-icons/pi";
 import ShareBtn from "@/app/strefa-klienta/[slug]/buttons/ShareBtn";
 import DownloadAllBtn from "./buttons/DownloadAllBtn";
+import { GoDownload } from "react-icons/go";
 
 export default function Galeria({
     name,
@@ -161,9 +162,19 @@ export default function Galeria({
                         data-pswp-height={height}
                         target="_blank"
                         rel="noreferrer"
-                        className="block w-full"
+                        className="block w-full group"
                     >
                         <div className="relative w-full overflow-hidden">
+                            {/* <div className="bg-gradient-to-t from-black via-transparent to-transparent z-10 absolute inset-0 h-full w-full -translate-y-full group-hover:translate-y-0 flex items-end justify-end p-4 text-white text-2xl space-x-2">
+                                <IoIosHeartEmpty />
+
+                                <a
+                                    href={url}
+                                    download
+                                >
+                                    <GoDownload />
+                                </a>
+                            </div>
                             <CldImage
                                 src={publicId}
                                 alt="Zdjęcie klienta"
@@ -171,7 +182,7 @@ export default function Galeria({
                                 height={height}
                                 className="w-full h-auto object-cover"
                                 sizes="(max-width: 768px) 100vw, 33vw"
-                            />
+                            /> */}
                         </div>
                     </a>
                 ))}

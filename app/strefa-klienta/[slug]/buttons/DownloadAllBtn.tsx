@@ -59,7 +59,6 @@ export default function DownloadAllBtn({
     return (
         <button
             onClick={handleDownload}
-            className="text-2xl text-gray-600 hover:text-black transition-colors duration-300"
             title={asZip ? "Pobierz jako ZIP" : "Otwórz wszystkie zdjęcia"}
         >
             {loading ? <SpinerLoading /> : <GoDownload />}
