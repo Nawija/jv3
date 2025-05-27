@@ -174,7 +174,7 @@ export default function Galeria({
                                 >
                                     <GoDownload />
                                 </a>
-                            </div>
+                            </div> */}
                             <CldImage
                                 src={publicId}
                                 alt="Zdjęcie klienta"
@@ -182,7 +182,7 @@ export default function Galeria({
                                 height={height}
                                 className="w-full h-auto object-cover"
                                 sizes="(max-width: 768px) 100vw, 33vw"
-                            /> */}
+                            />
                         </div>
                     </a>
                 ))}
