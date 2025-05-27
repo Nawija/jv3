@@ -13,6 +13,8 @@ import LinkShare from "@/components/ui/LinkShare";
 import InstagramGrid from "@/components/instagram/InstagramGrid";
 import Link from "next/link";
 import { getBlogsByCategory } from "@/lib/getBlogsByCategory";
+import Image from "next/image";
+import { CiShare1 } from "react-icons/ci";
 
 const pageTitle = "Fotografia ślubna - uchwyć magię najważniejszego dnia";
 const pageDescription =
@@ -105,12 +107,30 @@ export default async function FotografiaSlubna() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                             {OFERTAIMAGES.map((img, index) => (
                                 <Link key={index} href={img.href}>
-                                    <ImageComponent
-                                        index={index}
-                                        img={img.src}
-                                        title={img.title}
-                                        desc={img.desc}
-                                    />
+                                    <div className="relative flex flex-wrap items-center justify-center aspect-[4/2] sm:aspect-[8/6]">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.title}
+                                            title={`${img.title} - Jarek Olszewski`}
+                                            fill
+                                            sizes="320px"
+                                            priority={index === 0}
+                                            className="object-cover w-full h-full aspect-[4/2] sm:aspect-[8/6] opacity-80"
+                                            quality={70}
+                                        />
+
+                                        <div className="absolute bottom-0 right-0 lg:left-0 bg-black/45 text-center p-3 z-10 h-full w-full flex items-center justify-center flex-col">
+                                            <p className="capitalize text-white text-xl sm:text-lg md:text-xl lg:text-2xl mb-2 font-semibold">
+                                                {img.title}
+                                            </p>
+                                            <CiShare1 className="text-xl text-white absolute right-2 top-2" />
+                                            {img.desc && (
+                                                <p className="text-white text-base sm:text-sm md:text-base lg:text-lg py-1">
+                                                    {img.desc}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </div>
                                 </Link>
                             ))}
                         </div>

@@ -32,7 +32,6 @@ export default function ImageComponent({
                 <p className="capitalize text-white text-xl sm:text-lg md:text-xl lg:text-2xl mb-2 font-semibold">
                     {title}
                 </p>
-                <CiShare1 className="text-xl text-white absolute right-2 top-2" />
                 {desc && (
                     <p className="text-white text-base sm:text-sm md:text-base lg:text-lg py-1">
                         {desc}
