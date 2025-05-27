@@ -11,7 +11,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { PiPlay } from "react-icons/pi";
 import ShareBtn from "@/app/strefa-klienta/[slug]/buttons/ShareBtn";
 import DownloadAllBtn from "./buttons/DownloadAllBtn";
-import { GoDownload } from "react-icons/go";
+// import { GoDownload } from "react-icons/go";
 
 export default function Galeria({
     name,
