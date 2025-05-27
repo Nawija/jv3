@@ -14,7 +14,7 @@ export default function PasswordForm({
     return (
         <form
             method="GET"
-            className="mx-auto mt-72 h-[100vh] space-y-4 px-6"
+            className="mx-auto mt-64 lg:mt-72 h-[100vh] space-y-4 px-6"
         >
             <div className="absolute inset-0 h-full w-full -z-10">
                 <img

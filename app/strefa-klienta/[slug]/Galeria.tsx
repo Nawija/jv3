@@ -99,7 +99,7 @@ export default function Galeria({
 
                 <div className="flex flex-col items-center justify-center z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <motion.h1
-                        className="text-xl font-semibold leading-tight uppercase text-center text-white/80"
+                        className="text-xl font-medium leading-tight uppercase text-center text-white/80"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
@@ -108,7 +108,7 @@ export default function Galeria({
                     </motion.h1>
 
                     <motion.p
-                        className="text-5xl font-semibold w-max leading-tight uppercase text-center mb-8 text-white/80"
+                        className="text-4xl lg:text-5xl font-medium w-max leading-tight uppercase text-center mb-8 text-white/80"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
