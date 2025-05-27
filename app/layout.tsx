@@ -26,7 +26,6 @@ export const metadata: Metadata = {
         "sesja narzeczeńska",
         "reportaż ślubny",
         "Jarek Olszewski",
-        "fotograf artystyczny",
         "fotograf warszawa",
     ],
     openGraph: {
