@@ -74,8 +74,8 @@ export default async function OffertsPage() {
 
     return (
         <>
-            <div className="bg-gray-100 py-8 px-6 sm:px-6 lg:px-8 anim-opacity">
-                <section className="max-w-7xl mx-auto space-y-12 text-stone-800">
+            <div className="bg-gray-100 py-12 px-6 sm:px-6 lg:px-8 anim-opacity overflow-hidden">
+                <section className="max-w-7xl mx-auto space-y-12 text-stone-800 overflow-hidden">
                     <TitleH1
                         title="Profesjonalny Fotograf"
                         desc="Szukasz fotografa, który uwieczni Twoje

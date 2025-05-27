@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsMessenger } from "react-icons/bs";
 
 export default function Messenger() {
+    const pathname = usePathname();
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -24,6 +26,10 @@ export default function Messenger() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    if (pathname.includes("/strefa-klienta/")) {
+        return null;
+    }
 
     return (
         <Link

@@ -17,9 +17,16 @@ const InfoBlock: FC<Props> = ({ title, image, category, slug, desc }) => {
     return (
         <Link
             href={`/blog/${category}/${slug}`}
-            className="text-center border-gray-300 block relative overflow-hidden "
+            className="text-center border-gray-300 block relative overflow-hidden group"
         >
-            <div className="relative aspect-[16/12]">
+            <div className="relative aspect-[16/12] overflow-hidden">
+                <div className="absolute bottom-0 left-0 right-0 duration-300 bg-black/60 flex justify-center items-center h-full w-full group-hover:opacity-100 transition-opacity z-10 opacity-0">
+                    <div className="group-hover:opacity-100 transition-opacity z-10 opacity-0 border absolute duration-500 inset-4 border-white/50" />
+
+                    <p className="text-white text-base font-medium capitalize py-3 px-3 group-hover:translate-y-0 transition-transform z-10 translate-y-full duration-500 border-y border-white/40">
+                        Zobacz {title.split(" ").slice(0, 3).join(" ")}
+                    </p>
+                </div>
                 <Image
                     src={image}
                     alt={`${title
