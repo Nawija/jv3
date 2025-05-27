@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
 export default function StrefaKlientaStart() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);

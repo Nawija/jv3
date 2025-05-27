@@ -3,6 +3,7 @@ import { CLIENTS } from "@/constants/clients";
 import Galeria from "./Galeria";
 import PasswordForm from "./PasswordForm";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -26,6 +27,39 @@ interface CloudinaryResource {
 interface CloudinaryResponse {
     resources: CloudinaryResource[];
 }
+
+const pageTitle = "Strefa Klienta | Jarek Olszewski";
+const pageDescription =
+    "Strefa Klienta to miejsce, w którym uzyskasz dostęp do swojej prywatnej galerii zdjęć. Wprowadź unikalne hasło, aby bezpiecznie przeglądać fotografie z Twojej sesji wykonanej przez Jarka Olszewskiego.";
+
+const heroImage = "/Images/home/fotograf-siedlce-jarek-olszewski.webp";
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical:
+            "https://www.jarekolszewski.pl/regulamin-i-polityka-prywatnoci",
+    },
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+        title: pageTitle,
+        description: pageDescription,
+        images: [
+            {
+                url: heroImage,
+                width: 900,
+                height: 900,
+                alt: pageTitle,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [heroImage],
+    },
+};
 
 export default async function GaleriaKlienta({ params, searchParams }: Props) {
     const awaitedParams = await Promise.resolve(params);
