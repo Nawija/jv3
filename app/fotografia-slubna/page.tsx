@@ -100,7 +100,7 @@ export default async function FotografiaSlubna() {
             />
             <div className="text-center bg-white w-full">
                 <div className="w-full py-10">
-                    <div className="max-w-screen-lg mx-auto px-4">
+                    <div className="max-w-5xl mx-auto px-4">
                         <h1 className="text-2xl lg:text-3xl font-light text-center mb-10">
                             Fotografia ślubna, co skrywa?
                         </h1>
@@ -194,7 +194,7 @@ export default async function FotografiaSlubna() {
                             <Gallery allImages={allImages} />
                         </div>
                         <section className="bg-white py-12">
-                            <div className="mx-auto max-w-4xl text-center">
+                            <div className="mx-auto text-center">
                                 <p className=" font-light text-neutral-900 text-xl tracking-tight">
                                     Opinie klientów
                                 </p>
