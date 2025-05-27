@@ -18,8 +18,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "file-saver": "^2.0.5",
     "framer-motion": "^12.11.0",
     "gray-matter": "^4.0.3",
+    "jszip": "^3.10.1",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.510.0",
     "marked": "^15.0.11",
@@ -44,6 +46,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/canvas-confetti": "^1.9.0",
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",

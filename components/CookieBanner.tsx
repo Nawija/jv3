@@ -1,9 +1,11 @@
 "use client";
 
+// import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 // import { acceptCookies } from "@/lib/acceptCookies";
 
 export default function CookieBanner() {
+    // const pathname = usePathname();
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -28,6 +30,9 @@ export default function CookieBanner() {
     };
 
     if (!visible) return null;
+    // if (pathname.includes("/strefa-klienta/")) {
+    //     return null;
+    // }
 
     return (
         <div className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-6 max-w-6xl mx-auto z-50">

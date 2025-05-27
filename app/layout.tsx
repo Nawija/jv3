@@ -11,7 +11,6 @@ import CookieBanner from "@/components/CookieBanner";
 import IntroOverlay from "@/components/IntroOverlay";
 import FacebookPixel from "@/lib/FacebookPixel";
 
-
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],

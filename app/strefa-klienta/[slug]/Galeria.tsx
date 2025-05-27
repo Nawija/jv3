@@ -7,10 +7,10 @@ import { CldImage } from "next-cloudinary";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { GoDownload } from "react-icons/go";
-import { LiaShareSolid } from "react-icons/lia";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { PiPlay } from "react-icons/pi";
+import ShareBtn from "@/app/strefa-klienta/[slug]/buttons/ShareBtn";
+import DownloadAllBtn from "./buttons/DownloadAllBtn";
 
 export default function Galeria({
     name,
@@ -143,8 +143,8 @@ export default function Galeria({
                 <div className="space-x-5 flex items-center justify-center text-gray-600 text-2xl py-3">
                     <PiPlay />
                     <IoIosHeartEmpty />
-                    <GoDownload />
-                    <LiaShareSolid />
+                    <DownloadAllBtn images={images} asZip={true} />
+                    <ShareBtn name={name} heroTitle={heroTitle} />
                 </div>
             </div>
 
