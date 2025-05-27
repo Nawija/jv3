@@ -43,8 +43,8 @@ export default function PasswordForm({
                     />
 
                     {wrongPassword && (
-                        <p className="text-red-400 text-sm text-center">
-                            ❌ Niepoprawne hasło. Spróbuj ponownie.
+                        <p className="text-red-500 text-sm text-center">
+                            Niepoprawne hasło. Spróbuj ponownie.
                         </p>
                     )}
 
