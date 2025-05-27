@@ -38,7 +38,13 @@ export default async function GaleriaKlienta({ params, searchParams }: Props) {
     const isAuth = awaitedSearchParams.password === client.password;
 
     if (!isAuth) {
-        return <PasswordForm name={client.name} />;
+        const isPasswordProvided = !!awaitedSearchParams.password;
+        return (
+            <PasswordForm
+                name={client.name}
+                wrongPassword={isPasswordProvided}
+            />
+        );
     }
 
     // Pobieranie zdjęć z Cloudinary
