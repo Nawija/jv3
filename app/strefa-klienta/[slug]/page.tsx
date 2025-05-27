@@ -2,6 +2,7 @@
 import { CLIENTS } from "@/constants/clients";
 import Galeria from "./Galeria";
 import PasswordForm from "./PasswordForm";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -31,7 +32,7 @@ export default async function GaleriaKlienta({ params, searchParams }: Props) {
     const { slug } = awaitedParams;
 
     const client = CLIENTS.find((c) => c.slug === slug);
-    if (!client) return <div>Nie znaleziono galerii.</div>;
+    if (!client) return notFound();
 
     const awaitedSearchParams = await Promise.resolve(searchParams);
     const isAuth = awaitedSearchParams.password === client.password;
